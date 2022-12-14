@@ -1,0 +1,10 @@
+.row1 {
+    display: flex;
+    width: auto;
+    height: 98%;
+    background: none;
+    margin-top: 0;
+    margin-left: 15px;
+    /* float: left; */
+    padding: 10px;
+}
