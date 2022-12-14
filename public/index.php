@@ -20,7 +20,7 @@
 
         body {
             font-family: SUT_Bold; 
-        }
+        } 
 
         * {
 
