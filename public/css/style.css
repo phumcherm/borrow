@@ -120,3 +120,14 @@
             max-width: 500%;
             text-align: center;
         }
+
+        .container { 
+            height: 200px;
+           
+            position: relative;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          
+          
