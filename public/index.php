@@ -29,7 +29,7 @@ require_once "../app/model/server.php"
                 <li class="items button"><a href="#showcase" onclick="w3_close()">ยืมวัสดุ ครุภัณฑ์</a></li>
                 <li class="items button"><a href="#services" onclick="w3_close()">คืนวัสดุ ครุภัณฑ์</a></li>
                 <li class="items button"><a href="#designers" onclick="w3_close()">คลังวัสดุ ครุภัณฑ์</a></li>
-                <li class="items button"><a href="view/login.php" onclick="w3_close()">ออกจากระบบ</a></li>
+                <li class="items button"><a href="login.php" onclick="w3_close()">ออกจากระบบ</a></li>
             </ul>
         </h5>
 
@@ -50,6 +50,7 @@ require_once "../app/model/server.php"
                 </h3>
             </div>
         </div>
+
     </div>
 
     <!-- Sidebar/menu -->
