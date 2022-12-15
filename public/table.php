@@ -65,9 +65,7 @@ require_once "../app/model/server.php"
                             </td>
                             <td><?php echo $row["checkInDate"]; ?></td>
                             <td><?php echo $row["brand"]; ?></td>
-                            <td>
-                                <?php echo $row["serialNumber"]; ?></center>
-                            </td>
+                            <td><?php echo $row["serialNumber"]; ?></td>
                             <td>
                                 <?php echo $row['price']; ?>
                             </td>
@@ -80,7 +78,7 @@ require_once "../app/model/server.php"
                             <td><?php echo $row["status"]; ?></td>
                             <td><?php echo $row["notation"]; ?></td>
                             <td>
-                                <?php echo $row["misConfirmer"]; ?></center>
+                                <?php echo $row["misConfirmer"]; ?>
                             </td>
                             <td>
                                 <?php echo $row['organization']; ?>
