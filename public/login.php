@@ -67,14 +67,18 @@
             height: 100vh;
         }
 
-        .color {
+        .colorwhite {
             color: #ffffff;
+        }
+
+        .colororage {
+            color: #EC5A0F;
         }
     </style>
 </head>
 
 <body>
-    <div class="fullscreen-block color">
+    <div class="fullscreen-block colorwhite">
         <section><b>
                 <h1>E - Borrow</h1>
             </b></section>
@@ -82,11 +86,12 @@
         <section><b>
                 <h3>ระบบ ยืม - คืน วัสดุและครุภัณฑ์ฝ่ายเทคนิควิศวกรรม</h3>
             </b></section>
-        <div style="max-width: 500px; height: auto;margin: 25px auto 15px auto;border-radius: 7px;">
-            <div style="border-radius: 7px;">
-                <form class="container  w3-white w3-center " style="width: 25rem; margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
-                    <div class=" center">
-                        <p>The Troll's tongue in Hardanger, Norway</p>
+        <div style="max-width: 600px; height: auto;margin: 25px auto 15px auto;border-radius: 7px; ">
+            <div style="border-radius: 7px; ">
+                <form class="container  w3-orange w3-center " style="width: 30rem; margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                    <div class=" colororage ">
+
+                        <h3><b>เข้าสู่ระบบ</b></h3>
                     </div>
                 </form>
             </div>
@@ -94,7 +99,7 @@
     </div>
 
 
-    
+
 </body>
 
 </html>
