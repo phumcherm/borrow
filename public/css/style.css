@@ -64,28 +64,28 @@
                 list-style-type: none;
                 display: flex;
             }
-
             ul {
                 padding-right: 0;
                 float: right;
             }
+        .button a {
+            padding: 7px 15px;
+            border-radius: 7px;
+        }
         }
 
+        /* ***tablet*** */
         @media all and (max-width: 600px) {
             ul {
                 padding-left: 0;
             }
-
             .items a:hover {
                 background-color: #ff5722;
-
             }
-
+            .button a {
+                padding: 15px 100px;
+            }
         }
-
-        /* .menu.items {
-            display: flex;
-        } */
 
         .menu li {
             display: flex;
@@ -117,10 +117,6 @@
 
         }
 
-        .button a {
-            padding: 7px 15px;
-            border-radius: 7px;
-        }
 
         section {
             width: 100%;
