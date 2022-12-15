@@ -58,15 +58,34 @@
     display: inline;
 
 } */
+        /* ***Desktop*** */
+        @media all and (min-width: 600px) {
+            ul.menu {
+                list-style-type: none;
+                display: flex;
+            }
 
-        ul.menu {
-            list-style-type: none;
-            display: flex;
+            ul {
+                padding-right: 0;
+                float: right;
+            }
         }
 
-        .menu.items {
-            display: flex;
+        @media all and (max-width: 600px) {
+            ul {
+                padding-left: 0;
+            }
+
+            .items a:hover {
+                background-color: #ff5722;
+
+            }
+
         }
+
+        /* .menu.items {
+            display: flex;
+        } */
 
         .menu li {
             display: flex;
@@ -84,10 +103,6 @@
 
         }
 
-        ul {
-            padding-right: 0;
-            float: right;
-        }
 
         nav {
             height: auto;
@@ -98,7 +113,7 @@
         .items.button a {
             text-decoration: none;
             /* width: 100px; */
-            margin-left: auto;
+            margin: auto;
 
         }
 
@@ -121,13 +136,11 @@
             text-align: center;
         }
 
-        .container { 
+        .container {
             height: 200px;
-           
+
             position: relative;
             display: block;
             margin-left: auto;
             margin-right: auto;
-          }
-          
-          
+        }
