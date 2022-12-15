@@ -8,3 +8,45 @@
     /* float: left; */
     padding: 10px;
 }
+
+/* .menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+    white-space: nowrap;
+}
+
+.items {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+} */
+
+/* ul#menu li {
+    display: inline;
+
+} */
+
+ul.menu {
+    list-style-type: none;
+    display: flex ;
+}
+
+.menu.items{
+    display: flex;
+}
+
+.menu li{
+    display: flex;
+}
+
+.menu li.button {
+    padding-right: 0;
+}
+.menu li {
+    padding: 15px 20px;
+}
+
+.items a:hover{
+    color: aquamarine;
+}

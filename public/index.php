@@ -2,10 +2,11 @@
 <html>
 
 <head>
-    <title>W3.CSS Template</title>
+    <title>E - Borrow</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/style.css"  >
     <style>
         @font-face {
             font-family: SUT_Regular;
@@ -19,8 +20,8 @@
 
 
         body {
-            font-family: SUT_Bold; 
-        } 
+            font-family: SUT_Bold;
+        }
 
         * {
 
@@ -46,29 +47,26 @@
     </header>
 
     <!-- Navbar (sit on top) -->
+    <!-- <nav> -->
+    <ul class="menu" id="menu" style="padding-right: 0;">
+        <li class="items button"><a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">หน้าหลัก</a></li>
+        <li class="items button"><a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">ยืมวัสดุ ครุภัณฑ์</a></li>
+        <li class="items button"><a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">คืนวัสดุ ครุภัณฑ์</a></li>
+        <li class="items button"><a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">คลังวัสดุ ครุภัณฑ์</a></li>
+        <li class="items button"><a href="view/login.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">ออกจากระบบ</a></li>
+    </ul>
+
+    <!-- </nav> -->
     <div class="w3-bar w3-white w3-padding w3-card" style="width: auto; margin-left: auto;">
         <h3>
             <center>E - Borrow ระบบยืม-คืนวัสดุและครุภัณฑ์ฝ่ายเทคนิควิศวกรรม
                 <!-- Right-sided navbar links. Hide them on small screens -->
-            </center> s
+            </center>
         </h3>
     </div>
 
     <div class="row">
-        <nav class="w3-sidebar w3-blue w3-collapse w3-large w3-padding" style="z-index:3;width:300px;font-weight:normal;" id="mySidebar"><br>
-            <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
-            <div class="w3-container">
-                <img src="img/logo.png" alt="Girl in a jacket" width="250" height="150">
-            </div>
-            <div class="w3-bar-block ">
-                <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">หน้าหลัก</a>
-                <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">ยืมวัสดุ ครุภัณฑ์</a>
-                <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">คืนวัสดุ ครุภัณฑ์</a>
-                <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">คลังวัสดุ ครุภัณฑ์</a>
-                <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">เกี่ยวกับแผนก</a>
-                <a href="view/login.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">ออกจากระบบ</a> 
-            </div>
-        </nav>
+        
         <div style="background-color: red;width: auto; height: 500px;margin-left: auto;">
             <div>
                 <h3>
