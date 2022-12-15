@@ -8,7 +8,7 @@ services:
         depends_on:
             - db
         volumes:
-            - D:/borrow:/var/www/html/
+            - D:/project/borrow:/var/www/html/
         ports:
             - 8000:80
     db:
@@ -16,9 +16,14 @@ services:
         image: mysql
         restart: always
         environment:
-            MYSQL_ROOT_PASSWORD: 87654321
+            MYSQL_ROOT_PASSWORD: 12345678
             MYSQL_DATABASE: borrow
             MYSQL_USER: borrow
-            MYSQL_PASSWORD: 87654321
+            MYSQL_PASSWORD: 12345678
         ports:
             - "9906:3306"
+
+
+
+
+
