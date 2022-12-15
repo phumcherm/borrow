@@ -53,19 +53,19 @@
             /* For Firefox 3.6 to 15 */
             background: linear-gradient(#5B5B5B, #EC5A0F);
             /* Standard syntax */
-       /*      background-size: cover;
+            background-size: cover;
             width: 100vw;
-            height: 100vh; */
+            height: 100vh;
         }
     </style>
 </head>
 
 <body>
 
-<h1>hello </h1>
-   <!--  <div class="fullscreen-block">
-   
-    </div> -->
+
+    <div class="fullscreen-block">
+    <h1>hello </h1>
+    </div>
 
 
 </body>
