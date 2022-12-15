@@ -29,12 +29,14 @@
             font-family: SUT_Regular;
         }
 
-        h1{
+        h1 {
             font-family: SUT_Regular;
             letter-spacing: 1px;
             margin-top: 0;
             margin-bottom: 0;
+            font-size: 8em; 
         }
+
         h2,
         h3,
         h4,
@@ -42,22 +44,32 @@
         h6,
 
         .fullscreen-block {
-           
-            background: red; /* For browsers that do not support gradients */
-            background: -webkit-linear-gradient(#5B5B5B, #EC5A0F); /* For Safari 5.1 to 6.0 */
-            background: -o-linear-gradient(#5B5B5B,#EC5A0F); /* For Opera 11.1 to 12.0 */
-            background: -moz-linear-gradient(#5B5B5B, #EC5A0F); /* For Firefox 3.6 to 15 */
-            background: linear-gradient(#5B5B5B,#EC5A0F); /* Standard syntax */
+
+            background: red;
+            /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient(#5B5B5B, #EC5A0F);
+            /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(#5B5B5B, #EC5A0F);
+            /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(#5B5B5B, #EC5A0F);
+            /* For Firefox 3.6 to 15 */
+            background: linear-gradient(#5B5B5B, #EC5A0F);
+            /* Standard syntax */
             background-size: cover;
             width: 100vw;
             height: 100vh;
+        }
+        .color {
+        color: #ffffff;
         }
     </style>
 </head>
 
 <body>
-    <div class="fullscreen-block">
-        <section><h1>hello22233555</h1></section>
+    <div class="fullscreen-block color">
+        <section><b>
+                <h1>E - Borrow</h1>
+            </b></section>
     </div>
 
 </body>
