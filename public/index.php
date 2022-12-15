@@ -71,12 +71,10 @@
 
     <div class="row">
 
-        <div style="background-color: darkseagreen;max-width: 1000px; height: 500px;margin: 15px auto;border-radius: 7px;">
+        <div style="background-color: #dbd6d6;width: auto; height: 500px;margin: 15px;border-radius: 7px;padding: 30px;">
             <div>
-                <h3>
-                    <center>
-                        ยืม-คืนล่าสุดของคุณ
-                    </center>
+                <h3 style="color: #ff5722;font-family: SUT_Bold;">
+                ▶ ยืม-คืนล่าสุดของคุณ
                 </h3>
             </div>
         </div>
