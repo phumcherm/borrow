@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
+<<<<<<< HEAD
         h1,
         h2,
         h3,
@@ -19,6 +20,9 @@
             margin-top: 0;
             margin-bottom: 0;
         }
+=======
+
+>>>>>>> 981d863523c8f4ece4ac5de69e8d279196d7f77f
     </style>
 </head>
 
