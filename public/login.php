@@ -38,13 +38,14 @@
         }
 
         h2,
-        h3{
+        h3 {
             font-family: SUT_Regular;
             letter-spacing: 1px;
             margin-top: 0;
             margin-bottom: 0;
             font-size: 2.5em;
         }
+
         h4,
         h5,
         h6,
@@ -81,10 +82,19 @@
         <section><b>
                 <h3>ระบบ ยืม - คืน วัสดุและครุภัณฑ์ฝ่ายเทคนิควิศวกรรม</h3>
             </b></section>
-        
+        <div style="max-width: 500px; height: auto;margin: 25px auto 15px auto;border-radius: 7px;">
+            <div style="border-radius: 7px;">
+                <form class="container  w3-white w3-center " style="width: 25rem; margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                    <div class=" center">
+                        <p>The Troll's tongue in Hardanger, Norway</p>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
+
+    
 </body>
 
 </html>
-
