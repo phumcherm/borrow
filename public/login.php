@@ -29,17 +29,17 @@
             font-family: SUT_Regular;
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
+        h1{
             font-family: SUT_Regular;
             letter-spacing: 1px;
             margin-top: 0;
             margin-bottom: 0;
         }
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
 
         .fullscreen-block {
            
@@ -57,7 +57,7 @@
 
 <body>
     <div class="fullscreen-block">
-        <h1>gg</h1>
+        <h1>hello222</h1>
     </div>
 
 </body>
