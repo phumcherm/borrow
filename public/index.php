@@ -8,26 +8,6 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        @font-face {
-            font-family: SUT_Regular;
-            src: url(SUT-Fonts/SUT_Regular_ver_1.00.ttf);
-        }
-
-        @font-face {
-            font-family: SUT_Bold;
-            src: url(SUT-Fonts/SUT_Bold_ver_1.00.ttf);
-        }
-
-
-        body {
-            font-family: SUT_Bold;
-            /* margin: 0; */
-        }
-
-        * {
-
-            font-family: SUT_Regular;
-        }
 
         h1,
         h2,
