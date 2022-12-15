@@ -58,10 +58,17 @@
     display: inline;
 
 } */
+        /* ***Desktop*** */
+        @media all and (min-width: 600px) {
+            ul.menu {
+                list-style-type: none;
+                display: flex;
+            }
 
-        ul.menu {
-            list-style-type: none;
-            display: flex;
+            ul {
+                padding-right: 0;
+                float: right;
+            }
         }
 
         .menu.items {
@@ -84,10 +91,6 @@
 
         }
 
-        ul {
-            padding-right: 0;
-            float: right;
-        }
 
         nav {
             height: auto;
@@ -121,13 +124,11 @@
             text-align: center;
         }
 
-        .container { 
+        .container {
             height: 200px;
-           
+
             position: relative;
             display: block;
             margin-left: auto;
             margin-right: auto;
-          }
-          
-          
+        }

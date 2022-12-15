@@ -1,3 +1,6 @@
+<?php
+require_once "../app/model/server.php"
+?>
 <!DOCTYPE html>
 <html>
 
@@ -8,7 +11,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-       
+
     </style>
 </head>
 
@@ -22,8 +25,8 @@
     <nav style="padding: 15px;">
         <h5>
             <ul class="menu" id="menu" style="margin: 0;">
-                <li class="items button"><a href="#" onclick="w3_close()">หน้าหลัก</a></li>
-                <li class="items button"><a href="#showcase" onclick="w3_close()">ยืมวัสดุ ครุภัณฑ์</a></li>
+                <li class="items button"><a href="index.php" onclick="w3_close()">หน้าหลัก</a></li>
+                <li class="items button"><a href="borrow.php" onclick="w3_close()">ยืมวัสดุ ครุภัณฑ์</a></li>
                 <li class="items button"><a href="#services" onclick="w3_close()">คืนวัสดุ ครุภัณฑ์</a></li>
                 <li class="items button"><a href="#designers" onclick="w3_close()">คลังวัสดุ ครุภัณฑ์</a></li>
                 <li class="items button"><a href="view/login.php" onclick="w3_close()">ออกจากระบบ</a></li>
@@ -42,13 +45,12 @@
 
         <div style="background-color: #dbd6d6;width: auto; height: 500px;margin: 15px;border-radius: 7px;padding: 30px;">
             <div>
-                <h3 style="color: #ff5722;font-family: SUT_Bold;">
+                <h2 style="color: #ff5722;font-family: SUT_Bold;">
                     ▶ ยืม-คืนล่าสุดของคุณ
-                </h3>
+                </h2>
             </div>
         </div>
     </div>
-
 
     <!-- Sidebar/menu -->
 
