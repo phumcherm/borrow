@@ -8,26 +8,6 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        @font-face {
-            font-family: SUT_Regular;
-            src: url(SUT-Fonts/SUT_Regular_ver_1.00.ttf);
-        }
-
-        @font-face {
-            font-family: SUT_Bold;
-            src: url(SUT-Fonts/SUT_Bold_ver_1.00.ttf);
-        }
-
-
-        body {
-            font-family: SUT_Bold;
-            /* margin: 0; */
-        }
-
-        * {
-
-            font-family: SUT_Regular;
-        }
 
         h1,
         h2,
@@ -51,22 +31,22 @@
 
     <!-- Navbar (sit on top) -->
     <nav style="padding: 15px;">
-    <h5>
-        <ul class="menu" id="menu" style="margin: 0;">
-            <li class="items button"><a href="#" onclick="w3_close()">หน้าหลัก</a></li>
-            <li class="items button"><a href="#showcase" onclick="w3_close()" >ยืมวัสดุ ครุภัณฑ์</a></li>
-            <li class="items button"><a href="#services" onclick="w3_close()" >คืนวัสดุ ครุภัณฑ์</a></li>
-            <li class="items button"><a href="#designers" onclick="w3_close()">คลังวัสดุ ครุภัณฑ์</a></li>
-            <li class="items button"><a href="view/login.php" onclick="w3_close()">ออกจากระบบ</a></li>
-        </ul>
-    </h5>
+        <h5>
+            <ul class="menu" id="menu" style="margin: 0;">
+                <li class="items button"><a href="#" onclick="w3_close()">หน้าหลัก</a></li>
+                <li class="items button"><a href="#showcase" onclick="w3_close()">ยืมวัสดุ ครุภัณฑ์</a></li>
+                <li class="items button"><a href="#services" onclick="w3_close()">คืนวัสดุ ครุภัณฑ์</a></li>
+                <li class="items button"><a href="#designers" onclick="w3_close()">คลังวัสดุ ครุภัณฑ์</a></li>
+                <li class="items button"><a href="view/login.php" onclick="w3_close()">ออกจากระบบ</a></li>
+            </ul>
+        </h5>
 
-    
-    <div class="w3-bar w3-padding " style="width: auto; margin-left: auto;">
-        <h2 style="margin-left: 80px;">E - Borrow
+
+        <div class="w3-bar w3-padding " style="width: auto; margin-left: auto;">
+            <h2 style="margin-left: 80px;">E - Borrow
                 <!-- Right-sided navbar links. Hide them on small screens -->
-        </h2>
-    </div>
+            </h2>
+        </div>
     </nav>
 
     <div class="row">
@@ -74,7 +54,7 @@
         <div style="background-color: #dbd6d6;width: auto; height: 500px;margin: 15px;border-radius: 7px;padding: 30px;">
             <div>
                 <h3 style="color: #ff5722;font-family: SUT_Bold;">
-                ▶ ยืม-คืนล่าสุดของคุณ
+                    ▶ ยืม-คืนล่าสุดของคุณ
                 </h3>
             </div>
         </div>
