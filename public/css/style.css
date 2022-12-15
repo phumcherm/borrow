@@ -71,9 +71,21 @@
             }
         }
 
-        .menu.items {
-            display: flex;
+        @media all and (max-width: 600px) {
+            ul {
+                padding-left: 0;
+            }
+
+            .items a:hover {
+                background-color: #ff5722;
+
+            }
+
         }
+
+        /* .menu.items {
+            display: flex;
+        } */
 
         .menu li {
             display: flex;
@@ -101,7 +113,7 @@
         .items.button a {
             text-decoration: none;
             /* width: 100px; */
-            margin-left: auto;
+            margin: auto;
 
         }
 
