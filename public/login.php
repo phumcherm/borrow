@@ -34,11 +34,17 @@
             letter-spacing: 1px;
             margin-top: 0;
             margin-bottom: 0;
-            font-size: 8em; 
+            font-size: 8em;
         }
 
         h2,
-        h3,
+        h3{
+            font-family: SUT_Regular;
+            letter-spacing: 1px;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 2.5em;
+        }
         h4,
         h5,
         h6,
@@ -59,8 +65,9 @@
             width: 100vw;
             height: 100vh;
         }
+
         .color {
-        color: #ffffff;
+            color: #ffffff;
         }
     </style>
 </head>
@@ -70,6 +77,11 @@
         <section><b>
                 <h1>E - Borrow</h1>
             </b></section>
+
+        <section><b>
+                <h3>ระบบ ยืม - คืน วัสดุและครุภัณฑ์ฝ่ายเทคนิควิศวกรรม</h3>
+            </b></section>
+        
     </div>
 
 </body>
