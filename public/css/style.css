@@ -40,13 +40,25 @@ ul.menu {
     display: flex;
 }
 
-.menu li.button {
+/* .menu li.button {
     padding-right: 0;
-}
+} */
 .menu li {
-    padding: 15px 20px;
+    padding: 10px;
 }
 
-.items a:hover{
-    color: aquamarine;
+/* .items a:hover{
+    color: #ff5722;
+} */
+
+ul {
+    padding-right: 0;
+    float: right;
 }
+
+nav {
+    height: auto;
+    background-color: #837a7a;
+}
+
+
