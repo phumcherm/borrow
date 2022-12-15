@@ -56,7 +56,9 @@
 </head>
 
 <body>
-    <div class="fullscreen-block"></div>
+    <div class="fullscreen-block">
+        <h1>gg</h1>
+    </div>
 
 </body>
 
