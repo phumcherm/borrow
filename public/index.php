@@ -53,11 +53,11 @@
     <nav style="padding: 15px;">
     <h5>
         <ul class="menu" id="menu" style="margin: 0;">
-            <li class="items button"><a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">หน้าหลัก</a></li>
-            <li class="items button"><a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">ยืมวัสดุ ครุภัณฑ์</a></li>
-            <li class="items button"><a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">คืนวัสดุ ครุภัณฑ์</a></li>
-            <li class="items button"><a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">คลังวัสดุ ครุภัณฑ์</a></li>
-            <li class="items button"><a href="view/login.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">ออกจากระบบ</a></li>
+            <li class="items button"><a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange">หน้าหลัก</a></li>
+            <li class="items button"><a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange">ยืมวัสดุ ครุภัณฑ์</a></li>
+            <li class="items button"><a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange">คืนวัสดุ ครุภัณฑ์</a></li>
+            <li class="items button"><a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange">คลังวัสดุ ครุภัณฑ์</a></li>
+            <li class="items button"><a href="view/login.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange">ออกจากระบบ</a></li>
         </ul>
     </h5>
 

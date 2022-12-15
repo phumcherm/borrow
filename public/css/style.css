@@ -47,9 +47,9 @@ ul.menu {
     padding: 10px;
 }
 
-/* .items a:hover{
+.items a:hover{
     color: #ff5722;
-} */
+}
 
 ul {
     padding-right: 0;
@@ -58,7 +58,7 @@ ul {
 
 nav {
     height: auto;
-    background-color: red;
+    background-color: #837a7a;
     /* 837a7a */
 }
 
