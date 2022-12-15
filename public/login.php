@@ -90,8 +90,16 @@
             <div style="border-radius: 7px; ">
                 <form class="container  w3-orange w3-center " style="width: 30rem; margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
                     <div class=" colororage ">
-
                         <h3><b>เข้าสู่ระบบ</b></h3>
+                        <!-- Email input -->
+                        <div class="row">
+                            <input type="text" required name="txt_code" minlength="13" maxlength="13" class="form-control form-control-lg" placeholder="หมายเลขบัตรประชาชน">
+                        </div>
+                        <br>
+                        <!-- Password input -->
+                        <div class="row">
+                            <input type="password" required name="txt_password" minlength="11" maxlength="11" class="form-control form-control-lg" placeholder="รหัสผ่าน (หมายเลขประจำตัว)">
+                        </div>
                     </div>
                 </form>
             </div>
