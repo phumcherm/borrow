@@ -47,10 +47,9 @@ ul.menu {
     padding: 10px;
 }
 
-.items a:hover{
-    background-color: #ff5722;
-    
-}
+/* .items a:hover{
+    color: #ff5722;
+} */
 
 ul {
     padding-right: 0;
@@ -60,19 +59,6 @@ ul {
 nav {
     height: auto;
     background-color: #837a7a;
-    /* 837a7a */
-}
-
-.items.button a{
-    text-decoration: none;
-    /* width: 100px; */
-    margin-left: auto;
-
-}
-
-.button a {
-    padding: 7px 15px;
-    border-radius: 7px;
 }
 
 
