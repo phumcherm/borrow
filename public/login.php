@@ -42,17 +42,12 @@
         }
 
         .fullscreen-block {
-
-            background: red;
-            /* For browsers that do not support gradients */
-            background: -webkit-linear-gradient(#5B5B5B, #EC5A0F);
-            /* For Safari 5.1 to 6.0 */
-            background: -o-linear-gradient(#5B5B5B, #EC5A0F);
-            /* For Opera 11.1 to 12.0 */
-            background: -moz-linear-gradient(#5B5B5B, #EC5A0F);
-            /* For Firefox 3.6 to 15 */
-            background: linear-gradient(#5B5B5B, #EC5A0F);
-            /* Standard syntax */
+           
+            background: red; /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient(#5B5B5B, #EC5A0F); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(#5B5B5B,#EC5A0F); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(#5B5B5B, #EC5A0F); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(#5B5B5B,#EC5A0F); /* Standard syntax */
             background-size: cover;
             width: 100vw;
             height: 100vh;
@@ -61,10 +56,7 @@
 </head>
 
 <body>
-
-
-    
-
+    <div class="fullscreen-block"></div>
 
 </body>
 
