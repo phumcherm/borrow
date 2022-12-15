@@ -8,17 +8,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: SUT_Regular;
-            letter-spacing: 1px;
-            margin-top: 0;
-            margin-bottom: 0;
-        }
+       
     </style>
 </head>
 
