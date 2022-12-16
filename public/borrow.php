@@ -22,7 +22,7 @@
         <div style="background-color: #dbd6d6;width: auto; height: 500px;margin: 15px;border-radius: 7px;padding: 30px;">
             <div>
                 <h2 style="color: #ff5722;font-family: SUT_Bold;">
-                    ▶ ยืมวัสดุ ครุภัณฑ์
+                    ▶ ยืมวัสดุ ครุภัณฑ์  
                 </h2>
             </div>
         </div>
