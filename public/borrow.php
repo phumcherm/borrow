@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <style>
     input {
@@ -19,14 +18,16 @@
         width: 200px;
         height: 40px;
         padding: 20px;
-        margin: 15px;
+        margin: 15px auto 15px auto;
         text-align: center;
     }
+
     .blocktext {
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
-}
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+    }
+
     a:hover {
         background-color: #dbd6d6;
     }
@@ -40,9 +41,9 @@
         border-radius: 7px;
     }
 
-    center a:hover {
+    /* center a:hover {
         background-color: #ffa185;
-    }
+    } */
 </style>
 
 <body>
@@ -50,25 +51,25 @@
     include "navbar.php";
     ?>
 
-    <div class="">
+    <div>
 
         <div style="background-color: #dbd6d6;width: auto; height: 500px;margin: 15px;border-radius: 7px;padding: 30px;">
             <h2 style="color: #ff5722;font-family: SUT_Bold;">
                 ▶ ยืมวัสดุ ครุภัณฑ์
             </h2>
-            <div class="mb-3" style="max-width: 700px; margin: auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
+            <div style="max-width: 600px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
                 <form action="">
-                    <center><a href=""> Scan QR Code</a></center>
-                    <div class="blocktext">
-                            <input type="text" placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" style="width: 90%;">
-                    </div>
-                    <div class="row1" style="max-width: 650px;">
-                        <input class="w3-input w3-animate-input" type="text" placeholder="ระบุสถานที่" style="width: 40%;">
-                        <input  class="w3-input w3-animate-input" style="width: 40%;" type="date" id="date" name="date" required>
-                    </div>
-
+                    <center><a href="#"> Scan QR Code</a></center>
+                    <center>
+                        <input class="w3-input w3-animate-input" type="text" placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" style="max-width: 300px;">
+                        <div style="display: flex;">
+                            <input class="w3-input w3-animate-input" type="text" placeholder="ระบุสถานที่" style="width: 200px;">
+                            <input class="w3-input w3-animate-input" style="width: 200px;" type="date" id="date" name="date" required>
+                        </div>
+                    </center>
                 </form>
             </div>
+
         </div>
     </div>
 
