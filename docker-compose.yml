@@ -8,7 +8,7 @@ services:
         depends_on:
             - db
         volumes:
-            - D:/project/borrow:/var/www/html/
+            - D:/borrow:/var/www/html/
         ports:
             - 8000:80
     db:
@@ -22,8 +22,3 @@ services:
             MYSQL_PASSWORD: 12345678
         ports:
             - "9906:3306"
-
-
-
-
-
