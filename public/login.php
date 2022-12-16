@@ -71,8 +71,8 @@
             background: linear-gradient(#5B5B5B, #EC5A0F);
             /* Standard syntax */
             background-size: cover;
-            min-width: 100vw;
-            min-height: 100vh;
+            width: 100vw;
+            height: 100vh;
         }
 
         .colorwhite {
@@ -96,7 +96,7 @@
             </b></section>
         <div style="max-width: 600px; height: auto;margin: 25px auto 15px auto;border-radius: 7px; ">
             <div style="border-radius: 7px; ">
-                <form class="container  w3-orange w3-center " style="max-width: 30rem; margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                <form class="container  w3-orange w3-center " style="width: 30rem; margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
                     <div class=" colororage ">
                         <h3><b>เข้าสู่ระบบ</b></h3>
                         <!-- Email input -->
