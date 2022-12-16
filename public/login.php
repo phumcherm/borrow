@@ -93,12 +93,14 @@
                         <h3><b>เข้าสู่ระบบ</b></h3>
                         <!-- Email input -->
                         <div class="row">
-                            <input type="text" required name="txt_code" minlength="13" maxlength="13" class="form-control form-control-lg" placeholder="หมายเลขบัตรประชาชน">
+                            <label for="username">Username</label>
+                            <input type="text" required name="" class="form-control" placeholder="Username">
                         </div>
                         <br>
                         <!-- Password input -->
                         <div class="row">
-                            <input type="password" required name="txt_password" minlength="11" maxlength="11" class="form-control form-control-lg" placeholder="รหัสผ่าน (หมายเลขประจำตัว)">
+                            <label for="password">Password</label>
+                            <input type="password" required name="" class="form-control " placeholder="Password">
                         </div>
                     </div>
                 </form>
