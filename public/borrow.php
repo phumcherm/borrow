@@ -35,9 +35,17 @@
     center a {
         background-color: #ff5722;
         color: white;
-        padding: 7px 10px;
+        padding: 15px 10px;
         margin-top: 15px;
         text-decoration: none;
+        border-radius: 7px;
+    }
+
+    button {
+        color: white;
+        background-color: #ff5722;
+        padding: 15px;
+        border: none;
         border-radius: 7px;
     }
 
@@ -61,12 +69,13 @@
                 <form action="">
                     <center><a href="#"> Scan QR Code</a></center>
                     <center>
-                        <input class="w3-input w3-animate-input" type="text" placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" style="max-width: 300px;">
+                        <input class="w3-input w3-animate-input" type="text"  required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" style="max-width: 300px;">
                         <div style="display: flex;">
-                            <input class="w3-input w3-animate-input" type="text" placeholder="ระบุสถานที่" style="width: 200px;">
+                            <input class="w3-input w3-animate-input" type="text" required placeholder="ระบุสถานที่" style="width: 200px;">
                             <input class="w3-input w3-animate-input" style="width: 200px;" type="date" id="date" name="date" required>
                         </div>
                     </center>
+                    <button type="submit">ยืนยันทั้งหมด</button>
                 </form>
             </div>
 
