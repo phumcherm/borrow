@@ -8,7 +8,7 @@ $host = 'db';
 $user = 'borrow';
 
 //database user password
-$pass = '87654321';
+$pass = '12345678';
 
 // check the MySQL connection status
 $conn = new mysqli($host, $user, $pass);
