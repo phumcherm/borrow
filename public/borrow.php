@@ -69,26 +69,102 @@
 
     <div>
 
-        <div style="background-color: #dbd6d6;width: auto; height: 500px;margin: 15px;border-radius: 7px;padding: 30px;">
+        <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px;">
             <h2 style="color: #ff5722;font-family: SUT_Bold;">
                 ▶ ยืมวัสดุ ครุภัณฑ์
             </h2>
-            <div style="max-width: 600px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
+            <div style="max-width: 800px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
                 <form action="">
                     <center><a href="#"> Scan QR Code</a></center>
                     <center>
-                        <input class="w3-input w3-animate-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" style="max-width: 300px;">
+                        <input class="w3-input w3-animate-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" style="max-width: 500px;">
                         <div style="display: flex;">
-                            <input class="w3-input w3-animate-input" type="text" required placeholder="ระบุสถานที่" style="width: 200px;">
-                            <input class="w3-input" style="width: 200px;" type="date" id="date" name="date" required>
+                            <input class="w3-input w3-animate-input" type="text" required placeholder="ระบุสถานที่" style="width: 300px;">
+                            <input class="w3-input" style="width: 300px;" type="date" id="date" name="date" required>
                         </div>
                     </center>
                     <button type="submit">ยืนยันทั้งหมด</button>
                 </form>
             </div>
+            <br>
+            <div style="max-width: 1600px;margin-left: auto;">
+            <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2>
+                <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;">
+                    <thead class="table-dark">
+                        <th>
+                            <center>ลำดับ</center>
+                        </th>
+                        <th>
+                            <center>รายการ</center>
+                        </th>
+                        <th>
+                            <center>ห้อง-แผนก</center>
+                        </th>
+                        <th>
+                            <center>วันที่ยืม</center>
+                        </th>
+                        <th>
+                            <center>วันที่คืน</center>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <td>
+                            <center>1</center>
+                        </td>
+                        <td>
+                            <center>สายไฟ</center>
+                        </td>
+                        <td>
+                            <center>ศนท.</center>
+                        </td>
+                        <td>
+                            <center>12-12-2565</center>
+                        </td>
+                        <td>
+                            <center>30-12-2565</center>
+                        </td>
+                    </tbody>
+                    <tbody>
+                        <td>
+                            <center>1</center>
+                        </td>
+                        <td>
+                            <center>สายไฟ</center>
+                        </td>
+                        <td>
+                            <center>ศนท.</center>
+                        </td>
+                        <td>
+                            <center>12-12-2565</center>
+                        </td>
+                        <td>
+                            <center>30-12-2565</center>
+                        </td>
+                    </tbody>
+                    <tbody>
+                        <td>
+                            <center>1</center>
+                        </td>
+                        <td>
+                            <center>สายไฟ</center>
+                        </td>
+                        <td>
+                            <center>ศนท.</center>
+                        </td>
+                        <td>
+                            <center>12-12-2565</center>
+                        </td>
+                        <td>
+                            <center>30-12-2565</center>
+                        </td>
+                    </tbody>
+                </table>
+            </div>
 
         </div>
+
     </div>
+
 
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
