@@ -10,9 +10,12 @@ require_once "../app/model/server.php"
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
 </head>
 
 <body>
@@ -22,36 +25,92 @@ require_once "../app/model/server.php"
     </header> -->
 
     <!-- Navbar (sit on top) -->
-    <nav style="padding: 15px;">
-        <h5>
-            <ul class="menu" id="menu" style="margin: 0;">
-                <li class="items button"><a href="index.php" onclick="w3_close()">หน้าหลัก</a></li>
-                <li class="items button"><a href="borrow.php" onclick="w3_close()">ยืมวัสดุ ครุภัณฑ์</a></li>
-                <li class="items button"><a href="#services" onclick="w3_close()">คืนวัสดุ ครุภัณฑ์</a></li>
-                <li class="items button"><a href="#designers" onclick="w3_close()">คลังวัสดุ ครุภัณฑ์</a></li>
-                <li class="items button"><a href="login.php" onclick="w3_close()">ออกจากระบบ</a></li>
-            </ul>
-        </h5>
+    <?php
+    include "navbar.php";
+    ?>
 
 
-        <div class="w3-bar w3-padding " style="width: auto; margin-left: auto;">
-            <h2 style="margin-left: 80px;">E - Borrow
-                <!-- Right-sided navbar links. Hide them on small screens -->
+    <div style="background-color: #dbd6d6;width: auto; height: 500px;margin: 15px;border-radius: 7px;padding: 30px;">
+        <div>
+            <h2 style="color: #ff5722;font-family: SUT_Bold;">
+                ▶ ยืม-คืนล่าสุดของคุณ
             </h2>
         </div>
-    </nav>
-
-    <div class="row">
-
-        <div style="background-color: #dbd6d6;width: auto; height: 500px;margin: 15px;border-radius: 7px;padding: 30px;">
-            <div>
-                <h2 style="color: #ff5722;font-family: SUT_Bold;">
-                    ▶ ยืม-คืนล่าสุดของคุณ
-                </h2>
-            </div>
+        <br>
+        <div style="max-width: 1600px;margin-left: auto;">
+            <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;">
+                <thead class="table-dark">
+                    <th>
+                        <center>ลำดับ</center>
+                    </th>
+                    <th>
+                        <center>รายการ</center>
+                    </th>
+                    <th>
+                        <center>ห้อง-แผนก</center>
+                    </th>
+                    <th>
+                        <center>วันที่ยืม</center>
+                    </th>
+                    <th>
+                        <center>วันที่คืน</center>
+                    </th>
+                </thead>
+                <tbody>
+                    <td>
+                        <center>1</center>
+                    </td>
+                    <td>
+                        <center>สายไฟ</center>
+                    </td>
+                    <td>
+                        <center>ศนท.</center>
+                    </td>
+                    <td>
+                        <center>12-12-2565</center>
+                    </td>
+                    <td>
+                        <center>30-12-2565</center>
+                    </td>
+                </tbody>
+                <tbody>
+                    <td>
+                        <center>1</center>
+                    </td>
+                    <td>
+                        <center>สายไฟ</center>
+                    </td>
+                    <td>
+                        <center>ศนท.</center>
+                    </td>
+                    <td>
+                        <center>12-12-2565</center>
+                    </td>
+                    <td>
+                        <center>30-12-2565</center>
+                    </td>
+                </tbody>
+                <tbody>
+                    <td>
+                        <center>1</center>
+                    </td>
+                    <td>
+                        <center>สายไฟ</center>
+                    </td>
+                    <td>
+                        <center>ศนท.</center>
+                    </td>
+                    <td>
+                        <center>12-12-2565</center>
+                    </td>
+                    <td>
+                        <center>30-12-2565</center>
+                    </td>
+                </tbody>
+            </table>
         </div>
-
     </div>
+
 
     <!-- Sidebar/menu -->
 
