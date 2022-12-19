@@ -82,6 +82,22 @@
         .colororage {
             color: #EC5A0F;
         }
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
     </style>
 </head>
 
@@ -96,7 +112,7 @@
             </b></section>
         <div style="max-width: 600px; height: auto;margin: 25px auto 15px auto;border-radius: 7px; ">
             <div style="border-radius: 7px; ">
-                <form class="container  w3-orange w3-center " style="width: 30rem; margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                <form class="container  w3-white w3-center " style="width: 30rem; margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
                     <div class=" colororage ">
                         <h3><b>เข้าสู่ระบบ</b></h3>
                         <!-- Email input -->
