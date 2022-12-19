@@ -111,12 +111,9 @@ require_once "../app/model/server.php"
         </div>
     </div>
 
-
     <!-- Sidebar/menu -->
 
     <!-- Top menu on small screens -->
-
-
     <script>
         // Script to open and close sidebar
         function w3_open() {
