@@ -116,18 +116,19 @@
             <div >
                 <form class="container  w3-white w3-center " style=" margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
                     <div class=" colororage ">
-                        <h3><b>เข้าสู่ระบบ</b></h3><br>
+                        <h3><b>เข้าสู่ระบบ</b></h3>
                         <!-- Email input -->
 
                         <div>
-                            <i class="fa fa-user icon"></i>
+                            
                             <input type="text" required name="txt_code" minlength="13" maxlength="13" class="form-control form-control-lg" placeholder="หมายเลขบัตรประชาชน">
                         </div>
                         <br>
                         <!-- Password input -->
                         <div>
                             <input type="password" required name="txt_password" minlength="11" maxlength="11" class="form-control form-control-lg" placeholder="รหัสผ่าน (หมายเลขประจำตัว)">
-                        </div>
+                        </div><br>
+                        <button type="submit">เข้าสู่ระบบ</button>
                     </div>
                 </form>
             </div>
