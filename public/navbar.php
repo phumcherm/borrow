@@ -15,16 +15,18 @@
     }
 </style>
 
+<button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
+
 <nav style="padding: 15px;">
-        <h5>
-            <ul class="menu" id="menu" style="margin: 0;">
-                <li class="items button"><a href="index.php" onclick="w3_close()">หน้าหลัก</a></li>
-                <li class="items button"><a href="borrow.php" onclick="w3_close()">ยืมวัสดุ ครุภัณฑ์</a></li>
-                <li class="items button"><a href="back.php" onclick="w3_close()">คืนวัสดุ ครุภัณฑ์</a></li>
-                <li class="items button"><a href="#designers" onclick="w3_close()">คลังวัสดุ ครุภัณฑ์</a></li>
-                <li class="items button"><a href="login.php" onclick="w3_close()">ออกจากระบบ</a></li>
-            </ul>
-        </h5>
+    <h5>
+        <ul class="menu" id="menu" style="margin: 0;">
+            <li class="items button"><a href="index.php" onclick="w3_close()">หน้าหลัก</a></li>
+            <li class="items button"><a href="borrow.php" onclick="w3_close()">ยืมวัสดุ ครุภัณฑ์</a></li>
+            <li class="items button"><a href="back.php" onclick="w3_close()">คืนวัสดุ ครุภัณฑ์</a></li>
+            <li class="items button"><a href="#designers" onclick="w3_close()">คลังวัสดุ ครุภัณฑ์</a></li>
+            <li class="items button"><a href="login.php" onclick="w3_close()">ออกจากระบบ</a></li>
+        </ul>
+    </h5>
 
 
     <div class="w3-bar w3-padding " style="width: auto; margin-left: auto;">
@@ -33,7 +35,28 @@
                 <!-- Right-sided navbar links. Hide them on small screens -->
             </h1>
         </a>
-        </div>
-    </nav>
+    </div>
+</nav>
 
-    
+<script>
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>

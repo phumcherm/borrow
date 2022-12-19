@@ -38,7 +38,7 @@ require_once "../app/model/server.php"
         </div>
         <br>
         <div style="max-width: 1600px;margin-left: auto;">
-            <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;">
+            <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;">
                 <thead class="table-dark">
                     <th>
                         <center>ลำดับ</center>
