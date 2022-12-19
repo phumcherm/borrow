@@ -10,6 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
@@ -74,6 +77,7 @@
                 ▶ ยืมวัสดุ ครุภัณฑ์
             </h2>
             <div style="max-width: 800px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
+                <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการ</h3>
                 <form action="">
                     <center><a href="#"> Scan QR Code</a></center>
                     <center>
@@ -88,7 +92,7 @@
             </div>
             <br>
             <div style="max-width: 1600px;margin-left: auto;">
-            <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2>
+                <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2>
                 <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;">
                     <thead class="table-dark">
                         <th>
