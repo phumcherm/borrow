@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
     <style>
         @font-face {
             font-family: SUT_Regular;
@@ -85,7 +87,9 @@
 
         input[type=text],
         input[type=password] {
-            width: 100%;
+            width: 1000px;
+            height: 15px;
+            border: 3px solid #73AD21;
             padding: 15px;
             margin: 10px 10 20px 0;
             display: inline-block;
@@ -110,21 +114,28 @@
         <section><b>
                 <h3>ระบบ ยืม - คืน วัสดุและครุภัณฑ์ฝ่ายเทคนิควิศวกรรม</h3>
             </b></section>
-        <div style="max-width: 600px; height: auto;margin: 25px auto 15px auto;border-radius: 7px; ">
-            <div style="border-radius: 7px; ">
-                <form class="container  w3-white w3-center " style="width: 30rem; margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+        <div style="max-width: 600px; margin: 15px auto 15px auto; ">
+            <div>
+
+                <form class="container  w3-white w3-container " style=" margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
                     <div class=" colororage ">
-                        <h3><b>เข้าสู่ระบบ</b></h3><br>
+                        
+                            <h3><i class="fa fa-sign-in"></i><b>เข้าสู่ระบบ</b></h3>
+                        
+
                         <!-- Email input -->
 
                         <div>
+                            <i class="fa fa-user icon"></i>
                             <input type="text" required name="txt_code" minlength="13" maxlength="13" class="form-control form-control-lg" placeholder="หมายเลขบัตรประชาชน">
                         </div>
                         <br>
                         <!-- Password input -->
                         <div>
+                            <i class="fa fa-key icon"></i>
                             <input type="password" required name="txt_password" minlength="11" maxlength="11" class="form-control form-control-lg" placeholder="รหัสผ่าน (หมายเลขประจำตัว)">
-                        </div>
+                        </div><br>
+                        <button type="submit"><a href="index.php" onclick="w3_close()">เข้าสู่ระบบ</a></button>
                     </div>
                 </form>
             </div>

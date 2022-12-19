@@ -16,15 +16,15 @@
 </style>
 
 <nav style="padding: 15px;">
-    <h5>
-        <ul class="menu" id="menu" style="margin: 0;">
-            <li class="items button"><a href="index.php" onclick="w3_close()">หน้าหลัก</a></li>
-            <li class="items button"><a href="borrow.php" onclick="w3_close()">ยืมวัสดุ ครุภัณฑ์</a></li>
-            <li class="items button"><a href="back.php" onclick="w3_close()">คืนวัสดุ ครุภัณฑ์</a></li>
-            <li class="items button"><a href="#designers" onclick="w3_close()">คลังวัสดุ ครุภัณฑ์</a></li>
-            <li class="items button"><a href="view/login.php" onclick="w3_close()">ออกจากระบบ</a></li>
-        </ul>
-    </h5>
+        <h5>
+            <ul class="menu" id="menu" style="margin: 0;">
+                <li class="items button"><a href="index.php" onclick="w3_close()">หน้าหลัก</a></li>
+                <li class="items button"><a href="borrow.php" onclick="w3_close()">ยืมวัสดุ ครุภัณฑ์</a></li>
+                <li class="items button"><a href="back.php" onclick="w3_close()">คืนวัสดุ ครุภัณฑ์</a></li>
+                <li class="items button"><a href="#designers" onclick="w3_close()">คลังวัสดุ ครุภัณฑ์</a></li>
+                <li class="items button"><a href="login.php" onclick="w3_close()">ออกจากระบบ</a></li>
+            </ul>
+        </h5>
 
 
     <div class="w3-bar w3-padding " style="width: auto; margin-left: auto;">
@@ -33,5 +33,7 @@
                 <!-- Right-sided navbar links. Hide them on small screens -->
             </h1>
         </a>
-    </div>
-</nav>
+        </div>
+    </nav>
+
+    
