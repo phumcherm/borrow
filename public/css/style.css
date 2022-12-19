@@ -93,7 +93,7 @@
     padding-right: 0;
 } */
         .menu li {
-            padding: 10px;
+            padding-right: 20px;
         }
 
         .items a:hover {
@@ -103,6 +103,7 @@
         nav {
             height: auto;
             background-color: #837a7a;
+            /* padding: 20px; */
             /* 837a7a */
         }
 
@@ -110,9 +111,15 @@
             text-decoration: none;
             /* width: 100px; */
             margin: auto;
+            padding: 17px;
 
         }
 
+        a:hover {
+            /* background-color: #dbd6d6; */
+            color: white;
+            text-decoration: none;
+        }
 
         section {
             width: 100%;
