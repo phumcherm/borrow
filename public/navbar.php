@@ -16,8 +16,8 @@
 
 
         <div class="w3-bar w3-padding " style="width: auto; margin-left: auto;">
-            <h2 style="margin-left: 80px; color: white;">E - Borrow
+            <h1 style="margin-left: 80px; color: white;">E - Borrow
                 <!-- Right-sided navbar links. Hide them on small screens -->
-            </h2>
+            </h1>
         </div>
     </nav>
