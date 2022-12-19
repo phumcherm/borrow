@@ -128,7 +128,7 @@
                         <div>
                             <input type="password" required name="txt_password" minlength="11" maxlength="11" class="form-control form-control-lg" placeholder="รหัสผ่าน (หมายเลขประจำตัว)">
                         </div><br>
-                        <button type="submit">เข้าสู่ระบบ</button>
+                        <button type="submit"><a href="index.php" onclick="w3_close()">เข้าสู่ระบบ</a></button>
                     </div>
                 </form>
             </div>
