@@ -1,10 +1,5 @@
 <?php
 require_once "../app/model/server.php";
-<<<<<<< HEAD
-
-=======
-include "header.php";
->>>>>>> 9c09455b220bc7a340d40bd7201938f3c4403295
 ?>
 <!DOCTYPE html>
 <html>
