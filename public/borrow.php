@@ -60,6 +60,12 @@
         color: white;
     }
 
+    @media all and (max-width: 800px) {
+        .section_area_grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
     /* center a:hover {
         background-color: #ffa185;
     } */
@@ -84,15 +90,28 @@
                 <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการ</h3>
                 <form action="">
                     <center><a href="#"> Scan QR Code</a></center>
+                    <br>
                     <center>
+
                         <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" style="max-width: 500px;">
-                        <div style="display: flex;">
-                            <input class="w3-input" type="text" required placeholder="ระบุสถานที่" style="width: 300px;">
-                            <input class="w3-input" style="width: 300px;" type="date" id="date" name="date" required>
-                        </div>
+                            <div class="section_area_grid">
+                                    <div class="section_grid_bor">
+                                        <div class="section_grid_item">
+                                        <!-- <h5 style="padding-left: 0;">ระบุสถานที่<h5> -->
+                                        <br>
+                                            <input class="w3-input w3-animate-input" type="text" required placeholder="ระบุสถานที่" style="max-width: 400px;">
+                                        </div>
+                                    </div>
+                                    <div class="section_grid_bor">
+                                        <div class="section_grid_item">
+                                            <h5>วันที่คืน*</h5>
+                                            <input class="w3-input w3-animate-input" style="max-width: 400px;" type="date" id="date" name="date" required>
+                                        </div>
+                                    </div>
+                            </div>
                     </center>
                     <div style="max-width: 1600px;margin-left: auto;">
-                        <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2>
+                        <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
                         <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;">
                             <thead class="table-dark">
                                 <th>
@@ -111,57 +130,26 @@
                                     <center>วันที่คืน</center>
                                 </th>
                             </thead>
-                            <tbody>
-                                <td>
-                                    <center>1</center>
-                                </td>
-                                <td>
-                                    <center>สายไฟ</center>
-                                </td>
-                                <td>
-                                    <center>ศนท.</center>
-                                </td>
-                                <td>
-                                    <center>12-12-2565</center>
-                                </td>
-                                <td>
-                                    <center>30-12-2565</center>
-                                </td>
-                            </tbody>
-                            <tbody>
-                                <td>
-                                    <center>1</center>
-                                </td>
-                                <td>
-                                    <center>สายไฟ</center>
-                                </td>
-                                <td>
-                                    <center>ศนท.</center>
-                                </td>
-                                <td>
-                                    <center>12-12-2565</center>
-                                </td>
-                                <td>
-                                    <center>30-12-2565</center>
-                                </td>
-                            </tbody>
-                            <tbody>
-                                <td>
-                                    <center>1</center>
-                                </td>
-                                <td>
-                                    <center>สายไฟ</center>
-                                </td>
-                                <td>
-                                    <center>ศนท.</center>
-                                </td>
-                                <td>
-                                    <center>12-12-2565</center>
-                                </td>
-                                <td>
-                                    <center>30-12-2565</center>
-                                </td>
-                            </tbody>
+                            <?php for ($i = 0; $i < 5; $i++) {
+                            ?>
+                                <tbody>
+                                    <td>
+                                        <center><?php echo $i ?></center>
+                                    </td>
+                                    <td>
+                                        <center>สาย HDMI </center>
+                                    </td>
+                                    <td>
+                                        <center>ศนท.</center>
+                                    </td>
+                                    <td>
+                                        <center>12-12-2565</center>
+                                    </td>
+                                    <td>
+                                        <center>30-12-2565</center>
+                                    </td>
+                                </tbody>
+                            <?php } ?>
                         </table>
                     </div>
                     <br>

@@ -30,7 +30,7 @@ require_once "../app/model/server.php"
     ?>
 
 
-    <div style="background-color: #dbd6d6;width: auto; height: 500px;margin: 15px;border-radius: 7px;padding: 30px;">
+    <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px;">
         <div>
             <h2 style="color: #ff5722;font-family: SUT_Bold;">
                 ▶ ยืม-คืนล่าสุดของคุณ
@@ -56,57 +56,26 @@ require_once "../app/model/server.php"
                         <center>วันที่คืน</center>
                     </th>
                 </thead>
-                <tbody>
-                    <td>
-                        <center>1</center>
-                    </td>
-                    <td>
-                        <center>สายไฟ</center>
-                    </td>
-                    <td>
-                        <center>ศนท.</center>
-                    </td>
-                    <td>
-                        <center>12-12-2565</center>
-                    </td>
-                    <td>
-                        <center>30-12-2565</center>
-                    </td>
-                </tbody>
-                <tbody>
-                    <td>
-                        <center>1</center>
-                    </td>
-                    <td>
-                        <center>สายไฟ</center>
-                    </td>
-                    <td>
-                        <center>ศนท.</center>
-                    </td>
-                    <td>
-                        <center>12-12-2565</center>
-                    </td>
-                    <td>
-                        <center>30-12-2565</center>
-                    </td>
-                </tbody>
-                <tbody>
-                    <td>
-                        <center>1</center>
-                    </td>
-                    <td>
-                        <center>สายไฟ</center>
-                    </td>
-                    <td>
-                        <center>ศนท.</center>
-                    </td>
-                    <td>
-                        <center>12-12-2565</center>
-                    </td>
-                    <td>
-                        <center>30-12-2565</center>
-                    </td>
-                </tbody>
+                <?php for ($i = 0; $i < 25; $i++) {
+                ?>
+                    <tbody>
+                        <td>
+                            <center><?php echo $i ?></center>
+                        </td>
+                        <td>
+                            <center>สายไฟ</center>
+                        </td>
+                        <td>
+                            <center>ศนท.</center>
+                        </td>
+                        <td>
+                            <center>12-12-2565</center>
+                        </td>
+                        <td>
+                            <center>30-12-2565</center>
+                        </td>
+                    </tbody>
+                <?php } ?>
             </table>
         </div>
     </div>
