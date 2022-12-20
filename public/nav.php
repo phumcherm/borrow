@@ -358,7 +358,7 @@ require_once "../app/model/server.php";
 <<<<<<< HEAD
                     <a class="nav-link" href="borrow.php"><i class="far fa-address-book"></i>ยืมวัสดุ ครุภัณฑ์</a>
 =======
-                    <a class="nav-link" href="borrow.php" ห><i class="far fa-address-book"></i>ยืมวัสดุ ครุภัณฑ์</a>
+                   
 >>>>>>> 9c09455b220bc7a340d40bd7201938f3c4403295
                 </li>
                 <li class="nav-item">
