@@ -20,11 +20,11 @@
 <nav style="padding: 15px;">
     <h5>
         <ul class="menu" id="menu" style="margin: 0;">
-            <li class="items button"><a href="index.php" onclick="w3_close()">หน้าหลัก</a></li>
-            <li class="items button"><a href="borrow.php" onclick="w3_close()">ยืมวัสดุ ครุภัณฑ์</a></li>
-            <li class="items button"><a href="back.php" onclick="w3_close()">คืนวัสดุ ครุภัณฑ์</a></li>
-            <li class="items button"><a href="#designers" onclick="w3_close()">คลังวัสดุ ครุภัณฑ์</a></li>
-            <li class="items button"><a href="login.php" onclick="w3_close()">ออกจากระบบ</a></li>
+            <li class="items button"><a href="index.php">หน้าหลัก</a></li>
+            <li class="items button"><a href="borrow.php">ยืมวัสดุ ครุภัณฑ์</a></li>
+            <li class="items button"><a href="back.php">คืนวัสดุ ครุภัณฑ์</a></li>
+            <li class="items button"><a href="#designers">คลังวัสดุ ครุภัณฑ์</a></li>
+            <li class="items button"><a href="login.php">ออกจากระบบ</a></li>
         </ul>
     </h5>
 
