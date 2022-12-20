@@ -29,9 +29,7 @@
 
 
     <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-        }
+        
     </style>
 
     <head>
@@ -193,7 +191,7 @@
             }
 
             #navbarSupportedContent>ul>li.active>a {
-                color: #5B5B5B;
+                color: #EC5A0F;
                 background-color: transparent;
                 transition: all 0.7s;
             }
