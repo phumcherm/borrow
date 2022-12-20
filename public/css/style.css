@@ -29,6 +29,7 @@
             letter-spacing: 1px;
             margin-top: 0;
             margin-bottom: 0;
+            color: white;
         }
 
         .row1 {
@@ -62,14 +63,16 @@
                 list-style-type: none;
                 display: flex;
             }
+
             ul {
                 padding-right: 0;
                 float: right;
             }
-        .button a {
-            padding: 7px 15px;
-            border-radius: 7px;
-        }
+
+            .button a {
+                padding: 7px 15px;
+                border-radius: 7px;
+            }
         }
 
         /* ***tablet*** */
@@ -77,9 +80,11 @@
             ul {
                 padding-left: 0;
             }
+
             .items a:hover {
                 background-color: #ff5722;
             }
+
             .button a {
                 padding: 15px 100px;
             }
@@ -103,6 +108,8 @@
         nav {
             height: auto;
             background-color: #837a7a;
+            /* position: fixed; */
+            width: 100%;
             /* padding: 20px; */
             /* 837a7a */
         }
@@ -144,4 +151,46 @@
             margin-right: auto;
         }
 
+<<<<<<< HEAD
     
+=======
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #btn-back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+          }
+
+          /* //////   grid   ////// */
+
+          .section_area_grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+        }
+        
+        .section_grid_bor {
+            margin: auto 0;
+            padding: 15px 15px;
+            z-index: 3;
+            border-radius: 7px;
+            /* ///////////////////////////////////////////////////        เงา        ////////////////////////// */
+            /* box-shadow: 5px 5px 20px #000000; */
+        }
+>>>>>>> bd727ba61298ddcf5274ec750b01aa075af34822
