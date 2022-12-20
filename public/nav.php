@@ -1,11 +1,13 @@
 <?php
 require_once "../app/model/server.php";
-include"header.php";
+include "header.php";
 ?>
 
 <!DOCTYPE html>
 <html>
 
+
+<button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
 
 
 <body>
@@ -29,7 +31,7 @@ include"header.php";
                     <a class="nav-link" href="index.php"><i class="fas fa-tachometer-alt"></i>หน้าหลัก</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="borrow.php"ห><i class="far fa-address-book"></i>ยืมวัสดุ ครุภัณฑ์</a>
+                    <a class="nav-link" href="borrow.php" ห><i class="far fa-address-book"></i>ยืมวัสดุ ครุภัณฑ์</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="back.php"><i class="far fa-clone"></i>คืนวัสดุ ครุภัณฑ์</a>
@@ -40,7 +42,7 @@ include"header.php";
                 <li class="nav-item">
                     <a class="nav-link" href="login.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
                 </li>
-               
+
             </ul>
         </div>
     </nav>
@@ -242,6 +244,28 @@ include"header.php";
                 }
             })
         });
+    </script>
+    <script>
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
     </script>
 </body>
 
