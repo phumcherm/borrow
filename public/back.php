@@ -77,7 +77,7 @@
         <i class="fas fa-arrow-up"></i>
     </button>
     <?php
-    include "navbar.php";
+    include "nav.php";
     ?>
 
     <div>

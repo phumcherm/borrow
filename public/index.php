@@ -26,7 +26,7 @@ require_once "../app/model/server.php"
 
     <!-- Navbar (sit on top) -->
     <?php
-    include "navbar.php";
+    include "nav.php";
     ?>
 
 
