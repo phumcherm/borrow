@@ -356,15 +356,7 @@ include "header.php";
                     <a class="nav-link" href="index.php"><i class="fas fa-tachometer-alt"></i>หน้าหลัก</a>
                 </li>
                 <li class="nav-item">
-<<<<<<< HEAD
                     <a class="nav-link" href="borrow.php" ><i class="far fa-address-book"></i>ยืมวัสดุ ครุภัณฑ์</a>
-=======
-<<<<<<< HEAD
-                    <a class="nav-link" href="borrow.php"><i class="far fa-address-book"></i>ยืมวัสดุ ครุภัณฑ์</a>
-=======
-                    <a class="nav-link" href="borrow.php" ห><i class="far fa-address-book"></i>ยืมวัสดุ ครุภัณฑ์</a>
->>>>>>> 9c09455b220bc7a340d40bd7201938f3c4403295
->>>>>>> 1bbc05b0df6a10cf235b0407b9bb89a9f0e9dcb9
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="back.php"><i class="far fa-clone"></i>คืนวัสดุ ครุภัณฑ์</a>
