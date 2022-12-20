@@ -88,52 +88,54 @@
             </h2>
             <div style="max-width: 1300px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
                 <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการการคืน</h3>
-                    <center><a href="#" style="padding-left: 40px;padding-right:40px;"> Scan QR Code</a></center>
-                    <br>
-                    
-                    <div style="max-width: 1600px;margin-left: auto;">
-                        <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
-                        <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center;">
-                            <thead class="table-dark">
-                                <th>
-                                    ลำดับ
-                                </th>
-                                <th>
-                                    รายการ
-                                </th>
-                                <th>
-                                    วันที่ยืม
-                                </th>
-                                <th>
-                                    วันที่คืน
-                                </th>
-                                <th>
-                                    สถานะ
-                                </th>
-                            </thead>
-                            <?php for ($i = 0; $i < 5; $i++) {
-                            ?>
-                                <tbody>
-                                    <td>
-                                        <?php echo $i ?>
-                                    </td>
-                                    <td>
-                                        สาย HDMI
-                                    </td>
-                                    <td>
-                                        12-12-2565
-                                    </td>
-                                    <td>
-                                        30-12-2565
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-success disabled">คืนแล้ว</a>
-                                    </td>
-                                </tbody>
-                            <?php } ?>
-                        </table>
-                    </div>
-                    <br>
+                <center><a href="#" style="padding-left: 40px;padding-right:40px;"> Scan QR Code</a></center>
+                <br>
+
+                <div style="max-width: 1600px;margin-left: auto;">
+                    <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
+                    <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center;">
+                        <thead class="table-dark">
+                            <th>
+                                ลำดับ
+                            </th>
+                            <th>
+                                รายการ
+                            </th>
+                            <th>
+                                วันที่ยืม
+                            </th>
+                            <th>
+                                วันที่คืน
+                            </th>
+                            <th>
+                                สถานะ
+                            </th>
+                        </thead>
+                        <?php for ($i = 0; $i < 5; $i++) {
+                        ?>
+                            <tbody>
+                                <td>
+                                    <?php echo $i ?>
+                                </td>
+                                <td>
+                                    สาย HDMI
+                                </td>
+                                <td>
+                                    12-12-2565
+                                </td>
+                                <td>
+                                    30-12-2565
+                                </td>
+                                <td>
+                                    <center>
+                                        <p style="background-color: #28a745; max-width: 100px;padding: 5px;color: white;border-radius: 7px;">คืนแล้ว</p>
+                                    </center>
+                                </td>
+                            </tbody>
+                        <?php } ?>
+                    </table>
+                </div>
+                <br>
             </div>
             <br>
 
