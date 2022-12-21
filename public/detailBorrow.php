@@ -101,6 +101,14 @@
         text-decoration: none;
         border-radius: 7px;
     }
+    h6 {
+            font-family: SUT_Regular;
+            letter-spacing: 1px;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 2.5em;
+        }
+
 
     /*   button {
         color: white;
@@ -154,10 +162,22 @@
                             <div class="modal-body">
 
 
-                                <div class="row g-0">
+                                <div >
 
+                                    <div class="col-md-8 ">
+
+                                        <div class="status p-3">
+
+                                        <h6 style="color: #5B5B5B;">รายละเอียดวัสดุ ครุภัณฑ์</h6>
+
+
+                                        </div>
+
+
+
+
+                                    </div>
                                   
-                               
 
 
                                 </div>
