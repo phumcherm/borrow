@@ -1,3 +1,4 @@
+<? session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,6 +76,7 @@
 </style>
 
 <body>
+    
     <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
     <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
         <i class="fas fa-arrow-up"></i>
@@ -123,10 +125,10 @@
                         scanner.render(success, error);
 
                         function success(result) {
-                            var itemCode = (result);
+                            var itemCode = document.getElementById("result");
                             document.getElementById('result').innerHTML = `
                                 <h2>Success!</h2>
-                                <p>${result}</a></p>
+                                <a href="borrow.php?code=${result}"> ${result}</a>
                                 `;
 
                             // var itemCode = $result
@@ -140,15 +142,14 @@
                         function error(err) {
                             console.error(err);
                         }
+                        <?php echo "หวัดดี"  ?>
                     </script>
                     <!-- <center><a href="#"> Scan QR Code</a></center> -->
-                    <!-- <p> <?php echo $itemCode ?></p> -->
+                    <? 
 
-                    <?php
-                    echo '<script type="text/JavaScript"> 
-     console.log(itemCode);
-     </script>';
-                    ?>
+                    if (isset( $_GET['code'])) {
+                        echo $_GET['code']; 
+                    }?>
                     <br>
                     <center>
 
