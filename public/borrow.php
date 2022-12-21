@@ -14,6 +14,9 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="./node_modules/html5-qrcode/html5-qrcode.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.4/html5-qrcode.min.js" integrity="sha512-k/KAe4Yff9EUdYI5/IAHlwUswqeipP+Cp5qnrsUjTPCgl51La2/JhyyjNciztD7mWNKLSXci48m7cctATKfLlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 <style>
@@ -89,26 +92,83 @@
             <div style="max-width: 1300px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
                 <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการ</h3>
                 <form action="">
-                    <center><a href="#"> Scan QR Code</a></center>
+                    <style>
+                        main {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        #reader {
+                            width: 600px;
+                        }
+
+                        #result {
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    </style>
+                    <main>
+                        <div id="reader"></div>
+                        <div id="result"></div>
+                    </main>
+                    <script>
+                        const scanner = new Html5QrcodeScanner('reader', {
+                            qrbox: {
+                                width: 250,
+                                height: 250,
+                            },
+                            fps: 20,
+                        });
+                        scanner.render(success, error);
+
+                        function success(result) {
+                            var itemCode = (result);
+                            document.getElementById('result').innerHTML = `
+                                <h2>Success!</h2>
+                                <p>${result}</a></p>
+                                `;
+
+                            // var itemCode = $result
+                            // document.getElementById("demo").innerHTML = (result);
+                            // document.(itemCode);
+                            scanner.clear();
+                            document.getElementById('reader').remove();
+                            // echo  (itemCode);
+                        }
+
+                        function error(err) {
+                            console.error(err);
+                        }
+                    </script>
+                    <!-- <center><a href="#"> Scan QR Code</a></center> -->
+                    <!-- <p> <?php echo $itemCode ?></p> -->
+
+                    <?php
+                    echo '<script type="text/JavaScript"> 
+     console.log(itemCode);
+     </script>';
+                    ?>
                     <br>
                     <center>
 
                         <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" style="max-width: 500px;">
-                            <div class="section_area_grid">
-                                    <div class="section_grid_bor">
-                                        <div class="section_grid_item">
-                                        <!-- <h5 style="padding-left: 0;">ระบุสถานที่<h5> -->
-                                        <br>
-                                            <input class="w3-input w3-animate-input" type="text" required placeholder="ระบุสถานที่" style="max-width: 400px;">
-                                        </div>
-                                    </div>
-                                    <div class="section_grid_bor">
-                                        <div class="section_grid_item">
-                                            <h5>วันที่คืน*</h5>
-                                            <input class="w3-input w3-animate-input" style="max-width: 400px;" type="date" id="date" name="date" required>
-                                        </div>
-                                    </div>
+                        <div class="section_area_grid">
+                            <div class="section_grid_bor">
+                                <div class="section_grid_item">
+                                    <!-- <h5 style="padding-left: 0;">ระบุสถานที่<h5> -->
+                                    <br>
+                                    <input class="w3-input w3-animate-input  demo" type="text" required placeholder="ระบุสถานที่" style="max-width: 400px;">
+                                </div>
                             </div>
+                            <!-- <p id="demo">CODE</p> -->
+                            <div class="section_grid_bor">
+                                <div class="section_grid_item">
+                                    <h5>วันที่คืน*</h5>
+                                    <input class="w3-input w3-animate-input" style="max-width: 400px;" type="date" id="date" name="date" required>
+                                </div>
+                            </div>
+                        </div>
                     </center>
                     <div style="max-width: 1600px;margin-left: auto;">
                         <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
