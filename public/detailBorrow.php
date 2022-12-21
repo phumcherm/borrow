@@ -17,6 +17,60 @@
 
 </head>
 <style>
+    .close:focus {
+
+        outline: 1px dotted #fff !important;
+    }
+
+    .modal-body {
+
+        padding: 0rem !important;
+    }
+
+    .modal-title {
+
+        color: #fff;
+    }
+
+    .modal-header {
+
+        background: #EC5A0F;
+        color: #fff !important;
+    }
+
+    .fa-close {
+        color: #fff;
+    }
+
+    .heading {
+
+        font-weight: 500 !important;
+    }
+
+    .subheadings {
+        font-size: 12px;
+        color: #EC5A0F;
+    }
+
+
+    .dots {
+        height: 10px;
+        width: 10px;
+        background-color: green;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    .gallery img {
+
+        margin-right: 10px;
+    }
+
+    .fs-9 {
+        font-size: 9px;
+    }
+
     input {
         border-radius: 7px;
         border: none;
