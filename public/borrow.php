@@ -91,9 +91,7 @@
             <div style="max-width: 1300px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
                 <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการ</h3>
                 <form action="">
-                    <?
-                    require "../app/controller/scaner.php"
-                    ?>
+                    <? require "../app/controller/scaner.php" ?>
                     <!-- <center><a href="#"> Scan QR Code</a></center> -->
                     <?
                     // echo $itemCode;
@@ -102,7 +100,6 @@
                     } ?>
                     <br>
                     <center>
-
                         <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" style="max-width: 500px;">
                         <div class="section_area_grid">
                             <div class="section_grid_bor">
@@ -121,25 +118,17 @@
                             </div>
                         </div>
                     </center>
-                    
-                    <? require "../app/models/table.php"?>
 
+                    <? require "../app/models/table.php"?>
                     <br>
                     <button type="submit">ยืนยันทั้งหมด</button>
                 </form>
             </div>
             <br>
 
-
         </div>
-
     </div>
-
-
 </body>
-<script>
-    
-</script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

@@ -19,7 +19,7 @@
     }
 
     #html5-qrcode-button-camera-start {
-        width: 400px;
+        /* width: 400px; */
         /* content: "  เปิดกล้อง "; */
         background-color: green;
         border-radius: 7px;
