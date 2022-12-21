@@ -5,86 +5,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ยืมวัสดุ ครุภัณฑ์</title>
+    <title>คืนวัสดุ ครุภัณฑ์</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="./node_modules/html5-qrcode/html5-qrcode.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.4/html5-qrcode.min.js" integrity="sha512-k/KAe4Yff9EUdYI5/IAHlwUswqeipP+Cp5qnrsUjTPCgl51La2/JhyyjNciztD7mWNKLSXci48m7cctATKfLlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 <style>
-    body {
-        min-height: 82.5vh;
-        font-family: 'Rubik', sans-serif;
-        background: linear-gradient(140deg, #fff, 50%, #74a0ff) center center;
+    .close:focus {
+
+        outline: 1px dotted #fff !important;
     }
 
-    .container {
-        margin-top: 250px !important;
+    .modal-body {
+
+        padding: 0rem !important;
     }
 
-    img {
-        width: 250px;
+    .modal-title {
+
+        color: #fff;
     }
 
-    button:focus {
-        box-shadow: none !important;
-        outline-width: 0;
-    }
+    .modal-header {
 
-    .card {
-        border-radius: 11px !important;
-        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-        border-top-color: #52B4DB !important;
-    }
-
-    .modal-content {
-        width: calc(330px + 10 * ((100vw - 320px) / 680));
-        border-radius: 11px !important;
-    }
-
-    .card-header {
-        border: 0;
-        border-top: 14px solid #52B4DB !important;
-        border-radius: 11px !important;
-
-    }
-
-    .btn-outline-success {
-        border-radius: 20px !important;
-        border: 2px solid #52B4DB !important;
-
-    }
-
-    .btn-outline-success:hover {
+        background: #EC5A0F;
         color: #fff !important;
-        background-color: #52B4DB !important;
     }
 
-    img {
-        width: 350px !important;
+    .fa-close {
+        color: #fff;
     }
 
-    .card-body {
-        border-radius: 9px !important;
+    .heading {
+
+        font-weight: 500 !important;
     }
 
-    .btn-outline-success:active,
-    .btn-outline-success.active {
-        box-shadow: none !important;
-        outline: none !important;
+    .subheadings {
+        font-size: 12px;
+        color: #EC5A0F;
     }
 
-    @media (max-width: 401px) {
-        .card {
-            width: unset;
-        }
+
+    .dots {
+        height: 10px;
+        width: 10px;
+        background-color: green;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    .gallery img {
+
+        margin-right: 10px;
+    }
+
+    .fs-9 {
+        font-size: 9px;
     }
 
     input {
@@ -117,8 +101,16 @@
         text-decoration: none;
         border-radius: 7px;
     }
+    h6 {
+            font-family: SUT_Regular;
+            letter-spacing: 1px;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 2.5em;
+        }
 
-    button {
+
+    /*   button {
         color: white;
         background-color: #ff5722;
         padding: 15px;
@@ -134,11 +126,11 @@
         .section_area_grid {
             grid-template-columns: 1fr;
         }
-    }
+    }*/
 
-    /* center a:hover {
+     center a:hover {
         background-color: #ffa185;
-    } */
+    } 
 </style>
 
 <body>
@@ -146,36 +138,110 @@
     <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
         <i class="fas fa-arrow-up"></i>
     </button>
-    <div class="container d-flex justify-content-center">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#my-modal">Verification</button>
-        <div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog  modal-dialog-centered justify-content-center " role="document">
-                <div class="modal-content  border-0 mx-3">
-                    <div class="modal-body  p-0">
-                        <div class="card border-0">
-                            <div class="card-header pb-0  bg-white">
-                                <div class="row">
-                                    <div class="col-10">
-                                        <h5 class="font-weight-bold mt-2">Your documents being reviewed by our experts. </h5>
+    <?php
+    include "nav.php";
+    ?>
+
+    <div>
+
+        <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px;">
+           
+            <div style="max-width: 1300px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
+                <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการการคืน</h3>
+                <center><a href="#" style="padding-left: 40px;padding-right:40px;" type="button" data-toggle="modal" data-target="#exampleModal"> Scan QR Code</a></center>
+                <br>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content ">
+                            <div class="modal-header ">
+                           <h5 class="modal-title" id="exampleModalLabel">รายละเอียดการจอง</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+
+                                <div >
+
+                                    <div class="col-md-8 ">
+
+                                        <div class="status p-3">
+
+                                        <h6 style="color: #5B5B5B;">รายละเอียดวัสดุ ครุภัณฑ์</h6>
+
+
+                                        </div>
+
+
+
+
                                     </div>
-                                    <div class="col-2 my-auto"> <span class="text-right"><button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></span></div>
+                                  
+
+
                                 </div>
+
+
+
                             </div>
-                            <div class="card-body">
-                                <p class="text-muted text-left"> We'll notify you as soon as your documents have been reviewed,and appored by our expert team</p>
-                                <img src="https://i.imgur.com/F5hfOap.jpg" class="img-fluid" />
-                                <div class="row justify-content-center mt-4">
-                                    <div class="col-6"><button type="button" class="btn btn-outline-success btn-block font-weight-bold text-dark" data-dismiss="modal">Got it</button></div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
+
+                <div style="max-width: 1600px;margin-left: auto;">
+                    <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
+                    <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center;">
+                        <thead class="table-dark">
+                            <th>
+                                ลำดับ
+                            </th>
+                            <th>
+                                รายการ
+                            </th>
+                            <th>
+                                วันที่ยืม
+                            </th>
+                            <th>
+                                วันที่คืน
+                            </th>
+                            <th>
+                                สถานะ
+                            </th>
+                        </thead>
+                        <?php for ($i = 0; $i < 5; $i++) {
+                        ?>
+                            <tbody>
+                                <td>
+                                    <?php echo $i ?>
+                                </td>
+                                <td>
+                                    สาย HDMI
+                                </td>
+                                <td>
+                                    12-12-2565
+                                </td>
+                                <td>
+                                    30-12-2565
+                                </td>
+                                <td>
+                                    <center>
+                                        <p style="background-color: #28a745; max-width: 100px;padding: 5px;color: white;border-radius: 7px;">คืนแล้ว</p>
+                                    </center>
+                                </td>
+                            </tbody>
+                        <?php } ?>
+                    </table>
+                </div>
+                <br>
             </div>
+            <br>
+
+
         </div>
+
     </div>
-
-
 
 
 </body>
