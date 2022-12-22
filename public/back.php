@@ -32,12 +32,12 @@
         margin-right: auto;
         width: auto;
     }
-
-    a:hover {
+    
+   /* a:hover {
         background-color: #dbd6d6;
         color: white;
         text-decoration: none;
-    }
+    }*/
 
     center a {
         background-color: #ff5722;
