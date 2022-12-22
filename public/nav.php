@@ -166,7 +166,7 @@ require_once "../app/model/server.php";
             #navbarSupportedContent ul li a i {
                 margin-right: 10px;
             }
-navbar
+
             #navbarSupportedContent li {
                 list-style-type: none;
                 float: left;
