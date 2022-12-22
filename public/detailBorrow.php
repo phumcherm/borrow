@@ -138,6 +138,16 @@
     center a:hover {
         background-color: #ffa185;
     }
+
+    .row {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .col_50 {
+        width: 50%;
+        height: 100px;
+    }
 </style>
 
 <body>
@@ -169,176 +179,195 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <div>
-                                    <div class="col-md-8 ">
+                                <div class="row">
 
-                                        <div class="status p-3">
+                                    <div class="col_50 "><a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                            <font size="5"><b>ชื่อรายการ</b></font>
+                                        </a>
+                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 700px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                            <font size="5">&nbsp;&nbsp;กล้องถ่ายรูป</font>
+                                        </div>
+                                    </div>
 
-                                            <h3 style="color: #5B5B5B;font-family: SUT_Bold;">
-                                                <font size="6"><b>รายละเอียดวัสดุ ครุภัณฑ์</b></font>
-                                            </h3>
+                                </div>
+                                <div class="row">
 
-                                            <table>
+                                    <div class="col_50 "><a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                            <font size="5"><b>รุ่น</b></font>
+                                        </a>
+                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                            <font size="5">&nbsp;&nbsp;A7</font>
+                                        </div>
+                                    </div>
+                                    <div class="col_50 "><a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                            <font size="5"><b>ยี่ห้อ</b></font>
+                                        </a>
+                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                            <font size="5">&nbsp;&nbsp;SONY</font>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
 
-                                                <tbody>
-                                                    <tr>
-                                                        <td> <a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
-                                                                <font size="5"><b>ชื่อรายการ</b></font>
-                                                            </a>
-                                                            <div style="color: #5B5B5B; background-color: #eeecec;width: 700px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
-                                                                <font size="5">&nbsp;&nbsp;กล้องถ่ายรูป</font>
-                                                            </div>
-                                                        </td>
+                                    <div class="col_50 "><a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                            <font size="5"><b>ประเภท</b></font>
+                                        </a>
+                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                            <font size="5">&nbsp;&nbsp;วัสดุ</font>
+                                        </div>
+                                    </div>
+                                    <div class="col_50 "><a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                            <font size="5"><b>จำนวน</b></font>
+                                        </a>
+                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                            <font size="5">&nbsp;&nbsp;1</font>
+                                        </div>
+                                    </div>
+                                </div>
+                              
 
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
+
+                              <p style="background-color: #28a745; max-width: 100px;padding: 5px;color: white;border-radius: 7px;">คืนแล้ว</p></center>
+                                
+                                <!-- <div class="col-md-8 ">
+
+                                    <div class="status p-3">
+
+                                        <h3 style="color: #5B5B5B;font-family: SUT_Bold;">
+                                            <font size="6"><b>รายละเอียดวัสดุ ครุภัณฑ์</b></font>
+                                        </h3>
+
+                                        <table>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td> <a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                                            <font size="5"><b>ชื่อรายการ</b></font>
+                                                        </a>
+                                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 700px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                                            <font size="5">&nbsp;&nbsp;กล้องถ่ายรูป</font>
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>
                                                         <a style="color: #5B5B5B;">
                                                             <i class="fas fa-play" style="color: #EC5A0F;"></i>
-                                                                <font size="5"><b>รุ่น</b></font>
-                                                            </a>
-                                                            <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
-                                                                <font size="5">&nbsp;&nbsp;A7</font>
-                                                            </div>
-                                                        </td>
-                                                        <td><a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
-                                                                <font size="5"><b>รุ่น</b></font>
-                                                            </a>
-                                                            <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
-                                                                <font size="5">&nbsp;&nbsp;A7</font>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                                <tfoot>
-                                                    <tr>
-                                                        <td>Sum</td>
-                                                        <td>$180</td>
-                                                    </tr>
-                                                </tfoot>
-                                            </table>
-                                            <table class="table table-borderless column">
+                                                            <font size="5"><b>รุ่น</b></font>
+                                                        </a>
+                                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                                            <font size="5">&nbsp;&nbsp;A7</font>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <a style="color: #5B5B5B;">
+                                                            <i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                                            <font size="5"><b>รุ่น</b></font>
+                                                        </a>
+                                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                                            <font size="5">&nbsp;&nbsp;A7</font>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
 
-                                                <tbody>
-
-                                                    <tr>
-
-                                                        <td>
-                                                            <div class="d-flex flex-column">
-
-                                                                <a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
-                                                                    <font size="5"><b>ชื่อรายการ</b></font>
-                                                                </a>
-                                                                <div style="color: #5B5B5B; background-color: #eeecec;width: 700px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
-                                                                    <font size="5">&nbsp;&nbsp;กล้องถ่ายรูป</font>
-                                                                </div>
-
-                                                            </div>
-                                                        </td>
-
-                                                    </tr>
-                                                    <tr>
-
-                                                        <td>
-                                                            <div class="d-flex flex-column">
-
-                                                                <a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
-                                                                    <font size="5"><b>รุ่น</b></font>
-                                                                </a>
-                                                                <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
-                                                                    <font size="5">&nbsp;&nbsp;A7</font>
-                                                                </div>
-
-                                                            </div>
-
-                                                        </td>
-                                                        <td>
-                                                            <div class="d-flex flex-column">
-
-                                                                <span class="heading d-block">Referring Doctor</span>
-                                                                <span class="subheadings">Dr. Harry Pimn</span>
+                                                            <span class="heading d-block">Hospital</span>
+                                                            <span class="subheadings">Cairo Hospital</span>
 
 
-                                                            </div>
-                                                        </td>
-                                                        <td>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+
+                                                            <span class="heading d-block">Time/Date</span>
+                                                            <span class="subheadings">5:00PM 3-12-2020</span>
 
 
-                                                        </td>
-                                                    </tr>
-
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-
-
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td>Sum</td>
+                                                    <td>$180</td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
 
                                     </div>
 
 
 
-                                </div>
+
+                                </div> -->
 
 
 
                             </div>
 
+
+
                         </div>
+
                     </div>
                 </div>
+            </div>
 
-                <div style="max-width: 1600px;margin-left: auto;">
-                    <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
-                    <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center;">
-                        <thead class="table-dark">
-                            <th>
-                                ลำดับ
-                            </th>
-                            <th>
-                                รายการ
-                            </th>
-                            <th>
-                                วันที่ยืม
-                            </th>
-                            <th>
-                                วันที่คืน
-                            </th>
-                            <th>
-                                สถานะ
-                            </th>
-                        </thead>
-                        <?php for ($i = 0; $i < 5; $i++) {
-                        ?>
-                            <tbody>
-                                <td>
-                                    <?php echo $i ?>
-                                </td>
-                                <td>
-                                    สาย HDMI
-                                </td>
-                                <td>
-                                    12-12-2565
-                                </td>
-                                <td>
-                                    30-12-2565
-                                </td>
-                                <td>
-                                    <center>
-                                        <p style="background-color: #28a745; max-width: 100px;padding: 5px;color: white;border-radius: 7px;">คืนแล้ว</p>
-                                    </center>
-                                </td>
-                            </tbody>
-                        <?php } ?>
-                    </table>
-                </div>
-                <br>
+            <div style="max-width: 1600px;margin-left: auto;">
+                <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
+                <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center;">
+                    <thead class="table-dark">
+                        <th>
+                            ลำดับ
+                        </th>
+                        <th>
+                            รายการ
+                        </th>
+                        <th>
+                            วันที่ยืม
+                        </th>
+                        <th>
+                            วันที่คืน
+                        </th>
+                        <th>
+                            สถานะ
+                        </th>
+                    </thead>
+                    <?php for ($i = 0; $i < 5; $i++) {
+                    ?>
+                        <tbody>
+                            <td>
+                                <?php echo $i ?>
+                            </td>
+                            <td>
+                                สาย HDMI
+                            </td>
+                            <td>
+                                12-12-2565
+                            </td>
+                            <td>
+                                30-12-2565
+                            </td>
+                            <td>
+                                <center>
+                                    <p style="background-color: #28a745; max-width: 100px;padding: 5px;color: white;border-radius: 7px;">คืนแล้ว</p>
+                                </center>
+                            </td>
+                        </tbody>
+                    <?php } ?>
+                </table>
             </div>
             <br>
-
-
         </div>
+        <br>
+
+
+    </div>
 
     </div>
 
