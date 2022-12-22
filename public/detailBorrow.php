@@ -53,23 +53,23 @@
     }
 
 
-    .dots {
-        height: 10px;
+    /*.dots {
+        height: 50px;
         width: 10px;
         background-color: green;
         border-radius: 50%;
         display: inline-block;
         margin-right: 5px;
-    }
+    }*/
 
-    .gallery img {
+   /* .gallery img {
 
         margin-right: 10px;
-    }
+    }*/
 
-    .fs-9 {
+    /*.fs-9 {
         font-size: 9px;
-    }
+    }*/
 
     input {
         border-radius: 7px;
@@ -144,7 +144,7 @@
 
     <div>
 
-        <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px;">
+        <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 50px;border-radius: 7px;padding: 30px;">
            
             <div style="max-width: 1300px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
                 <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการการคืน</h3>
@@ -160,10 +160,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-
-
-                                <div >
-
+                                <div>
                                     <div class="col-md-8 ">
 
                                         <div class="status p-3">
