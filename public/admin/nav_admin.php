@@ -31,7 +31,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet">
     <link href="http://demo-freelancer-crm.quickadminpanel.com/css/custom.css" rel="stylesheet">
 
-  
+
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -330,11 +330,11 @@
                 <li class="nav-item ">
                     <a class="nav-link" href="index.php"><i class="fas fa-tachometer-alt"></i>หน้าหลัก</a>
                 </li>
-              
-                <li class="nav-item">
-                    <a class="nav-link"   href="report_admin.php" ><i class="far fa-address-book"></i>รายงาน</a>
+
+
+                <li class=" nav-item ">
+                    <a class=" nav-link" href="report_admin.php"><i class="far fa-address-book"></i>รายงาน</a>
                 </li>
-              
                 <li class="nav-item">
                     <a class="nav-link" href="back_user.php"><i class="far fa-clone"></i>คืนวัสดุ ครุภัณฑ์</a>
                 </li>
@@ -346,10 +346,18 @@
                 </li>
 
             </ul>
+
+
+
+
+
+        </div>
+
+
         </div>
     </nav>
 
-</div>
+    </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -476,7 +484,7 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
-    </script> 
+    </script>
 
 
 </body>
