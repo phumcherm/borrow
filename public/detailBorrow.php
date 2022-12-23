@@ -17,6 +17,16 @@
 
 </head>
 <style>
+    @font-face {
+        font-family: SUT_Regular;
+        src: url(SUT-Fonts/SUT_Regular_ver_1.00.ttf);
+    }
+
+    @font-face {
+        font-family: SUT_Bold;
+        src: url(SUT-Fonts/SUT_Bold_ver_1.00.ttf);
+    }
+
     .close:focus {
 
         outline: 1px dotted #fff !important;
@@ -53,23 +63,23 @@
     }
 
 
-    .dots {
-        height: 10px;
+    /*.dots {
+        height: 50px;
         width: 10px;
         background-color: green;
         border-radius: 50%;
         display: inline-block;
         margin-right: 5px;
-    }
+    }*/
 
-    .gallery img {
+    /* .gallery img {
 
         margin-right: 10px;
-    }
+    }*/
 
-    .fs-9 {
+    /*.fs-9 {
         font-size: 9px;
-    }
+    }*/
 
     input {
         border-radius: 7px;
@@ -87,11 +97,7 @@
         width: auto;
     }
 
-    a:hover {
-        background-color: #dbd6d6;
-        color: white;
-        text-decoration: none;
-    }
+
 
     center a {
         background-color: #ff5722;
@@ -101,13 +107,14 @@
         text-decoration: none;
         border-radius: 7px;
     }
+
     h6 {
-            font-family: SUT_Regular;
-            letter-spacing: 1px;
-            margin-top: 0;
-            margin-bottom: 0;
-            font-size: 2.5em;
-        }
+        font-family: SUT_Regular;
+        letter-spacing: 1px;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 2.5em;
+    }
 
 
     /*   button {
@@ -128,9 +135,19 @@
         }
     }*/
 
-     center a:hover {
+    center a:hover {
         background-color: #ffa185;
-    } 
+    }
+
+    .row {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .col_50 {
+        width: 50%;
+        height: 100px;
+    }
 </style>
 
 <body>
@@ -144,102 +161,213 @@
 
     <div>
 
-        <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px;">
-           
+        <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 50px;border-radius: 7px;padding: 30px;">
+
             <div style="max-width: 1300px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
                 <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการการคืน</h3>
                 <center><a href="#" style="padding-left: 40px;padding-right:40px;" type="button" data-toggle="modal" data-target="#exampleModal"> Scan QR Code</a></center>
                 <br>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content ">
                             <div class="modal-header ">
-                           <h5 class="modal-title" id="exampleModalLabel">รายละเอียดการจอง</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">
+                                    <font size="7"><b>รายละเอียดการจอง</b></font>
+                                </h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true"><i class="fa fa-close"></i></span>
                                 </button>
                             </div>
                             <div class="modal-body">
+                                <div class="row">
 
-
-                                <div >
-
-                                    <div class="col-md-8 ">
-
-                                        <div class="status p-3">
-
-                                        <h6 style="color: #5B5B5B;">รายละเอียดวัสดุ ครุภัณฑ์</h6>
-
-
+                                    <div class="col_50 "><a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                            <font size="5"><b>ชื่อรายการ</b></font>
+                                        </a>
+                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 700px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                            <font size="5">&nbsp;&nbsp;กล้องถ่ายรูป</font>
                                         </div>
-
-
-
-
                                     </div>
-                                  
-
 
                                 </div>
+                                <div class="row">
+
+                                    <div class="col_50 "><a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                            <font size="5"><b>รุ่น</b></font>
+                                        </a>
+                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                            <font size="5">&nbsp;&nbsp;A7</font>
+                                        </div>
+                                    </div>
+                                    <div class="col_50 "><a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                            <font size="5"><b>ยี่ห้อ</b></font>
+                                        </a>
+                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                            <font size="5">&nbsp;&nbsp;SONY</font>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col_50 "><a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                            <font size="5"><b>ประเภท</b></font>
+                                        </a>
+                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                            <font size="5">&nbsp;&nbsp;วัสดุ</font>
+                                        </div>
+                                    </div>
+                                    <div class="col_50 "><a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                            <font size="5"><b>จำนวน</b></font>
+                                        </a>
+                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                            <font size="5">&nbsp;&nbsp;1</font>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+
+
+                              <p style="background-color: #28a745; max-width: 100px;padding: 5px;color: white;border-radius: 7px;">คืนแล้ว</p></center>
+                                
+                                <!-- <div class="col-md-8 ">
+
+                                    <div class="status p-3">
+
+                                        <h3 style="color: #5B5B5B;font-family: SUT_Bold;">
+                                            <font size="6"><b>รายละเอียดวัสดุ ครุภัณฑ์</b></font>
+                                        </h3>
+
+                                        <table>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td> <a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                                            <font size="5"><b>ชื่อรายการ</b></font>
+                                                        </a>
+                                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 700px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                                            <font size="5">&nbsp;&nbsp;กล้องถ่ายรูป</font>
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a style="color: #5B5B5B;">
+                                                            <i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                                            <font size="5"><b>รุ่น</b></font>
+                                                        </a>
+                                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                                            <font size="5">&nbsp;&nbsp;A7</font>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <a style="color: #5B5B5B;">
+                                                            <i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                                            <font size="5"><b>รุ่น</b></font>
+                                                        </a>
+                                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                                            <font size="5">&nbsp;&nbsp;A7</font>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+
+                                                            <span class="heading d-block">Hospital</span>
+                                                            <span class="subheadings">Cairo Hospital</span>
+
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+
+                                                            <span class="heading d-block">Time/Date</span>
+                                                            <span class="subheadings">5:00PM 3-12-2020</span>
+
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td>Sum</td>
+                                                    <td>$180</td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+
+                                    </div>
+
+
+
+
+                                </div> -->
 
 
 
                             </div>
 
+
+
                         </div>
+
                     </div>
                 </div>
+            </div>
 
-                <div style="max-width: 1600px;margin-left: auto;">
-                    <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
-                    <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center;">
-                        <thead class="table-dark">
-                            <th>
-                                ลำดับ
-                            </th>
-                            <th>
-                                รายการ
-                            </th>
-                            <th>
-                                วันที่ยืม
-                            </th>
-                            <th>
-                                วันที่คืน
-                            </th>
-                            <th>
-                                สถานะ
-                            </th>
-                        </thead>
-                        <?php for ($i = 0; $i < 5; $i++) {
-                        ?>
-                            <tbody>
-                                <td>
-                                    <?php echo $i ?>
-                                </td>
-                                <td>
-                                    สาย HDMI
-                                </td>
-                                <td>
-                                    12-12-2565
-                                </td>
-                                <td>
-                                    30-12-2565
-                                </td>
-                                <td>
-                                    <center>
-                                        <p style="background-color: #28a745; max-width: 100px;padding: 5px;color: white;border-radius: 7px;">คืนแล้ว</p>
-                                    </center>
-                                </td>
-                            </tbody>
-                        <?php } ?>
-                    </table>
-                </div>
-                <br>
+            <div style="max-width: 1600px;margin-left: auto;">
+                <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
+                <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center;">
+                    <thead class="table-dark">
+                        <th>
+                            ลำดับ
+                        </th>
+                        <th>
+                            รายการ
+                        </th>
+                        <th>
+                            วันที่ยืม
+                        </th>
+                        <th>
+                            วันที่คืน
+                        </th>
+                        <th>
+                            สถานะ
+                        </th>
+                    </thead>
+                    <?php for ($i = 0; $i < 5; $i++) {
+                    ?>
+                        <tbody>
+                            <td>
+                                <?php echo $i ?>
+                            </td>
+                            <td>
+                                สาย HDMI
+                            </td>
+                            <td>
+                                12-12-2565
+                            </td>
+                            <td>
+                                30-12-2565
+                            </td>
+                            <td>
+                                <center>
+                                    <p style="background-color: #28a745; max-width: 100px;padding: 5px;color: white;border-radius: 7px;">คืนแล้ว</p>
+                                </center>
+                            </td>
+                        </tbody>
+                    <?php } ?>
+                </table>
             </div>
             <br>
-
-
         </div>
+        <br>
+
+
+    </div>
 
     </div>
 
