@@ -1,6 +1,4 @@
-<?php
-require_once "../app/model/server.php"
-?>
+
 <!DOCTYPE html>
 <html>
 
@@ -26,7 +24,7 @@ require_once "../app/model/server.php"
 
     <!-- Navbar (sit on top) -->
     <?php
-    include "nav_user.php";
+    include "nav_admin.php";
     ?>
 
 
