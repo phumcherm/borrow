@@ -131,18 +131,6 @@
 
 
                         <!-- Email input -->
-<<<<<<< HEAD
-                        <div class="row">
-                            <label for="username">Username</label>
-                            <input type="text" required name="" class="form-control" placeholder="Username">
-                        </div>
-                        <br>
-                        <!-- Password input -->
-                        <div class="row">
-                            <label for="password">Password</label>
-                            <input type="password" required name="" class="form-control " placeholder="Password">
-                        </div>
-=======
 
                         <div class="w3-center">
                             <i class="fa fa-user icon"></i>
@@ -156,11 +144,10 @@
                         </div>
                         <br>
                         <div class="w3-center">
-                        <a href="index_user.php" type="button" style="  background-color: #EC5A0F; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">เข้าสู่ระบบ</a>
+                        <a href="index.php" type="button" style="  background-color: #EC5A0F; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">เข้าสู่ระบบ</a>
                                   
                         </div> 
                     </div>
->>>>>>> 485b6c9da1aacdcbd18cfeeeadd32e56abcc0aaf
                 </form>
             </div>
         </div>
