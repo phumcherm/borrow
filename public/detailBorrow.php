@@ -164,7 +164,7 @@
         <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 50px;border-radius: 7px;padding: 30px;">
 
             <div style="max-width: 1300px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
-                <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการการคืน</h3>
+                <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการการยืม</h3>
                 <center><a href="#" style="padding-left: 40px;padding-right:40px;" type="button" data-toggle="modal" data-target="#exampleModal"> Scan QR Code</a></center>
                 <br>
 
