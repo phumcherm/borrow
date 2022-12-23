@@ -13,22 +13,26 @@
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!--  -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <!-- <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="csrf-token" content="PwOtZEQuVE8QU1ebwM3FQhoICPnLTDikrVUdlg4d">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="csrf-token" content="PwOtZEQuVE8QU1ebwM3FQhoICPnLTDikrVUdlg4d"> 
     <link href="http://demo-freelancer-crm.quickadminpanel.com/css/adminltev3.css" rel="stylesheet">
-    <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/select/1.3.0/css/select.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet">
-    <link href="http://demo-freelancer-crm.quickadminpanel.com/css/custom.css" rel="stylesheet">
+    <link href="http://demo-freelancer-crm.quickadminpanel.com/css/custom.css" rel="stylesheet">-->
+   
+
+    
+  
+
+    
+    
+ 
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -165,7 +169,7 @@
         #navbarSupportedContent>ul>li.active>a {
             color: #EC5A0F;
             background-color: transparent;
-            transition: all 0.7s;
+            
         }
 
         #navbarSupportedContent a:not(:only-child):after {
@@ -328,7 +332,7 @@
                     <div class="left"></div>
                     <div class="right"></div>
                 </div>
-                <li class="nav-item">
+                <li class="nav-item-active">
                     <a class="nav-link" href="index.php"><i class="fas fa-tachometer-alt"></i>หน้าหลัก</a>
                 </li>
                 <li class="nav-item">
@@ -338,7 +342,7 @@
                     <a class="nav-link" href="back_user.php"><i class="far fa-clone"></i>คืนวัสดุ ครุภัณฑ์</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="stock_user.php"><i class="far fa-calendar-alt"></i>คลังวัสดุ ครุภัณฑ์</a>
+                    <a class="nav-link" href="treasury_user.php"><i class="far fa-calendar-alt"></i>คลังวัสดุ ครุภัณฑ์</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
@@ -355,6 +359,7 @@
     <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.colVis.min.js"></script>
     <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    
     <!--  navbarเด้ง -->
     <script>
         function test() {
@@ -402,6 +407,7 @@
                 test();
             });
         });
+
         // --------------add active class-on another-page move----------
         jQuery(document).ready(function($) {
             // Get current path and find target link
@@ -419,7 +425,7 @@
 
         // Add active class on another page linked
         // ==========================================
-        $(window).on('load', function() {
+       /*  $(window).on('load', function() {
             var current = location.pathname;
             console.log(current);
             $('#navbarSupportedContent ul li a').each(function() {
@@ -433,8 +439,9 @@
                     $this.parent().removeClass('active');
                 }
             })
-        });
+        }); */
     </script>
+    
 
 </body>
 
