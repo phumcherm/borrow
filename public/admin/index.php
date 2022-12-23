@@ -40,157 +40,89 @@
 
     <!-- Navbar (sit on top) -->
     <?php
-    include "nav_user.php";
+    include "nav_admin.php";
     ?>
 
 
     <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px;">
         <div>
             <h2 style="color: #ff5722;font-family: SUT_Bold;">
-                ▶ ยืม-คืนล่าสุดของคุณ
+                ▶ รายการวัสดุและครุภัณฑ์
             </h2>
         </div>
         <br>
         <div style="max-width: 1600px;margin-left: auto;">
-            <div>
-                <table id="datatable" class="table">
-                    <thead class="table-dark">
-                        <th>
-                            <center>id </center>
-                        </th>
-                        <th>
-                            <center>updateTime</center>
-                        </th>
-                        <th>
-                            <center>itemCode</center>
-                        </th>
-                        <th>
-                            <center>detail</center>
-                        </th>
-                        <th>
-                            <center>checkInDate</center>
-                        </th>
-                        <th>
-                            <center>brand</center>
-                        </th>
-                        <th>
-                            <center>serialNumber</center>
-                        </th>
-                        <th>
-                            <center>price</center>
-                        </th>
-                        <th>
-                            <center>refDoc</center>
-                        </th>
-                        <th>
-                            <center>room</center>
-                        </th>
-                        <!-- <th>
-                            <center>status</center>
-                        </th>
-                        <th>
-                            <center>notation</center>
-                        </th>
-                        <th>
-                            <center>misConfirmer</center>
-                        </th>
-                        <th>
-                            <center>organization</center>
-                        </th>
-                        <th>
-                            <center>type</center>
-                        </th>
-                        <th>
-                            <center>active</center>
-                        </th> -->
-
-                    </thead>
-
+            <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;">
+                <thead class="table-dark">
+                    <th>
+                        <center>ลำดับ</center>
+                    </th>
+                    <th>
+                        <center>รายการ</center>
+                    </th>
+                    <th>
+                        <center>รุ่น</center>
+                    </th>
+                    <th>
+                        <center>ยี่ห้อ</center>
+                    </th>
+                    <th>
+                        <center>ประเภท</center>
+                    </th>
+                    <th>
+                        <center>จำนวน</center>
+                    </th>
+                </thead>
+                <?php for ($i = 0; $i < 25; $i++) {
+                ?>
                     <tbody>
-                        <?php
-                        $select_stmt = $db->prepare("SELECT * FROM itemdata");
-
-                        $select_stmt->execute();
-
-                        while ($row = $select_stmt->fetch(PDO::FETCH_ASSOC)) {
-                        ?>
-                            <td>
-                                <center><?php echo $row["id"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["updateTime"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["itemCode"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["detail"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["checkInDate"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["brand"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["serialNumber"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["price"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["refDoc"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["room"] ?></center>
-                            </td>
-                            <!-- <td>
-                            <center><?php echo $row["status"] ?></center>
+                        <td>
+                            <center><?php echo $i ?></center>
                         </td>
                         <td>
-                            <center><?php echo $row["notation"] ?></center>
+                            <center>แลปท็อป</center>
                         </td>
                         <td>
-                            <center><?php echo $row["misConfirmer"] ?></center>
+                            <center>Pavillion</center>
                         </td>
                         <td>
-                            <center><?php echo $row["organization"] ?></center>
+                            <center>HP</center>
                         </td>
                         <td>
-                            <center><?php echo $row["type"] ?></center>
+                            <center>อุปกรณ์</center>
                         </td>
                         <td>
-                            <center><?php echo $row["active"] ?></center>
-                        </td> -->
+                            <center>1</center>
+                        </td>
                     </tbody>
                 <?php } ?>
-                </table>
-            </div>
+            </table>
         </div>
+    </div>
 
-        <!-- Sidebar/menu -->
+    <!-- Sidebar/menu -->
 
-        <!-- Top menu on small screens -->
-        <script>
-            // Script to open and close sidebar
-            function w3_open() {
-                document.getElementById("mySidebar").style.display = "block";
-                document.getElementById("myOverlay").style.display = "block";
-            }
+    <!-- Top menu on small screens -->
+    <script>
+        // Script to open and close sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
 
-            function w3_close() {
-                document.getElementById("mySidebar").style.display = "none";
-                document.getElementById("myOverlay").style.display = "none";
-            }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
 
-            // Modal Image Gallery
-            function onClick(element) {
-                document.getElementById("img01").src = element.src;
-                document.getElementById("modal01").style.display = "block";
-                var captionText = document.getElementById("caption");
-                captionText.innerHTML = element.alt;
-            }
-        </script>
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+    </script>
 </body>
 
 </html>
