@@ -1,8 +1,8 @@
 <?php
 
-$db_host = "localhost"; //202.28.34.205
-$db_user = "root"; //62011211097
-$db_password = ""; //62011211097
+$db_host = "ldb"; //202.28.34.205
+$db_user = "borrow"; //62011211097
+$db_password = "12345678"; //62011211097
 $db_name = "borrow"; //62011211097
 
 try {
