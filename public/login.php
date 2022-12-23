@@ -131,6 +131,18 @@
 
 
                         <!-- Email input -->
+<<<<<<< HEAD
+                        <div class="row">
+                            <label for="username">Username</label>
+                            <input type="text" required name="" class="form-control" placeholder="Username">
+                        </div>
+                        <br>
+                        <!-- Password input -->
+                        <div class="row">
+                            <label for="password">Password</label>
+                            <input type="password" required name="" class="form-control " placeholder="Password">
+                        </div>
+=======
 
                         <div class="w3-center">
                             <i class="fa fa-user icon"></i>
@@ -148,6 +160,7 @@
                                   
                         </div> 
                     </div>
+>>>>>>> 485b6c9da1aacdcbd18cfeeeadd32e56abcc0aaf
                 </form>
             </div>
         </div>
