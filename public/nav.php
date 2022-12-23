@@ -361,7 +361,7 @@ require_once "../app/model/server.php";
                     <a class="nav-link" href="back.php"><i class="far fa-clone"></i>คืนวัสดุ ครุภัณฑ์</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#designers"><i class="far fa-calendar-alt"></i>คลังวัสดุ ครุภัณฑ์</a>
+                    <a class="nav-link" href="treasury.php"><i class="far fa-calendar-alt"></i>คลังวัสดุ ครุภัณฑ์</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
