@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
-  
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-  
-    
 
-   
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+
+
+
     <style>
         @font-face {
             font-family: SUT_Regular;
@@ -125,24 +125,12 @@
                     <div class="colororage">
 
                         <h3>
-                           
-                        <h3 style="color: #EC5A0F;font-family: SUT_Bold;"><i class="fas fa-sign-in-alt" style="font-size:24px;"></i>&nbsp;เข้าสู่ระบบ</h3>
+
+                            <h3 style="color: #EC5A0F;font-family: SUT_Bold;"><i class="fas fa-sign-in-alt" style="font-size:24px;"></i>&nbsp;เข้าสู่ระบบ</h3>
                         </h3>
 
 
                         <!-- Email input -->
-<<<<<<< HEAD
-                        <div class="row">
-                            <label for="username">Username</label>
-                            <input type="text" required name="" class="form-control" placeholder="Username">
-                        </div>
-                        <br>
-                        <!-- Password input -->
-                        <div class="row">
-                            <label for="password">Password</label>
-                            <input type="password" required name="" class="form-control " placeholder="Password">
-                        </div>
-=======
 
                         <div class="w3-center">
                             <i class="fa fa-user icon"></i>
@@ -156,11 +144,10 @@
                         </div>
                         <br>
                         <div class="w3-center">
-                        <a href="index_user.php" type="button" style="  background-color: #EC5A0F; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">เข้าสู่ระบบ</a>
-                                  
-                        </div> 
+                            <a href="index_admin.php" type="button" style="  background-color: #EC5A0F; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">เข้าสู่ระบบ</a>
+
+                        </div>
                     </div>
->>>>>>> 485b6c9da1aacdcbd18cfeeeadd32e56abcc0aaf
                 </form>
             </div>
         </div>

@@ -164,7 +164,7 @@
         <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 50px;border-radius: 7px;padding: 30px;">
 
             <div style="max-width: 1300px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
-                <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการการยืม</h3>
+                <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการการคืน</h3>
                 <center><a href="#" style="padding-left: 40px;padding-right:40px;" type="button" data-toggle="modal" data-target="#exampleModal"> Scan QR Code</a></center>
                 <br>
 
@@ -173,7 +173,7 @@
                         <div class="modal-content ">
                             <div class="modal-header ">
                                 <h5 class="modal-title" id="exampleModalLabel">
-                                    <font size="7"><b>รายละเอียดการจอง</b></font>
+                                    <font size="7"><b>รายละเอียดการคืน</b></font>
                                 </h5>
 
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -224,13 +224,27 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col_50 "><a style="color: #5B5B5B;"> &nbsp;&nbsp;<i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                            <font size="5"><b>วันที่ยืม</b></font>
+                                        </a>
+                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                            <font size="5">&nbsp;&nbsp;13/12/2565</font>
+                                        </div>
+                                    </div>
+                                    <div class="col_50 "><a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                            <font size="5"><b>วันที่คืน</b></font>
+                                        </a>
+                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                            <font size="5">&nbsp;&nbsp;15/12/2565</font>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="row">
+                                    
                                     <div align="center">
-                                        <a href="borrow.php" type="button" style=" margin-left: 30px; background-color: #FF0000; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">ยกเลิก</a>
-                                    </div>
-                                    <div align="center">
-                                        &nbsp;&nbsp;<a href="borrow.php" type="button" style="margin-left: 500px; background-color: #28a745; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">ยืนยัน</a>
+                                        &nbsp;&nbsp;<a href="back.php" type="button" style="margin-left: 650px; background-color: #28a745; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">ยืนยันการคืน</a>
                                     </div>
                                 </div>
                             </div>
