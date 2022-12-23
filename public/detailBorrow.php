@@ -167,6 +167,7 @@
                 <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการการคืน</h3>
                 <center><a href="#" style="padding-left: 40px;padding-right:40px;" type="button" data-toggle="modal" data-target="#exampleModal"> Scan QR Code</a></center>
                 <br>
+
                 <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content ">
@@ -174,32 +175,32 @@
                                 <h5 class="modal-title" id="exampleModalLabel">
                                     <font size="7"><b>รายละเอียดการจอง</b></font>
                                 </h5>
+
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true"><i class="fa fa-close"></i></span>
                                 </button>
                             </div>
+
                             <div class="modal-body">
                                 <div class="row">
-
-                                    <div class="col_50 "><a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                    <div class="col_50 "><a style="color: #5B5B5B;"> &nbsp;&nbsp;<i class="fas fa-play" style="color: #EC5A0F;"></i>
                                             <font size="5"><b>ชื่อรายการ</b></font>
                                         </a>
-                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 700px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
+                                        <div style="color: #5B5B5B; background-color: #eeecec;width: 750px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
                                             <font size="5">&nbsp;&nbsp;กล้องถ่ายรูป</font>
                                         </div>
                                     </div>
 
                                 </div>
                                 <div class="row">
-
-                                    <div class="col_50 "><a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                    <div class="col_50 "><a style="color: #5B5B5B;"> &nbsp;&nbsp;<i class="fas fa-play" style="color: #EC5A0F;"></i>
                                             <font size="5"><b>รุ่น</b></font>
                                         </a>
                                         <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
                                             <font size="5">&nbsp;&nbsp;A7</font>
                                         </div>
                                     </div>
-                                    <div class="col_50 "><a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                    <div class="col_50 "><a style="color: #5B5B5B;"> &nbsp;&nbsp;<i class="fas fa-play" style="color: #EC5A0F;"></i>
                                             <font size="5"><b>ยี่ห้อ</b></font>
                                         </a>
                                         <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
@@ -208,8 +209,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-
-                                    <div class="col_50 "><a style="color: #5B5B5B;"><i class="fas fa-play" style="color: #EC5A0F;"></i>
+                                    <div class="col_50 "><a style="color: #5B5B5B;"> &nbsp;&nbsp;<i class="fas fa-play" style="color: #EC5A0F;"></i>
                                             <font size="5"><b>ประเภท</b></font>
                                         </a>
                                         <div style="color: #5B5B5B; background-color: #eeecec;width: 350px; height: 50px;margin: 10px;border-radius: 20px;padding: 10px;">
@@ -224,11 +224,17 @@
                                         </div>
                                     </div>
                                 </div>
-                              
+
+                                <div class="row">
+                                    <div align="center">
+                                        <a href="borrow.php" type="button" style=" margin-left: 30px; background-color: #FF0000; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">ยกเลิก</a>
+                                    </div>
+                                    <div align="center">
+                                        &nbsp;&nbsp;<a href="borrow.php" type="button" style="margin-left: 500px; background-color: #28a745; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">ยืนยัน</a>
+                                    </div>
+                                </div>
 
 
-                              <p style="background-color: #28a745; max-width: 100px;padding: 5px;color: white;border-radius: 7px;">คืนแล้ว</p></center>
-                                
                                 <!-- <div class="col-md-8 ">
 
                                     <div class="status p-3">
@@ -305,7 +311,7 @@
 
 
                                 </div> -->
-
+                               
 
 
                             </div>
