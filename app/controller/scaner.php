@@ -46,7 +46,7 @@
 
         document.getElementById('result').innerHTML = `
                                 <h2>Success!</h2>
-                                <a href="borrow.php?code=${result}"> ${result}</a>
+                                <a href="borrow_user.php?code=${result}"> ${result}</a>
                                 `;
 
         // var itemCode = $result
