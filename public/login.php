@@ -144,8 +144,9 @@
                         </div>
                         <br>
                         <div class="w3-center">
-                            <button type="submit"><a href="index.php" onclick="w3_close()">เข้าสู่ระบบ</a></button>
-                        </div>
+                        <a href="borrow.php" type="button" style="  background-color: #EC5A0F; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">เข้าสู่ระบบ</a>
+                                  
+                        </div> 
                     </div>
                 </form>
             </div>
