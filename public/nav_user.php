@@ -1,38 +1,22 @@
-<!-- <?php
-require_once "../app/model/server.php";
-?> -->
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>E - Borrow</title>
     <meta charset="UTF-8">
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <!--     Fonts and icons     -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-
-    <!-- Nucleo Icons -->
-    <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
-    <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- CSS Files -->
     <link id="pagestyle" href="./assets/css/material-dashboard.css?v=3.0.4" rel="stylesheet" />
     <link id="pagestyle" href="./assets/css/normalize.css" rel="stylesheet" />
-    <!-- Styles -->
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!--  -->
 
 
     <style>
-        
+
     </style>
 
     <head>
@@ -52,10 +36,10 @@ require_once "../app/model/server.php";
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet">
         <link href="http://demo-freelancer-crm.quickadminpanel.com/css/custom.css" rel="stylesheet">
-        
+
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        
+
         <script>
             window.dataLayer = window.dataLayer || [];
 
@@ -132,7 +116,7 @@ require_once "../app/model/server.php";
                 color: #EC5A0F;
             }
 
-          
+
             * {
                 margin: 0;
                 padding: 0;
@@ -182,7 +166,7 @@ require_once "../app/model/server.php";
                 transition-duration: 0.6s;
                 transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
                 position: relative;
-               
+
             }
 
             #navbarSupportedContent>ul>li.active>a {
@@ -327,11 +311,11 @@ require_once "../app/model/server.php";
         </style>
     </head>
 
-<!DOCTYPE html>
-<html>
+    <!DOCTYPE html>
+    <html>
 
 
-<button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
+    <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
 
 
 <body>
@@ -352,7 +336,7 @@ require_once "../app/model/server.php";
                     <div class="right"></div>
                 </div>
                 <li class="nav-item">
-                    <a class="nav-link" href="index_user.php"><i class="fas fa-tachometer-alt"></i>หน้าหลัก</a>
+                    <a class="nav-link" href="index.php"><i class="fas fa-tachometer-alt"></i>หน้าหลัก</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="borrow_user.php"><i class="far fa-address-book"></i>ยืมวัสดุ ครุภัณฑ์</a>
@@ -372,121 +356,13 @@ require_once "../app/model/server.php";
     </nav>
 
 
-    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.2.4/js/buttons.flash.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.print.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.colVis.min.js"></script>
     <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
-    <script src="http://demo-freelancer-crm.quickadminpanel.com/js/main.js"></script>
-    <script>
-        $(function() {
-            let copyButtonTrans = 'Copy'
-            let csvButtonTrans = 'CSV'
-            let excelButtonTrans = 'Excel'
-            let pdfButtonTrans = 'PDF'
-            let printButtonTrans = 'Print'
-            let colvisButtonTrans = 'Column visibility'
-
-            let languages = {
-                'en': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/English.json'
-            };
-
-            $.extend(true, $.fn.dataTable.Buttons.defaults.dom.button, {
-                className: 'btn'
-            })
-            $.extend(true, $.fn.dataTable.defaults, {
-                language: {
-                    url: languages['en']
-                },
-                columnDefs: [{
-                    orderable: false,
-                    className: 'select-checkbox',
-                    targets: 0
-                }, {
-                    orderable: false,
-                    searchable: false,
-                    targets: -1
-                }],
-                select: {
-                    style: 'multi+shift',
-                    selector: 'td:first-child'
-                },
-                order: [],
-                scrollX: true,
-                pageLength: 100,
-                dom: 'lBfrtip<"actions">',
-                buttons: [{
-                        extend: 'copy',
-                        className: 'btn-default',
-                        text: copyButtonTrans,
-                        exportOptions: {
-                            columns: ':visible'
-                        }
-                    },
-                    {
-                        extend: 'csv',
-                        className: 'btn-default',
-                        text: csvButtonTrans,
-                        exportOptions: {
-                            columns: ':visible'
-                        }
-                    },
-                    {
-                        extend: 'excel',
-                        className: 'btn-default',
-                        text: excelButtonTrans,
-                        exportOptions: {
-                            columns: ':visible'
-                        }
-                    },
-                    {
-                        extend: 'pdf',
-                        className: 'btn-default',
-                        text: pdfButtonTrans,
-                        exportOptions: {
-                            columns: ':visible'
-                        }
-                    },
-                    {
-                        extend: 'print',
-                        className: 'btn-default',
-                        text: printButtonTrans,
-                        exportOptions: {
-                            columns: ':visible'
-                        }
-                    },
-                    {
-                        extend: 'colvis',
-                        className: 'btn-default',
-                        text: colvisButtonTrans,
-                        exportOptions: {
-                            columns: ':visible'
-                        }
-                    }
-                ]
-            });
-
-            $.fn.dataTable.ext.classes.sPageButton = '';
-        });
-    </script>
+    <!--  navbarเด้ง -->
     <script>
         function test() {
             var tabsNewAnim = $('#navbarSupportedContent');
@@ -533,9 +409,6 @@ require_once "../app/model/server.php";
                 test();
             });
         });
-
-
-
         // --------------add active class-on another-page move----------
         jQuery(document).ready(function($) {
             // Get current path and find target link
@@ -569,28 +442,7 @@ require_once "../app/model/server.php";
             })
         });
     </script>
-    <script>
-        let mybutton = document.getElementById("myBtn");
 
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {
-            scrollFunction()
-        };
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
-
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
 </body>
 
 </html>
