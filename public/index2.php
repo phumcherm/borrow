@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    
     <h1>My Project</h1>
     <form action="">
         <label for="house">House</label>

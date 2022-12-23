@@ -1,9 +1,9 @@
 <?php
 
-$db_host = "202.28.34.205"; //202.28.34.205
-$db_user = "62011211097"; //62011211097
-$db_password = "62011211097"; //62011211097
-$db_name = "62011211097"; //62011211097
+$db_host = "localhost"; //202.28.34.205
+$db_user = "root"; //62011211097
+$db_password = ""; //62011211097
+$db_name = "borrow"; //62011211097
 
 try {
     $db = new PDO("mysql:host={$db_host}; dbname={$db_name}", $db_user, $db_password);
