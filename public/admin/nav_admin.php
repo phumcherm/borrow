@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html>  
 
 <head>
     <title>E - Borrow</title>
@@ -10,27 +10,32 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="./assets/css/material-dashboard.css?v=3.0.4" rel="stylesheet" />
     <link id="pagestyle" href="./assets/css/normalize.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!--  -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <!-- <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="csrf-token" content="PwOtZEQuVE8QU1ebwM3FQhoICPnLTDikrVUdlg4d">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="csrf-token" content="PwOtZEQuVE8QU1ebwM3FQhoICPnLTDikrVUdlg4d"> 
     <link href="http://demo-freelancer-crm.quickadminpanel.com/css/adminltev3.css" rel="stylesheet">
-    <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/select/1.3.0/css/select.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet">
-    <link href="http://demo-freelancer-crm.quickadminpanel.com/css/custom.css" rel="stylesheet">
+    <link href="http://demo-freelancer-crm.quickadminpanel.com/css/custom.css" rel="stylesheet">-->
 
+
+
+
+
+
+
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -45,7 +50,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <style>
         @font-face {
@@ -164,7 +169,7 @@
         #navbarSupportedContent>ul>li.active>a {
             color: #EC5A0F;
             background-color: transparent;
-            transition: all 0.1s;
+
         }
 
         #navbarSupportedContent a:not(:only-child):after {
@@ -314,7 +319,7 @@
 
     <nav class="navbar navbar-expand-custom navbar-mainbg">
         <a class="navbar-brand " href="#">
-            <h3 style="margin-left: 60px; color:#FFFFFF;">E - Borrow
+            <h3 style="margin-left: 60px;">E - Borrow
                 <!-- Right-sided navbar links. Hide them on small screens -->
             </h3>
         </a>
@@ -327,37 +332,22 @@
                     <div class="left"></div>
                     <div class="right"></div>
                 </div>
-                <li class="nav-item ">
+                <li class="nav-item-active">
                     <a class="nav-link" href="index.php"><i class="fas fa-tachometer-alt"></i>หน้าหลัก</a>
                 </li>
 
-
-                <li class=" nav-item ">
-                    <a class=" nav-link" href="report_admin.php"><i class="far fa-address-book"></i>รายงาน</a>
+                <li class=" nav-item">
+                    <a class="nav-link " type="button"  href="report_admin.php"><i class="far fa-address-book"></i>รายงาน</a>
+                    
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="back_user.php"><i class="far fa-clone"></i>คืนวัสดุ ครุภัณฑ์</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="stock_user.php"><i class="far fa-calendar-alt"></i>คลังวัสดุ ครุภัณฑ์</a>
-                </li>
+               
                 <li class="nav-item">
                     <a class="nav-link" href="login.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
                 </li>
 
             </ul>
-
-
-
-
-
-        </div>
-
-
         </div>
     </nav>
-
-    </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -366,23 +356,7 @@
     <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.colVis.min.js"></script>
     <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.2.4/js/buttons.flash.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.print.min.js"></script>
-    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
-    <script src="http://demo-freelancer-crm.quickadminpanel.com/js/main.js"></script>
+
     <!--  navbarเด้ง -->
     <script>
         function test() {
@@ -430,6 +404,7 @@
                 test();
             });
         });
+
         // --------------add active class-on another-page move----------
         jQuery(document).ready(function($) {
             // Get current path and find target link
@@ -447,43 +422,21 @@
 
         // Add active class on another page linked
         // ==========================================
-        $(window).on('load', function() {
-            var current = location.pathname;
-            console.log(current);
-            $('#navbarSupportedContent ul li a').each(function() {
-                var $this = $(this);
-                // if the current path is like this link, make it active
-                if ($this.attr('href').indexOf(current) !== -1) {
-                    $this.parent().addClass('active');
-                    $this.parents('.menu-submenu').addClass('show-dropdown');
-                    $this.parents('.menu-submenu').parent().addClass('active');
-                } else {
-                    $this.parent().removeClass('active');
-                }
-            })
-        });
-    </script>
-    <script>
-        let mybutton = document.getElementById("myBtn");
-
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {
-            scrollFunction()
-        };
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
-
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
+        /*  $(window).on('load', function() {
+             var current = location.pathname;
+             console.log(current);
+             $('#navbarSupportedContent ul li a').each(function() {
+                 var $this = $(this);
+                 // if the current path is like this link, make it active
+                 if ($this.attr('href').indexOf(current) !== -1) {
+                     $this.parent().addClass('active');
+                     $this.parents('.menu-submenu').addClass('show-dropdown');
+                     $this.parents('.menu-submenu').parent().addClass('active');
+                 } else {
+                     $this.parent().removeClass('active');
+                 }
+             })
+         }); */
     </script>
 
 
