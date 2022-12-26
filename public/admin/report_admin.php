@@ -15,7 +15,7 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+
 </head>
 <style>
     input {
@@ -34,7 +34,7 @@
         width: auto;
     }
 
-   /* a:hover {
+    /* a:hover {
         background-color: #dbd6d6;
         color: white;
         text-decoration: none;
@@ -85,10 +85,22 @@
     <div>
 
         <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px;">
-            <h2 style="color: #ff5722;font-family: SUT_Bold;">
-                ▶ ยืมวัสดุ ครุภัณฑ์
-            </h2>
-            <div style="max-width: 1300px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
+            <div id="list-example" class="list-group">
+
+                <a href="nameborrow.php" class="list-group-item " style="background-color: #ff5722; width: 200px; height: 10px;padding: 20px;">
+                    <center>รายชื่อผู้ยืม</center>
+                </a>
+                <a href="category.php" class="list-group-item " style="background-color: #ff5722; width: 200px; height: 10px;padding: 20px;">
+                    <center>หมวดหมู่</center>
+                </a>
+
+                <a href="historyofrepair.php" class="list-group-item " style="background-color: #ff5722; width: 200px; height: 10px;padding: 20px;">
+                    <center> ประวัติการเเจ้งซ่อม</center>
+                </a>
+
+            </div>
+           
+        <!--    <div style="max-width: 1300px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
                 <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการ</h3>
                 <form action="">
                     
@@ -98,12 +110,12 @@
                         <div class="section_area_grid">
                             <div class="section_grid_bor">
                                 <div class="section_grid_item">
-                                    <!-- <h5 style="padding-left: 0;">ระบุสถานที่<h5> -->
+                                    
                                     <br>
                                     <input class="w3-input w3-animate-input  demo" type="text" required placeholder="ระบุสถานที่" style="max-width: 400px;">
                                 </div>
                             </div>
-                            <!-- <p id="demo">CODE</p> -->
+                            
                             <div class="section_grid_bor">
                                 <div class="section_grid_item">
                                     <h5>วันที่คืน*</h5>
@@ -120,7 +132,7 @@
             </div>
             <br>
 
-        </div>
+        </div> -->
     </div>
 </body>
 
