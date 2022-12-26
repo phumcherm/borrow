@@ -1,5 +1,6 @@
 <?php
-require_once "../app/model/server.php"
+require_once "../app/models/Database.php";
+require_once "../app/models/function.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -94,11 +95,11 @@ require_once "../app/model/server.php"
 
                     <tbody>
                         <?php
-                        $select_stmt = $db->prepare("SELECT * FROM itemdata");
 
-                        $select_stmt->execute();
 
-                        while ($row = $select_stmt->fetch(PDO::FETCH_ASSOC)) {
+                        $selectAll = new DB_con();
+                        $sql = $selectAll->selectAll();
+                        while ($row = mysqli_fetch_array($sql)) {
                         ?>
                             <td>
                                 <center><?php echo $row["id"] ?></center>
