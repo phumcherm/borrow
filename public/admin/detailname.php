@@ -108,7 +108,7 @@
                                 ลำดับ
                             </th>
                             <th>
-                           เลขครุภัณฑ์
+                                เลขครุภัณฑ์
                             </th>
                             <th>
                                 รายการ
@@ -140,7 +140,7 @@
                                     30 พ.ย. 65
                                 </td>
 
-                                
+
                             </tbody>
                         <?php } ?>
                     </table>
@@ -156,29 +156,28 @@
 
 
 </body>
-<script>
-    // Get the button
-    // let mybutton = document.getElementById("myBtn");
+ <script>
+        let mybutton = document.getElementById("myBtn");
 
-    // // When the user scrolls down 20px from the top of the document, show the button
-    // window.onscroll = function() {
-    //     scrollFunction()
-    // };
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
 
-    // function scrollFunction() {
-    //     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    //         mybutton.style.display = "block";
-    //     } else {
-    //         mybutton.style.display = "none";
-    //     }
-    // }
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
 
-    // // When the user clicks on the button, scroll to the top of the document
-    // function topFunction() {
-    //     document.body.scrollTop = 0;
-    //     document.documentElement.scrollTop = 0;
-    // }
-</script>
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script> 
 <!-- <script src="script.js"></script> -->
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
