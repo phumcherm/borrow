@@ -213,9 +213,9 @@
                                     วัสดุ
                                 </td>
                                 <td>
-                                <a href="detailname.php">
+                                
                                             โทรทัศน์ 
-                                    </a> 
+                                    
                                 </td>
                                 <td>
                                     SONY
