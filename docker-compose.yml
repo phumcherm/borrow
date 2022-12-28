@@ -6,19 +6,19 @@ services:
             context: ./php
             dockerfile: Dockerfile
         depends_on:
-            - db
+            - ceitdb
         volumes:
             - D:\project\borrow:/var/www/html/
         ports:
             - 8000:80
-    db:
-        container_name: db
+    ceitdb:
+        container_name: ceitdb
         image: mysql
         restart: always
         environment:
             MYSQL_ROOT_PASSWORD: 12345678
             MYSQL_DATABASE: borrow
-            MYSQL_USER: borrw
+            MYSQL_USER: borrow
             MYSQL_PASSWORD: 12345678
         ports:
             - "9906:3306"
