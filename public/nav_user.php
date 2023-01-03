@@ -1,6 +1,6 @@
 <!-- <?php
-require_once "../app/model/server.php";
-?> -->
+        require_once "../app/model/server.php";
+        ?> -->
 <!DOCTYPE html>
 <html>
 
@@ -32,7 +32,7 @@ require_once "../app/model/server.php";
 
 
     <style>
-        
+
     </style>
 
     <head>
@@ -52,10 +52,10 @@ require_once "../app/model/server.php";
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet">
         <link href="http://demo-freelancer-crm.quickadminpanel.com/css/custom.css" rel="stylesheet">
-        
+
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        
+
         <script>
             window.dataLayer = window.dataLayer || [];
 
@@ -132,7 +132,7 @@ require_once "../app/model/server.php";
                 color: #EC5A0F;
             }
 
-          
+
             * {
                 margin: 0;
                 padding: 0;
@@ -182,7 +182,7 @@ require_once "../app/model/server.php";
                 transition-duration: 0.6s;
                 transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
                 position: relative;
-               
+
             }
 
             #navbarSupportedContent>ul>li.active>a {
@@ -327,11 +327,11 @@ require_once "../app/model/server.php";
         </style>
     </head>
 
-<!DOCTYPE html>
-<html>
+    <!DOCTYPE html>
+    <html>
 
 
-<button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
+    <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
 
 
 <body>

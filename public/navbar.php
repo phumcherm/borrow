@@ -4,7 +4,7 @@
 </header> -->
 <!-- Navbar (sit on top) -->
 <style>
-    a {
+    /* a {
         color: white;
     }
 
@@ -12,7 +12,7 @@
         background-color: #dbd6d6;
         color: white;
         text-decoration: none;
-    }
+    } */
 </style>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
@@ -20,7 +20,7 @@
 <nav style="padding: 15px;">
     <h5>
         <ul class="menu" id="menu" style="margin: 0;">
-            <li class="items button"><a href="index.php">หน้าหลัก</a></li>
+            <li class="items button"><a href="index.php javascript:void(0);">หน้าหลัก</a></li>
             <li class="items button"><a href="borrow.php">ยืมวัสดุ ครุภัณฑ์</a></li>
             <li class="items button"><a href="back.php">คืนวัสดุ ครุภัณฑ์</a></li>
             <li class="items button"><a href="#designers">คลังวัสดุ ครุภัณฑ์</a></li>
