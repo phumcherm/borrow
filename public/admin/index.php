@@ -1,4 +1,4 @@
-<?php
+<?php 
 require_once "../app/model/server.php"
 ?>
 <!DOCTYPE html>
@@ -9,7 +9,8 @@ require_once "../app/model/server.php"
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="/borrow/public/css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
@@ -17,7 +18,23 @@ require_once "../app/model/server.php"
 
 
 </head>
-
+<style>
+    #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+</style>
 <body>
     <!-- <header class="w3-container w3-top w3-hide-large w3-blue w3-xlarge w3-padding">
         <a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">☰</a>
@@ -26,14 +43,14 @@ require_once "../app/model/server.php"
 
     <!-- Navbar (sit on top) -->
     <?php
-    include "nav_user.php";
+    include "nav_admin.php";
     ?>
 
 
     <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px;">
         <div>
             <h2 style="color: #ff5722;font-family: SUT_Bold;">
-                ▶ ยืม-คืนล่าสุดของคุณ
+                ▶ รายการวัสดุและครุภัณฑ์
             </h2>
         </div>
         <br>
@@ -47,13 +64,16 @@ require_once "../app/model/server.php"
                         <center>รายการ</center>
                     </th>
                     <th>
-                        <center>ห้อง-แผนก</center>
+                        <center>รุ่น</center>
                     </th>
                     <th>
-                        <center>วันที่ยืม</center>
+                        <center>ยี่ห้อ</center>
                     </th>
                     <th>
-                        <center>วันที่คืน</center>
+                        <center>ประเภท</center>
+                    </th>
+                    <th>
+                        <center>จำนวน</center>
                     </th>
                 </thead>
                 <?php for ($i = 0; $i < 25; $i++) {
@@ -63,16 +83,19 @@ require_once "../app/model/server.php"
                             <center><?php echo $i ?></center>
                         </td>
                         <td>
-                            <center>สายไฟ</center>
+                            <center>แลปท็อป</center>
                         </td>
                         <td>
-                            <center>ศนท.</center>
+                            <center>Pavillion</center>
                         </td>
                         <td>
-                            <center>12-12-2565</center>
+                            <center>HP</center>
                         </td>
                         <td>
-                            <center>30-12-2565</center>
+                            <center>อุปกรณ์</center>
+                        </td>
+                        <td>
+                            <center>1</center>
                         </td>
                     </tbody>
                 <?php } ?>

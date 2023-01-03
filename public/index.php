@@ -1,5 +1,6 @@
 <?php
-require_once "../app/model/server.php"
+require_once "../app/models/Database.php";
+require_once "../app/models/function.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,7 +10,7 @@ require_once "../app/model/server.php"
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/borrow/public/css/style.css">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
@@ -94,11 +95,11 @@ require_once "../app/model/server.php"
 
                     <tbody>
                         <?php
-                        $select_stmt = $db->prepare("SELECT * FROM itemdata");
 
-                        $select_stmt->execute();
 
-                        while ($row = $select_stmt->fetch(PDO::FETCH_ASSOC)) {
+                        $selectAll = new DB_con();
+                        $sql = $selectAll->selectAll();
+                        while ($row = mysqli_fetch_array($sql)) {
                         ?>
                             <td>
                                 <center><?php echo $row["id"] ?></center>

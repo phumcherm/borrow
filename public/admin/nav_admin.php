@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html>  
 
 <head>
     <title>E - Borrow</title>
@@ -50,7 +50,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <style>
         @font-face {
@@ -335,15 +335,12 @@
                 <li class="nav-item-active">
                     <a class="nav-link" href="index.php"><i class="fas fa-tachometer-alt"></i>หน้าหลัก</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="borrow_user.php"><i class="far fa-address-book"></i>ยืมวัสดุ ครุภัณฑ์</a>
+
+                <li class=" nav-item">
+                    <a class="nav-link " type="button"  href="report_admin.php"><i class="far fa-address-book"></i>รายงาน</a>
+                    
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="back_user.php"><i class="far fa-clone"></i>คืนวัสดุ ครุภัณฑ์</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="treasury_user.php"><i class="far fa-calendar-alt"></i>คลังวัสดุ ครุภัณฑ์</a>
-                </li>
+               
                 <li class="nav-item">
                     <a class="nav-link" href="login.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
                 </li>

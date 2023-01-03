@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-   <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
@@ -32,8 +32,8 @@
         margin-right: auto;
         width: auto;
     }
-    
-   /* a:hover {
+
+    /* a:hover {
         background-color: #dbd6d6;
         color: white;
         text-decoration: none;
@@ -77,19 +77,28 @@
         <i class="fas fa-arrow-up"></i>
     </button>
     <?php
-    require "nav_user.php";
+    require "nav_admin.php";
     ?>
 
     <div>
 
         <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px;">
             <h2 style="color: #ff5722;font-family: SUT_Bold;">
-                ▶ คืนวัสดุ ครุภัณฑ์
+                <?php {
+                ?>
+                    <tbody>
+                        <td>
+                            เปรมฤทัย สีแปลก
+                        </td>
+                        <td>
+                            ฝ่ายเทคนิควิศวกรรม
+                        </td>
+
+                    </tbody>
+                <?php } ?>
             </h2>
             <div style="max-width: 1300px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
-                <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการการคืน</h3>
-                <center><a href="#" style="padding-left: 40px;padding-right:40px;"> Scan QR Code</a></center>
-                <br>
+
 
                 <div style="max-width: 1600px;margin-left: auto;">
                     <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
@@ -97,6 +106,9 @@
                         <thead class="table-dark">
                             <th>
                                 ลำดับ
+                            </th>
+                            <th>
+                                เลขครุภัณฑ์
                             </th>
                             <th>
                                 รายการ
@@ -107,30 +119,28 @@
                             <th>
                                 วันที่คืน
                             </th>
-                            <th>
-                                สถานะ
-                            </th>
+
                         </thead>
-                        <?php for ($i = 0; $i < 5; $i++) {
+                        <?php for ($i = 1; $i < 6; $i++) {
                         ?>
                             <tbody>
                                 <td>
                                     <?php echo $i ?>
                                 </td>
                                 <td>
-                                    สาย HDMI
+                                    1000111
                                 </td>
                                 <td>
-                                    12-12-2565
+                                    โทรทัศน์ (SONY, A123)
                                 </td>
                                 <td>
-                                    30-12-2565
+                                    25 พ.ย. 65
                                 </td>
                                 <td>
-                                    <center>
-                                        <p style="background-color: #28a745; max-width: 100px;padding: 5px;color: white;border-radius: 7px;">คืนแล้ว</p>
-                                    </center>
+                                    30 พ.ย. 65
                                 </td>
+
+
                             </tbody>
                         <?php } ?>
                     </table>
@@ -146,29 +156,28 @@
 
 
 </body>
-<script>
-    // Get the button
-    // let mybutton = document.getElementById("myBtn");
+ <script>
+        let mybutton = document.getElementById("myBtn");
 
-    // // When the user scrolls down 20px from the top of the document, show the button
-    // window.onscroll = function() {
-    //     scrollFunction()
-    // };
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
 
-    // function scrollFunction() {
-    //     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    //         mybutton.style.display = "block";
-    //     } else {
-    //         mybutton.style.display = "none";
-    //     }
-    // }
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
 
-    // // When the user clicks on the button, scroll to the top of the document
-    // function topFunction() {
-    //     document.body.scrollTop = 0;
-    //     document.documentElement.scrollTop = 0;
-    // }
-</script>
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script> 
 <!-- <script src="script.js"></script> -->
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

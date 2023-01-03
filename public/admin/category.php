@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-   <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
@@ -32,8 +32,8 @@
         margin-right: auto;
         width: auto;
     }
-    
-   /* a:hover {
+
+    /* a:hover {
         background-color: #dbd6d6;
         color: white;
         text-decoration: none;
@@ -66,6 +66,72 @@
         }
     }
 
+    .dropbtn {
+        background-color: #ff5722;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Dropdown button on hover & focus */
+    .dropbtn:hover,
+    .dropbtn:focus {
+        background-color: #ff5722;
+    }
+
+    /* The search field */
+    #myInput {
+        box-sizing: border-box;
+        background-image: url('searchicon.png');
+        background-position: 14px 12px;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        padding: 14px 20px 12px 45px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* The search field when it gets focus/clicked on */
+    #myInput:focus {
+        outline: 3px solid #ddd;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f6f6f6;
+        min-width: 230px;
+        border: 1px solid #ddd;
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {
+        background-color: #ff5722
+    }
+
+    /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+    .show {
+        display: block;
+    }
+
     /* center a:hover {
         background-color: #ffa185;
     } */
@@ -77,19 +143,29 @@
         <i class="fas fa-arrow-up"></i>
     </button>
     <?php
-    require "nav_user.php";
+    require "nav_admin.php";
     ?>
 
     <div>
 
         <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px;">
             <h2 style="color: #ff5722;font-family: SUT_Bold;">
-                ▶ คืนวัสดุ ครุภัณฑ์
+                ▶ หมวดหมู่วัสดุ ครุภัณฑ์
             </h2>
             <div style="max-width: 1300px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
-                <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการการคืน</h3>
-                <center><a href="#" style="padding-left: 40px;padding-right:40px;"> Scan QR Code</a></center>
-                <br>
+
+
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">เลือกหมวดหมู่</button>
+                    <div id="myDropdown" class="dropdown-content">
+                       
+                        <a href="#about">วัสดุ</a>
+                        <a href="#base">ครุภัณฑ์</a>
+                        
+                    </div>
+
+                </div>
+<br><br><br>
 
                 <div style="max-width: 1600px;margin-left: auto;">
                     <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
@@ -99,17 +175,18 @@
                                 ลำดับ
                             </th>
                             <th>
+                                หมวดหมู่
+                            </th>
+                            <th>
                                 รายการ
                             </th>
                             <th>
-                                วันที่ยืม
+                                ยี่ห้อ
                             </th>
                             <th>
-                                วันที่คืน
+                                รุ่น
                             </th>
-                            <th>
-                                สถานะ
-                            </th>
+                            
                         </thead>
                         <?php for ($i = 0; $i < 5; $i++) {
                         ?>
@@ -118,18 +195,18 @@
                                     <?php echo $i ?>
                                 </td>
                                 <td>
-                                    สาย HDMI
+                                    วัสดุ
                                 </td>
                                 <td>
-                                    12-12-2565
+                                <a href="detailcategory.php">
+                                            โทรทัศน์ 
+                                    </a> 
                                 </td>
                                 <td>
-                                    30-12-2565
+                                    SONY
                                 </td>
                                 <td>
-                                    <center>
-                                        <p style="background-color: #28a745; max-width: 100px;padding: 5px;color: white;border-radius: 7px;">คืนแล้ว</p>
-                                    </center>
+                                    A123
                                 </td>
                             </tbody>
                         <?php } ?>
@@ -146,7 +223,30 @@
 
 
 </body>
+
 <script>
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
     // Get the button
     // let mybutton = document.getElementById("myBtn");
 
