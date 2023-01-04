@@ -17,8 +17,8 @@ services:
         restart: always
         environment:
             MYSQL_ROOT_PASSWORD: 12345678
-            MYSQL_DATABASE: borrow
-            MYSQL_USER: borrow
+            MYSQL_DATABASE: ceit
+            MYSQL_USER: ceit
             MYSQL_PASSWORD: 12345678
         ports:
             - "9906:3306"
