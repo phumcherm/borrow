@@ -25,14 +25,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet">
     <link href="http://demo-freelancer-crm.quickadminpanel.com/css/custom.css" rel="stylesheet">-->
-   
 
-    
-  
 
-    
-    
- 
+
+
+
+
+
+
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -169,7 +169,7 @@
         #navbarSupportedContent>ul>li.active>a {
             color: #EC5A0F;
             background-color: transparent;
-            
+
         }
 
         #navbarSupportedContent a:not(:only-child):after {
@@ -359,7 +359,7 @@
     <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.colVis.min.js"></script>
     <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-    
+
     <!--  navbarเด้ง -->
     <script>
         function test() {
@@ -425,23 +425,23 @@
 
         // Add active class on another page linked
         // ==========================================
-       /*  $(window).on('load', function() {
-            var current = location.pathname;
-            console.log(current);
-            $('#navbarSupportedContent ul li a').each(function() {
-                var $this = $(this);
-                // if the current path is like this link, make it active
-                if ($this.attr('href').indexOf(current) !== -1) {
-                    $this.parent().addClass('active');
-                    $this.parents('.menu-submenu').addClass('show-dropdown');
-                    $this.parents('.menu-submenu').parent().addClass('active');
-                } else {
-                    $this.parent().removeClass('active');
-                }
-            })
-        }); */
+        /*  $(window).on('load', function() {
+             var current = location.pathname;
+             console.log(current);
+             $('#navbarSupportedContent ul li a').each(function() {
+                 var $this = $(this);
+                 // if the current path is like this link, make it active
+                 if ($this.attr('href').indexOf(current) !== -1) {
+                     $this.parent().addClass('active');
+                     $this.parents('.menu-submenu').addClass('show-dropdown');
+                     $this.parents('.menu-submenu').parent().addClass('active');
+                 } else {
+                     $this.parent().removeClass('active');
+                 }
+             })
+         }); */
     </script>
-    
+
 
 </body>
 
