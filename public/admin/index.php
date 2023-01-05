@@ -1,6 +1,4 @@
-<?php 
-require_once "../app/model/server.php"
-?>
+
 <!DOCTYPE html>
 <html>
 
