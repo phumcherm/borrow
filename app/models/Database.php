@@ -1,8 +1,8 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "1234";
+$servername = "172.17.0.1:9906";
+$username = "ceitdb";
+$password = "12345678";
 	try {
         $conn = new PDO("mysql:host=$servername;dbname=ceitdb", $username, $password);
         // set the PDO error mode to exception

@@ -1,8 +1,8 @@
 <?php
 class DBController {
-	private $host = "localhost";
-	private $user = "root";
-	private $password = "1234";
+	private $host = "172.17.0.1:9906";
+	private $user = "ceitdb";
+	private $password = "12345678";
 	private $database = "ceitdb";
 	private $conn;
 

@@ -27,7 +27,8 @@
 </style>
 <main>
     <div id="reader"></div>
-    <div id="result"></div>
+    <!-- <div id="result"></div> -->
+    <input type="text" id="result" name="result">
 </main>
 <script>
     const scanner = new Html5QrcodeScanner('reader', {
@@ -44,11 +45,7 @@
     function success(result) {
         const itemCode = document.getElementById("result");
 
-        document.getElementById('result').innerHTML = `
-                                <h2>Success!</h2>
-                                <a href="borrow_user.php?code=${result}"> ${result}</a>
-                                `;
-
+        document.getElementById('result').value = (result);
         // var itemCode = $result
         // document.getElementById("demo").innerHTML = (result);
         // document.(itemCode);
