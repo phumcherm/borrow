@@ -1,4 +1,7 @@
-
+<?php
+require_once "../app/models/Database.php";
+require_once "../app/models/function.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -37,50 +40,93 @@
         <br>
         <div style="max-width: 1600px;margin-left: auto;">
             <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;">
-                <thead class="table-dark">
-                    <th>
-                        <center>ลำดับ</center>
-                    </th>
-                    <th>
-                        <center>รายการ</center>
-                    </th>
-                    <th>
-                        <center>รุ่น</center>
-                    </th>
-                    <th>
-                        <center>ยี่ห้อ</center>
-                    </th>
-                    <th>
-                        <center>ประเภท</center>
-                    </th>
-                    <th>
-                        <center>จำนวน</center>
-                    </th>
-                </thead>
-                <?php for ($i = 0; $i < 25; $i++) {
-                ?>
+            <div>
+                <table id="datatable" class="table">
+                    <thead class="table-dark">
+                        <th>
+                            <center>ลำดับ</center>
+                        </th>
+                       
+                       
+                        <th>
+                            <center>รายการ</center>
+                        </th>
+                        <th>
+                            <center>ยี่ห้อ / รุ่น</center>
+                        </th>
+                       
+                        <th>
+                            <center>ห้อง</center>
+                        </th>
+                        <!-- <th>
+                            <center>status</center>
+                        </th>
+                        <th>
+                            <center>notation</center>
+                        </th>
+                        <th>
+                            <center>misConfirmer</center>
+                        </th>
+                        <th>
+                            <center>organization</center>
+                        </th>
+                        <th>
+                            <center>type</center>
+                        </th>
+                        <th>
+                            <center>active</center>
+                        </th> -->
+
+                    </thead>
+
                     <tbody>
-                        <td>
-                            <center><?php echo $i ?></center>
+                        <?php
+
+
+                        $selectAll = new DB_con();
+                        $sql = $selectAll->selectAll();
+                        while ($row = mysqli_fetch_array($sql)) {
+                        ?>
+                            <td>
+                                <center><?php echo $row["id"] ?></center>
+                            </td>
+                           
+                           
+                            <td>
+                                <center><?php echo $row["detail"] ?></center>
+                            </td>
+                           
+                            <td>
+                                <center><?php echo $row["brand"] ?></center>
+                            </td>
+                            <td>
+                                <center><?php echo $row["room"] ?></center>
+                            </td>
+                            <!-- <td>
+                            <center><?php echo $row["status"] ?></center>
                         </td>
                         <td>
-                            <center>แลปท็อป</center>
+                            <center><?php echo $row["notation"] ?></center>
                         </td>
                         <td>
-                            <center>Pavillion</center>
+                            <center><?php echo $row["misConfirmer"] ?></center>
                         </td>
                         <td>
-                            <center>HP</center>
+                            <center><?php echo $row["organization"] ?></center>
                         </td>
                         <td>
-                            <center>อุปกรณ์</center>
+                            <center><?php echo $row["type"] ?></center>
                         </td>
                         <td>
-                            <center>1</center>
-                        </td>
+                            <center><?php echo $row["active"] ?></center>
+                        </td> -->
                     </tbody>
                 <?php } ?>
-            </table>
+                </table>
+            </div>
+          
+                   
+           
         </div>
     </div>
 
@@ -108,5 +154,4 @@
         }
     </script>
 </body>
-
 </html>
