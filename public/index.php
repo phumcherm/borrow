@@ -1,7 +1,24 @@
 <?php
 require_once "../app/models/Database.php";
 require_once "../app/models/function.php";
+
+
+$con = mysqli_connect('localhost', 'root', '', 'pagination');
+$perpage = 5;
+if (isset($_GET['page'])) {
+$page = $_GET['page'];
+} else {
+$page = 1;
+}
+
+$start = ($page - 1) * $perpage;
+
+$sql = "select * from products limit {$start} , {$perpage} ";
+$query = mysqli_query($con, $sql);
+
 ?>
+
+
 <!DOCTYPE html>
 <html>
 
