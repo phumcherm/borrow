@@ -3,7 +3,7 @@
 require_once "../app/models/function.php";
 // require_once "../app/models/Database.php";
 
-$con=mysqli_connect("172.17.0.1:9906","ceitdb","12345678","ceitdb");
+$con = mysqli_connect("172.17.0.1:9906", "ceitdb", "12345678", "ceitdb");
 
 ?>
 <!DOCTYPE html>
@@ -44,8 +44,8 @@ $con=mysqli_connect("172.17.0.1:9906","ceitdb","12345678","ceitdb");
         <br>
         <div style="max-width: 1600px;margin-left: auto;">
             <div>
-            <li class="items "><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Game Name.." title="Type in a name"></li>
-            
+                <li class="items "><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Game Name.." title="Type in a name"></li>
+
                 <table id="datatable" class="table">
                     <thead class="table-dark">
                         <th>
@@ -106,7 +106,7 @@ $con=mysqli_connect("172.17.0.1:9906","ceitdb","12345678","ceitdb");
 
 
                     while ($row = mysqli_fetch_array($sql)) {
- 
+
                     ?>
                         <tbody>
 
@@ -170,27 +170,30 @@ $con=mysqli_connect("172.17.0.1:9906","ceitdb","12345678","ceitdb");
                 captionText.innerHTML = element.alt;
             }
         </script>
-          <script>
-        function myFunction() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("datatable");
+        <script>
+            function myFunction() {
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("datatable");
 
-            tr = table.getElementsByTagName("tr"); 
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[3];
-                if (td) {
-                    txtValue = td.textContent || td.innerText; 
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
+                tr = table.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                    td0 = tr[i].getElementsByTagName("td")[0];
+                    td3 = tr[i].getElementsByTagName("td")[3];
+                    if (td3 || td0) {
+                        var td3Value = td3.textContent || td3.innerText;
+                        var td0Value = td0.textContent || td0.innerText;
+                        if (td3Value.toUpperCase().indexOf(filter) > -1 || td0Value.toUpperCase().indexOf(filter) > -1 ) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+
+                    } 
                 }
             }
-        }
-    </script>
+        </script>
 </body>
 
 </html>
