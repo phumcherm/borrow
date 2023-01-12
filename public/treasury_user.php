@@ -41,7 +41,7 @@ require_once "../app/models/function.php";
         <div style="max-width: 1600px;margin-left: auto;">
             <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;">
             <div>
-                <table id="datatable" class="table">
+                <table id="datatable" class="table ">
                     <thead class="table-dark">
                         <th>
                             <center>ลำดับ</center>
@@ -57,6 +57,9 @@ require_once "../app/models/function.php";
                        
                         <th>
                             <center>ห้อง</center>
+                        </th>
+                        <th>
+                            <center>สถานะ</center>
                         </th>
                         <!-- <th>
                             <center>status</center>
@@ -79,7 +82,7 @@ require_once "../app/models/function.php";
 
                     </thead>
 
-                    <tbody>
+                    <tbody >
                         <?php
 
 
@@ -102,6 +105,9 @@ require_once "../app/models/function.php";
                             <td>
                                 <center><?php echo $row["room"] ?></center>
                             </td>
+                            <td>
+                            <center><?php echo $row["active"] ?></center>
+                        </td>
                             <!-- <td>
                             <center><?php echo $row["status"] ?></center>
                         </td>
@@ -117,9 +123,7 @@ require_once "../app/models/function.php";
                         <td>
                             <center><?php echo $row["type"] ?></center>
                         </td>
-                        <td>
-                            <center><?php echo $row["active"] ?></center>
-                        </td> -->
+                         -->
                     </tbody>
                 <?php } ?>
                 </table>
