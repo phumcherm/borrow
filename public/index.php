@@ -1,6 +1,10 @@
 <?php
-require_once "../app/models/Database.php";
+// require_once "../app/models/Database.php";
 require_once "../app/models/function.php";
+// require_once "../app/models/Database.php";
+
+$con=mysqli_connect("172.17.0.1:9906","ceitdb","12345678","ceitdb");
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,6 +44,8 @@ require_once "../app/models/function.php";
         <br>
         <div style="max-width: 1600px;margin-left: auto;">
             <div>
+            <li class="items "><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Game Name.." title="Type in a name"></li>
+            
                 <table id="datatable" class="table">
                     <thead class="table-dark">
                         <th>
@@ -92,15 +98,18 @@ require_once "../app/models/function.php";
                         </th> -->
 
                     </thead>
-
-                    <tbody>
-                        <?php
+                    <?php
 
 
-                        $selectAll = new DB_con();
-                        $sql = $selectAll->selectAll();
-                        while ($row = mysqli_fetch_array($sql)) {
-                        ?>
+                    $selectAll = new DB_con();
+                    $sql = $selectAll->selectAll();
+
+
+                    while ($row = mysqli_fetch_array($sql)) {
+ 
+                    ?>
+                        <tbody>
+
                             <td>
                                 <center><?php echo $row["id"] ?></center>
                             </td>
@@ -131,26 +140,9 @@ require_once "../app/models/function.php";
                             <td>
                                 <center><?php echo $row["room"] ?></center>
                             </td>
-                            <!-- <td>
-                            <center><?php echo $row["status"] ?></center>
-                        </td>
-                        <td>
-                            <center><?php echo $row["notation"] ?></center>
-                        </td>
-                        <td>
-                            <center><?php echo $row["misConfirmer"] ?></center>
-                        </td>
-                        <td>
-                            <center><?php echo $row["organization"] ?></center>
-                        </td>
-                        <td>
-                            <center><?php echo $row["type"] ?></center>
-                        </td>
-                        <td>
-                            <center><?php echo $row["active"] ?></center>
-                        </td> -->
-                    </tbody>
-                <?php } ?>
+
+                        </tbody>
+                    <?php } ?>
                 </table>
             </div>
         </div>
@@ -178,6 +170,27 @@ require_once "../app/models/function.php";
                 captionText.innerHTML = element.alt;
             }
         </script>
+          <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("datatable");
+
+            tr = table.getElementsByTagName("tr"); 
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[3];
+                if (td) {
+                    txtValue = td.textContent || td.innerText; 
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
