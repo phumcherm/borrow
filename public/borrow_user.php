@@ -1,4 +1,7 @@
-<? session_start(); ?>
+<? session_start(); ?><?php
+                        require_once "../app/models/Database.php";
+                        require_once "../app/models/function.php";
+                        ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +18,7 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+
 </head>
 <style>
     input {
@@ -34,7 +37,7 @@
         width: auto;
     }
 
-   /* a:hover {
+    /* a:hover {
         background-color: #dbd6d6;
         color: white;
         text-decoration: none;
@@ -119,7 +122,125 @@
                         </div>
                     </center>
 
-                    <? require "../app/models/table.php"?>
+                    
+                    <div style="max-width: 1600px;margin-left: auto;">
+                        <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
+                        <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;">
+                            <thead class="table-dark">
+                                <th>
+                                    <center>id </center>
+                                </th>
+                                <th>
+                                    <center>updateTime</center>
+                                </th>
+                                <th>
+                                    <center>itemCode</center>
+                                </th>
+                                <th>
+                                    <center>detail</center>
+                                </th>
+                                <th>
+                                    <center>checkInDate</center>
+                                </th>
+                                <th>
+                                    <center>brand</center>
+                                </th>
+                                <th>
+                                    <center>serialNumber</center>
+                                </th>
+                                <th>
+                                    <center>price</center>
+                                </th>
+                                <th>
+                                    <center>refDoc</center>
+                                </th>
+                                <th>
+                                    <center>room</center>
+                                </th>
+                                <!-- <th>
+                <center>ลำดับ</center>
+            </th>
+            <th>
+                <center>รายการ</center>
+            </th>
+            <th>
+                <center>ห้อง-แผนก</center>
+            </th>
+            <th>
+                <center>วันที่ยืม</center>
+            </th>
+            <th>
+                <center>วันที่คืน</center>
+            </th> -->
+                            </thead>
+                            <tbody id="data">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <script>
+                        var ajax = new XMLHttpRequest();
+                        var method = "GET";
+                        var url = "data.php";
+                        var asynchronous = true;
+
+                        ajax.open(method, url, asynchronous);
+                        ajax.send();
+                        ajax.onreadystatechange = function()
+                        {
+                            if(this.readyState == 4 && this.status == 200)
+                            {
+                                var data = JSON.parse(this.responseText);
+                                console.log(data);
+
+                                var html = "";
+
+                                for (var a = 0; a < data.length; a++)
+                                {
+                                    var id = data[a].id;
+                                    var updateTime = data[a].updateTime;
+                                    var itemCode = data[a].itemCode;
+                                    var detail = data[a].detail;
+                                    var checkInDate = data[a].checkInDate;
+                                    var brand = data[a].brand;
+                                    var serialNumber = data[a].serialNumber;
+                                    var price = data[a].price;
+                                    var refDoc = data[a].refDoc;
+                                    var room = data[a].room;
+
+                                    html += "<tr>";
+                                        html += "<td>" + id + "</td>";
+                                        html += "<td>" + updateTime + "</td>";
+                                        html += "<td>" + itemCode + "</td>";
+                                        html += "<td>" + detail + "</td>";
+                                        html += "<td>" + checkInDate + "</td>";
+                                        html += "<td>" + brand + "</td>";
+                                        html += "<td>" + serialNumber + "</td>";
+                                        html += "<td>" + price + "</td>";
+                                        html += "<td>" + refDoc + "</td>";
+                                        html += "<td>" + room + "</td>";
+                                    html += "</tr>";
+
+                                }
+                                
+                                document.getElementById("data").innerHTML = html;
+                            }
+                        }
+                    </script>
+                    <!-- <script>
+                        $(document).ready(function() {
+
+                            $.ajax({
+                                type: "GET",
+                                url: "data.php",
+                                dataType: "json",
+                                success: function(data) {
+                                    $('#my-data').html(data);
+                                }
+                            });
+                        });
+                    </script> -->
                     <br>
                     <button type="submit">ยืนยันทั้งหมด</button>
                 </form>
