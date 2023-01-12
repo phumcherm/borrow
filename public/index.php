@@ -1,6 +1,7 @@
 <?php
-require_once "../app/models/Database.php";
+// require_once "../app/models/Database.php";
 require_once "../app/models/function.php";
+<<<<<<< HEAD
 
 
 $con = mysqli_connect('localhost', 'root', '', 'pagination');
@@ -15,6 +16,11 @@ $start = ($page - 1) * $perpage;
 
 $sql = "select * from products limit {$start} , {$perpage} ";
 $query = mysqli_query($con, $sql);
+=======
+// require_once "../app/models/Database.php";
+
+$con=mysqli_connect("172.17.0.1:9906","ceitdb","12345678","ceitdb");
+>>>>>>> a0352478f648c165eee74e0bb57e0c8ca250dfa4
 
 ?>
 
@@ -57,6 +63,8 @@ $query = mysqli_query($con, $sql);
         <br>
         <div style="max-width: 1600px;margin-left: auto;">
             <div>
+            <li class="items "><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Game Name.." title="Type in a name"></li>
+            
                 <table id="datatable" class="table">
                     <thead class="table-dark">
                         <th>
@@ -109,15 +117,18 @@ $query = mysqli_query($con, $sql);
                         </th> -->
 
                     </thead>
-
-                    <tbody>
-                        <?php
+                    <?php
 
 
-                        $selectAll = new DB_con();
-                        $sql = $selectAll->selectAll();
-                        while ($row = mysqli_fetch_array($sql)) {
-                        ?>
+                    $selectAll = new DB_con();
+                    $sql = $selectAll->selectAll();
+
+
+                    while ($row = mysqli_fetch_array($sql)) {
+ 
+                    ?>
+                        <tbody>
+
                             <td>
                                 <center><?php echo $row["id"] ?></center>
                             </td>
@@ -148,26 +159,9 @@ $query = mysqli_query($con, $sql);
                             <td>
                                 <center><?php echo $row["room"] ?></center>
                             </td>
-                            <!-- <td>
-                            <center><?php echo $row["status"] ?></center>
-                        </td>
-                        <td>
-                            <center><?php echo $row["notation"] ?></center>
-                        </td>
-                        <td>
-                            <center><?php echo $row["misConfirmer"] ?></center>
-                        </td>
-                        <td>
-                            <center><?php echo $row["organization"] ?></center>
-                        </td>
-                        <td>
-                            <center><?php echo $row["type"] ?></center>
-                        </td>
-                        <td>
-                            <center><?php echo $row["active"] ?></center>
-                        </td> -->
-                    </tbody>
-                <?php } ?>
+
+                        </tbody>
+                    <?php } ?>
                 </table>
             </div>
         </div>
@@ -195,6 +189,27 @@ $query = mysqli_query($con, $sql);
                 captionText.innerHTML = element.alt;
             }
         </script>
+          <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("datatable");
+
+            tr = table.getElementsByTagName("tr"); 
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[3];
+                if (td) {
+                    txtValue = td.textContent || td.innerText; 
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
