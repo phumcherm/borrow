@@ -1,26 +1,23 @@
 <?php
 // require_once "../app/models/Database.php";
 require_once "../app/models/function.php";
-<<<<<<< HEAD
+/* // require_once "../app/models/Database.php"; */
 
 
-$con = mysqli_connect('localhost', 'root', '', 'pagination');
-$perpage = 5;
+$con = mysqli_connect("172.19.0.1:9906", "ceitdb", "12345678", "ceitdb");
+
 if (isset($_GET['page'])) {
-$page = $_GET['page'];
+    $page = $_GET['page'];
 } else {
-$page = 1;
+    $page = 1;
 }
 
-$start = ($page - 1) * $perpage;
+$num_par_page = 49;
+$start_from = ($page - 1) * 49;
 
-$sql = "select * from products limit {$start} , {$perpage} ";
-$query = mysqli_query($con, $sql);
-=======
-// require_once "../app/models/Database.php";
 
-$con=mysqli_connect("172.17.0.1:9906","ceitdb","12345678","ceitdb");
->>>>>>> a0352478f648c165eee74e0bb57e0c8ca250dfa4
+$query = "SELECT * FROM itemdata limit $start_from,$num_par_page";
+$result_l = mysqli_query($con, $query);
 
 ?>
 
@@ -33,12 +30,54 @@ $con=mysqli_connect("172.17.0.1:9906","ceitdb","12345678","ceitdb");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <link rel="stylesheet" href="/borrow/public/css/style.css">
+    <link rel="stylesheet" href="/borrow/public/css/icons.png">
+ 
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <style>
+   
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/icons.png');
+  background-position: 5px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 20px;
+  padding: 12px 5px 12px 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 6px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+</style>
 
 </head>
 
@@ -54,52 +93,85 @@ $con=mysqli_connect("172.17.0.1:9906","ceitdb","12345678","ceitdb");
     ?>
 
 
-    <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px;">
+    <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
         <div>
             <h2 style="color: #ff5722;font-family: SUT_Bold;">
                 ▶ ยืม-คืนล่าสุดของคุณ
             </h2>
         </div>
         <br>
-        <div style="max-width: 1600px;margin-left: auto;">
-            <div>
-            <li class="items "><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Game Name.." title="Type in a name"></li>
-            
-                <table id="datatable" class="table">
-                    <thead class="table-dark">
-                        <th>
-                            <center>id </center>
-                        </th>
-                        <th>
-                            <center>updateTime</center>
-                        </th>
-                        <th>
-                            <center>itemCode</center>
-                        </th>
-                        <th>
-                            <center>detail</center>
-                        </th>
-                        <th>
-                            <center>checkInDate</center>
-                        </th>
-                        <th>
-                            <center>brand</center>
-                        </th>
-                        <th>
-                            <center>serialNumber</center>
-                        </th>
-                        <th>
-                            <center>price</center>
-                        </th>
-                        <th>
-                            <center>refDoc</center>
-                        </th>
-                        <th>
-                            <center>room</center>
-                        </th>
-                        <!-- <th>
+
+       
+        <center>
+        <input class="w3-input " type="text" id="myInput" onkeyup="myFunction()"  placeholder="Search .." style="max-width: 700px; margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;" title="Type in a name">
+        </center>
+
+        <br>
+        <div style="max-width: 1600px;margin-left: auto; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px; border-radius: 7px;">
+
+            <!-- <center>
+                    <li class="items "><input type="text" id="myInput" onkeyup="myFunction()"" title="Type in a name"></li>
+                </center> -->
+            <!-- 
+                <?php
+                /*  $output = "";
+                $pr_query = "SELECT * FROM itemdata";
+                $pr_result = mysqli_query($con, $pr_query);
+                $total_record = mysqli_num_rows($pr_result);
+                $total_page = ceil($total_record / $num_par_page);
+                /* echo $total_page; 
+
+
+
+                if ($page > 1) {
+                    echo "<a href='index.php?page=" . ($page - 1) . "' class='btn btn-danger'>Provious</a>";
+                }
+                for ($i = 1; $i < $total_page; $i++) {
+                    echo "<a href='index.php?page=" . $i . "' class='btn btn-primary'>$i</a>";
+                }
+                if ($i > $page) {
+                    echo "<a href='index.php?page=" . ($page + 1) . "' class='btn btn-danger'>Next</a>";
+                } */
+
+                ?>
+ -->
+
+            <table id="datatable" class="table">
+                <thead class="table-dark">
+                    <th>
+                        <center>id </center>
+                    </th>
+                    <th>
+                        <center>updateTime</center>
+                    </th>
+                    <th>
+                        <center>itemCode</center>
+                    </th>
+                    <th>
+                        <center>detail</center>
+                    </th>
+                    <th>
+                        <center>checkInDate</center>
+                    </th>
+                    <th>
+                        <center>brand</center>
+                    </th>
+                    <th>
+                        <center>serialNumber</center>
+                    </th>
+                    <th>
+                        <center>price</center>
+                    </th>
+                    <th>
+                        <center>refDoc</center>
+                    </th>
+                    <th>
+                        <center>room</center>
+                    </th>
+                    <th>
                             <center>status</center>
                         </th>
+                    <!-- 
                         <th>
                             <center>notation</center>
                         </th>
@@ -116,91 +188,95 @@ $con=mysqli_connect("172.17.0.1:9906","ceitdb","12345678","ceitdb");
                             <center>active</center>
                         </th> -->
 
-                    </thead>
-                    <?php
+                </thead>
+                <?php
 
 
-                    $selectAll = new DB_con();
-                    $sql = $selectAll->selectAll();
+                $selectAll = new DB_con();
+                $sql = $selectAll->selectAll();
 
 
-                    while ($row = mysqli_fetch_array($sql)) {
- 
-                    ?>
-                        <tbody>
+                while ($row = mysqli_fetch_assoc($result_l)) {
 
-                            <td>
-                                <center><?php echo $row["id"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["updateTime"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["itemCode"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["detail"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["checkInDate"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["brand"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["serialNumber"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["price"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["refDoc"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["room"] ?></center>
-                            </td>
+                ?>
+                    <tbody>
 
-                        </tbody>
-                    <?php } ?>
-                </table>
-            </div>
+                        <td>
+                            <center><?php echo $row["id"] ?></center>
+                        </td>
+                        <td>
+                            <center><?php echo $row["updateTime"] ?></center>
+                        </td>
+                        <td>
+                            <center><?php echo $row["itemCode"] ?></center>
+                        </td>
+                        <td>
+                            <center><?php echo $row["detail"] ?></center>
+                        </td>
+                        <td>
+                            <center><?php echo $row["checkInDate"] ?></center>
+                        </td>
+                        <td>
+                            <center><?php echo $row["brand"] ?></center>
+                        </td>
+                        <td>
+                            <center><?php echo $row["serialNumber"] ?></center>
+                        </td>
+                        <td>
+                            <center><?php echo $row["price"] ?></center>
+                        </td>
+                        <td>
+                            <center><?php echo $row["refDoc"] ?></center>
+                        </td>
+                        <td>
+                            <center><?php echo $row["room"] ?></center>
+                        </td>
+                        <td>
+                            <center><?php echo $row["status"] ?></center>
+                        </td>
+                        
+
+                    </tbody>
+                <?php } ?>
+            </table>
         </div>
+    </div>
 
-        <!-- Sidebar/menu -->
+    <!-- Sidebar/menu -->
 
-        <!-- Top menu on small screens -->
-        <script>
-            // Script to open and close sidebar
-            function w3_open() {
-                document.getElementById("mySidebar").style.display = "block";
-                document.getElementById("myOverlay").style.display = "block";
-            }
+    <!-- Top menu on small screens -->
+    <script>
+        // Script to open and close sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
 
-            function w3_close() {
-                document.getElementById("mySidebar").style.display = "none";
-                document.getElementById("myOverlay").style.display = "none";
-            }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
 
-            // Modal Image Gallery
-            function onClick(element) {
-                document.getElementById("img01").src = element.src;
-                document.getElementById("modal01").style.display = "block";
-                var captionText = document.getElementById("caption");
-                captionText.innerHTML = element.alt;
-            }
-        </script>
-          <script>
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+    </script>
+    <script>
         function myFunction() {
             var input, filter, table, tr, td, i, txtValue;
             input = document.getElementById("myInput");
             filter = input.value.toUpperCase();
             table = document.getElementById("datatable");
 
-            tr = table.getElementsByTagName("tr"); 
+            tr = table.getElementsByTagName("tr");
             for (i = 0; i < tr.length; i++) {
                 td = tr[i].getElementsByTagName("td")[3];
                 if (td) {
-                    txtValue = td.textContent || td.innerText; 
+                    txtValue = td.textContent || td.innerText;
                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
                         tr[i].style.display = "";
                     } else {
@@ -210,6 +286,17 @@ $con=mysqli_connect("172.17.0.1:9906","ceitdb","12345678","ceitdb");
             }
         }
     </script>
+    <!-- 
+        <script>
+            export default {
+                methods: {
+                    linkGen(pageNum) {
+                        return pageNum === 1 ? '?' : `?page=${pageNum}`
+                    }
+                }
+            }
+        </script> -->
+
 </body>
 
 </html>
