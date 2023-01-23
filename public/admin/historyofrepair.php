@@ -7,21 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>คืนวัสดุ ครุภัณฑ์</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-   <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
 
 </head>
 <style>
     input {
         border-radius: 7px;
         border: none;
-        width: 200px;
-        height: 40px;
+        width: auto;
+        height: auto;
         padding: 20px;
         margin: 15px auto 15px auto;
         text-align: center;
@@ -32,8 +31,8 @@
         margin-right: auto;
         width: auto;
     }
-    
-   /* a:hover {
+
+    /* a:hover {
         background-color: #dbd6d6;
         color: white;
         text-decoration: none;
@@ -69,6 +68,10 @@
     /* center a:hover {
         background-color: #ffa185;
     } */
+    li {
+        color: #000;
+        cursor: pointer;
+    }
 </style>
 
 <body>
@@ -80,79 +83,93 @@
     require "nav_admin.php";
     ?>
 
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" style="background-color: #fff;">
+            <li class="breadcrumb-item active"><a href="report_admin.php">หน้าเเรกรายงาน</a></li>
+            <li class="breadcrumb-item "><a href="historyofrepair.php">ประวัติการเเจ้งซ่อม</a></li>
+
+        </ol>
+    </nav>
+
     <div>
 
-        <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px;">
+        <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
             <h2 style="color: #ff5722;font-family: SUT_Bold;">
-                ▶ ประวัติการเเจ้งซ่อม
+            <i class="fa fa-caret-right" style="font-size:48px"></i>ประวัติการเเจ้งซ่อม
             </h2>
-            <div style="max-width: 1300px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
-              
+            <div style="max-width: 1300px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
 
-                <div style="max-width: 1600px;margin-left: auto;">
-                    <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
-                    <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center;">
-                        <thead class="table-dark">
-                            <th>
-                                ลำดับ
-                            </th>
-                            <th>
-                                หมวดหมู่
-                            </th>
-                            <th>
-                                เลขครุภัณฑ์
-                            </th>
-                            <th>
-                                รายการ
-                            </th>
-                            <th>
-                                ยี่ห้อ
-                            </th>
-                            <th>
-                                รุ่น
-                            </th>
-                            <th>
-                                
-                            </th>
-                        </thead>
-                        <?php for ($i = 1; $i < 6; $i++) {
-                        ?>
-                            <tbody>
-                                <td>
-                                    <?php echo $i ?>
-                                </td>
-                                <td>
-                                    วัสดุ
-                                </td>
-                                <td>
-                                    1000221
-                                </td>
-                                <td>
-                                    โทรทัศน์
-                                </td>
-                                <td>
-                                    SONY
-                                </td>
-                                <td>
-                                    A123
-                                </td>
-                                <td>
-                                    <center>
-                                        <a href="detailhistoryofrepair.php" style="background-color: #5B5B5B; max-width: 100px;padding: 5px;color: white;border-radius: 7px;">รายละเอียด</a>
-                                    </center>
-                                </td>
-                            </tbody>
-                        <?php } ?>
-                    </table>
+                <div class="table-responsive">
+                    <div style="max-width: 1600px;margin-left: auto;">
+                        <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
+                        <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+                            <thead class="table-dark">
+                                <th>
+                                    ลำดับ
+                                </th>
+                                <th>
+                                    หมวดหมู่
+                                </th>
+                                <th>
+                                    เลขครุภัณฑ์
+                                </th>
+                                <th>
+                                    รายการ
+                                </th>
+                                <th>
+                                    ยี่ห้อ
+                                </th>
+                                <th>
+                                    รุ่น
+                                </th>
+                                <th>
+
+                                </th>
+                            </thead>
+                            <?php for ($i = 1; $i < 6; $i++) {
+                            ?>
+                                <tbody>
+                                    <td>
+                                        <?php echo $i ?>
+                                    </td>
+                                    <td>
+                                        วัสดุ
+                                    </td>
+                                    <td>
+                                        1000221
+                                    </td>
+                                    <td>
+                                        โทรทัศน์
+                                    </td>
+                                    <td>
+                                        SONY
+                                    </td>
+                                    <td>
+                                        A123
+                                    </td>
+
+                                    <td>
+                                        <div class="w3-center">
+                                            <a href="detailhistoryofrepair.php" type="button" style="  background-color:#5B5B5B; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">รายละเอียด</a>
+
+                                        </div>
+                                        <!--  <center>
+                                        <a href="detailhistoryofrepair.php" style=" width: auto; height: auto; background-color: #5B5B5B;padding: 2px;color: white;border-radius: 7px;">รายละเอียด</a>
+                                    </center> -->
+                                    </td>
+
+                                </tbody>
+                            <?php } ?>
+                        </table>
+                    </div>
+                    <br>
                 </div>
                 <br>
-            </div>
-            <br>
 
+
+            </div>
 
         </div>
-
-    </div>
 
 
 </body>
@@ -181,8 +198,5 @@
 </script>
 <!-- <script src="script.js"></script> -->
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </html>
