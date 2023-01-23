@@ -48,7 +48,7 @@
         gtag('config', 'UA-79616612-8');
     </script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -316,42 +316,44 @@
 
 
 <body>
+    
+            
+                <nav class="navbar navbar-expand-custom navbar-mainbg">
+                    <a class="navbar-brand " href="#">
+                        <h3 style="margin-left: 60px;">E - Borrow
+                            <!-- Right-sided navbar links. Hide them on small screens -->
+                        </h3>
+                    </a>
+                    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars text-white"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <div class="hori-selector">
+                                <div class="left"></div>
+                                <div class="right"></div>
+                            </div>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.php"><i class="fas fa-tachometer-alt"></i>หน้าหลัก</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="borrow_user.php"><i class="far fa-address-book"></i>ยืมวัสดุ ครุภัณฑ์</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="back_user.php"><i class="far fa-clone"></i>คืนวัสดุ ครุภัณฑ์</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="treasury_user.php"><i class="far fa-calendar-alt"></i>คลังวัสดุ ครุภัณฑ์</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
+                            </li>
 
-    <nav class="navbar navbar-expand-custom navbar-mainbg">
-        <a class="navbar-brand " href="#">
-            <h3 style="margin-left: 60px;">E - Borrow
-                <!-- Right-sided navbar links. Hide them on small screens -->
-            </h3>
-        </a>
-        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars text-white"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <div class="hori-selector">
-                    <div class="left"></div>
-                    <div class="right"></div>
-                </div>
-                <li class="nav-item-active">
-                    <a class="nav-link" href="index.php"><i class="fas fa-tachometer-alt"></i>หน้าหลัก</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="borrow_user.php"><i class="far fa-address-book"></i>ยืมวัสดุ ครุภัณฑ์</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="back_user.php"><i class="far fa-clone"></i>คืนวัสดุ ครุภัณฑ์</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="treasury_user.php"><i class="far fa-calendar-alt"></i>คลังวัสดุ ครุภัณฑ์</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
-                </li>
-
-            </ul>
-        </div>
-    </nav>
-
+                        </ul>
+                    </div>
+                </nav>
+           
+     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
@@ -402,7 +404,7 @@
             }, 500);
         });
         $(".navbar-toggler").click(function() {
-            $(".navbar-collapse").slideToggle(300);
+            $(".navbar-collapse").slideToggle(1000);
             setTimeout(function() {
                 test();
             });
@@ -415,7 +417,8 @@
 
             // Account for home page with empty path
             if (path == '') {
-                path = 'index.html';
+                path = '';
+                
             }
 
             var target = $('#navbarSupportedContent ul li a[href="' + path + '"]');
