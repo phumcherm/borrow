@@ -4,7 +4,7 @@
 <head>
     <title>E - Borrow</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
   
@@ -48,7 +48,7 @@
             letter-spacing: 1px;
             margin-top: 0;
             margin-bottom: 0;
-            font-size: 8em;
+            font-size: 4em;
         }
 
         h2,
@@ -111,13 +111,20 @@
 
 <body>
     <div class="fullscreen-block colorwhite">
-        <section><b>
-                <h1>E - Borrow</h1>
-            </b></section>
+    <br><br>
+        <section class="w3-center">
+            <div><b>
+                    <h1>E - Borrow</h1>
+                </b></div>
+        </section>
 
-        <section><b>
-                <h3>ระบบ ยืม - คืน วัสดุและครุภัณฑ์ฝ่ายเทคนิควิศวกรรม</h3>
-            </b></section>
+        <section class="w3-center">
+            <div><b>
+                    <h3>ระบบ ยืม - คืน วัสดุและครุภัณฑ์ฝ่ายเทคนิควิศวกรรม</h3>
+                </b></div>
+        </section>
+
+        <br><br><br>
         <div style="max-width: 400px; margin: 15px auto 15px auto; ">
             <div>
 
@@ -147,6 +154,7 @@
                         <a href="index.php" type="button" style="  background-color: #EC5A0F; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">เข้าสู่ระบบ</a>
                                   
                         </div> 
+                        <br>
                     </div>
                 </form>
             </div>
