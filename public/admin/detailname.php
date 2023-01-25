@@ -10,11 +10,10 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-
 </head>
+
 <style>
     input {
         border-radius: 7px;
@@ -77,9 +76,7 @@
 
 <body>
     <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
-    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top"><i class="fas fa-arrow-up"></i></button>
     <?php
     require "nav_admin.php";
     ?>
@@ -93,7 +90,6 @@
     </nav>
 
     <div>
-
         <div style="background-color: #827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
             <h2 style="color: #fff;font-family: SUT_Bold;">
                 <?php {
@@ -109,62 +105,58 @@
                     </tbody>
                 <?php } ?>
             </h2>
-           <br><br>
-                <div class="table-responsive">
+            <br><br>
+            <div class="table-responsive">
+                <div style="max-width: 1600px;margin-left: auto; ">
+                    <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
+                    <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+                        <thead class="table-dark">
+                            <th>
+                                ลำดับ
+                            </th>
+                            <th>
+                                เลขครุภัณฑ์
+                            </th>
+                            <th>
+                                รายการ
+                            </th>
+                            <th>
+                                วันที่ยืม
+                            </th>
+                            <th>
+                                วันที่คืน
+                            </th>
 
-                    <div style="max-width: 1600px;margin-left: auto; ">
-                        <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
-                        <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-                            <thead class="table-dark">
-                                <th>
-                                    ลำดับ
-                                </th>
-                                <th>
-                                    เลขครุภัณฑ์
-                                </th>
-                                <th>
-                                    รายการ
-                                </th>
-                                <th>
-                                    วันที่ยืม
-                                </th>
-                                <th>
-                                    วันที่คืน
-                                </th>
-
-                            </thead>
-                            <?php for ($i = 1; $i < 6; $i++) {
-                            ?>
-                                <tbody>
-                                    <td>
-                                        <?php echo $i ?>
-                                    </td>
-                                    <td>
-                                        1000111
-                                    </td>
-                                    <td>
-                                        โทรทัศน์ (SONY, A123)
-                                    </td>
-                                    <td>
-                                        25 พ.ย. 65
-                                    </td>
-                                    <td>
-                                        30 พ.ย. 65
-                                    </td>
+                        </thead>
+                        <?php for ($i = 1; $i < 6; $i++) {
+                        ?>
+                            <tbody>
+                                <td>
+                                    <?php echo $i ?>
+                                </td>
+                                <td>
+                                    1000111
+                                </td>
+                                <td>
+                                    โทรทัศน์ (SONY, A123)
+                                </td>
+                                <td>
+                                    25 พ.ย. 65
+                                </td>
+                                <td>
+                                    30 พ.ย. 65
+                                </td>
 
 
-                                </tbody>
-                            <?php } ?>
-                        </table>
-                    </div>
-                    <br>
+                            </tbody>
+                        <?php } ?>
+                    </table>
                 </div>
                 <br>
-
-
-           
-
+            </div>
+            <br>
         </div>
+    </div>
 
 
 </body>
@@ -190,7 +182,7 @@
         document.documentElement.scrollTop = 0;
     }
 </script>
-<!-- <script src="script.js"></script> -->
+
 
 
 </html>
