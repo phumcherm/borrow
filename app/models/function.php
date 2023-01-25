@@ -22,4 +22,18 @@ class DB_con
         return $result;
     }
     
+    function selectWhereCode() {
+        $result = mysqli_query($this->dbcon, "SELECT * FROM itemdata ");
+        return $result;
+    }
+
+    function selectPage($startRow,$rowPerPage) {
+        $result = mysqli_query($this->dbcon, "SELECT * FROM itemdata limit $startRow,$rowPerPage");
+        return $result;
+    }
+
+    function selectCount() {
+        $result = mysqli_query($this->dbcon, "select count(id) as num from itemdata");
+        return $result;
+    }
 }

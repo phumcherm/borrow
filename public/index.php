@@ -1,5 +1,5 @@
 <?php
-// require_once "../app/models/Database.php";
+require_once "../app/models/Database.php";
 require_once "../app/models/function.php";
 /* // require_once "../app/models/Database.php"; */
 
@@ -20,8 +20,6 @@ $query = "SELECT * FROM itemdata limit $start_from,$num_par_page";
 $result_l = mysqli_query($con, $query);
 
 ?>
-
-
 <!DOCTYPE html>
 <html>
 
@@ -149,59 +147,114 @@ $result_l = mysqli_query($con, $query);
 
                     </thead>
                     <?php
+                    // $rs = $conn->query("select count(id) as num from itemdata"); // query แบบมีเงื่อนไข ถ้ามีการส่งค่าค้นหา
+                    $selectCount = new DB_con();
+                    $sql = $selectCount->selectCount();
+                    $row = mysqli_fetch_array($sql);
 
+                    $totalRow =  $row['num'];
 
-                    $selectAll = new DB_con();
-                    $sql = $selectAll->selectAll();
+                    $rowPerPage = 5;
+                    $startRow = 0;
 
+                    $selectPage = new DB_con();
+                    $sql = $selectPage->selectPage($startRow, $rowPerPage);
 
-                    while ($row = mysqli_fetch_assoc($result_l)) {
+                    while ($row = mysqli_fetch_array($sql)) {
 
                     ?>
-                        <tbody>
-
-                            <td>
-                                <center><?php echo $row["id"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["updateTime"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["itemCode"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["detail"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["checkInDate"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["brand"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["serialNumber"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["price"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["refDoc"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["room"] ?></center>
-                            </td>
-                            <td>
-                                <center><?php echo $row["status"] ?></center>
-                            </td>
-
-
+                        <tbody id="data">
+                            <!-- <center>
+                                <td>
+                                    <?php echo $row["id"] ?>
+                                </td>
+                                <td>
+                                    <?php echo $row["updateTime"] ?>
+                                </td>
+                                <td>
+                                    <?php echo $row["itemCode"] ?>
+                                </td>
+                                <td>
+                                    <?php echo $row["detail"] ?>
+                                </td>
+                                <td>
+                                    <?php echo $row["checkInDate"] ?>
+                                </td>
+                                <td>
+                                    <?php echo $row["brand"] ?>
+                                </td>
+                                <td>
+                                    <?php echo $row["serialNumber"] ?>
+                                </td>
+                                <td>
+                                    <?php echo $row["price"] ?>
+                                </td>
+                                <td>
+                                    <?php echo $row["refDoc"] ?>
+                                </td>
+                                <td>
+                                    <?php echo $row["room"] ?>
+                                </td>
+                            </center> -->
                         </tbody>
                     <?php } ?>
                 </table>
 
-            </div>
+                <center>
+                    <button style="background-color: #ff5722;padding: 10px 40px;font-size: 30px;" onclick="rowFunction()">+</button>
+                </center>
+
+                <div >
+                    <h1 id="show"></h1>
+                </div>
             </div>
         </div>
+        <script>
+            var ajax = new XMLHttpRequest();
+            var method = "GET";
+            var url = "data.php";
+            var asynchronous = true;
+
+            ajax.open(method, url, asynchronous);
+            ajax.send();
+            ajax.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var data = JSON.parse(this.responseText);
+                    console.log(data);
+
+                    var html = "";
+
+                    for (var a = 0; a < data.length; a++) {
+                        var id = data[a].id;
+                        var updateTime = data[a].updateTime;
+                        var itemCode = data[a].itemCode;
+                        var detail = data[a].detail;
+                        var checkInDate = data[a].checkInDate;
+                        var brand = data[a].brand;
+                        var serialNumber = data[a].serialNumber;
+                        var price = data[a].price;
+                        var refDoc = data[a].refDoc;
+                        var room = data[a].room;
+
+                        html += "<tr>";
+                        html += "<td>" + id + "</td>";
+                        html += "<td>" + updateTime + "</td>";
+                        html += "<td>" + itemCode + "</td>";
+                        html += "<td>" + detail + "</td>";
+                        html += "<td>" + checkInDate + "</td>";
+                        html += "<td>" + brand + "</td>";
+                        html += "<td>" + serialNumber + "</td>";
+                        html += "<td>" + price + "</td>";
+                        html += "<td>" + refDoc + "</td>";
+                        html += "<td>" + room + "</td>";
+                        html += "</tr>";
+
+                    }
+
+                    document.getElementById("data").innerHTML = html;
+                }
+            }
+        </script>
 
         <!-- Sidebar/menu -->
 
@@ -235,19 +288,27 @@ $result_l = mysqli_query($con, $query);
 
                 tr = table.getElementsByTagName("tr");
                 for (i = 0; i < tr.length; i++) {
-                    td = tr[i].getElementsByTagName("td")[3];
-                    if (td) {
-                        txtValue = td.textContent || td.innerText;
-                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    td0 = tr[i].getElementsByTagName("td")[0];
+                    td3 = tr[i].getElementsByTagName("td")[3];
+                    if (td3 || td0) {
+                        var td3Value = td3.textContent || td3.innerText;
+                        var td0Value = td0.textContent || td0.innerText;
+                        if (td3Value.toUpperCase().indexOf(filter) > -1 || td0Value.toUpperCase().indexOf(filter) > -1) {
                             tr[i].style.display = "";
                         } else {
                             tr[i].style.display = "none";
                         }
+
                     }
                 }
             }
         </script>
-
+        <script>
+            function rowFunction(){
+                var textshow = "ไปปปปปปปปปป"
+                document.getElementById("show").innerHTML = textshow;
+            }
+        </script>
 </body>
 
 </html>

@@ -82,8 +82,8 @@
 
     <div>
 
-        <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-            <h2 style="color: #ff5722;font-family: SUT_Bold;">
+        <div style="background-color: #827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+            <h2 style="color: #fff;font-family: SUT_Bold;">
                 <i class="fa fa-caret-right" style="font-size:48px"></i> คืนวัสดุ ครุภัณฑ์
             </h2>
             <div style="max-width: 100%; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
@@ -96,7 +96,7 @@
                 <div class="table-responsive">
                     <div style="max-width: 1600px;margin-left: auto;">
                         <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
-                        <table class="table" style="width: 100%; height: 100%;margin: auto; padding: 16px;background-color: white; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; border-radius: 7px;">
+                        <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
                             <thead class="table-dark">
                                 <th>
                                     ลำดับ

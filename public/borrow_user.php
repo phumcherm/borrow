@@ -2,6 +2,18 @@
                         /*  require_once "../app/models/Database.php"; */
                         require_once "../app/models/function.php";
                         $con = mysqli_connect("172.19.0.1:9906", "ceitdb", "12345678", "ceitdb");
+                        if (isset($_GET['page'])) {
+                            $page = $_GET['page'];
+                        } else {
+                            $page = 1;
+                        }
+                        
+                        $num_par_page = 10;
+                        $start_from = ($page - 1) * 49;
+                        
+                        
+                        $query = "SELECT * FROM itemdata limit $start_from,$num_par_page";
+                        $result_l = mysqli_query($con, $query);
                         ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,13 +98,13 @@
 
     <div>
 
-        <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-            <h2 style="color: #ff5722;font-family: SUT_Bold;">
-                <i class="fa fa-caret-right" style="font-size:48px"></i>ยืมวัสดุ ครุภัณฑ์
+        <div style="background-color: #827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+            <h2 style="color: #fff;font-family: SUT_Bold;">
+                <i class="fa fa-caret-right" style="font-size:48px  " ></i>ยืมวัสดุ ครุภัณฑ์
             </h2>
             <!--   1300px -->
             <div style="max-width: auto; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;">
-                <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการ</h3>
+                <h3 style="color: #fff;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการ</h3>
                 <form action="">
                     <? require "../app/controller/scaner.php" ?>
                     <!-- <center><a href="#"> Scan QR Code</a></center> -->
@@ -127,63 +139,134 @@
                     </center>
 
                     <div class="table-responsive">
-                        <div style="width: 100%; height: 100%;margin-left: auto;">
-                            <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
-                            <table class="table" style="width: 100%; height: 100%;margin: auto; padding: 16px;background-color: white;border-radius: 7px;">
-                                <thead class="table-dark">
-                                    <th>
-                                        <center>id </center>
-                                    </th>
-                                    <th>
-                                        <center>updateTime</center>
-                                    </th>
-                                    <th>
-                                        <center>itemCode</center>
-                                    </th>
-                                    <th>
-                                        <center>detail</center>
-                                    </th>
-                                    <th>
-                                        <center>checkInDate</center>
-                                    </th>
-                                    <th>
-                                        <center>brand</center>
-                                    </th>
-                                    <th>
-                                        <center>serialNumber</center>
-                                    </th>
-                                    <th>
-                                        <center>price</center>
-                                    </th>
-                                    <th>
-                                        <center>refDoc</center>
-                                    </th>
-                                    <th>
-                                        <center>room</center>
-                                    </th>
-                                    <!-- <th>
-                <center>ลำดับ</center>
-            </th>
-            <th>
-                <center>รายการ</center>
-            </th>
-            <th>
-                <center>ห้อง-แผนก</center>
-            </th>
-            <th>
-                <center>วันที่ยืม</center>
-            </th>
-            <th>
-                <center>วันที่คืน</center>
-            </th> -->
-                                </thead>
-                                <tbody id="data">
+            <div>
+                <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+                    <div>
 
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <br>
+                        <thead class="table-dark">
+                        <th>
+                            <center>id </center>
+                        </th>
+                        <th>
+                            <center>updateTime</center>
+                        </th>
+                        <th>
+                            <center>itemCode</center>
+                        </th>
+                        <th>
+                            <center>detail</center>
+                        </th>
+                        <th>
+                            <center>checkInDate</center>
+                        </th>
+                        <th>
+                            <center>brand</center>
+                        </th>
+                        <th>
+                            <center>serialNumber</center>
+                        </th>
+                        <th>
+                            <center>price</center>
+                        </th>
+                        <th>
+                            <center>refDoc</center>
+                        </th>
+                        <th>
+                            <center>room</center>
+                        </th>
+                        <th>
+                            <center>status</center>
+                        </th>
+                            <!-- <th>
+                     <center>status</center>
+                 </th>
+                 <th>
+                     <center>notation</center>
+                 </th>
+                 <th>
+                     <center>misConfirmer</center>
+                 </th>
+                 <th>
+                     <center>organization</center>
+                 </th>
+                 <th>
+                     <center>type</center>
+                 </th>
+                 <th>
+                     <center>active</center>
+                 </th> -->
+
+                        </thead>
+
+                        <tbody >
+                            <?php
+
+
+                            $selectAll = new DB_con();
+                            $sql = $selectAll->selectAll();
+                            while ($row = mysqli_fetch_array($result_l)) {
+                            ?>
+                                <td>
+                                    <center><?php echo $row["id"] ?></center>
+                                </td>
+                                <td>
+                                    <center> <?php echo $row["updateTime"] ?></center>
+                                </td>
+                                <td>
+                                    <center> <?php echo $row["itemCode"] ?></center>
+                                </td>
+
+                                <td>
+                                    <center><?php echo $row["detail"] ?></center>
+                                </td>
+                                <td>
+                                    <?php echo $row["checkInDate"] ?>
+                                </td>
+                                <td>
+                                    <center><?php echo $row["brand"] ?></center>
+                                </td>
+                                <td>
+                                    <center> <?php echo $row["serialNumber"] ?></center>
+                                </td>
+                                <td>
+                                    <center> <?php echo $row["price"] ?></center>
+                                </td>
+                                <td>
+                                    <center> <?php echo $row["refDoc"] ?></center>
+                                </td>
+                                <td>
+                                    <center><?php echo $row["room"] ?></center>
+                                </td>
+                                <td>
+                                    <center><?php echo $row["status"] ?></center>
+                                </td>
+                                <!-- <td>
+                     <center><?php echo $row["status"] ?></center>
+                 </td>
+                 <td>
+                     <center><?php echo $row["notation"] ?></center>
+                 </td>
+                 <td>
+                     <center><?php echo $row["misConfirmer"] ?></center>
+                 </td>
+                 <td>
+                     <center><?php echo $row["organization"] ?></center>
+                 </td>
+                 <td>
+                     <center><?php echo $row["type"] ?></center>
+                 </td>
+                  -->
+                        </tbody>
+                    <?php } ?>
+                </table>
+
+            
+            </div>
+        </div>
+
+
+
+
                     <script>
                         var ajax = new XMLHttpRequest();
                         var method = "GET";
@@ -244,7 +327,7 @@
                         });
                     </script> -->
                     <br>
-                    <button type="submit">ยืนยันทั้งหมด</button>
+                    <button type="submit" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;">ยืนยันทั้งหมด</button>
                 </form>
             </div>
             <br>
