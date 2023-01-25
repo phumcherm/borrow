@@ -83,7 +83,7 @@ $result_l = mysqli_query($con, $query);
 
 </head>
 
-<body>
+<body  >
 
     <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
     <!-- <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
@@ -105,7 +105,7 @@ $result_l = mysqli_query($con, $query);
 
 
     
-    </div> -->
+    </div> 
 </body>
 
 </html>
