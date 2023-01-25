@@ -94,8 +94,8 @@
 
     <div>
 
-        <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px;">
-            <h2 style="color: #ff5722;font-family: SUT_Bold;">
+        <div style="background-color: #827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+            <h2 style="color: #fff;font-family: SUT_Bold;">
                 <?php {
                 ?>
                     <tbody>
@@ -109,12 +109,12 @@
                     </tbody>
                 <?php } ?>
             </h2>
-            <div style="max-width: 1300px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
+           <br><br>
                 <div class="table-responsive">
 
-                    <div style="max-width: 1600px;margin-left: auto;">
+                    <div style="max-width: 1600px;margin-left: auto; ">
                         <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
-                        <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center;">
+                        <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
                             <thead class="table-dark">
                                 <th>
                                     ลำดับ
@@ -162,7 +162,7 @@
                 <br>
 
 
-            </div>
+           
 
         </div>
 
