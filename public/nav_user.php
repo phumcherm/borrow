@@ -5,38 +5,11 @@
     <title>E - Borrow</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-    <!-- CSS Files -->
     <link id="pagestyle" href="./assets/css/material-dashboard.css?v=3.0.4" rel="stylesheet" />
     <link id="pagestyle" href="./assets/css/normalize.css" rel="stylesheet" />
-    <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    <!--  -->
     <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <!-- <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="csrf-token" content="PwOtZEQuVE8QU1ebwM3FQhoICPnLTDikrVUdlg4d"> 
-    <link href="http://demo-freelancer-crm.quickadminpanel.com/css/adminltev3.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet">
-    <link href="http://demo-freelancer-crm.quickadminpanel.com/css/custom.css" rel="stylesheet">-->
-
-
-
-
-
-
-
-
-
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -47,8 +20,6 @@
 
         gtag('config', 'UA-79616612-8');
     </script>
-
-
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -310,19 +281,11 @@
 
 <!DOCTYPE html>
 <html>
-
-
 <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
-
-
 <body>
-    
-            
                 <nav class="navbar navbar-expand-custom navbar-mainbg">
                     <a class="navbar-brand " href="#">
-                        <h3 style="margin-left: 60px;">E - Borrow
-                            <!-- Right-sided navbar links. Hide them on small screens -->
-                        </h3>
+                        <h3 style="margin-left: 60px;">E - Borrow</h3>
                     </a>
                     <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-bars text-white"></i>
@@ -348,20 +311,15 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="login.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
                             </li>
-
                         </ul>
                     </div>
                 </nav>
-           
-     
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.colVis.min.js"></script>
     <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-
     <!--  navbarเด้ง -->
     <script>
         function test() {
@@ -425,27 +383,6 @@
             // Add active class to target link
             target.parent().addClass('active');
         });
-
-        // Add active class on another page linked
-        // ==========================================
-        /*  $(window).on('load', function() {
-             var current = location.pathname;
-             console.log(current);
-             $('#navbarSupportedContent ul li a').each(function() {
-                 var $this = $(this);
-                 // if the current path is like this link, make it active
-                 if ($this.attr('href').indexOf(current) !== -1) {
-                     $this.parent().addClass('active');
-                     $this.parents('.menu-submenu').addClass('show-dropdown');
-                     $this.parents('.menu-submenu').parent().addClass('active');
-                 } else {
-                     $this.parent().removeClass('active');
-                 }
-             })
-         }); */
     </script>
-
-
 </body>
-
 </html>
