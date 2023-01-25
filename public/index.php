@@ -1,8 +1,6 @@
 <?php
 require_once "../app/models/Database.php";
 require_once "../app/models/function.php";
-/* // require_once "../app/models/Database.php"; */
-
 
 $con = mysqli_connect("172.19.0.1:9906", "ceitdb", "12345678", "ceitdb");
 
@@ -28,16 +26,10 @@ $result_l = mysqli_query($con, $query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
     <link rel="stylesheet" href="/borrow/public/css/style.css">
     <link rel="stylesheet" href="/borrow/public/css/icons.png">
-
-
-
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <style>
         * {
             box-sizing: border-box;
@@ -75,77 +67,37 @@ $result_l = mysqli_query($con, $query);
         #myUL li a:hover:not(.header) {
             background-color: #eee;
         }
-
-       
-
-        
-
-        
-
-     
-
-
-     
-
-       
-
-        
-
-
     </style>
 
 </head>
 
 <body>
-
-
-    <!-- <header class="w3-container w3-top w3-hide-large w3-blue w3-xlarge w3-padding">
-        <a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">☰</a>
-        <span>ศูนย์นวัตกรรมและเทคโนโลยีการศึกษา</span> 
-    </header> -->
-
-    <!-- Navbar (sit on top) -->
     <?php
     include "nav_user.php";
     ?>
-
-
     <div style="background-color:#827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
         <div>
             <h2 style="color: #fff;font-family: SUT_Bold;">
                 <i class="fa fa-caret-right" style="font-size:48px"></i>รายการครุภัณฑ์
-
             </h2>
         </div>
         <br>
-      
 
-
-
-       
         <center>
-        
             <input class="w3-input " type="text" id="myInput" onkeyup="myFunction()" placeholder="Search .." style="max-width: 100%; max-height: 100%;margin: 15px;border-radius: 7px;padding: 30px;    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;" title="Type in a name">
-      
         </center>
-
         <br>
-
-
-
 
         <div class='pagination-container'>
             <p Align=right>
-            <nav aria-label="Page navigation example " >
+            <nav aria-label="Page navigation example ">
                 <ul class="pagination">
-
                     <li data-page="prev" class="page-item">
                         <a class="page-link" href="#" style=" border-color:#5B5B5B; color:#000000; ">Previous
                             <span>
                                 <span class="sr-only">(current)
                                 </span></a>
                     </li>
-                    <!--	Here the JS Function Will Add the Rows -->
                     <li data-page="next" class="page-item">
                         <a class="page-link" href="#" style=" border-color:#5B5B5B; color:#000000;">Next
                             <span> <span class="sr-only">(current)</span></span></a>
@@ -168,19 +120,14 @@ $result_l = mysqli_query($con, $query);
                     <option value="100">100</option>
                 </select>
             </p>
-
         </div>
 
 
 
         <div class="table-responsive">
-
-
             <div>
                 <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
                     <div>
-
-
                         <thead class="table-dark">
                             <th>
                                 <center>id </center>
@@ -215,31 +162,10 @@ $result_l = mysqli_query($con, $query);
                             <th>
                                 <center>status</center>
                             </th>
-                            <!-- <th>
-                     <center>status</center>
-                 </th>
-                 <th>
-                     <center>notation</center>
-                 </th>
-                 <th>
-                     <center>misConfirmer</center>
-                 </th>
-                 <th>
-                     <center>organization</center>
-                 </th>
-                 <th>
-                     <center>type</center>
-                 </th>
-                 <th>
-                     <center>active</center>
-                 </th> -->
-
                         </thead>
 
                         <tbody>
                             <?php
-
-
                             $selectAll = new DB_con();
                             $sql = $selectAll->selectAll();
                             while ($row = mysqli_fetch_array($sql)) {
@@ -278,31 +204,13 @@ $result_l = mysqli_query($con, $query);
                                 <td>
                                     <center><?php echo $row["status"] ?></center>
                                 </td>
-                                <!-- <td>
-                     <center><?php echo $row["status"] ?></center>
-                 </td>
-                 <td>
-                     <center><?php echo $row["notation"] ?></center>
-                 </td>
-                 <td>
-                     <center><?php echo $row["misConfirmer"] ?></center>
-                 </td>
-                 <td>
-                     <center><?php echo $row["organization"] ?></center>
-                 </td>
-                 <td>
-                     <center><?php echo $row["type"] ?></center>
-                 </td>
-                  -->
                         </tbody>
                     <?php } ?>
                 </table>
-
-
-
             </div>
         </div>
     </div>
+
     <script>
         var ajax = new XMLHttpRequest();
         var method = "GET";
@@ -350,9 +258,7 @@ $result_l = mysqli_query($con, $query);
         }
     </script>
 
-    <!-- Sidebar/menu -->
-
-    <!-- Top menu on small screens -->
+  
     <script>
         // Script to open and close sidebar
         function w3_open() {
@@ -397,10 +303,6 @@ $result_l = mysqli_query($con, $query);
             }
         }
     </script>
-
-
-
-
 
     <script>
         getPagination('#datatable');
@@ -532,5 +434,4 @@ $result_l = mysqli_query($con, $query);
         }
     </script>
 </body>
-
 </html>
