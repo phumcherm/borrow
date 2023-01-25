@@ -1,23 +1,23 @@
-<? session_start(); ?><?php
-                        /*  require_once "../app/models/Database.php"; */
-                        require_once "../app/models/function.php";
-                        $con = mysqli_connect("172.19.0.1:9906", "ceitdb", "12345678", "ceitdb");
-                        if (isset($_GET['page'])) {
-                            $page = $_GET['page'];
-                        } else {
-                            $page = 1;
-                        }
-                        
-                        $num_par_page = 10;
-                        $start_from = ($page - 1) * 49;
-                        
-                        
-                        $query = "SELECT * FROM itemdata limit $start_from,$num_par_page";
-                        $result_l = mysqli_query($con, $query);
-                        ?>
+<? session_start(); ?>
+<?php
+require_once "../app/models/function.php";
+$con = mysqli_connect("172.19.0.1:9906", "ceitdb", "12345678", "ceitdb");
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+} else {
+    $page = 1;
+}
+
+$num_par_page = 10;
+$start_from = ($page - 1) * 49;
+
+
+$query = "SELECT * FROM itemdata limit $start_from,$num_par_page";
+$result_l = mysqli_query($con, $query);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,9 +27,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
 </head>
 <style>
     input {
@@ -47,12 +45,6 @@
         margin-right: auto;
         width: auto;
     }
-
-    /* a:hover {
-        background-color: #dbd6d6;
-        color: white;
-        text-decoration: none;
-    }*/
 
     center a {
         background-color: #ff5722;
@@ -81,9 +73,6 @@
         }
     }
 
-    /* center a:hover {
-        background-color: #ffa185;
-    } */
 </style>
 
 <body>
@@ -91,16 +80,11 @@
     include "nav_user.php";
     ?>
     <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
-    <!-- <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button> -->
-
 
     <div>
-
         <div style="background-color: #827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
             <h2 style="color: #fff;font-family: SUT_Bold;">
-                <i class="fa fa-caret-right" style="font-size:48px  " ></i>ยืมวัสดุ ครุภัณฑ์
+                <i class="fa fa-caret-right" style="font-size:48px  "></i>ยืมวัสดุ ครุภัณฑ์
             </h2>
             <!--   1300px -->
             <div style="max-width: auto; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;">
@@ -137,135 +121,93 @@
                             </div>
                         </div>
                     </center>
-
+                    <br><br>
                     <div class="table-responsive">
-            <div>
-                <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-                    <div>
+                        <div>
+                            <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+                                <div>
 
-                        <thead class="table-dark">
-                        <th>
-                            <center>id </center>
-                        </th>
-                        <th>
-                            <center>updateTime</center>
-                        </th>
-                        <th>
-                            <center>itemCode</center>
-                        </th>
-                        <th>
-                            <center>detail</center>
-                        </th>
-                        <th>
-                            <center>checkInDate</center>
-                        </th>
-                        <th>
-                            <center>brand</center>
-                        </th>
-                        <th>
-                            <center>serialNumber</center>
-                        </th>
-                        <th>
-                            <center>price</center>
-                        </th>
-                        <th>
-                            <center>refDoc</center>
-                        </th>
-                        <th>
-                            <center>room</center>
-                        </th>
-                        <th>
-                            <center>status</center>
-                        </th>
-                            <!-- <th>
-                     <center>status</center>
-                 </th>
-                 <th>
-                     <center>notation</center>
-                 </th>
-                 <th>
-                     <center>misConfirmer</center>
-                 </th>
-                 <th>
-                     <center>organization</center>
-                 </th>
-                 <th>
-                     <center>type</center>
-                 </th>
-                 <th>
-                     <center>active</center>
-                 </th> -->
+                                    <thead class="table-dark">
+                                        <th>
+                                            <center>id </center>
+                                        </th>
+                                        <th>
+                                            <center>updateTime</center>
+                                        </th>
+                                        <th>
+                                            <center>itemCode</center>
+                                        </th>
+                                        <th>
+                                            <center>detail</center>
+                                        </th>
+                                        <th>
+                                            <center>checkInDate</center>
+                                        </th>
+                                        <th>
+                                            <center>brand</center>
+                                        </th>
+                                        <th>
+                                            <center>serialNumber</center>
+                                        </th>
+                                        <th>
+                                            <center>price</center>
+                                        </th>
+                                        <th>
+                                            <center>refDoc</center>
+                                        </th>
+                                        <th>
+                                            <center>room</center>
+                                        </th>
+                                        <th>
+                                            <center>status</center>
+                                        </th>
+                                    </thead>
 
-                        </thead>
+                                    <tbody>
+                                        <?php
+                                        $selectAll = new DB_con();
+                                        $sql = $selectAll->selectAll();
+                                        while ($row = mysqli_fetch_array($result_l)) {
+                                        ?>
+                                            <td>
+                                                <center><?php echo $row["id"] ?></center>
+                                            </td>
+                                            <td>
+                                                <center> <?php echo $row["updateTime"] ?></center>
+                                            </td>
+                                            <td>
+                                                <center> <?php echo $row["itemCode"] ?></center>
+                                            </td>
 
-                        <tbody >
-                            <?php
-
-
-                            $selectAll = new DB_con();
-                            $sql = $selectAll->selectAll();
-                            while ($row = mysqli_fetch_array($result_l)) {
-                            ?>
-                                <td>
-                                    <center><?php echo $row["id"] ?></center>
-                                </td>
-                                <td>
-                                    <center> <?php echo $row["updateTime"] ?></center>
-                                </td>
-                                <td>
-                                    <center> <?php echo $row["itemCode"] ?></center>
-                                </td>
-
-                                <td>
-                                    <center><?php echo $row["detail"] ?></center>
-                                </td>
-                                <td>
-                                    <?php echo $row["checkInDate"] ?>
-                                </td>
-                                <td>
-                                    <center><?php echo $row["brand"] ?></center>
-                                </td>
-                                <td>
-                                    <center> <?php echo $row["serialNumber"] ?></center>
-                                </td>
-                                <td>
-                                    <center> <?php echo $row["price"] ?></center>
-                                </td>
-                                <td>
-                                    <center> <?php echo $row["refDoc"] ?></center>
-                                </td>
-                                <td>
-                                    <center><?php echo $row["room"] ?></center>
-                                </td>
-                                <td>
-                                    <center><?php echo $row["status"] ?></center>
-                                </td>
-                                <!-- <td>
-                     <center><?php echo $row["status"] ?></center>
-                 </td>
-                 <td>
-                     <center><?php echo $row["notation"] ?></center>
-                 </td>
-                 <td>
-                     <center><?php echo $row["misConfirmer"] ?></center>
-                 </td>
-                 <td>
-                     <center><?php echo $row["organization"] ?></center>
-                 </td>
-                 <td>
-                     <center><?php echo $row["type"] ?></center>
-                 </td>
-                  -->
-                        </tbody>
-                    <?php } ?>
-                </table>
-
-            
-            </div>
-        </div>
-
-
-
+                                            <td>
+                                                <center><?php echo $row["detail"] ?></center>
+                                            </td>
+                                            <td>
+                                                <?php echo $row["checkInDate"] ?>
+                                            </td>
+                                            <td>
+                                                <center><?php echo $row["brand"] ?></center>
+                                            </td>
+                                            <td>
+                                                <center> <?php echo $row["serialNumber"] ?></center>
+                                            </td>
+                                            <td>
+                                                <center> <?php echo $row["price"] ?></center>
+                                            </td>
+                                            <td>
+                                                <center> <?php echo $row["refDoc"] ?></center>
+                                            </td>
+                                            <td>
+                                                <center><?php echo $row["room"] ?></center>
+                                            </td>
+                                            <td>
+                                                <center><?php echo $row["status"] ?></center>
+                                            </td>
+                                    </tbody>
+                                <?php } ?>
+                            </table>
+                        </div>
+                    </div>
 
                     <script>
                         var ajax = new XMLHttpRequest();
@@ -313,28 +255,12 @@
                             }
                         }
                     </script>
-                    <!-- <script>
-                        $(document).ready(function() {
-
-                            $.ajax({
-                                type: "GET",
-                                url: "data.php",
-                                dataType: "json",
-                                success: function(data) {
-                                    $('#my-data').html(data);
-                                }
-                            });
-                        });
-                    </script> -->
                     <br>
                     <button type="submit" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;">ยืนยันทั้งหมด</button>
                 </form>
             </div>
             <br>
-
         </div>
     </div>
 </body>
-
-
 </html>
