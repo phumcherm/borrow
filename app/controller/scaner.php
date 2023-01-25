@@ -34,8 +34,8 @@
 <script>
     const scanner = new Html5QrcodeScanner('reader', {
         qrbox: {
-            width: 150,
-            height: 150,
+            width: 300,
+            height: 300,
             // textBox: "เปิด"
         },
         fps: 20,
