@@ -95,9 +95,9 @@ $result_l = mysqli_query($con, $query);
     ?>
 
 
-    <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+    <div style="background-color: #827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
         <div>
-            <h2 style="color: #ff5722;font-family: SUT_Bold;">
+            <h2 style="color: #fff;font-family: SUT_Bold;">
                 <i class="fa fa-caret-right" style="font-size:48px"></i>คลังครุภัณฑ์
             </h2>
         </div>
@@ -107,6 +107,43 @@ $result_l = mysqli_query($con, $query);
         <center>
             <input class="w3-input " type="text" id="myInput" onkeyup="myFunction()" placeholder="Search .." style="max-width: 100%; max-height: 100%;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;" title="Type in a name">
         </center>
+        <div class='pagination-container'>
+            <p Align=right>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+
+                    <li data-page="prev" class="page-item">
+                        <a class="page-link" href="#" style=" border-color:#827A7A; color:#000;">Previous
+                            <span>
+                                <span class="sr-only">(current)
+                                </span></a>
+                    </li>
+                    <!--	Here the JS Function Will Add the Rows -->
+                    <li data-page="next" class="page-item">
+                        <a class="page-link" href="#" style=" border-color:#827A7A; color:#000;">Next
+                            <span> <span class="sr-only">(current)</span></span></a>
+                    </li>
+                </ul>
+            </nav>
+            </p>
+
+
+            <br><br><br>
+            <p Align=right>
+                <select name="state" id="maxRows" style=" border-color:#827A7A; box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.3); ">
+                    <option value="5000">Show ALL Rows</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="70">70</option>
+                    <option value="100">100</option>
+                </select>
+            </p>
+
+        </div>
+
 
         <br>
         <div class="table-responsive">
@@ -247,6 +284,135 @@ $result_l = mysqli_query($con, $query);
                 }
             }
         </script>
+          <script>
+        getPagination('#datatable');
+
+        function getPagination(table) {
+            var lastPage = 1;
+
+            $('#maxRows')
+                .on('change', function(evt) {
+                    //$('.paginationprev').html('');						// reset pagination
+
+                    lastPage = 1;
+                    $('.pagination')
+                        .find('li')
+                        .slice(1, -1)
+                        .remove();
+                    var trnum = 0; // reset tr counter
+                    var maxRows = parseInt($(this).val()); // get Max Rows from select option
+
+                    if (maxRows == 5000) {
+                        $('.pagination').hide();
+                    } else {
+                        $('.pagination').show();
+                    }
+
+                    var totalRows = $(table + ' tbody tr').length; // numbers of rows
+                    $(table + ' tr:gt(0)').each(function() {
+                        // each TR in  table and not the header
+                        trnum++; // Start Counter
+                        if (trnum > maxRows) {
+                            // if tr number gt maxRows
+
+                            $(this).hide(); // fade it out
+                        }
+                        if (trnum <= maxRows) {
+                            $(this).show();
+                        } // else fade in Important in case if it ..
+                    }); //  was fade out to fade it in
+                    if (totalRows > maxRows) {
+                        // if tr total rows gt max rows option
+                        var pagenum = Math.ceil(totalRows / maxRows); // ceil total(rows/maxrows) to get ..
+                        //	numbers of pages
+                        for (var i = 1; i <= pagenum;) {
+                            // for each page append pagination li
+                            $('.pagination #prev')
+                                .before(
+                                    '<li data-page="' +
+                                    i +
+                                    '">\
+								  <span>' +
+                                    i++ +
+                                    '<span class="sr-only">(current)</span></span>\
+								</li>'
+                                )
+                                .show();
+                        } // end for i
+                    } // end if row count > max rows
+                    $('.pagination [data-page="1"]').addClass('active'); // add active class to the first li
+                    $('.pagination li').on('click', function(evt) {
+                        // on click each page
+                        evt.stopImmediatePropagation();
+                        evt.preventDefault();
+                        var pageNum = $(this).attr('data-page'); // get it's number
+
+                        var maxRows = parseInt($('#maxRows').val()); // get Max Rows from select option
+
+                        if (pageNum == 'prev') {
+                            if (lastPage == 1) {
+                                return;
+                            }
+                            pageNum = --lastPage;
+                        }
+                        if (pageNum == 'next') {
+                            if (lastPage == $('.pagination li').length - 2) {
+                                return;
+                            }
+                            pageNum = ++lastPage;
+                        }
+
+                        lastPage = pageNum;
+                        var trIndex = 0; // reset tr counter
+                        $('.pagination li').removeClass('active'); // remove active class from all li
+                        $('.pagination [data-page="' + lastPage + '"]').addClass('active'); // add active class to the clicked
+                        // $(this).addClass('active');					// add active class to the clicked
+                        limitPagging();
+                        $(table + ' tr:gt(0)').each(function() {
+                            // each tr in table not the header
+                            trIndex++; // tr index counter
+                            // if tr index gt maxRows*pageNum or lt maxRows*pageNum-maxRows fade if out
+                            if (
+                                trIndex > maxRows * pageNum ||
+                                trIndex <= maxRows * pageNum - maxRows
+                            ) {
+                                $(this).hide();
+                            } else {
+                                $(this).show();
+                            } //else fade in
+                        }); // end of for each tr in table
+                    }); // end of on click pagination list
+                    limitPagging();
+                })
+                .val(5)
+                .change();
+
+            // end of on select change
+
+            // END OF PAGINATION
+        }
+
+        function limitPagging() {
+            // alert($('.pagination li').length)
+
+            if ($('.pagination li').length > 7) {
+                if ($('.pagination li.active').attr('data-page') <= 3) {
+                    $('.pagination li:gt(5)').hide();
+                    $('.pagination li:lt(5)').show();
+                    $('.pagination [data-page="next"]').show();
+                }
+                if ($('.pagination li.active').attr('data-page') > 3) {
+                    $('.pagination li:gt(0)').hide();
+                    $('.pagination [data-page="next"]').show();
+                    for (let i = (parseInt($('.pagination li.active').attr('data-page')) - 2); i <= (parseInt($('.pagination li.active').attr('data-page')) + 2); i++) {
+                        $('.pagination [data-page="' + i + '"]').show();
+
+                    }
+
+                }
+            }
+        }
+    </script>
 
 </body>
 
