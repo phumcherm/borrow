@@ -141,7 +141,7 @@
 
                         <div class="w3-center">
                             <i class="fa fa-user icon"></i>
-                            <input type="text" required name="txt_code" minlength="13" maxlength="13" class="form-control form-control-lg " placeholder="หมายเลขบัตรประชาชน">
+                            <input type="text" required name="txt_code" minlength="13" maxlength="13" class="form-control form-control-lg " placeholder="หมายเลขประจำตัว">
                         </div>
                         <br>
                         <!-- Password input -->
