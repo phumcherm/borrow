@@ -125,7 +125,7 @@
                                 <div class="section_grid_item">
                                     <!-- <h5 style="padding-left: 0;">ระบุสถานที่<h5> -->
                                     <br>
-                                    <input class="w3-input w3-animate-input  demo" type="text" required placeholder="ระบุสถานที่" style="max-width: 400px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                                    <input class="w3-input w3-animate-input  demo" type="text" required placeholder="ระบุสถานที่" style="max-width: 400px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; ">
                                 </div>
                             </div>
                             <!-- <p id="demo">CODE</p> -->
