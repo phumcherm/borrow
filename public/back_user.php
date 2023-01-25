@@ -1,4 +1,5 @@
 <?php $con = mysqli_connect("172.19.0.1:9906", "ceitdb", "12345678", "ceitdb"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,9 +12,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
 </head>
 <style>
     input {
@@ -31,12 +30,6 @@
         margin-right: auto;
         width: auto;
     }
-
-    /* a:hover {
-        background-color: #dbd6d6;
-        color: white;
-        text-decoration: none;
-    }*/
 
     center a {
         background-color: #ff5722;
@@ -64,24 +57,18 @@
             grid-template-columns: 1fr;
         }
     }
-
-    /* center a:hover {
-        background-color: #ffa185;
-    } */
 </style>
 
 <body>
-<?php
+    <?php
     require "nav_user.php";
     ?>
     <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
     <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
         <i class="fas fa-arrow-up"></i>
     </button>
-   
 
     <div>
-
         <div style="background-color: #827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
             <h2 style="color: #fff;font-family: SUT_Bold;">
                 <i class="fa fa-caret-right" style="font-size:48px"></i> คืนวัสดุ ครุภัณฑ์
@@ -91,8 +78,6 @@
                 <br><br>
                 <center><a href="#" style="padding-left: 40px;padding-right:40px;"> Scan QR Code</a></center>
                 <br>
-
-
                 <div class="table-responsive">
                     <div style="max-width: 1600px;margin-left: auto;">
                         <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
@@ -140,40 +125,9 @@
                     </div>
                     <br>
                 </div>
-
                 <br>
-
-
             </div>
-
         </div>
-
-
+    </div>
 </body>
-<script>
-    // Get the button
-    // let mybutton = document.getElementById("myBtn");
-
-    // // When the user scrolls down 20px from the top of the document, show the button
-    // window.onscroll = function() {
-    //     scrollFunction()
-    // };
-
-    // function scrollFunction() {
-    //     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    //         mybutton.style.display = "block";
-    //     } else {
-    //         mybutton.style.display = "none";
-    //     }
-    // }
-
-    // // When the user clicks on the button, scroll to the top of the document
-    // function topFunction() {
-    //     document.body.scrollTop = 0;
-    //     document.documentElement.scrollTop = 0;
-    // }
-</script>
-<!-- <script src="script.js"></script> -->
-
-
 </html>
