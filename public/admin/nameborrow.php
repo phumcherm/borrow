@@ -93,11 +93,11 @@
         </ol>
     </nav>
 
-    <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-        <h2 style="color: #ff5722;font-family: SUT_Bold;">
+    <div style="background-color: #827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+        <h2 style="color: #fff;font-family: SUT_Bold;">
             <i class="fa fa-caret-right" style="font-size:48px"></i> รายชื่อผู้ยืม
         </h2>
-        <div style="max-width: 1300px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+       <br><br>
             <div class="table-responsive">
 
                 <div style="max-width: 1600px;margin-left: auto;">
@@ -145,7 +145,7 @@
             <br>
 
 
-        </div>
+       
 
     </div>
 
