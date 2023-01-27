@@ -22,8 +22,8 @@ class DB_con
         return $result;
     }
     
-    function selectWhereCode() {
-        $result = mysqli_query($this->dbcon, "SELECT * FROM itemdata ");
+    function selectWhereCode($itemCode) {
+        $result = mysqli_query($this->dbcon, "SELECT * FROM itemdata WHERE itemCode IN ($itemCode) ");
         return $result;
     }
 
@@ -34,6 +34,12 @@ class DB_con
 
     function selectCount() {
         $result = mysqli_query($this->dbcon, "select count(id) as num from itemdata");
+        return $result;
+    }
+
+    
+    function selectWhereId($tb_id) {
+        $result = mysqli_query($this->dbcon, "SELECT itemCode FROM itemdata WHERE id = $tb_id ");
         return $result;
     }
 }

@@ -62,6 +62,7 @@
 
     a {
         color: white;
+        background-color: #ff5722;
     }
 
     @media all and (max-width: 800px) {
@@ -103,6 +104,10 @@
                     } ?>
                     <br>
                     <center>
+                        <!-- <input class="w3-input" type="text" required placeholder="code" id="result" name="result" style="max-width: 500px;"> -->
+                        <h2 id="data4" name="data4">555 :</h2>
+                        <!-- <h2 id="result" ></h2> -->
+                        <br><br>
                         <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" style="max-width: 500px;">
                         <div class="section_area_grid">
                             <div class="section_grid_bor">
@@ -122,9 +127,10 @@
                         </div>
                     </center>
 
-                    
+
                     <div style="max-width: 1600px;margin-left: auto;">
                         <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
+                        <a style="float: right;padding: 15px 25px;background-color: #ff5722;border-radius: 7px;margin-bottom: 15px;" onclick="delAll_test()">ลบทั้งหมด</a>
                         <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;">
                             <thead class="table-dark">
                                 <th>
@@ -157,6 +163,9 @@
                                 <th>
                                     <center>room</center>
                                 </th>
+                                <th>
+                                    <center></center>
+                                </th>
                                 <!-- <th>
                 <center>ลำดับ</center>
             </th>
@@ -174,58 +183,20 @@
             </th> -->
                             </thead>
                             <tbody id="data">
-
+                                <p>
+                                    <td colspan="10" class="text-center">No data available</td>
+                                </p>
                             </tbody>
                         </table>
                     </div>
                     <br>
                     <script>
-                        var ajax = new XMLHttpRequest();
-                        var method = "GET";
-                        var url = "data.php";
-                        var asynchronous = true;
-
-                        ajax.open(method, url, asynchronous);
-                        ajax.send();
-                        ajax.onreadystatechange = function()
-                        {
-                            if(this.readyState == 4 && this.status == 200)
-                            {
-                                var data = JSON.parse(this.responseText);
-                                console.log(data);
-
-                                var html = "";
- 
-                                for (var a = 0; a < data.length; a++)
-                                {
-                                    var id = data[a].id;
-                                    var updateTime = data[a].updateTime;
-                                    var itemCode = data[a].itemCode;
-                                    var detail = data[a].detail;
-                                    var checkInDate = data[a].checkInDate;
-                                    var brand = data[a].brand;
-                                    var serialNumber = data[a].serialNumber;
-                                    var price = data[a].price;
-                                    var refDoc = data[a].refDoc;
-                                    var room = data[a].room;
-
-                                    html += "<tr>";
-                                        html += "<td>" + id + "</td>";
-                                        html += "<td>" + updateTime + "</td>";
-                                        html += "<td>" + itemCode + "</td>";
-                                        html += "<td>" + detail + "</td>";
-                                        html += "<td>" + checkInDate + "</td>";
-                                        html += "<td>" + brand + "</td>";
-                                        html += "<td>" + serialNumber + "</td>";
-                                        html += "<td>" + price + "</td>";
-                                        html += "<td>" + refDoc + "</td>";
-                                        html += "<td>" + room + "</td>";
-                                    html += "</tr>";
-
-                                }
-                                
-                                document.getElementById("data").innerHTML = html;
-                            }
+                        function delAll_test() {
+                            // document.getElementById("data4").innerHTML = code234
+                            // console.log(code234)
+                            itemCode.length = 0
+                            console.log("del = " + itemCode)
+                            tableFunc()
                         }
                     </script>
                     <!-- <script>

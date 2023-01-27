@@ -18,6 +18,7 @@ require_once "../app/models/function.php";
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
@@ -156,60 +157,15 @@ require_once "../app/models/function.php";
                 </table>
 
                 <center>
-                    <button style="background-color: #ff5722;padding: 10px 40px;font-size: 30px;" onclick="rowFunction()">+</button>
+                    <button id="plus" style="background-color: #ff5722;padding: 10px 40px;font-size: 30px;" onclick="">+</button>
                 </center>
 
-                <div >
-                    <h1 id="show"></h1>
+                <div>
+                    <h1 id="show">ไปปปป</h1>
                 </div>
             </div>
         </div>
-        <script>
-            var ajax = new XMLHttpRequest();
-            var method = "GET";
-            var url = "data.php";
-            var asynchronous = true;
-
-            ajax.open(method, url, asynchronous);
-            ajax.send();
-            ajax.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    var data = JSON.parse(this.responseText);
-                    console.log(data);
-
-                    var html = "";
-
-                    for (var a = 0; a < data.length; a++) {
-                        var id = data[a].id;
-                        var updateTime = data[a].updateTime;
-                        var itemCode = data[a].itemCode;
-                        var detail = data[a].detail;
-                        var checkInDate = data[a].checkInDate;
-                        var brand = data[a].brand;
-                        var serialNumber = data[a].serialNumber;
-                        var price = data[a].price;
-                        var refDoc = data[a].refDoc;
-                        var room = data[a].room;
-
-                        html += "<tr>";
-                        html += "<td>" + id + "</td>";
-                        html += "<td>" + updateTime + "</td>";
-                        html += "<td>" + itemCode + "</td>";
-                        html += "<td>" + detail + "</td>";
-                        html += "<td>" + checkInDate + "</td>";
-                        html += "<td>" + brand + "</td>";
-                        html += "<td>" + serialNumber + "</td>";
-                        html += "<td>" + price + "</td>";
-                        html += "<td>" + refDoc + "</td>";
-                        html += "<td>" + room + "</td>";
-                        html += "</tr>";
-
-                    }
-
-                    document.getElementById("data").innerHTML = html;
-                }
-            }
-        </script>
+        <script src="lolo.js"></script>
 
         <!-- Sidebar/menu -->
 
@@ -259,11 +215,39 @@ require_once "../app/models/function.php";
             }
         </script>
         <script>
-            function rowFunction(){
-                var textshow = "ไปปปปปปปปปป"
-                document.getElementById("show").innerHTML = textshow;
-            }
+            let numb5 = 5
+            // $(document).ready(function() {
+            //     $("#plus").click(function() {
+            //         $.ajax({
+            //             url: 'data.php', //This is the current doc
+            //             // type: "GET",
+            //             // dataType: 'html', // add json datatype to get json
+            //             // data:"numb="+5,
+            //             data: 'numb=' + numb5,
+            //             success: function(data) {
+            //                 // console.log(data)
+            //                 tableFunc()
+            //                 $('#show').html(data);
+            //                 // console.log(data);
+            //             }
+            //         });
+            //     });
+            // });
+
+            $('#plus').click(function(){
+                $.ajax({
+                        url: 'data3.php',
+                        data: 'numb=' + numb5,
+                        success: function(data) {
+                            tableFunc()
+                            $('#show').html(data);
+                            // console.log(data);
+                        }
+                    });
+            })
+            
         </script>
+
 </body>
 
 </html>
