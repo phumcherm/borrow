@@ -38,8 +38,8 @@
     // audio.play();
     const scanner = new Html5QrcodeScanner('reader', {
         qrbox: {
-            width: 250,
-            height: 250,
+            width: 300,
+            height: 300,
             // textBox: "เปิด"
         },
         fps: 1,

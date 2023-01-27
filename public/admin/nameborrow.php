@@ -7,14 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>คืนวัสดุ ครุภัณฑ์</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
 </head>
 <style>
     input {
@@ -32,12 +29,6 @@
         margin-right: auto;
         width: auto;
     }
-
-    /* a:hover {
-        background-color: #dbd6d6;
-        color: white;
-        text-decoration: none;
-    }*/
 
     center a {
         background-color: #ff5722;
@@ -66,107 +57,85 @@
         }
     }
 
-    /* center a:hover {
-        background-color: #ffa185;
-    } */
+    li {
+        color: #000;
+        cursor: pointer;
+    }
 </style>
 
 <body>
     <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
-    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top"><i class="fas fa-arrow-up"></i></button>
     <?php
     require "nav_admin.php";
     ?>
 
-    <div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" style="background-color: #fff;">
+            <li class="breadcrumb-item active"><a href="report_admin.php">หน้าเเรกรายงาน</a></li>
+            <li class="breadcrumb-item "><a href="nameborrow.php">รายชื่อผู้ยืม</a></li>
+        </ol>
+    </nav>
 
-        <div style="background-color: #dbd6d6;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px;">
-            <h2 style="color: #ff5722;font-family: SUT_Bold;">
-                ▶ รายชื่อผู้ยืม
-            </h2>
-            <div style="max-width: 1300px; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px;">
+    <div style="background-color: #827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+        <h2 style="color: #fff;font-family: SUT_Bold;">
+            <i class="fa fa-caret-right" style="font-size:48px"></i> รายชื่อผู้ยืม
+        </h2><br><br>
 
-
-                <div style="max-width: 1600px;margin-left: auto;">
-                    <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
-                    <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center;">
-                        <thead class="table-dark">
-                            <th>
-                                ลำดับ
-                            </th>
-                            <th>
-                                รายชื่อ
-                            </th>
-                            <th>
-                                ฝ่าย
-                            </th>
-
-                        </thead>
-                        <?php for ($i = 1; $i < 6; $i++) {
-                        ?>
-                            <tbody>
-                                <td>
-                                    <?php echo $i ?>
-                                </td>
-                                <td>
-                                    <a href="detailname.php">
-                                        เปรมฤทัย สีแปลก
-                                    </a>
-
-                                </td>
-                                <td>
-                                    เทคนิควิศวกรรม
-                                </td>
-
-                                <!--  <td>
-                                    <center>
-                                        <p style="background-color: #28a745; max-width: 100px;padding: 5px;color: white;border-radius: 7px;">คืนแล้ว</p>
-                                    </center>
-                                </td> -->
-                            </tbody>
-                        <?php } ?>
-                    </table>
-                </div>
-                <br>
-            </div>
-            <br>
-
-
+        <div class="table-responsive">
+            <div style="max-width: 1600px;margin-left: auto;">
+                <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+                    <thead class="table-dark">
+                        <th>
+                            ลำดับ
+                        </th>
+                        <th>
+                            รายชื่อ
+                        </th>
+                        <th>
+                            ฝ่าย
+                        </th>
+                    </thead>
+                    <?php for ($i = 1; $i < 6; $i++) {
+                    ?>
+                        <tbody>
+                            <td>
+                                <?php echo $i ?>
+                            </td>
+                            <td>
+                                <a href="detailname.php">
+                                    เปรมฤทัย สีแปลก
+                                </a>
+                            </td>
+                            <td>
+                                เทคนิควิศวกรรม
+                            </td>
+                        </tbody>
+                    <?php } ?>
+                </table>
+            </div> <br>
         </div>
-
+        <br>
     </div>
 
 
 </body>
 <script>
-    // Get the button
-    // let mybutton = document.getElementById("myBtn");
+    $(document).ready(function() {
 
-    // // When the user scrolls down 20px from the top of the document, show the button
-    // window.onscroll = function() {
-    //     scrollFunction()
-    // };
+        $('.second ol li a.active-2 span').css({
+            'border-bottom': '3px solid rgb(0, 183, 255) ',
+            'padding-bottom': ' 21px  '
+        });
 
-    // function scrollFunction() {
-    //     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    //         mybutton.style.display = "block";
-    //     } else {
-    //         mybutton.style.display = "none";
-    //     }
-    // }
-
-    // // When the user clicks on the button, scroll to the top of the document
-    // function topFunction() {
-    //     document.body.scrollTop = 0;
-    //     document.documentElement.scrollTop = 0;
-    // }
+        $('.second ol li a').click(function() {
+            $('.second ol li a.active-2 span').css('padding-bottom', '0px');
+            $('.second ol li a.active-2 span').css('border-bottom', 'none');
+            $('.second ol li a.active-2').removeClass('active-2');
+            $(this).closest('a').find('span').css('padding-bottom', ' 21px  ');
+            $(this).closest('a').find('span').css('border-bottom', '3px solid rgb(0, 183, 255) ');
+            $(this).closest('a').addClass('active-2');
+        });
+    });
 </script>
-<!-- <script src="script.js"></script> -->
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
 </html>
