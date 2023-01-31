@@ -9,18 +9,9 @@ require_once "../app/models/function.php";
 
 // $totalRow =  $row['num'];
 
-$startRow = 0;
-if (isset($_GET['numb'])) {
-        $numb = $_GET['numb']; 
 
-        $rowPerPage = 20;
-        $rowPerPage + $numb;
-} else {
-        $rowPerPage = 10;
-}
-
-$selectPage = new DB_con();
-$sql = $selectPage->selectPage($startRow, $rowPerPage);
+$selectBorrow = new DB_con();
+$sql = $selectBorrow->selectBorrow();
 
 while ($row = mysqli_fetch_array($sql)) {
         $data[] = $row;

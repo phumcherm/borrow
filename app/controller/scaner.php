@@ -1,7 +1,7 @@
 <script src="./node_modules/html5-qrcode/html5-qrcode.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.4/html5-qrcode.min.js" integrity="sha512-k/KAe4Yff9EUdYI5/IAHlwUswqeipP+Cp5qnrsUjTPCgl51La2/JhyyjNciztD7mWNKLSXci48m7cctATKfLlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
     main {
         display: flex;
@@ -48,6 +48,7 @@
     scanner.render(success, error);
 
     const itemCode = []
+    const arr_id = []
 
     function success(code) {
 
@@ -129,6 +130,7 @@
                     // console.log(tb_itemCode)
 
                     html += "<tr>";
+                    html += "<center>";
                     html += "<td>" + id + "</td>";
                     html += "<td>" + updateTime + "</td>";
                     html += "<td>" + tb_itemCode + "</td>";
@@ -139,7 +141,9 @@
                     html += "<td>" + price + "</td>";
                     html += "<td>" + refDoc + "</td>";
                     html += "<td>" + room + "</td>";
-                    html += "<td onclick='del_Func(" + id + ")'>" + "<a style='padding: 8px 25px;background-color: #ff5722;border-radius: 7px;'>X</a>" + "</td>";
+                    html += "<td onclick='del_Func(" + id + ")'>" + "<a style='padding: 8px 25px;background-color: #ff5722;border-radius: 7px;'><i class='fa-sharp fa-solid fa-xmark'" +
+                        "style='margin-right: 0 px;'></i></a>" + "</td>";
+                    html += "</center>";
                     html += "</tr>";
                     // console.log(tb_itemCode)
 
@@ -150,7 +154,13 @@
 
                 }
 
-                // document.getElementById("data4").innerHTML = data;
+                const indexId = arr_id.findIndex(object => object === id);
+
+                if (indexId === -1) {
+                    arr_id.push(id)
+                }
+
+                document.getElementById("data4").value = itemCode;
 
 
             }
@@ -163,14 +173,6 @@
     //     // del_itemcode(this.itemCode)
     //     document.getElementById("data4").innerHTML = "ได้ละะะะะะะะะะะะะะะ!!"
     // };
-
-    function del_test(code234) {
-        document.getElementById("data4").innerHTML = code234
-        // console.log(code234)
-        console.log("del = " + code234)
-        tableFunc()
-        return code234
-    }
 
     function show_item() {
         console.log("นี่คือ :" + itemCode)
@@ -219,7 +221,7 @@
                 console.log(itemCode);
                 tableFunc()
 
-                document.getElementById("data4").innerHTML = data.itemCode;
+                // document.getElementById("data4").innerHTML = data.itemCode;
             }
 
             // document.getElementById("data4").innerHTML = data;

@@ -130,34 +130,31 @@ $result_l = mysqli_query($con, $query);
                     <div>
                         <thead class="table-dark">
                             <th>
-                                <center>id </center>
+                                <center>Borrow ID</center>
                             </th>
                             <th>
-                                <center>updateTime</center>
+                                <center>Item ID</center>
                             </th>
                             <th>
-                                <center>itemCode</center>
+                                <center>รายการ</center>
                             </th>
                             <th>
-                                <center>detail</center>
+                                <center>Brand</center>
                             </th>
                             <th>
-                                <center>checkInDate</center>
+                                <center>งานที่นำไปใช้</center>
                             </th>
                             <th>
-                                <center>brand</center>
+                                <center>สถานที่กิจกรรม</center>
                             </th>
                             <th>
-                                <center>serialNumber</center>
+                                <center>ฝ่าย</center>
                             </th>
                             <th>
-                                <center>price</center>
+                                <center>วันที่ยืม</center>
                             </th>
                             <th>
-                                <center>refDoc</center>
-                            </th>
-                            <th>
-                                <center>room</center>
+                                <center>วันที่ต้องคืน</center>
                             </th>
                             <th>
                                 <center>status</center>
@@ -166,43 +163,42 @@ $result_l = mysqli_query($con, $query);
 
                         <tbody>
                             <?php
-                            $selectAll = new DB_con();
-                            $sql = $selectAll->selectAll();
+                            $selectBorrow = new DB_con();
+                            $sql = $selectBorrow->selectBorrow();
                             while ($row = mysqli_fetch_array($sql)) {
                             ?>
                                 <td>
-                                    <center><?php echo $row["id"] ?></center>
+                                    <center><?php echo $row["br_id"] ?></center>
                                 </td>
                                 <td>
-                                    <center> <?php echo $row["updateTime"] ?></center>
+                                    <center> <?php echo $row["id"] ?></center>
                                 </td>
                                 <td>
-                                    <center> <?php echo $row["itemCode"] ?></center>
+                                    <center> <?php echo $row["detail"] ?></center>
+                                </td>
+                                <td>
+                                    <center> <?php echo $row["brand"] ?></center>
+                                </td>
+                                <td>
+                                    <center> <?php echo $row["activity"] ?></center>
                                 </td>
 
                                 <td>
-                                    <center><?php echo $row["detail"] ?></center>
+                                    <center><?php echo $row["location"] ?></center>
                                 </td>
                                 <td>
-                                    <?php echo $row["checkInDate"] ?>
+                                    <center> <?php echo $row["room"] ?></center>
                                 </td>
                                 <td>
-                                    <center><?php echo $row["brand"] ?></center>
+                                    <?php echo $row["br_time"] ?>
                                 </td>
                                 <td>
-                                    <center> <?php echo $row["serialNumber"] ?></center>
+                                    <center><?php echo $row["br_date"] ?></center>
                                 </td>
                                 <td>
-                                    <center> <?php echo $row["price"] ?></center>
-                                </td>
-                                <td>
-                                    <center> <?php echo $row["refDoc"] ?></center>
-                                </td>
-                                <td>
-                                    <center><?php echo $row["room"] ?></center>
-                                </td>
-                                <td>
-                                    <center><?php echo $row["status"] ?></center>
+                                    <center>
+                                        <p style="background-color: red;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">รอดำเนินการ</p>
+                                    </center>
                                 </td>
                         </tbody>
                     <?php } ?>
@@ -258,7 +254,7 @@ $result_l = mysqli_query($con, $query);
         }
     </script>
 
-  
+
     <script>
         // Script to open and close sidebar
         function w3_open() {
@@ -289,11 +285,11 @@ $result_l = mysqli_query($con, $query);
             tr = table.getElementsByTagName("tr");
             for (i = 0; i < tr.length; i++) {
                 td0 = tr[i].getElementsByTagName("td")[0];
-                td3 = tr[i].getElementsByTagName("td")[3];
-                if (td3 || td0) {
-                    var td3Value = td3.textContent || td3.innerText;
+                td2 = tr[i].getElementsByTagName("td")[2];
+                if (td2 || td0) {
+                    var td2Value = td2.textContent || td2.innerText;
                     var td0Value = td0.textContent || td0.innerText;
-                    if (td3Value.toUpperCase().indexOf(filter) > -1 || td0Value.toUpperCase().indexOf(filter) > -1) {
+                    if (td2Value.toUpperCase().indexOf(filter) > -1 || td0Value.toUpperCase().indexOf(filter) > -1) {
                         tr[i].style.display = "";
                     } else {
                         tr[i].style.display = "none";
@@ -434,4 +430,5 @@ $result_l = mysqli_query($con, $query);
         }
     </script>
 </body>
+
 </html>

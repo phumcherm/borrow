@@ -26,7 +26,7 @@ if (isset($_GET['code']) && !empty(isset($_GET['code']))) {
     $selectWhereId = new DB_con();
     $sql = $selectWhereId->selectWhereId($tb_id);
     $row = mysqli_fetch_array($sql);
-    $data = $row;
+    $data[] = $row;
     echo json_encode($data);
 } else {
     $data[] = "พังละ";

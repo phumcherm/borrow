@@ -90,30 +90,30 @@ $result_l = mysqli_query($con, $query);
             <!--   1300px -->
             <div style="max-width: auto; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;">
                 <h3 style="color: #fff;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการ</h3>
-                <form action="">
+                <form action="../app/models/add_borrow.php" method="post">
                     <? require "../app/controller/scaner.php" ?>
                     <!-- <center><a href="#"> Scan QR Code</a></center> -->
                     <?
                     // echo $itemCode;
-                    if (isset($_GET['code'])) {
-                        echo $_GET['code'];
-                    } ?>
+                    // if (isset($_GET['code'])) {
+                    //     echo $_GET['code'];
+                    // } ?>
                     <br>
                     <br>
 
                     <center>
-                        <!-- <input class="w3-input" type="text" required placeholder="code" id="result" name="result" style="max-width: 500px;"> -->
-                        <h2 id="data4" name="data4">555 :</h2>
+                        <input class="w3-input" type="text" required placeholder="code" id="data4" name="data4" style="max-width: 500px;visibility: hidden; ">
+                        <!-- <h2 id="data4" name="data4"></h2> -->
                         <!-- <h2 id="result" ></h2> -->
-                        <br><br>
-                        <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" style="max-width: 500px;">
+                        <!-- <br><br> -->
+                        <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" name="activity" style="max-width: 500px;">
                         <div class="section_area_grid">
 
                             <div class="section_grid_bor">
                                 <div class="section_grid_item">
                                     <!-- <h5 style="padding-left: 0;">ระบุสถานที่<h5> -->
                                     <br>
-                                    <input class="w3-input w3-animate-input  demo" type="text" required placeholder="ระบุสถานที่" style="max-width: 400px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; ">
+                                    <input class="w3-input w3-animate-input demo" id="location" name="location" type="text" required placeholder="ระบุสถานที่" style="max-width: 400px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; ">
                                 </div>
                             </div>
                             <!-- <p id="demo">CODE</p> -->
@@ -204,7 +204,7 @@ $result_l = mysqli_query($con, $query);
                         }
                     </script>
                     <br>
-                    <button type="submit" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;">ยืนยันทั้งหมด</button>
+                    <button type="submit" id="submit" name="submit" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;">ยืนยันทั้งหมด</button>
                 </form>
             </div>
             <br>
