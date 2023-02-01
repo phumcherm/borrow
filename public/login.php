@@ -86,17 +86,11 @@
 
         input[type=text],
         input[type=password] {
-<<<<<<< Updated upstream
             width: 1000px;
             height: 15px;
             border: 3px solid #73AD21;
             padding: 15px;
             margin: 10px 10 20px 0;
-=======
-            width: 100%;
-            padding: 15px;
-            margin: 5px 0 22px 0;
->>>>>>> Stashed changes
             display: inline-block;
             border: none;
             background: #f1f1f1;
@@ -107,19 +101,10 @@
             background-color: #ddd;
             outline: none;
         }
-<<<<<<< Updated upstream
-=======
-
-        hr {
-            border: 1px solid #f1f1f1;
-            margin-bottom: 25px;
-        }
->>>>>>> Stashed changes
     </style>
 </head>
 <body>
     <div class="fullscreen-block colorwhite">
-<<<<<<< Updated upstream
         <br><br>
         <section class="w3-center">
             <div><b>
@@ -156,25 +141,6 @@
                             <a href="index.php" type="button" style="  background-color: #EC5A0F; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">เข้าสู่ระบบ</a>
                         </div>
                         <br>
-=======
-        <section><b>
-                <h1>E - Borrow</h1>
-            </b></section>
-
-        <section><b>
-                <h3>ระบบ ยืม - คืน วัสดุและครุภัณฑ์ฝ่ายเทคนิควิศวกรรม</h3>
-            </b></section>
-        <div style="max-width: 600px; height: auto;margin: 25px auto 15px auto;border-radius: 7px; ">
-            <div style="border-radius: 7px; ">
-                <form class="container  w3-white  " style="width: 30rem; margin: 50px; border-radius: 15px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
-                    <div class=" colororage ">
-
-                        <h3><b>&nbsp;&nbsp;&nbsp; เข้าสู่ระบบ</b></h3>
-                        <br>
-
-                        &nbsp;&nbsp;<label for="email"><b>Email</b></label>
-                       <input type="text" placeholder="Enter Email" name="email" required>
->>>>>>> Stashed changes
                     </div>
                 </form>
             </div>
