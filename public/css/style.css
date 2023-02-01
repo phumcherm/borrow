@@ -57,6 +57,7 @@
     display: inline;
 
 } */
+<<<<<<< Updated upstream
  
         /* ***Desktop*** */
 
@@ -80,6 +81,12 @@
                 padding: 7px 15px;
                 border-radius: 7px;
             }
+=======
+
+        ul.menu {
+            list-style-type: none;
+            display: flex;
+>>>>>>> Stashed changes
         }
 
         /* ***tablet*** */
@@ -112,6 +119,14 @@
             background-color: #ff5722;
         }
 
+<<<<<<< Updated upstream
+=======
+        ul {
+            padding-right: 0;
+            float: right;
+        }
+
+>>>>>>> Stashed changes
         nav {
             height: auto;
             background-color: #837a7a;
@@ -150,13 +165,20 @@
         }
         
 
+<<<<<<< Updated upstream
         .container {
             max-height: 200px;
 
+=======
+        .container { 
+            height: 200px;
+           
+>>>>>>> Stashed changes
             position: relative;
             display: block;
             margin-left: auto;
             margin-right: auto;
+<<<<<<< Updated upstream
         }
 
         #myBtn {
@@ -200,3 +222,8 @@
         }
 
         
+=======
+          }
+          
+          
+>>>>>>> Stashed changes
