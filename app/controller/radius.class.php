@@ -9,7 +9,7 @@ class Radius
     public function Radius($ip_radius_server = '127.0.0.1', $shared_secret = '', $radius_suffix = '', $udp_timeout = 5, $authentication_port = 1812, $accounting_port = 1813)
     {
         // (...)
-        echo "haha";
+        
     }
 
     // (...)
