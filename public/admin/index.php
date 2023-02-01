@@ -23,7 +23,7 @@ $result_l = mysqli_query($con, $query);
 <html>
 
 <head>
-    <title>E - Borrow</title>
+    <title>E - Borrow || ADMIN</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -125,7 +125,7 @@ $result_l = mysqli_query($con, $query);
             </p>
         </div><br>
 
-        <div class="table-responsive">
+        <div class="table-responsive" style="padding: 25px;">
             <div>
                 <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
                     <div>

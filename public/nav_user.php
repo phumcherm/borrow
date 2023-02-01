@@ -277,6 +277,17 @@
             }
         }
     </style>
+
+<?php 
+if(isset($_GET['logout'])){
+    //Destroy entire session data.
+session_destroy();
+
+//redirect page to index.php
+header('location:login.php');
+}
+?>
+
 </head>
 
 <!DOCTYPE html>
@@ -309,7 +320,7 @@
                                 <a class="nav-link" href="treasury_user.php"><i class="far fa-calendar-alt"></i>คลังวัสดุ ครุภัณฑ์</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="login.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
+                                <a class="nav-link" name="logout" href="#"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
                             </li>
                         </ul>
                     </div>
