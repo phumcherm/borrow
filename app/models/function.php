@@ -64,7 +64,7 @@ class DB_con
 
     function selectBorrow()
     {
-        $result = mysqli_query($this->dbcon, "SELECT *,detail FROM borrow,itemdata where borrow.id = itemdata.id");
+        $result = mysqli_query($this->dbcon, "SELECT *,detail FROM borrow,itemdata where borrow.id = itemdata.id  order by br_id desc");
         return $result;
     }
 }
