@@ -112,7 +112,7 @@ $con = mysqli_connect("172.19.0.1:9906", "ceitdb", "12345678", "ceitdb");
 
 
 
-        <div class="table-responsive">
+        <div class="table-responsive" style="padding: 25px;">
             <div>
                 <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
                     <div>
