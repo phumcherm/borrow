@@ -189,7 +189,6 @@ $result_l = mysqli_query($con, $query);
                         <tbody>
                             <?php
 
-
                             $selectAll = new DB_con();
                             $sql = $selectAll->selectAll();
                             while ($row = mysqli_fetch_array($sql)) {
