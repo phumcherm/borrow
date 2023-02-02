@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>E - Borrow</title>
     <meta charset="UTF-8">
@@ -103,6 +104,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="fullscreen-block colorwhite">
         <br><br>
@@ -120,7 +122,7 @@
 
         <div style="max-width: 400px; margin: 15px auto 15px auto; ">
             <div>
-                <form class="container  w3-white w3-container " style=" margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                <form action="../app/controller/login_db.php" method="post" class="container  w3-white w3-container " style=" margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
                     <div class="colororage">
 
                         <h3>
@@ -134,11 +136,14 @@
                         <br>
                         <div class="w3-center">
                             <i class="fa fa-key icon"></i>
-                            <input type="password" required name="txt_password" minlength="11" maxlength="11" class="form-control form-control-lg"required  placeholder="รหัสผ่าน (หมายเลขประจำตัว)">
+                            <input type="password" required name="txt_password" minlength="11" maxlength="11" class="form-control form-control-lg" required placeholder="รหัสผ่าน (หมายเลขประจำตัว)">
                         </div>
                         <br>
                         <div class="w3-center">
-                            <a href="index.php" type="button" style="  background-color: #EC5A0F; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">เข้าสู่ระบบ</a>
+                            <button type="submit" name="submit" style="background-color: #EC5A0F; width: 100px;padding: 5px;color: white;border-radius: 7px;border: none; ">
+                                เข้าสู่ระบบ
+                            </button>
+                            <!-- <a href="index.php" type="button" style="  background-color: #EC5A0F; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">เข้าสู่ระบบ</a> -->
                         </div>
                         <br>
                     </div>
@@ -147,4 +152,5 @@
         </div>
     </div>
 </body>
+
 </html>
