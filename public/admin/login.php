@@ -1,11 +1,13 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
     <title>E - Borrow</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <style>
         @font-face {
@@ -17,6 +19,7 @@
             font-family: SUT_Bold;
             src: url(SUT-Fonts/SUT_Bold_ver_1.00.ttf);
         }
+
 
         body {
             font-family: SUT_Bold;
@@ -50,6 +53,7 @@
             letter-spacing: 1px;
             margin-top: 0;
             margin-bottom: 0;
+
             font-size: 2.5em;
         }
 
@@ -101,7 +105,6 @@
         }
     </style>
 </head>
-
 <body>
     <div class="fullscreen-block colorwhite">
         <br><br>
@@ -110,32 +113,36 @@
                     <h1>E - Borrow</h1>
                 </b></div>
         </section>
-
         <section class="w3-center">
             <div><b>
                     <h3>ระบบ ยืม - คืน วัสดุและครุภัณฑ์ฝ่ายเทคนิควิศวกรรม</h3>
                 </b></div>
         </section>
-
         <br><br><br>
+
         <div style="max-width: 400px; margin: 15px auto 15px auto; ">
             <div>
-                <form class="container  w3-white w3-container " style=" margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
-                    <div class="colororage">                   
-                        <h3 style="color: #EC5A0F;font-family: SUT_Bold;"><i class="fas fa-sign-in-alt" style="font-size:24px;"></i>&nbsp;เข้าสู่ระบบ</h3>
-                        <!-- Email input -->
+                <form   action= "../app/models/login_db.php" class="container  w3-white w3-container " style=" margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;" method="post">
+                    <div class="colororage">
+
+                        <h3>
+
+                            <h3 style="color: #EC5A0F;font-family: SUT_Bold;"><i class="fas fa-sign-in-alt" style="font-size:24px;"></i>&nbsp;เข้าสู่ระบบ</h3>
+                        </h3>
                         <div class="w3-center">
                             <i class="fa fa-user icon"></i>
-                            <input type="text" required name="txt_code" minlength="13" maxlength="13" class="form-control form-control-lg " placeholder="หมายเลขประจำตัว">
-                        </div><br>
-                        <!-- Password input -->
+                            <input type="text" required name="txt_code" class="form-control form-control-lg " required placeholder="หมายเลขประจำตัว">
+                        </div>
+                        <br>
                         <div class="w3-center">
                             <i class="fa fa-key icon"></i>
-                            <input type="password" required name="txt_password" minlength="11" maxlength="11" class="form-control form-control-lg" placeholder="รหัสผ่าน (หมายเลขประจำตัว)">
-                        </div><br>
+                            <input type="password" required name="txt_password"  class="form-control form-control-lg"required  placeholder="รหัสผ่าน (หมายเลขประจำตัว)">
+                        </div>
+                        <br>
                         <div class="w3-center">
-                        <a href="index.php" type="button" style="  background-color: #EC5A0F; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">เข้าสู่ระบบ</a>                 
-                        </div><br>
+                            <button type="submit" name="btn_login" style="  background-color: #EC5A0F; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">เข้าสู่ระบบ</bouton>
+                        </div>
+                        <br>
                     </div>
                 </form>
             </div>

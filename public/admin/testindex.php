@@ -1,32 +1,15 @@
 <?php
-require_once "../app/models/Database.php";
-require_once "../app/models/function.php";
-
-$con = mysqli_connect("172.17.0.1:9906", "ceitdb", "12345678", "ceitdb");
-
-/* if (isset($_GET['page'])) {
-    $page = $_GET['page'];
-} else {
-    $page = 1;
-}
-
-$num_par_page = 49;
-$start_from = ($page - 1) * 49;
-
-
-$query = "SELECT * FROM itemdata limit $start_from,$num_par_page";
-$result_l = mysqli_query($con, $query);
+require_once "../../app/models/function.php";
+$con = mysqli_connect("172.19.0.1:9906", "ceitdb", "12345678", "ceitdb");
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>E - Borrow</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="/borrow/public/css/style.css">
-    <link rel="stylesheet" href="/borrow/public/css/icons.png">
+    <link rel="stylesheet" href="css/style.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
@@ -66,31 +49,36 @@ $result_l = mysqli_query($con, $query);
         #myUL li a:hover:not(.header) {
             background-color: #eee;
         }
+
+
+        .pagination li:hover {
+            cursor: pointer;
+        }
     </style>
 
 </head>
 
 <body>
     <?php
-    include "nav_user.php";
+    include "a_navbar.php";
     ?>
     <div style="background-color:#827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
         <div>
             <h2 style="color: #fff;font-family: SUT_Bold;">
                 <i class="fa fa-caret-right" style="font-size:48px"></i>รายการครุภัณฑ์
+
             </h2>
         </div>
         <br>
-
         <center>
-            <input class="w3-input " type="text" id="myInput" onkeyup="myFunction()" placeholder="Search .." style="max-width: 100%; max-height: 100%;margin: 15px;border-radius: 7px;padding: 30px;    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;" title="Type in a name">
+            <input class="w3-input " type="text" id="myInput" onkeyup="myFunction()" placeholder="Search .." style="max-width: 100%; max-height: 100%;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;" title="Type in a name">
         </center>
         <br>
-
         <div class='pagination-container'>
             <p Align=right>
-            <nav aria-label="Page navigation example ">
+            <nav aria-label="Page navigation example">
                 <ul class="pagination">
+
                     <li data-page="prev" class="page-item">
                         <a class="page-link" href="#" style=" border-color:#5B5B5B; color:#000000; ">Previous
                             <span>
@@ -108,7 +96,7 @@ $result_l = mysqli_query($con, $query);
 
             <br><br><br>
             <p Align=right>
-                <select name="state" id="maxRows" style=" border-color:#5B5B5B; box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.3); ">
+                <select name="state" id="maxRows" style=" border-color:#5B5B5B;box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.3);  ">
                     <option value="5000">Show ALL Rows</option>
                     <option value="5">5</option>
                     <option value="10">10</option>
@@ -119,41 +107,45 @@ $result_l = mysqli_query($con, $query);
                     <option value="100">100</option>
                 </select>
             </p>
+
         </div>
 
 
 
-        <div class="table-responsive" style="padding: 25px;">
+        <div class="table-responsive">
             <div>
                 <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
                     <div>
                         <thead class="table-dark">
                             <th>
-                                <center>Borrow ID</center>
+                                <center>id </center>
                             </th>
                             <th>
-                                <center>Item ID</center>
+                                <center>updateTime</center>
                             </th>
                             <th>
-                                <center>รายการ</center>
+                                <center>itemCode</center>
                             </th>
                             <th>
-                                <center>Brand</center>
+                                <center>detail</center>
                             </th>
                             <th>
-                                <center>งานที่นำไปใช้</center>
+                                <center>checkInDate</center>
                             </th>
                             <th>
-                                <center>สถานที่กิจกรรม</center>
+                                <center>brand</center>
                             </th>
                             <th>
-                                <center>ฝ่าย</center>
+                                <center>serialNumber</center>
                             </th>
                             <th>
-                                <center>วันที่ยืม</center>
+                                <center>price</center>
                             </th>
                             <th>
-                                <center>วันที่ต้องคืน</center>
+                                <center>refDoc</center>
+                            </th>
+                            <th>
+                                <center>room</center>
                             </th>
                             <th>
                                 <center>status</center>
@@ -162,70 +154,50 @@ $result_l = mysqli_query($con, $query);
 
                         <tbody>
                             <?php
-                            $selectBorrow = new DB_con();
-                            $sql = $selectBorrow->selectBorrow();
+                            $selectAll = new DB_con();
+                            $sql = $selectAll->selectAll();
                             while ($row = mysqli_fetch_array($sql)) {
                             ?>
                                 <td>
-                                    <center><?php echo $row["br_id"] ?></center>
+                                    <center><?php echo $row["id"] ?></center>
                                 </td>
                                 <td>
-                                    <center> <?php echo $row["id"] ?></center>
+                                    <center> <?php echo $row["updateTime"] ?></center>
                                 </td>
                                 <td>
-                                    <center> <?php echo $row["detail"] ?></center>
-                                </td>
-                                <td>
-                                    <center> <?php echo $row["brand"] ?></center>
-                                </td>
-                                <td>
-                                    <center> <?php echo $row["activity"] ?></center>
+                                    <center> <?php echo $row["itemCode"] ?></center>
                                 </td>
 
                                 <td>
-                                    <center><?php echo $row["location"] ?></center>
+                                    <center><?php echo $row["detail"] ?></center>
                                 </td>
                                 <td>
-                                    <center> <?php echo $row["room"] ?></center>
+                                    <?php echo $row["checkInDate"] ?>
                                 </td>
                                 <td>
-                                    <?php echo $row["br_time"] ?>
+                                    <center><?php echo $row["brand"] ?></center>
                                 </td>
                                 <td>
-                                    <center><?php echo $row["br_date"] ?></center>
+                                    <center> <?php echo $row["serialNumber"] ?></center>
                                 </td>
                                 <td>
-
-                                    <center>
-                                        <?php
-                                        if ($row["br_stat"] == 0) {
-                                        ?>
-                                            <p style="background-color: red;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">รอดำเนินการ</p>
-                                    </center>
-                                <?php
-                                        } else {
-                                ?>
-                                    <center>
-                                        <p style="background-color: green;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">คืนแล้ว</p>
-
-                                    <?php
-                                        }
-                                    ?>
-                                    <!-- <center><?php echo $row["borrow.status"] ?></center> -->
-                                    </center>
+                                    <center> <?php echo $row["price"] ?></center>
                                 </td>
-                                <!-- <td>
-                                    <center>
-                                        <p style="background-color: red;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">รอดำเนินการ</p>
-                                    </center>
-                                </td> -->
+                                <td>
+                                    <center> <?php echo $row["refDoc"] ?></center>
+                                </td>
+                                <td>
+                                    <center><?php echo $row["room"] ?></center>
+                                </td>
+                                <td>
+                                    <center><?php echo $row["status"] ?></center>
+                                </td>
                         </tbody>
                     <?php } ?>
                 </table>
             </div>
         </div>
     </div>
-
     <script>
         var ajax = new XMLHttpRequest();
         var method = "GET";
@@ -273,7 +245,9 @@ $result_l = mysqli_query($con, $query);
         }
     </script>
 
+    <!-- Sidebar/menu -->
 
+    <!-- Top menu on small screens -->
     <script>
         // Script to open and close sidebar
         function w3_open() {
@@ -304,11 +278,11 @@ $result_l = mysqli_query($con, $query);
             tr = table.getElementsByTagName("tr");
             for (i = 0; i < tr.length; i++) {
                 td0 = tr[i].getElementsByTagName("td")[0];
-                td2 = tr[i].getElementsByTagName("td")[2];
-                if (td2 || td0) {
-                    var td2Value = td2.textContent || td2.innerText;
+                td3 = tr[i].getElementsByTagName("td")[3];
+                if (td3 || td0) {
+                    var td3Value = td3.textContent || td3.innerText;
                     var td0Value = td0.textContent || td0.innerText;
-                    if (td2Value.toUpperCase().indexOf(filter) > -1 || td0Value.toUpperCase().indexOf(filter) > -1) {
+                    if (td3Value.toUpperCase().indexOf(filter) > -1 || td0Value.toUpperCase().indexOf(filter) > -1) {
                         tr[i].style.display = "";
                     } else {
                         tr[i].style.display = "none";
@@ -449,5 +423,4 @@ $result_l = mysqli_query($con, $query);
         }
     </script>
 </body>
-
 </html>
