@@ -16,7 +16,6 @@ $start_from = ($page - 1) * 49;
 
 $query = "SELECT * FROM itemdata limit $start_from,$num_par_page";
 $result_l = mysqli_query($con, $query);
- */
 ?>
 <!DOCTYPE html>
 <html>
@@ -196,10 +195,30 @@ $result_l = mysqli_query($con, $query);
                                     <center><?php echo $row["br_date"] ?></center>
                                 </td>
                                 <td>
+
+                                    <center>
+                                        <?php
+                                        if ($row["br_stat"] == 0) {
+                                        ?>
+                                            <p style="background-color: red;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">รอดำเนินการ</p>
+                                    </center>
+                                <?php
+                                        } else {
+                                ?>
+                                    <center>
+                                        <p style="background-color: green;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">คืนแล้ว</p>
+
+                                    <?php
+                                        }
+                                    ?>
+                                    <!-- <center><?php echo $row["borrow.status"] ?></center> -->
+                                    </center>
+                                </td>
+                                <!-- <td>
                                     <center>
                                         <p style="background-color: red;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">รอดำเนินการ</p>
                                     </center>
-                                </td>
+                                </td> -->
                         </tbody>
                     <?php } ?>
                 </table>

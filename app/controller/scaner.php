@@ -97,7 +97,7 @@
         var method = "GET";
         var url = "data4.php";
         var data = "?code=" + str_code;
-        var asynchronous = true;
+        var asynchronous = true; 
 
         ajax.open(method, url + data, asynchronous);
         ajax.send();

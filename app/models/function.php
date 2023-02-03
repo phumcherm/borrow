@@ -56,15 +56,35 @@ class DB_con
 
     function insertBorrow($itemcode, $activity, $location, $br_date)
     {
-        $result = mysqli_query($this->dbcon, "INSERT INTO borrow(id,activity,location,br_date) values(
+        $result = mysqli_query($this->dbcon, "INSERT INTO borrow(id,activity,location,br_date,status) values(
                                             (select id from itemdata where itemCode = '$itemcode'),
-                                            '$activity','$location','$br_date')");
+                                            '$activity','$location','$br_date',0)");
+        return $result;
+    }
+
+    function insertBack($itemcode)
+    {
+        $result = mysqli_query($this->dbcon, "INSERT INTO back(id,br_id) values(
+                                            (select id from itemdata where itemCode = '$itemcode'),
+                                            (SELECT br_id FROM borrow,itemdata where borrow.id = itemdata.id and itemCode = '$itemcode'))");
+        return $result;
+    }
+
+    function updateStatusBorrow()
+    {
+        $result = mysqli_query($this->dbcon, "UPDATE borrow set status = 1 where br_id in (SELECT br_id FROM back );");
         return $result;
     }
 
     function selectBorrow()
     {
-        $result = mysqli_query($this->dbcon, "SELECT *,detail FROM borrow,itemdata where borrow.id = itemdata.id  order by br_id desc");
+        $result = mysqli_query($this->dbcon, "SELECT *,borrow.status br_stat FROM borrow,itemdata where borrow.id = itemdata.id  order by br_id desc");
+        return $result;
+    }
+
+    function selectCountItem()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT * FROM borrow,itemdata ");
         return $result;
     }
 }

@@ -307,7 +307,7 @@
                     <a class="nav-link  " type="button" href="report_admin.php" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-address-book"></i>รายงาน</a> 
                 </li>        
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
+                    <a class="nav-link" href="../login.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
                 </li>
             </ul>
         </div>

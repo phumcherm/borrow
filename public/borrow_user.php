@@ -18,6 +18,7 @@ $result_l = mysqli_query($con, $query);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -73,7 +74,6 @@ $result_l = mysqli_query($con, $query);
             grid-template-columns: 1fr;
         }
     }
-
 </style>
 
 <body>
@@ -97,7 +97,8 @@ $result_l = mysqli_query($con, $query);
                     // echo $itemCode;
                     // if (isset($_GET['code'])) {
                     //     echo $_GET['code'];
-                    // } ?>
+                    // } 
+                    ?>
                     <br>
                     <br>
 
@@ -129,86 +130,76 @@ $result_l = mysqli_query($con, $query);
                     <div class="table-responsive">
                         <div>
                             <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-                                <div>
 
 
-                    <div style="max-width: 1600px;margin-left: auto;">
-                        <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
-                        <a style="float: right;padding: 15px 25px;background-color: #ff5722;border-radius: 7px;margin-bottom: 15px;" onclick="delAll_test()">ลบทั้งหมด</a>
-                        <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;">
-                            <thead class="table-dark">
-                                <th>
-                                    <center>id </center>
-                                </th>
-                                <th>
-                                    <center>updateTime</center>
-                                </th>
-                                <th>
-                                    <center>itemCode</center>
-                                </th>
-                                <th>
-                                    <center>detail</center>
-                                </th>
-                                <th>
-                                    <center>checkInDate</center>
-                                </th>
-                                <th>
-                                    <center>brand</center>
-                                </th>
-                                <th>
-                                    <center>serialNumber</center>
-                                </th>
-                                <th>
-                                    <center>price</center>
-                                </th>
-                                <th>
-                                    <center>refDoc</center>
-                                </th>
-                                <th>
-                                    <center>room</center>
-                                </th>
-                                <th>
-                                    <center></center>
-                                </th>
-                                <!-- <th>
-                <center>ลำดับ</center>
-            </th>
-            <th>
-                <center>รายการ</center>
-            </th>
-            <th>
-                <center>ห้อง-แผนก</center>
-            </th>
-            <th>
-                <center>วันที่ยืม</center>
-            </th>
-            <th>
-                <center>วันที่คืน</center>
-            </th> -->
-                            </thead>
-                            <tbody id="data">
-                                <p>
-                                    <td colspan="10" class="text-center">No data available</td>
-                                </p>
-                            </tbody>
-                        </table>
+
+                                <div style="max-width: 1600px;margin-left: auto;">
+                                    <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
+                                    <a style="float: right;padding: 15px 25px;background-color: #ff5722;border-radius: 7px;margin-bottom: 15px;" onclick="delAll_test()">ลบทั้งหมด</a>
+                                    <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;">
+                                        <thead class="table-dark">
+                                            <th>
+                                                <center>id </center>
+                                            </th>
+                                            <th>
+                                                <center>updateTime</center>
+                                            </th>
+                                            <th>
+                                                <center>itemCode</center>
+                                            </th>
+                                            <th>
+                                                <center>detail</center>
+                                            </th>
+                                            <th>
+                                                <center>checkInDate</center>
+                                            </th>
+                                            <th>
+                                                <center>brand</center>
+                                            </th>
+                                            <th>
+                                                <center>serialNumber</center>
+                                            </th>
+                                            <th>
+                                                <center>price</center>
+                                            </th>
+                                            <th>
+                                                <center>refDoc</center>
+                                            </th>
+                                            <th>
+                                                <center>room</center>
+                                            </th>
+                                            <th>
+                                                <center></center>
+                                            </th>
+                                        </thead>
+                                        <tbody id="data">
+                                            <p>
+                                                <td colspan="10" class="text-center">แสกน QR Code ยืมครุภัณฑ์</td>
+                                            </p>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <script>
+                                    function delAll_test() {
+                                        // document.getElementById("data4").innerHTML = code234
+                                        // console.log(code234)
+                                        itemCode.length = 0
+                                        console.log("del = " + itemCode)
+                                        tableFunc()
+                                    }
+                                </script>
+                                <br>
+                                <button type="submit" id="submit" name="submit" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;">ยืนยันทั้งหมด</button>
+
+                            </table>
+                        </div>
                     </div>
-
-                    <script>
-                        function delAll_test() {
-                            // document.getElementById("data4").innerHTML = code234
-                            // console.log(code234)
-                            itemCode.length = 0
-                            console.log("del = " + itemCode)
-                            tableFunc()
-                        }
-                    </script>
-                    <br>
-                    <button type="submit" id="submit" name="submit" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;">ยืนยันทั้งหมด</button>
                 </form>
             </div>
             <br>
         </div>
     </div>
 </body>
+
 </html>
