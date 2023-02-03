@@ -32,8 +32,6 @@ if (isset($_POST['submit'])) {
             // echo $br_date . "<br>";
         } else {
             echo "พังงง000";
-            echo $sql;
-            echo $arr_code[0];
         }
     } else {
 ?><script>
