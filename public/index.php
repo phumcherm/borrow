@@ -15,7 +15,7 @@ $start_from = ($page - 1) * 49;
 
 
 $query = "SELECT * FROM itemdata limit $start_from,$num_par_page";
-$result_l = mysqli_query($con, $query); */
+$result_l = mysqli_query($con, $query); 
 ?>
 
 <!DOCTYPE html>
