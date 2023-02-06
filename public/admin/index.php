@@ -3,8 +3,7 @@ session_start();
 require('../../app/models/Modelborrow.php');
 require_once "../../app/models/Database.php";
 require_once "../../app/models/function.php";
-
-$con = mysqli_connect("172.19.0.1:9906", "ceitdb", "12345678", "ceitdb");
+require_once "../../app/models/db.php";
 // if (!isset($_SESSION['admin_login'])) {
 //     $_SESSION['error'] = 'กรุณาเข้าสู่ระบบ!!';
 //     header("location: ./../login.php");
@@ -95,11 +94,11 @@ $con = mysqli_connect("172.19.0.1:9906", "ceitdb", "12345678", "ceitdb");
                                     <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
                                     <td data-label="ยี่ห้อ."><?php echo $row['brand'] ?></td>
                                     <td data-label="สถานะ."><?php if ($row['status'] == "ใช้งานได้") {
-                                                                echo "<p style='color:green;font-size:16px'>ใช้งานได้</p>";
-                                                            } elseif ($row['status'] == "ชำรุดเพื่อรอการจำหน่าย") {
-                                                                echo "<p style='color:red;font-size:16px'>ชำรุดเพื่อรอการจำหน่าย</p>";
+                                                                echo "<p style='background-color: green;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;'>ใช้งานได้</p>";
+                                                            } elseif ($row['status'] == "ชำรุดรอการซ่อม") {
+                                                                echo "<p style='background-color: #ffcc00;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;'>ชำรุดรอการซ่อม</p>";
                                                             } else {
-                                                                echo $row['br_status'];
+                                                                echo "<p style='background-color: red;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;'>".$row['status']."</p>";
                                                             }  ?></td>
                                     <td data-label="เจ้าหน้าที่."><?php echo $row['notation'] ?></td>
 
