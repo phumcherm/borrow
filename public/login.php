@@ -131,12 +131,12 @@
                         </h3>
                         <div class="w3-center">
                             <i class="fa fa-user icon"></i>
-                            <input type="text" required name="txt_code" minlength="13" maxlength="13" class="form-control form-control-lg " required placeholder="หมายเลขประจำตัว">
+                            <input type="text" required name="txt_code"  class="form-control form-control-lg " required placeholder="หมายเลขประจำตัว">
                         </div>
                         <br>
                         <div class="w3-center">
                             <i class="fa fa-key icon"></i>
-                            <input type="password" required name="txt_password" minlength="11" maxlength="11" class="form-control form-control-lg" required placeholder="รหัสผ่าน (หมายเลขประจำตัว)">
+                            <input type="password" required name="txt_password"  class="form-control form-control-lg" required placeholder="รหัสผ่าน (หมายเลขประจำตัว)">
                         </div>
                         <br>
                         <div class="w3-center">

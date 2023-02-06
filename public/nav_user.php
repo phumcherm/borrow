@@ -292,7 +292,7 @@ header('location:login.php');
 
 <!DOCTYPE html>
 <html>
-<button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
+<!-- <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button> -->
 <body>
                 <nav class="navbar navbar-expand-custom navbar-mainbg">
                     <a class="navbar-brand " href="#">
@@ -318,6 +318,9 @@ header('location:login.php');
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="treasury_user.php"><i class="far fa-calendar-alt"></i>คลังวัสดุ ครุภัณฑ์</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="repair.php"><i class="far fa-calendar-alt"></i>แจ้งซ่อม</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" name="logout" href="login.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
