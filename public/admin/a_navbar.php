@@ -45,9 +45,6 @@ if (isset($_SESSION['admin_login'])) {
 
       font-family: SUT_Regular;
     }
-
-
-   
   </style>
 </head>
 <!-- style="background-color: #E6581D;" -->
@@ -56,7 +53,7 @@ if (isset($_SESSION['admin_login'])) {
 
   <!-- Top container -->
   <div class="w3-bar w3-top  w3-large  " style="z-index:4; background-color: #E6581D; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; ">
-    <button class="w3-bar-item w3-button w3-hide-large  w3-hover-text-light-grey" onclick="w3_open();"  style="color: #fff;"><i class="fa fa-bars"></i>  Menu</button>
+    <button class="w3-bar-item w3-button w3-hide-large  w3-hover-text-light-grey" onclick="w3_open();" style="color: #fff;"><i class="fa fa-bars"></i>  Menu</button>
     <span class="w3-bar-item w3-right" style="color: #fff;">แอดมิน </span>
   </div>
 
@@ -64,9 +61,9 @@ if (isset($_SESSION['admin_login'])) {
   <nav class="w3-sidebar w3-collapse  w3-animate-left" style="z-index:3;width:250px; background-color: #E6581D; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;" id="mySidebar"><br>
     <div class="w3-container w3-row">
       <div class="w3-col s8 ">
-       
-        <center><img src="../../app/asset/ceit_logo.jpg" style=" box-shadow: rgba(0, 0, 0,0.70) 0px 5px 15px;  width:90px  " class="w3-circle w3-margin-right" ></center>
-      
+
+        <center><img src="../../app/asset/ceit_logo.jpg" style=" box-shadow: rgba(0, 0, 0,0.70) 0px 5px 15px;  width:90px  " class="w3-circle w3-margin-right"></center>
+
         <br>
         <center>
           <h2 style="color: #fff;font-family: SUT_Bold;  "> &nbsp;&nbsp;E - borrow</h2>
@@ -82,8 +79,8 @@ if (isset($_SESSION['admin_login'])) {
     <hr>
 
     <div class="w3-bar-block " style="color: #fff;">
-      <a href="index.php" class="w3-bar-item w3-button w3-padding ">
-        <h5><i class="fas fa-home"></i>  หน้าหลัก</h5>
+      <a href="index.php" class="w3-bar-item w3-button w3-padding">
+        <h5><i class="fas fa-home"></i> หน้าหลัก</h5>
       </a>
       <a href="a_borrow.php" class="w3-bar-item w3-button w3-padding">
         <h5><i class="fas fa-file-download"></i>  ข้อมูลยืมครุภัณฑ์</h5>
@@ -93,6 +90,9 @@ if (isset($_SESSION['admin_login'])) {
       </a>
       <a href="a_report.php" class="w3-bar-item w3-button w3-padding">
         <h5><i class="fas fa-file-invoice"></i>  รายงานจัดการครุภัณฑ์</h5>
+      </a>
+      <a href="a_report.php" class="w3-bar-item w3-button w3-padding">
+        <h5><i class="fas fa-tools"></i>  แจ้งซ่อมรายการครุภัณฑ์</h5>
       </a>
       <a data-id="logout" href="../login.php?logout='1'" class="w3-bar-item w3-button w3-padding">
         <h5><i class="fas fa-sign-out-alt"></i>  ออกจากระบบ</h5>
