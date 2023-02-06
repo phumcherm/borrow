@@ -22,8 +22,8 @@ if (isset($_POST['submit'])) {
             if ($sql) {
 
                 //after insert or update 
-                $_SESSION['status'] = "คืนครุภัณฑ์สำเร็จ";
-                header("location: /public/back_user.php");
+                $_SESSION['status'] = "ยืมครุภัณฑ์สำเร็จ";
+                header("location: /public/index.php");
                 // foreach ($arr_code as $v) {
                 //     print $v;
                 //     echo "<br>";

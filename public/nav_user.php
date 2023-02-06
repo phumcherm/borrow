@@ -292,7 +292,7 @@ header('location:login.php');
 
 <!DOCTYPE html>
 <html>
-<button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
+<!-- <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button> -->
 <body>
                 <nav class="navbar navbar-expand-custom navbar-mainbg">
                     <a class="navbar-brand " href="#">

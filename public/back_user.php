@@ -68,7 +68,7 @@ session_start();
     <?php
     include "nav_user.php";
     ?>
-    <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
+    <!-- <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button> -->
 
     <?php
 
@@ -115,8 +115,6 @@ session_start();
                     <div class="table-responsive">
                         <div>
                             <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-
-
 
                                 <div style="max-width: 1600px;margin-left: auto;">
                                     <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
