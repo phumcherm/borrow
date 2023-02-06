@@ -5,7 +5,7 @@ require('../../app/models/Modelborrow.php');
 require_once "../../app/models/Database.php";
 require_once "../../app/models/function.php";
 
-$con = mysqli_connect("172.19.0.1:9906", "ceitdb", "12345678", "ceitdb");
+require_once "../../app/models/db.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
