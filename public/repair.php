@@ -65,18 +65,6 @@
                border: none;
           }
 
-          article,
-          aside,
-          details,
-          figcaption,
-          figure,
-          footer,
-          header,
-          hgroup,
-          main,
-          menu,
-          nav,
-          section,
           summary {
                display: block;
           }
@@ -91,13 +79,9 @@
 
           body {
                text-align: center;
-               font-family: 'Lato', 'sans-serif';
-               font-weight: 400;
+        
           }
 
-          a {
-               text-decoration: none;
-          }
 
           .info-text {
                text-align: left;
@@ -110,18 +94,18 @@
           }
 
           .form-group {
-               margin-bottom: 20px;
+               margin-bottom: 30px;
           }
 
           h2.heading {
-               font-size: 18px;
+               font-size: 30px;
                text-transform: uppercase;
                font-weight: 300;
                text-align: left;
                color: #506982;
-               border-bottom: 1px solid #506982;
-               padding-bottom: 3px;
-               margin-bottom: 20px;
+               border-bottom: 3px solid #506982;
+               padding-bottom: 15px;
+               margin-bottom: 50px;
           }
 
           .controls {
@@ -137,18 +121,17 @@
           .controls textarea,
           .controls button,
           .controls select {
-               padding: 12px;
-               font-size: 14px;
-               border: 1px solid #c6c6c6;
+               padding: 20px;
+               font-size: 20px;
+               border: 2px solid #c6c6c6;
                width: 100%;
                margin-bottom: 18px;
                color: #888;
-               font-family: 'Lato', 'sans-serif';
                font-size: 16px;
                font-weight: 300;
                -moz-border-radius: 2px;
                -webkit-border-radius: 2px;
-               border-radius: 2px;
+               border-radius: 5px;
                -moz-transition: all 0.3s;
                -o-transition: all 0.3s;
                -webkit-transition: all 0.3s;
@@ -207,7 +190,7 @@
                -webkit-appearance: none;
                cursor: pointer;
           }
-
+/*text*/ 
           .controls label {
                position: absolute;
                left: 8px;
@@ -216,8 +199,8 @@
                color: #999;
                font-size: 16px;
                display: inline-block;
-               padding: 4px 10px;
-               font-weight: 400;
+               padding: 1px 10px;
+               font-weight: 100%;
                background-color: rgba(255, 255, 255, 0);
                -moz-transition: color 0.3s, top 0.3s, background-color 0.8s;
                -o-transition: color 0.3s, top 0.3s, background-color 0.8s;
@@ -227,9 +210,9 @@
           }
 
           .controls label.active {
-               top: -11px;
+               top: -20px;
                color: #555;
-               background-color: white;
+               background-color:transparent;
                width: auto;
           }
 
@@ -237,12 +220,12 @@
                resize: none;
                height: 200px;
           }
-
+/*text*/ 
           button {
                cursor: pointer;
                background-color: #1b3d4d;
                border: none;
-               color: #fff;
+               color: transparent;
                padding: 12px 0;
                float: right;
           }
@@ -286,7 +269,7 @@
           }
 
           .col-1-2 {
-               width: 50%;
+               width: 100%;
           }
 
           .col-1-4 {
