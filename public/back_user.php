@@ -1,4 +1,9 @@
-<?php $con = mysqli_connect("172.19.0.1:9906", "ceitdb", "12345678", "ceitdb"); ?>
+<?php $con = mysqli_connect("172.17.0.1:9906", "ceitdb", "12345678", "ceitdb"); ?>
+<?php
+require_once "../app/models/function.php";
+
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,73 +66,125 @@
 
 <body>
     <?php
-    require "nav_user.php";
+    include "nav_user.php";
     ?>
     <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button>
-    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
+    <?php
+
+    if (isset($_SESSION['status'])) {
+    ?>
+        <div class="alert alert-warning bg-success alert-dismissible fade show" role="alert">
+            <h1>
+                Hey !<?= $_SESSION['status']; ?>
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">ปิด</button>
+        </div>
+    <?php
+        unset($_SESSION['status']);
+    }
+
+    ?>
     <div>
         <div style="background-color: #827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
             <h2 style="color: #fff;font-family: SUT_Bold;">
-                <i class="fa fa-caret-right" style="font-size:48px"></i> คืนวัสดุ ครุภัณฑ์
+                <i class="fa fa-caret-right" style="font-size:48px  "></i>คืนวัสดุ ครุภัณฑ์
             </h2>
-            <div style="max-width: 100%; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
-                <h3 style="color: white;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการการคืน</h3>
-                <br><br>
-                <center><a href="#" style="padding-left: 40px;padding-right:40px;"> Scan QR Code</a></center>
-                <br>
-                <div class="table-responsive">
-                    <div style="max-width: 1600px;margin-left: auto;">
-                        <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
-                        <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-                            <thead class="table-dark">
-                                <th>
-                                    ลำดับ
-                                </th>
-                                <th>
-                                    รายการ
-                                </th>
-                                <th>
-                                    วันที่ยืม
-                                </th>
-                                <th>
-                                    วันที่คืน
-                                </th>
-                                <th>
-                                    สถานะ
-                                </th>
-                            </thead>
-                            <?php for ($i = 0; $i < 5; $i++) {
-                            ?>
-                                <tbody>
-                                    <td>
-                                        <?php echo $i ?>
-                                    </td>
-                                    <td>
-                                        สาย HDMI
-                                    </td>
-                                    <td>
-                                        12-12-2565
-                                    </td>
-                                    <td>
-                                        30-12-2565
-                                    </td>
-                                    <td>
-                                        <center>
-                                            <p style="background-color: #28a745; max-width: 100px;padding: 5px;color: white;border-radius: 7px;">คืนแล้ว</p>
-                                        </center>
-                                    </td>
-                                </tbody>
-                            <?php } ?>
-                        </table>
-                    </div>
+            <!--   1300px -->
+            <div style="max-width: auto; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;">
+                <h3 style="color: #fff;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการ</h3>
+                <form action="../app/models/add_back.php" method="post">
+                    <? require "../app/controller/scaner.php" ?>
+                    <!-- <center><a href="#"> Scan QR Code</a></center> -->
+                    <?
+                    // echo $itemCode;
+                    // if (isset($_GET['code'])) {
+                    //     echo $_GET['code'];
+                    // } 
+                    ?>
                     <br>
-                </div>
-                <br>
+                    <br>
+
+                    <center>
+                        <input class="w3-input" type="text" required placeholder="code" id="data4" name="data4" style="max-width: 500px;visibility: hidden; ">
+                        <!-- <h2 id="data4" name="data4"></h2> -->
+                        <!-- <h2 id="result" ></h2> -->
+                        <!-- <br><br> -->
+                    </center>
+                    <br><br>
+                    <div class="table-responsive">
+                        <div>
+                            <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+
+
+
+                                <div style="max-width: 1600px;margin-left: auto;">
+                                    <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
+                                    <a style="float: right;padding: 15px 25px;background-color: #ff5722;border-radius: 7px;margin-bottom: 15px;" onclick="delAll_test()">ลบทั้งหมด</a>
+                                    <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;">
+                                        <thead class="table-dark">
+                                            <th>
+                                                <center>id </center>
+                                            </th>
+                                            <th>
+                                                <center>updateTime</center>
+                                            </th>
+                                            <th>
+                                                <center>itemCode</center>
+                                            </th>
+                                            <th>
+                                                <center>detail</center>
+                                            </th>
+                                            <th>
+                                                <center>checkInDate</center>
+                                            </th>
+                                            <th>
+                                                <center>brand</center>
+                                            </th>
+                                            <th>
+                                                <center>serialNumber</center>
+                                            </th>
+                                            <th>
+                                                <center>price</center>
+                                            </th>
+                                            <th>
+                                                <center>refDoc</center>
+                                            </th>
+                                            <th>
+                                                <center>room</center>
+                                            </th>
+                                            <th>
+                                                <center></center>
+                                            </th>
+                                        </thead>
+                                        <tbody id="data">
+                                            <p>
+                                                <td colspan="10" class="text-center">แสกน QR Code คืนครุภัณฑ์</td>
+                                            </p>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <script>
+                                    function delAll_test() {
+                                        // document.getElementById("data4").innerHTML = code234
+                                        // console.log(code234)
+                                        itemCode.length = 0
+                                        console.log("del = " + itemCode)
+                                        tableFunc()
+                                    }
+                                </script>
+                                <br>
+                                <button type="submit" id="submit" name="submit" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;">ยืนยันทั้งหมด</button>
+
+                            </table>
+                        </div>
+                    </div>
+                </form>
             </div>
+            <br>
         </div>
     </div>
 </body>
+
 </html>
