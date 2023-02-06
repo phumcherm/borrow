@@ -4,7 +4,7 @@ require_once "../app/models/function.php";
 
 $con = mysqli_connect("172.19.0.1:9906", "ceitdb", "12345678", "ceitdb");
 
-/* if (isset($_GET['page'])) {
+if (isset($_GET['page'])) {
     $page = $_GET['page'];
 } else {
     $page = 1;
@@ -74,7 +74,9 @@ $result_l = mysqli_query($con, $query); */
 <body>
     <?php
     include "nav_user.php";
+    require_once "../app/views/session_status.php";
     ?>
+    
     <div style="background-color:#827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
         <div>
             <h2 style="color: #fff;font-family: SUT_Bold;">

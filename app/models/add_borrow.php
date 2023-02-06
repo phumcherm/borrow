@@ -18,6 +18,7 @@ if (isset($_POST['submit'])) {
         }
 
         if ($sql) {
+            $_SESSION['status'] = "คืนครุภัณฑ์สำเร็จ";
             header("location: /public/index.php");
             // foreach ($arr_code as $v) {
             //     print $v;
@@ -28,7 +29,7 @@ if (isset($_POST['submit'])) {
             // print_r (explode(",",$id)) . "<br>";
             // echo $id . "<br>";
             // echo $activity . "<br>";
-            // echo $location . "<br>";
+            // echo $location . "<br>"; 
             // echo $br_date . "<br>";
         } else {
             echo "พังงง000";
