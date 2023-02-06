@@ -81,13 +81,6 @@ $con = mysqli_connect("172.19.0.1:9906", "ceitdb", "12345678", "ceitdb");
                                 <th>ยี่ห้อ</th>
                                 <th>สถานะ</th>
                                 <th>เจ้าหน้าที่</th>
-
-      
-
-    
-
-    
-
                         </thead>
                         <tbody>
                             <?php
