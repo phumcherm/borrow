@@ -320,6 +320,9 @@ header('location:login.php');
                                 <a class="nav-link" href="treasury_user.php"><i class="far fa-calendar-alt"></i>คลังวัสดุ ครุภัณฑ์</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="repair.php"><i class="far fa-calendar-alt"></i>แจ้งซ่อม</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" name="logout" href="login.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
                             </li>
                         </ul>
