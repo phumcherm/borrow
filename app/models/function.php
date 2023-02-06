@@ -66,7 +66,7 @@ class DB_con
     {
         $result = mysqli_query($this->dbcon, "INSERT INTO back(id,br_id) values(
                                             (select id from itemdata where itemCode = '$itemcode'),
-                                            (SELECT br_id FROM borrow,itemdata where borrow.id = itemdata.id and itemCode = '$itemcode'))");
+                                            (SELECT br_id FROM borrow,itemdata where borrow.id = itemdata.id and itemCode = '$itemcode' and borrow.status = 0))");
         return $result;
     }
 
