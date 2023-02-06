@@ -2,7 +2,7 @@
 require_once "../app/models/Database.php";
 require_once "../app/models/function.php";
 
-$con = mysqli_connect("172.17.0.1:9906", "ceitdb", "12345678", "ceitdb");
+$con = mysqli_connect("172.19.0.1:9906", "ceitdb", "12345678", "ceitdb");
 
 /* if (isset($_GET['page'])) {
     $page = $_GET['page'];
@@ -15,8 +15,9 @@ $start_from = ($page - 1) * 49;
 
 
 $query = "SELECT * FROM itemdata limit $start_from,$num_par_page";
-$result_l = mysqli_query($con, $query);
+$result_l = mysqli_query($con, $query); */
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -54,7 +55,7 @@ $result_l = mysqli_query($con, $query);
         #myUL li a {
             border: 6px solid #ddd;
             margin-top: -1px;
-            /* Prevent double borders */
+         
             background-color: #f6f6f6;
             padding: 12px;
             text-decoration: none;
