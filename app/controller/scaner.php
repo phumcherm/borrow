@@ -9,13 +9,23 @@
         align-items: center;
     }
 
+    video{
+        border-radius: 7px;
+    }
+
+    #qr-shaded-region {
+        border-radius: 7px;
+    }
+
     #reader {
         width: 600px;
+        border-radius: 7px;
     }
 
     #result {
         text-align: center;
         font-size: 1.5rem;
+        border-radius: 7px;
     }
 
     #html5-qrcode-button-camera-start {
@@ -97,7 +107,7 @@
         var method = "GET";
         var url = "data4.php";
         var data = "?code=" + str_code;
-        var asynchronous = true; 
+        var asynchronous = true;
 
         ajax.open(method, url + data, asynchronous);
         ajax.send();
