@@ -16,7 +16,6 @@
 
 
      <style>
-         
           video {
                margin: 0;
                padding: 0;
@@ -79,7 +78,7 @@
 
           body {
                text-align: center;
-        
+
           }
 
 
@@ -137,7 +136,9 @@
                -webkit-transition: all 0.3s;
                transition: all 0.3s;
           }
-
+          
+          .controls input[type="position"]:focus,
+          .controls input[type="position"]:hover,
           .controls input[type="text"]:focus,
           .controls input[type="text"]:hover,
           .controls input[type="email"]:focus,
@@ -157,7 +158,8 @@
                outline: none;
                border-color: #9FB1C1;
           }
-
+          .controls input[type="position"]:focus+label,
+          .controls input[type="position"]:hover+label
           .controls input[type="text"]:focus+label,
           .controls input[type="text"]:hover+label,
           .controls input[type="email"]:focus+label,
@@ -190,7 +192,8 @@
                -webkit-appearance: none;
                cursor: pointer;
           }
-/*text*/ 
+
+          /*text*/
           .controls label {
                position: absolute;
                left: 8px;
@@ -212,7 +215,7 @@
           .controls label.active {
                top: -20px;
                color: #555;
-               background-color:transparent;
+               background-color: transparent;
                width: auto;
           }
 
@@ -220,7 +223,8 @@
                resize: none;
                height: 200px;
           }
-/*text*/ 
+
+          /*text*/
           button {
                cursor: pointer;
                background-color: #1b3d4d;
@@ -292,6 +296,50 @@
           .col-1-8 {
                width: 12.5%;
           }
+
+          input {
+        border-radius: 7px;
+        border: none;
+        width: auto;
+        height: 40px;
+        padding: 20px;
+        margin: 15px auto 15px auto;
+        text-align: center;
+    }
+
+    .blocktext {
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+    }
+
+    center a {
+        background-color: #ff5722;
+        color: white;
+        padding: 15px 10px;
+        margin-top: 15px;
+        text-decoration: none;
+        border-radius: 7px;
+    }
+
+    button {
+        color: white;
+        background-color: #ff5722;
+        padding: 15px;
+        border: none;
+        border-radius: 7px;
+    }
+
+    a {
+        color: white;
+        background-color: #ff5722;
+    }
+
+    @media all and (max-width: 800px) {
+        .section_area_grid {
+            grid-template-columns: 1fr;
+        }
+    }
      </style>
 </head>
 
@@ -305,15 +353,12 @@
      <form action="">
           <!--  General -->
           <div class="form-group">
-               <h2 class="heading">Booking & contact</h2>
+               <h2 class="heading">กรอกรายละเอียดแจ้งซ่อม</h2>
                <div class="controls">
-                    <input type="text" id="name" class="floatLabel" name="name">
-                    <label for="name">Name</label>
+                    <input type="text" id="name" class="floatLabel  " name="name" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                    <label for="name">ชื่อ - สกุล</label>
                </div>
-               <div class="controls">
-                    <input type="text" id="email" class="floatLabel" name="email">
-                    <label for="email">Email</label>
-               </div>
+             
                <div class="controls">
                     <input type="tel" id="phone" class="floatLabel" name="phone">
                     <label for="phone">Phone</label>
