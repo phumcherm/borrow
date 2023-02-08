@@ -1,7 +1,7 @@
-<?php require('../../Models/db.php');
+<!-- <?php /* require('../../Models/db.php');
 require('../../Controller/c_admin.php');
-session_start();
-?>
+session_start(); */
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,61 +12,69 @@ session_start();
     <title>Admin borrow</title>
 </head>
 <style>
-    #search {
-        width: 30%;
-        padding: 12px 10px;
-        background-color: transparent;
+   #search {
+        width: 50%;
+        padding: 17px 10px;
+        background-color: #fff;
         transition: transform 250ms ease-in-out;
-        font-size: 14px;
+        font-size: 20px;
         line-height: 18px;
         border-radius: 50px;
-        border: 1px solid #00009a;
-
+        border: 1px solid #E6581D;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
     }
 </style>
 
 <body>
     <?php include 'a_navbar.php' ?>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" style="background-color: #dcdad8;">
+            <li class="breadcrumb-item active"><a href="a_borrow.php">แจ้งซ่อมครุภัณฑ์</a></li>
+        </ol>
+    </nav>
     <div>
-        <h2 style="color: #00009a;font-family: SUT_Bold;text-align: center;">
-            ▶ รายการแจ้งซ้อมครุภัณฑ์
+        <h2 style="color: #E6581D;font-family: SUT_Bold;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-caret-right" style="font-size:48px"></i>&nbsp; แจ้งซ่อมครุภัณฑ์
         </h2>
     </div>
     <br>
-    <br>
     <center>
-        <input type="search" id="search" onkeyup="SearchBox()" placeholder="ค้นหา" title="Type in a name">
+        <input type="search" id="search" onkeyup="SearchBox()" placeholder="&nbsp;&nbsp;ค้นหา" title="Type in a name">
     </center>
 
-    <div class="table-container">
-        <table class="table" id="data">
-            <thead style="text-align: center;">
-                <tr>
-                    <th>Id</th>
+    <br>
+    <div class="table-responsive " style="padding: 25px;">
+        <div>
+            <div style="max-width: 1600px;margin-left: auto;">
+                <div class="table-container">
+                    <table class="table" id="data" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+                        <thead   style="color:white;text-align: center; background-color:#E6581D; ">
+                            <tr>
+                 
+                    <th>หมายเลขครุภัณฑ์</th>
                     <th>ชื่ออุปกรณ์</th>
-                    <th>แจ้งปัญหา</th>
-                    <th>งาน</th>
-                    <th>สถานที่</th>
-                    <th>วันที่</th>
-                    <th>สถานะ</th>
+                    <th>วันที่เเจ้งซ่อม</th>
+                    <th>รายละเอียดเพิ่มเติม</th>
+                    
+
                 </tr>
             </thead>
             <tbody>
+          
                 <?php
-                $selectAll = new DB_con();
-                $sql = $selectAll->selectAll();
-                while ($row = mysqli_fetch_array($sql)) {
-                ?>
+                  $selectAll = new DB_con();
+                  $sql = $selectAll->selectAll();
+                  while ($row = mysqli_fetch_array($sql)) {
+                  ?>
                     <tr>
                         <td data-label="Id."><?php echo $row['id'] ?></td>
+                        <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td>
                         <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
-                        <td data-label="รหัสครุภัณฑ์."> <span style="color: red;"> ระบบไฟเสีย เกิดจากหนูกัด</span></td>
-                        <td data-label="งาน."><?php echo $row['b_work'] ?></td>
-                        <td data-label="สถานที่."><?php echo $row['b_location'] ?></td>
-                        <td data-label="วันที่ยืม."><?php echo $row['dateCreate'] ?></td>
-                        <td data-label="สถานะ."><span style="color: gray;">รอดำเนินการ</span> </td>
-
+                        <td data-label="วันที่ยืม."><!-- <?php /* echo $row['dateCreate'] */ ?> -->รอข้อมูลยืม</td>
+                        <td data-label="วันที่คืน."><span style="color: red;"><!-- <?php /* echo $row['Backdate']  */?> -->รอข้อมูลคืน</span> </td>
+                        <td data-label="สถานะ."><span style="color: gray;">รอการอนุมัติ</span> </td>
+                        <!-- <td><a data-id="<?php echo $row['borrow_id']; ?>" href="?delete_id=<?php echo $row['borrow_id'] ?>" class="btn btn-danger">ลบ</a></td> -->
                     </tr>
             </tbody>
         <?php
