@@ -19,10 +19,10 @@
 -- Table structure for table `back`
 --
 
-DROP TABLE IF EXISTS `back`;
+DROP TABLE IF EXISTS ceitdb.`back`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `back` (
+CREATE TABLE ceitdb.`back` (
   `bk_id` int NOT NULL AUTO_INCREMENT,
   `id` int DEFAULT NULL,
   `br_id` int DEFAULT NULL,
@@ -39,9 +39,9 @@ CREATE TABLE `back` (
 -- Dumping data for table `back`
 --
 
-LOCK TABLES `back` WRITE;
+LOCK TABLES ceitdb.`back` WRITE;
 /*!40000 ALTER TABLE `back` DISABLE KEYS */;
-INSERT INTO `back` VALUES (1,548,11,'2023-02-03 03:59:16'),(2,563,10,'2023-02-03 04:10:53'),(3,545,9,'2023-02-03 06:39:06'),(4,545,12,'2023-02-03 06:45:49'),(5,545,13,'2023-02-03 06:51:42'),(6,548,11,'2023-02-03 08:44:42'),(7,548,11,'2023-02-03 08:46:24'),(8,548,NULL,'2023-02-03 08:47:49'),(9,548,NULL,'2023-02-03 08:48:27'),(10,563,15,'2023-02-03 08:48:27');
+INSERT INTO ceitdb.`back` VALUES (1,548,11,'2023-02-03 03:59:16'),(2,563,10,'2023-02-03 04:10:53'),(3,545,9,'2023-02-03 06:39:06'),(4,545,12,'2023-02-03 06:45:49'),(5,545,13,'2023-02-03 06:51:42'),(6,548,11,'2023-02-03 08:44:42'),(7,548,11,'2023-02-03 08:46:24'),(8,548,NULL,'2023-02-03 08:47:49'),(9,548,NULL,'2023-02-03 08:48:27'),(10,563,15,'2023-02-03 08:48:27');
 /*!40000 ALTER TABLE `back` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
