@@ -2,7 +2,7 @@
 <html>
 
 <head>
-     <title>E - Borrow</title>
+     <title>แจ้งซ่อม</title>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -122,7 +122,7 @@
           .controls select {
                padding: 20px;
                font-size: 20px;
-               border: 2px solid #c6c6c6;
+               border: 2px solid #224C60;
                width: 100%;
                margin-bottom: 18px;
                color: #888;
@@ -136,7 +136,7 @@
                -webkit-transition: all 0.3s;
                transition: all 0.3s;
           }
-          
+
           .controls input[type="position"]:focus,
           .controls input[type="position"]:hover,
           .controls input[type="text"]:focus,
@@ -156,10 +156,11 @@
           .controls select:focus,
           .controls select:hover {
                outline: none;
-               border-color: #9FB1C1;
+               border-color: #224C60;
           }
+
           .controls input[type="position"]:focus+label,
-          .controls input[type="position"]:hover+label
+          .controls input[type="position"]:hover+label, 
           .controls input[type="text"]:focus+label,
           .controls input[type="text"]:hover+label,
           .controls input[type="email"]:focus+label,
@@ -176,7 +177,7 @@
           .controls button:hover+label,
           .controls select:focus+label,
           .controls select:hover+label {
-               color: #bdcc00;
+               color: #224C60;
                cursor: text;
           }
 
@@ -298,48 +299,48 @@
           }
 
           input {
-        border-radius: 7px;
-        border: none;
-        width: auto;
-        height: 40px;
-        padding: 20px;
-        margin: 15px auto 15px auto;
-        text-align: center;
-    }
+               border-radius: 7px;
+               border: none;
+               width: auto;
+               height: 40px;
+               padding: 20px;
+               margin: 15px auto 15px auto;
+               text-align: center;
+          }
 
-    .blocktext {
-        margin-left: auto;
-        margin-right: auto;
-        width: auto;
-    }
+          .blocktext {
+               margin-left: auto;
+               margin-right: auto;
+               width: auto;
+          }
 
-    center a {
-        background-color: #ff5722;
-        color: white;
-        padding: 15px 10px;
-        margin-top: 15px;
-        text-decoration: none;
-        border-radius: 7px;
-    }
+          center a {
+               background-color: #e6581d;
+               color: white;
+               padding: 15px 10px;
+               margin-top: 15px;
+               text-decoration: none;
+               border-radius: 7px;
+          }
 
-    button {
-        color: white;
-        background-color: #ff5722;
-        padding: 15px;
-        border: none;
-        border-radius: 7px;
-    }
+          button {
+               color: white;
+               background-color: #e6581d;
+               padding: 15px;
+               border: none;
+               border-radius: 7px;
+          }
 
-    a {
-        color: white;
-        background-color: #ff5722;
-    }
+          a {
+               color: white;
+               background-color: #e6581d;
+          }
 
-    @media all and (max-width: 800px) {
-        .section_area_grid {
-            grid-template-columns: 1fr;
-        }
-    }
+          @media all and (max-width: 800px) {
+               .section_area_grid {
+                    grid-template-columns: 1fr;
+               }
+          }
      </style>
 </head>
 
@@ -353,116 +354,96 @@
      <form action="">
           <!--  General -->
           <div class="form-group">
-               <h2 class="heading">กรอกรายละเอียดแจ้งซ่อม</h2>
-               <div class="controls">
-                    <input type="text" id="name" class="floatLabel  " name="name" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                    <label for="name">ชื่อ - สกุล</label>
-               </div>
-             
-               <div class="controls">
-                    <input type="tel" id="phone" class="floatLabel" name="phone">
-                    <label for="phone">Phone</label>
-               </div>
-               <div class="grid">
-                    <div class="col-2-3">
-                         <div class="controls">
-                              <input type="text" id="street" class="floatLabel" name="street">
-                              <label for="street">Street</label>
-                         </div>
-                    </div>
-                    <div class="col-1-3">
-                         <div class="controls">
-                              <input type="number" id="street-number" class="floatLabel" name="street-number">
-                              <label for="street-number">Number</label>
-                         </div>
-                    </div>
-               </div>
-               <div class="grid">
-                    <div class="col-2-3">
-                         <div class="controls">
-                              <input type="text" id="city" class="floatLabel" name="city">
-                              <label for="city">City</label>
-                         </div>
-                    </div>
-                    <div class="col-1-3">
-                         <div class="controls">
-                              <input type="text" id="post-code" class="floatLabel" name="post-code">
-                              <label for="post-code">Post Code</label>
-                         </div>
-                    </div>
-               </div>
-               <div class="controls">
-                    <input type="text" id="country" class="floatLabel" name="country">
-                    <label for="country">Country</label>
-               </div>
-          </div>
-          <!--  Details -->
-          <div class="form-group">
-               <h2 class="heading">Details</h2>
+               <h2 class="heading">กรอกรายละเอียดแจ้งซ่อม</h2>ฃ
                <div class="grid">
                     <div class="col-1-4 col-1-4-sm">
                          <div class="controls">
                               <input type="date" id="arrive" class="floatLabel" name="arrive" value="<?php echo date('Y-m-d'); ?>">
-                              <label for="arrive" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Arrive</label>
+                              <label for="arrive" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;วันที่แจ้งซ่อม</label>
                          </div>
                     </div>
-                    <div class="col-1-4 col-1-4-sm">
-                         <div class="controls">
-                              <input type="date" id="depart" class="floatLabel" name="depart" value="<?php echo date('Y-m-d'); ?>" />
-                              <label for="depart" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Depart</label>
-                         </div>
-                    </div>
+                   
                </div>
-               <div class="grid">
-                    <div class="col-1-3 col-1-3-sm">
-                         <div class="controls">
-                              <i class="fa fa-sort"></i>
-                              <select class="floatLabel">
-                                   <option value="blank"></option>
-                                   <option value="1">1</option>
-                                   <option value="2" selected>2</option>
-                                   <option value="3">3</option>
-                              </select>
-                              <label for="fruit"><i class="fa fa-male"></i>&nbsp;&nbsp;People</label>
-                         </div>
-                    </div>
-                    <div class="col-1-3 col-1-3-sm">
-                         <div class="controls">
-                              <i class="fa fa-sort"></i>
-                              <select class="floatLabel">
-                                   <option value="blank"></option>
-                                   <option value="deluxe" selected>With Bathroom</option>
-                                   <option value="Zuri-zimmer">Without Bathroom</option>
-                              </select>
-                              <label for="fruit">Room</label>
-                         </div>
-                    </div>
-
-                    <div class="col-1-3 col-1-3-sm">
-                         <div class="controls">
-                              <i class="fa fa-sort"></i>
-                              <select class="floatLabel">
-                                   <option value="blank"></option>
-                                   <option value="single-bed">Zweibett</option>
-                                   <option value="double-bed" selected>Doppelbett</option>
-                              </select>
-                              <label for="fruit">Bedding</label>
-                         </div>
-                    </div>
-
-               </div>
-               <div class="grid">
-                    <p class="info-text">Please describe your needs e.g. Extra beds, children's cots</p>
-                    <br>
+               <div class="col-1-2 col-1-6">
                     <div class="controls">
-                         <textarea name="comments" class="floatLabel" id="comments"></textarea>
-                         <label for="comments">Comments</label>
+                         <input type="text" id="name" class="floatLabel  " name="name" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="name">ชื่อ - สกุล</label>
                     </div>
-                    <button type="submit" value="Submit" class="col-1-4">Submit</button>
                </div>
-          </div> <!-- /.form-group -->
-     </form>
+               <div class="col-1-3 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="position" class="floatLabel  " name="position" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="position">ตำแหน่ง</label>
+                    </div>
+               </div>
 
+               <div class="col-1-3 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="affiliation" class="floatLabel  " name="affiliation" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="affiliation">สังกัด</label>
+                    </div>
+               </div>
+               <div class="col-1-3 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="Phone" class="floatLabel  " name="Phone" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="Phone">โทรศัพท์</label>
+                    </div>
+               </div>
+               <div class="col-1-2 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="repair" class="floatLabel  " name="repair" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="repair">ขอแจ้งซ่อม/ตรวจสอบอุปกรณ</label>
+                    </div>
+               </div>
+               <div class="col-1-3 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="commoditynumber" class="floatLabel  " name="commoditynumber" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="commoditynumber">หมายเลขครุภัณฑ์</label>
+                    </div>
+               </div>
+
+               <div class="col-1-3 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="machinenumber" class="floatLabel  " name="machinenumber" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="machinenumber">หมายเลขเครื่อง</label>
+                    </div>
+               </div>
+
+               <div class="grid">
+             
+               <div class="col-1-3 col-1-6-sm">
+                    <div class="controls">
+                         <input type="text" id="brand" class="floatLabel  " name="brand" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="brand">ยี่ห้อ</label>
+                    </div>
+               </div>
+                    <div class="col-1-3 col-1-6-sm">
+                         <div class="controls">
+                              <input type="text" id="model" class="floatLabel  " name="model" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                              <label for="model">รุ่น</label>
+                         </div>
+                    </div>
+
+                    <div class="col-2-3 col-1-6-sm">
+                         <div class="controls">
+                              <input type="text" id="active" class="floatLabel  " name="active" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                              <label for="active">ใช้ในงาน</label>
+                         </div>
+                    </div>
+               </div>
+               <div class="col-1-2 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="Symptoms" class="floatLabel  " name="Symptoms" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="Symptoms">อาการที่พบ</label>
+                    </div>
+               </div>
+<br><br><br><br><br>
+               <button type="submit" value="Submit" class="col-1-4">Submit</button>
+          </div>
+          <!--  Details -->
+
+       
+     </form>
      <script>
           (function($) {
                function floatLabel(inputType) {
