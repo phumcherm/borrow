@@ -1,6 +1,6 @@
 <?php 
 
-$serverName = "172.17.0.1:9906";
+$serverName = "172.18.0.1:9906";
 $userName = "ceitdb";
 $password = "12345678";
 $dbName = "ceitdb";
