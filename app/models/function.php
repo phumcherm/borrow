@@ -46,7 +46,22 @@ class DB_con
         $result = mysqli_query($this->dbcon, "select count(id) as num from itemdata");
         return $result;
     }
+    function selectCountData()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_sum FROM itemdata");
+        return $result;
+    }
+    function selectCountBorrow()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_borrow FROM borrow");
+        return $result;
+    }
 
+    function selectCountBack()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_back FROM back");
+        return $result;
+    }
 
     function selectWhereId($tb_id)
     {

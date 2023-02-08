@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('../../app/models/Modelborrow.php');
+
 require_once "../../app/models/Database.php";
 require_once "../../app/models/function.php";
 require_once "../../app/models/db.php";
@@ -23,10 +23,6 @@ require_once "../../app/models/db.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/borrow/public/css/style.css">
-    <link rel="stylesheet" href="/borrow/public/css/icons.png">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>E-Borrow</title>
 </head>
 <style>
@@ -42,24 +38,19 @@ require_once "../../app/models/db.php";
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
     }
-
-   
 </style>
+
 
 <body>
     <?php include 'a_navbar.php' ?>
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb" style="background-color: #dcdad8;">
-            <li class="breadcrumb-item active"><a href="index.php">หน้าเเรก</a></li>
-        </ol>
-    </nav>
-
     <div>
         <h2 style="color: #E6581D;font-family: SUT_Bold;">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-caret-right" style="font-size:48px"></i>&nbsp;รายการครุภัณฑ์
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;▶ รายการครุภัณฑ์
         </h2>
     </div>
+    <br>
+    <?php include 'dashboard.php' ?>
     <br>
     <center>
         <input type="search" id="search" onkeyup="SearchBox()" placeholder="&nbsp;&nbsp;ค้นหา" title="Type in a name">
@@ -98,7 +89,7 @@ require_once "../../app/models/db.php";
                                                             } elseif ($row['status'] == "ชำรุดรอการซ่อม") {
                                                                 echo "<p style='background-color: #ffcc00;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;'>ชำรุดรอการซ่อม</p>";
                                                             } else {
-                                                                echo "<p style='background-color: red;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;'>".$row['status']."</p>";
+                                                                echo "<p style='background-color: red;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;'>" . $row['status'] . "</p>";
                                                             }  ?></td>
                                     <td data-label="เจ้าหน้าที่."><?php echo $row['notation'] ?></td>
 

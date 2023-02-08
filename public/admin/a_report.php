@@ -1,7 +1,7 @@
-<?php 
+<?php
 
 session_start();
-require('../../app/models/Modelborrow.php');
+
 require_once "../../app/models/Database.php";
 require_once "../../app/models/function.php";
 ?>
@@ -66,29 +66,29 @@ require_once "../../app/models/function.php";
     <?php include 'a_navbar.php' ?>
     <!-- Add chart JS -->
 
-    <div class="graphBox" >
+    <div class="graphBox">
         <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
-            <select required class="form-select col-12 form-control" aria-label="Default select example" name="num" id="num"  style="border-color: #E6581D; box-shadow: rgba(0, 0, 0, 0.11) 0px 5px 5px  ;">
+            <select required class="form-select col-12 form-control" aria-label="Default select example" name="num" id="num" style="border-color: #E6581D; box-shadow: rgba(0, 0, 0, 0.11) 0px 5px 5px  ;">
 
                 <optgroup label="เลือกดูการใช้งาน">
                     <option id="y" value="">รายปี</option>
                     <option id="m" value="">รายเดือน</option>
                     <option id="d" value="">รายวัน</option>
             </select>
-           <!--  <button type="button" onclick="fittertem()">ค้นหา</button> -->
-           <br><br>
+            <!--  <button type="button" onclick="fittertem()">ค้นหา</button> -->
+            <br><br>
             <div>
                 <canvas id="myChart"></canvas>
             </div>
         </div>
         <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
-            <select required class="form-select col-12 form-control" aria-label="Default select example" name="txt_bed"  style="border-color: #E6581D; box-shadow: rgba(0, 0, 0, 0.11) 0px 5px 5px  ;">
+            <select required class="form-select col-12 form-control" aria-label="Default select example" name="txt_bed" style="border-color: #E6581D; box-shadow: rgba(0, 0, 0, 0.11) 0px 5px 5px  ;">
                 <optgroup label="เลือกดูการใช้งาน">
                     <option id="y" value="">รายปี</option>
                     <option id="m" value="">รายเดือน</option>
                     <option id="d" value="">รายวัน</option>
             </select>
-           <!--  <button type="button" onclick="fittertem()">ค้นหา</button> -->
+            <!--  <button type="button" onclick="fittertem()">ค้นหา</button> -->
             <canvas id="testChart"></canvas>
         </div>
     </div>
@@ -112,11 +112,11 @@ require_once "../../app/models/function.php";
                     </thead>
                     <tbody>
                         <?php
-                         $selectAll = new DB_con();
-                         $sql = $selectAll->selectAll();
-                         while ($row = mysqli_fetch_array($sql)) {
-                         ?>
-                      <!--   $back = new Borrow();
+                        $selectAll = new DB_con();
+                        $sql = $selectAll->selectAll();
+                        while ($row = mysqli_fetch_array($sql)) {
+                        ?>
+                            <!--   $back = new Borrow();
                         $sql = $back->fetch_back();
                         foreach ($sql as $row) {
                         ?> -->
@@ -135,7 +135,7 @@ require_once "../../app/models/function.php";
             </div>
         </div><!--  #E6581D; -->
         <div class="boxt" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
-            <button  style="background-color:#E6581D;  color:#fff;  border-color:#fff;border-radius: 7px;">รายวัน</button>
+            <button style="background-color:#E6581D;  color:#fff;  border-color:#fff;border-radius: 7px;">รายวัน</button>
             <button style="background-color:#E6581D;  color:#fff;  border-color:#fff;border-radius: 7px;">รายเดือน</button>
             <button style="background-color:#E6581D;  color:#fff;  border-color:#fff;border-radius: 7px;">รายปี</button>
             <br><br>
@@ -151,11 +151,11 @@ require_once "../../app/models/function.php";
                     </thead>
                     <tbody>
                         <?php
-                         $selectAll = new DB_con();
-                         $sql = $selectAll->selectAll();
-                         while ($row = mysqli_fetch_array($sql)) {
-                         ?>
-                      <!--   $back = new Borrow();
+                        $selectAll = new DB_con();
+                        $sql = $selectAll->selectAll();
+                        while ($row = mysqli_fetch_array($sql)) {
+                        ?>
+                            <!--   $back = new Borrow();
                         $sql = $back->fetch_back();
                         foreach ($sql as $row) {
                         ?> -->
