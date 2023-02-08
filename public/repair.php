@@ -2,7 +2,7 @@
 <html>
 
 <head>
-     <title>E - Borrow</title>
+     <title>แจ้งซ่อม</title>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -16,7 +16,6 @@
 
 
      <style>
-         
           video {
                margin: 0;
                padding: 0;
@@ -65,18 +64,6 @@
                border: none;
           }
 
-          article,
-          aside,
-          details,
-          figcaption,
-          figure,
-          footer,
-          header,
-          hgroup,
-          main,
-          menu,
-          nav,
-          section,
           summary {
                display: block;
           }
@@ -91,13 +78,9 @@
 
           body {
                text-align: center;
-               font-family: 'Lato', 'sans-serif';
-               font-weight: 400;
+
           }
 
-          a {
-               text-decoration: none;
-          }
 
           .info-text {
                text-align: left;
@@ -110,18 +93,18 @@
           }
 
           .form-group {
-               margin-bottom: 20px;
+               margin-bottom: 30px;
           }
 
           h2.heading {
-               font-size: 18px;
+               font-size: 30px;
                text-transform: uppercase;
                font-weight: 300;
                text-align: left;
                color: #506982;
-               border-bottom: 1px solid #506982;
-               padding-bottom: 3px;
-               margin-bottom: 20px;
+               border-bottom: 3px solid #506982;
+               padding-bottom: 15px;
+               margin-bottom: 50px;
           }
 
           .controls {
@@ -137,24 +120,25 @@
           .controls textarea,
           .controls button,
           .controls select {
-               padding: 12px;
-               font-size: 14px;
-               border: 1px solid #c6c6c6;
+               padding: 20px;
+               font-size: 20px;
+               border: 2px solid #224C60;
                width: 100%;
                margin-bottom: 18px;
                color: #888;
-               font-family: 'Lato', 'sans-serif';
                font-size: 16px;
                font-weight: 300;
                -moz-border-radius: 2px;
                -webkit-border-radius: 2px;
-               border-radius: 2px;
+               border-radius: 5px;
                -moz-transition: all 0.3s;
                -o-transition: all 0.3s;
                -webkit-transition: all 0.3s;
                transition: all 0.3s;
           }
 
+          .controls input[type="position"]:focus,
+          .controls input[type="position"]:hover,
           .controls input[type="text"]:focus,
           .controls input[type="text"]:hover,
           .controls input[type="email"]:focus,
@@ -172,9 +156,11 @@
           .controls select:focus,
           .controls select:hover {
                outline: none;
-               border-color: #9FB1C1;
+               border-color: #224C60;
           }
 
+          .controls input[type="position"]:focus+label,
+          .controls input[type="position"]:hover+label, 
           .controls input[type="text"]:focus+label,
           .controls input[type="text"]:hover+label,
           .controls input[type="email"]:focus+label,
@@ -191,7 +177,7 @@
           .controls button:hover+label,
           .controls select:focus+label,
           .controls select:hover+label {
-               color: #bdcc00;
+               color: #224C60;
                cursor: text;
           }
 
@@ -208,6 +194,7 @@
                cursor: pointer;
           }
 
+          /*text*/
           .controls label {
                position: absolute;
                left: 8px;
@@ -216,8 +203,8 @@
                color: #999;
                font-size: 16px;
                display: inline-block;
-               padding: 4px 10px;
-               font-weight: 400;
+               padding: 1px 10px;
+               font-weight: 100%;
                background-color: rgba(255, 255, 255, 0);
                -moz-transition: color 0.3s, top 0.3s, background-color 0.8s;
                -o-transition: color 0.3s, top 0.3s, background-color 0.8s;
@@ -227,9 +214,9 @@
           }
 
           .controls label.active {
-               top: -11px;
+               top: -20px;
                color: #555;
-               background-color: white;
+               background-color: transparent;
                width: auto;
           }
 
@@ -238,11 +225,12 @@
                height: 200px;
           }
 
+          /*text*/
           button {
                cursor: pointer;
                background-color: #1b3d4d;
                border: none;
-               color: #fff;
+               color: transparent;
                padding: 12px 0;
                float: right;
           }
@@ -286,7 +274,7 @@
           }
 
           .col-1-2 {
-               width: 50%;
+               width: 100%;
           }
 
           .col-1-4 {
@@ -309,6 +297,50 @@
           .col-1-8 {
                width: 12.5%;
           }
+
+          input {
+               border-radius: 7px;
+               border: none;
+               width: auto;
+               height: 40px;
+               padding: 20px;
+               margin: 15px auto 15px auto;
+               text-align: center;
+          }
+
+          .blocktext {
+               margin-left: auto;
+               margin-right: auto;
+               width: auto;
+          }
+
+          center a {
+               background-color: #e6581d;
+               color: white;
+               padding: 15px 10px;
+               margin-top: 15px;
+               text-decoration: none;
+               border-radius: 7px;
+          }
+
+          button {
+               color: white;
+               background-color: #e6581d;
+               padding: 15px;
+               border: none;
+               border-radius: 7px;
+          }
+
+          a {
+               color: white;
+               background-color: #e6581d;
+          }
+
+          @media all and (max-width: 800px) {
+               .section_area_grid {
+                    grid-template-columns: 1fr;
+               }
+          }
      </style>
 </head>
 
@@ -322,119 +354,96 @@
      <form action="">
           <!--  General -->
           <div class="form-group">
-               <h2 class="heading">Booking & contact</h2>
-               <div class="controls">
-                    <input type="text" id="name" class="floatLabel" name="name">
-                    <label for="name">Name</label>
-               </div>
-               <div class="controls">
-                    <input type="text" id="email" class="floatLabel" name="email">
-                    <label for="email">Email</label>
-               </div>
-               <div class="controls">
-                    <input type="tel" id="phone" class="floatLabel" name="phone">
-                    <label for="phone">Phone</label>
-               </div>
-               <div class="grid">
-                    <div class="col-2-3">
-                         <div class="controls">
-                              <input type="text" id="street" class="floatLabel" name="street">
-                              <label for="street">Street</label>
-                         </div>
-                    </div>
-                    <div class="col-1-3">
-                         <div class="controls">
-                              <input type="number" id="street-number" class="floatLabel" name="street-number">
-                              <label for="street-number">Number</label>
-                         </div>
-                    </div>
-               </div>
-               <div class="grid">
-                    <div class="col-2-3">
-                         <div class="controls">
-                              <input type="text" id="city" class="floatLabel" name="city">
-                              <label for="city">City</label>
-                         </div>
-                    </div>
-                    <div class="col-1-3">
-                         <div class="controls">
-                              <input type="text" id="post-code" class="floatLabel" name="post-code">
-                              <label for="post-code">Post Code</label>
-                         </div>
-                    </div>
-               </div>
-               <div class="controls">
-                    <input type="text" id="country" class="floatLabel" name="country">
-                    <label for="country">Country</label>
-               </div>
-          </div>
-          <!--  Details -->
-          <div class="form-group">
-               <h2 class="heading">Details</h2>
+               <h2 class="heading">กรอกรายละเอียดแจ้งซ่อม</h2>ฃ
                <div class="grid">
                     <div class="col-1-4 col-1-4-sm">
                          <div class="controls">
                               <input type="date" id="arrive" class="floatLabel" name="arrive" value="<?php echo date('Y-m-d'); ?>">
-                              <label for="arrive" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Arrive</label>
+                              <label for="arrive" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;วันที่แจ้งซ่อม</label>
                          </div>
                     </div>
-                    <div class="col-1-4 col-1-4-sm">
-                         <div class="controls">
-                              <input type="date" id="depart" class="floatLabel" name="depart" value="<?php echo date('Y-m-d'); ?>" />
-                              <label for="depart" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Depart</label>
-                         </div>
-                    </div>
+                   
                </div>
-               <div class="grid">
-                    <div class="col-1-3 col-1-3-sm">
-                         <div class="controls">
-                              <i class="fa fa-sort"></i>
-                              <select class="floatLabel">
-                                   <option value="blank"></option>
-                                   <option value="1">1</option>
-                                   <option value="2" selected>2</option>
-                                   <option value="3">3</option>
-                              </select>
-                              <label for="fruit"><i class="fa fa-male"></i>&nbsp;&nbsp;People</label>
-                         </div>
-                    </div>
-                    <div class="col-1-3 col-1-3-sm">
-                         <div class="controls">
-                              <i class="fa fa-sort"></i>
-                              <select class="floatLabel">
-                                   <option value="blank"></option>
-                                   <option value="deluxe" selected>With Bathroom</option>
-                                   <option value="Zuri-zimmer">Without Bathroom</option>
-                              </select>
-                              <label for="fruit">Room</label>
-                         </div>
-                    </div>
-
-                    <div class="col-1-3 col-1-3-sm">
-                         <div class="controls">
-                              <i class="fa fa-sort"></i>
-                              <select class="floatLabel">
-                                   <option value="blank"></option>
-                                   <option value="single-bed">Zweibett</option>
-                                   <option value="double-bed" selected>Doppelbett</option>
-                              </select>
-                              <label for="fruit">Bedding</label>
-                         </div>
-                    </div>
-
-               </div>
-               <div class="grid">
-                    <p class="info-text">Please describe your needs e.g. Extra beds, children's cots</p>
-                    <br>
+               <div class="col-1-2 col-1-6">
                     <div class="controls">
-                         <textarea name="comments" class="floatLabel" id="comments"></textarea>
-                         <label for="comments">Comments</label>
+                         <input type="text" id="name" class="floatLabel  " name="name" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="name">ชื่อ - สกุล</label>
                     </div>
-                    <button type="submit" value="Submit" class="col-1-4">Submit</button>
                </div>
-          </div> <!-- /.form-group -->
-     </form>
+               <div class="col-1-3 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="position" class="floatLabel  " name="position" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="position">ตำแหน่ง</label>
+                    </div>
+               </div>
 
+               <div class="col-1-3 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="affiliation" class="floatLabel  " name="affiliation" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="affiliation">สังกัด</label>
+                    </div>
+               </div>
+               <div class="col-1-3 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="Phone" class="floatLabel  " name="Phone" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="Phone">โทรศัพท์</label>
+                    </div>
+               </div>
+               <div class="col-1-2 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="repair" class="floatLabel  " name="repair" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="repair">ขอแจ้งซ่อม/ตรวจสอบอุปกรณ</label>
+                    </div>
+               </div>
+               <div class="col-1-3 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="commoditynumber" class="floatLabel  " name="commoditynumber" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="commoditynumber">หมายเลขครุภัณฑ์</label>
+                    </div>
+               </div>
+
+               <div class="col-1-3 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="machinenumber" class="floatLabel  " name="machinenumber" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="machinenumber">หมายเลขเครื่อง</label>
+                    </div>
+               </div>
+
+               <div class="grid">
+             
+               <div class="col-1-3 col-1-6-sm">
+                    <div class="controls">
+                         <input type="text" id="brand" class="floatLabel  " name="brand" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="brand">ยี่ห้อ</label>
+                    </div>
+               </div>
+                    <div class="col-1-3 col-1-6-sm">
+                         <div class="controls">
+                              <input type="text" id="model" class="floatLabel  " name="model" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                              <label for="model">รุ่น</label>
+                         </div>
+                    </div>
+
+                    <div class="col-2-3 col-1-6-sm">
+                         <div class="controls">
+                              <input type="text" id="active" class="floatLabel  " name="active" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                              <label for="active">ใช้ในงาน</label>
+                         </div>
+                    </div>
+               </div>
+               <div class="col-1-2 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="Symptoms" class="floatLabel  " name="Symptoms" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="Symptoms">อาการที่พบ</label>
+                    </div>
+               </div>
+<br><br><br><br><br>
+               <button type="submit" value="Submit" class="col-1-4">Submit</button>
+          </div>
+          <!--  Details -->
+
+       
+     </form>
      <script>
           (function($) {
                function floatLabel(inputType) {
