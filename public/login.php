@@ -56,9 +56,7 @@
             font-size: 2.5em;
         }
 
-        h4,
-        h5,
-        h6,
+
 
         .fullscreen-block {
 
@@ -107,18 +105,19 @@
 
 <body>
     <div class="fullscreen-block colorwhite">
-        <br><br>
+        <br><br> <center><img src="../../app/asset/ceit_logo.jpg" style=" box-shadow: rgba(0, 0, 0,0.70) 0px 5px 15px;  width:120px  " class="w3-circle w3-margin-right"></center>
         <section class="w3-center">
+            
             <div><b>
-                    <h1>E - Borrow</h1>
+                    <h1 style="text-shadow:2px 3px 10px #000; ">E - Borrow</h1>
                 </b></div>
         </section>
         <section class="w3-center">
             <div><b>
-                    <h3>ระบบ ยืม - คืน วัสดุและครุภัณฑ์ฝ่ายเทคนิควิศวกรรม</h3>
+                    <h3 style="text-shadow:2px 3px 10px #000; ">ระบบ ยืม - คืน วัสดุและครุภัณฑ์ฝ่ายเทคนิควิศวกรรม</h3>
                 </b></div>
         </section>
-        <br><br><br>
+        <br>
 
         <div style="max-width: 400px; margin: 15px auto 15px auto; ">
             <div>
@@ -131,25 +130,28 @@
                         </h3>
                         <div class="w3-center">
                             <i class="fa fa-user icon"></i>
-                            <input type="text" required name="txt_code"  class="form-control form-control-lg " required placeholder="หมายเลขประจำตัว">
+                            <input type="text" required name="txt_code" class="form-control form-control-lg " required placeholder="หมายเลขประจำตัว">
                         </div>
                         <br>
                         <div class="w3-center">
                             <i class="fa fa-key icon"></i>
-                            <input type="password" required name="txt_password"  class="form-control form-control-lg" required placeholder="รหัสผ่าน (หมายเลขประจำตัว)">
+                            <input type="password" required name="txt_password" class="form-control form-control-lg" required placeholder="รหัสผ่าน (หมายเลขประจำตัว)">
                         </div>
                         <br>
                         <div class="w3-center">
                             <button type="submit" name="submit" style="background-color: #EC5A0F; width: 100px;padding: 5px;color: white;border-radius: 7px;border: none; ">
                                 เข้าสู่ระบบ
                             </button>
-                            <!-- <a href="index.php" type="button" style="  background-color: #EC5A0F; width: 100px;padding: 5px;color: white;border-radius: 7px;  ">เข้าสู่ระบบ</a> -->
+
                         </div>
                         <br>
                     </div>
                 </form>
             </div>
+
+
         </div>
+    </div>
     </div>
 </body>
 

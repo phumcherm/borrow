@@ -149,9 +149,22 @@ session_start();
                </div>
           </div>
 
+               <select name="" id="" class="form-control custom-select " style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                    <label for="arrive" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Destination</label>
+                    <option value="">Peru</option>
+                    <option value="">Japan</option>
+                    <option value="">Thailand</option>
+                    <option value="">Brazil</option>
+                    <option value="">United States</option>
+                    <option value="">Israel</option>
+                    <option value="">China</option>
+                    <option value="">Russia</option>
+               </select>
+          </div>
+          </div> 
           <br><br><br><br><br><br><br><br>
 
-          <button type="submit" value="Submit" class="col-1-4">Submit</button>
+          <button type="submit" value="Submit" class="col-1-4" style="  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px; ">Submit</button>
           </div>
           <!--  Details -->
 
@@ -187,8 +200,6 @@ session_start();
 
                               document.getElementById('brand').value = data.brand;
                               document.getElementById('lb_brand').classList.add("active");
-                              // document.getElementById("repair").innerHTML = data.detail;
-                              // document.getElementById("data4").innerHTML = data.itemCode;
                          }
 
                          // document.getElementById("data4").innerHTML = data;

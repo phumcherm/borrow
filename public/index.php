@@ -67,6 +67,15 @@ $result_l = mysqli_query($con, $query);
         #myUL li a:hover:not(.header) {
             background-color: #eee;
         }
+
+        #grad {
+  background: #827A7A; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top,#4F4848,#686060,#827A7A,#CFC7C7); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right,#4F4848,#686060,#827A7A,#CFC7C7); /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(bottom right,#4F4848,#686060,#827A7A,#CFC7C7); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #4F4848,#686060,#827A7A,#CFC7C7); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right,#4F4848,#686060,#827A7A,#CFC7C7); /* Standard syntax */
+}
     </style>
 
 </head>
@@ -77,10 +86,10 @@ $result_l = mysqli_query($con, $query);
     require_once "../app/views/session_status.php";
     ?>
     
-    <div style="background-color:#827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+    <div id="grad"  style="background-color:#827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
         <div>
-            <h2 style="color: #fff;font-family: SUT_Bold;">
-                <i class="fa fa-caret-right" style="font-size:48px"></i>รายการครุภัณฑ์
+            <h2 style="color: #fff;font-family: SUT_Bold;  text-shadow:2px 3px 10px #000; ">
+                <i class="fa fa-caret-right" style="font-size:48px"></i>รายการยืม-คืนล่าสุด
             </h2>
         </div>
         <br>
@@ -134,14 +143,14 @@ $result_l = mysqli_query($con, $query);
                             <th>
                                 <center>Borrow ID</center>
                             </th>
-                            <th>
+                           <!--  <th>
                                 <center>Item ID</center>
-                            </th>
+                            </th> -->
                             <th>
                                 <center>รายการ</center>
                             </th>
                             <th>
-                                <center>Brand</center>
+                                <center>ยี่ห้อ</center>
                             </th>
                             <th>
                                 <center>งานที่นำไปใช้</center>
@@ -159,7 +168,7 @@ $result_l = mysqli_query($con, $query);
                                 <center>วันที่ต้องคืน</center>
                             </th>
                             <th>
-                                <center>status</center>
+                                <center>สถานะ</center>
                             </th>
                         </thead>
 
@@ -172,9 +181,9 @@ $result_l = mysqli_query($con, $query);
                                 <td>
                                     <center><?php echo $row["br_id"] ?></center>
                                 </td>
-                                <td>
-                                    <center> <?php echo $row["id"] ?></center>
-                                </td>
+                               <!--  <td>
+                                    <center> <?php /* echo $row["id"]  */?></center>
+                                </td> -->
                                 <td>
                                     <center> <?php echo $row["detail"] ?></center>
                                 </td>

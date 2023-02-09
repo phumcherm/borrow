@@ -1,4 +1,5 @@
-<?php require_once "../app/models/db.php";?>
+<?php
+require_once "../app/models/db.php"; ?>
 <?php
 require_once "../app/models/function.php";
 
@@ -57,11 +58,37 @@ session_start();
         color: white;
     }
 
+    #cancle {
+        color: red;
+        border-style: solid;
+        border-color: #ff0000;
+        border-width: 5px;
+        padding: 15px 25px;
+        background-color: #fff;
+        border-radius: 7px;
+        margin-bottom: 15px;
+        box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;
+    }
+
+    #submit {
+        float: right;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;
+    }
+
     @media all and (max-width: 800px) {
         .section_area_grid {
             grid-template-columns: 1fr;
         }
     }
+
+    #grad {
+  background: #827A7A; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top,#4F4848,#686060,#827A7A,#CFC7C7); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right,#4F4848,#686060,#827A7A,#CFC7C7); /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(bottom right,#4F4848,#686060,#827A7A,#CFC7C7); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #4F4848,#686060,#827A7A,#CFC7C7); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right,#4F4848,#686060,#827A7A,#CFC7C7); /* Standard syntax */
+}
 </style>
 
 <body>
@@ -86,13 +113,13 @@ session_start();
 
     ?>
     <div>
-        <div style="background-color: #827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-            <h2 style="color: #fff;font-family: SUT_Bold;">
-                <i class="fa fa-caret-right" style="font-size:48px  "></i>คืนวัสดุ ครุภัณฑ์
+        <div id="grad" style="background-color: #827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+            <h2 style="color: #fff;font-family: SUT_Bold; text-shadow:2px 3px 10px #000; ">
+                <i class="fa fa-caret-right" style="font-size:48px"></i>คืนวัสดุ ครุภัณฑ์
             </h2>
             <!--   1300px -->
-            <div style="max-width: auto; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;">
-                <h3 style="color: #fff;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการ</h3>
+           <!--  <div style="max-width: auto; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;">
+                <h3 style="color: #fff;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการ</h3> -->
                 <form action="../app/models/add_back.php" method="post">
                     <? require "../app/controller/scaner.php" ?>
                     <!-- <center><a href="#"> Scan QR Code</a></center> -->
@@ -118,7 +145,6 @@ session_start();
 
                                 <div style="max-width: 1600px;margin-left: auto;">
                                     <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
-                                    <a style="float: right;padding: 15px 25px;background-color: #ff5722;border-radius: 7px;margin-bottom: 15px;" onclick="delAll_test()">ลบทั้งหมด</a>
                                     <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;">
                                         <thead class="table-dark">
                                             <th>
@@ -173,13 +199,14 @@ session_start();
                                     }
                                 </script>
                                 <br>
-                                <button type="submit" id="submit" name="submit" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;">ยืนยันทั้งหมด</button>
+                                <a type="button" id="cancle" onclick="delAll_test()">ยกเลิก</a>
+                                <button type="submit" id="submit" name="submit">ยืนยันทั้งหมด</button>
 
                             </table>
                         </div>
                     </div>
                 </form>
-            </div>
+           <!--  </div> -->
             <br>
         </div>
     </div>

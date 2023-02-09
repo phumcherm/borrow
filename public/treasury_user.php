@@ -55,6 +55,15 @@ require_once "../app/models/db.php";
         .pagination li:hover {
             cursor: pointer;
         }
+
+        #grad {
+  background: #827A7A; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top,#4F4848,#686060,#827A7A,#CFC7C7); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right,#4F4848,#686060,#827A7A,#CFC7C7); /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(bottom right,#4F4848,#686060,#827A7A,#CFC7C7); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #4F4848,#686060,#827A7A,#CFC7C7); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right,#4F4848,#686060,#827A7A,#CFC7C7); /* Standard syntax */
+}
     </style>
 
 </head>
@@ -63,9 +72,9 @@ require_once "../app/models/db.php";
     <?php
     include "nav_user.php";
     ?>
-    <div style="background-color:#827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+    <div id="grad"  style="background-color:#827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
         <div>
-            <h2 style="color: #fff;font-family: SUT_Bold;">
+            <h2 style="color: #fff;font-family: SUT_Bold;  text-shadow:2px 3px 10px #000;">
                 <i class="fa fa-caret-right" style="font-size:48px"></i>รายการครุภัณฑ์
 
             </h2>
