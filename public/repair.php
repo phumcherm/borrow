@@ -16,7 +16,6 @@ session_start();
      <meta charset="UTF-8">
      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
      <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
-<<<<<<< HEAD
      <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -348,12 +347,6 @@ session_start();
      }
 </style>
 
-=======
-     <link rel="stylesheet" type="text/css" href="../../public/css/repair.css">
-     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
->>>>>>> 2a662be9c2fd3fbf7900461946d5a511a3a410cc
 
 <body>
      <?php
@@ -389,26 +382,8 @@ session_start();
                          </div>
                     </div>
 
-<<<<<<< HEAD
-=======
-               </div>
-               <div class="col-1-2 col-1-6">
-                    <div class="controls">
-                         <input type="text" id="name" class="floatLabel  " name="name" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                         <label for="name">ชื่อ - สกุล</label>
-                    </div>
-               </div>
-               <div class="col-1-3 col-1-6">
-                    <div class="controls">
-                         <input type="text" id="position" class="floatLabel  " name="position" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                         <label for="position">ตำแหน่ง</label>
-                    </div>
->>>>>>> 2a662be9c2fd3fbf7900461946d5a511a3a410cc
                </div>
 
-
-
-<<<<<<< HEAD
           </div>
 
           <div class="col-1-2 col-1-6">
@@ -465,37 +440,11 @@ session_start();
                     </div>
                </div>
                <div class="col-1-3 col-1-6-sm">
-=======
-               <div class="grid">
-
-                    <div class="col-1-3 col-1-6-sm">
-                         <div class="controls">
-                              <input type="text" id="brand" class="floatLabel  " name="brand" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                              <label for="brand">ยี่ห้อ</label>
-                         </div>
-                    </div>
-                    <div class="col-1-3 col-1-6-sm">
-                         <div class="controls">
-                              <input type="text" id="model" class="floatLabel  " name="model" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                              <label for="model">รุ่น</label>
-                         </div>
-                    </div>
-
-                    <div class="col-2-3 col-1-6-sm">
-                         <div class="controls">
-                              <input type="text" id="active" class="floatLabel  " name="active" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                              <label for="active">ใช้ในงาน</label>
-                         </div>
-                    </div>
-               </div>
-               <div class="col-1-2 col-1-6">
->>>>>>> 2a662be9c2fd3fbf7900461946d5a511a3a410cc
                     <div class="controls">
                          <input type="text" id="model" class="floatLabel  " name="model" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
                          <label for="model">รุ่น</label>
                     </div>
                </div>
-<<<<<<< HEAD
 
                <div class="col-2-3 col-1-6-sm">
                     <div class="controls">
@@ -512,22 +461,21 @@ session_start();
           </div>
           <div class="col-1-4 col-1-4-sm">
                <div class="controls">
+                
                     <select class="form-select" id="arrive" class="floatLabel" name="arrive" style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                         <option for="arrive" class="label-date"><i class="fas fa-caret-down"></i>&nbsp;&nbsp;เลือก</option>
+              
+                         <option for="arrive" class="label-date">&nbsp;&nbsp;เลือก</option>
                          <option value="1">One</option>
                          <option value="2">Two</option>
                          <option value="3">Three</option>
                     </select>
+                    
                </div>
           </div>
 
           <br><br><br><br><br><br><br><br>
- 
+
           <button type="submit" value="Submit" class="col-1-4">Submit</button>
-=======
-               <br><br><br><br><br>
-               <button type="submit" value="Submit" class="col-1-4">Submit</button>
->>>>>>> 2a662be9c2fd3fbf7900461946d5a511a3a410cc
           </div>
           <!--  Details -->
 
