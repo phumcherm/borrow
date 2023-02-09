@@ -375,7 +375,7 @@ session_start();
      <form action="">
           <!--  General -->
           <div class="form-group">
-               <h2 class="heading">กรอกรายละเอียดแจ้งซ่อม</h2>ฃ
+               <h2 class="heading" >กรอกรายละเอียดแจ้งซ่อม</h2>ฃ
                <div class="grid">
                     <div class="col-1-4 col-1-4-sm">
                          <div class="controls">
@@ -490,7 +490,7 @@ session_start();
           </div> -->
           <br><br><br><br><br><br><br><br>
 
-          <button type="submit" value="Submit" class="col-1-4">Submit</button>
+          <button type="submit" value="Submit" class="col-1-4" style="  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px; ">Submit</button>
           </div>
           <!--  Details -->
 
