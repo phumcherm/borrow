@@ -345,6 +345,8 @@ session_start();
                grid-template-columns: 1fr;
           }
      }
+
+    
 </style>
 
 
@@ -461,18 +463,31 @@ session_start();
           </div>
           <div class="col-1-4 col-1-4-sm">
                <div class="controls">
-                
+
                     <select class="form-select" id="arrive" class="floatLabel" name="arrive" style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-              
+
                          <option for="arrive" class="label-date">&nbsp;&nbsp;เลือก</option>
                          <option value="1">One</option>
                          <option value="2">Two</option>
                          <option value="3">Three</option>
                     </select>
-                    
                </div>
           </div>
+          <!-- <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
 
+               <select name="" id="" class="form-control custom-select " style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                    <label for="arrive" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Destination</label>
+                    <option value="">Peru</option>
+                    <option value="">Japan</option>
+                    <option value="">Thailand</option>
+                    <option value="">Brazil</option>
+                    <option value="">United States</option>
+                    <option value="">Israel</option>
+                    <option value="">China</option>
+                    <option value="">Russia</option>
+               </select>
+          </div>
+          </div> -->
           <br><br><br><br><br><br><br><br>
 
           <button type="submit" value="Submit" class="col-1-4">Submit</button>
