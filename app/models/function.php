@@ -69,6 +69,12 @@ class DB_con
         return $result;
     }
 
+    function selectWhereId2($tb_id)
+    {
+        $result = mysqli_query($this->dbcon, "SELECT * FROM itemdata WHERE id = $tb_id ");
+        return $result;
+    }
+
     function insertBorrow($itemcode, $activity, $location, $br_date)
     {
         $result = mysqli_query($this->dbcon, "INSERT INTO borrow(id,activity,location,br_date,status) values(
@@ -97,9 +103,16 @@ class DB_con
         return $result;
     }
 
-    function selectCountItem()
+    function selectBorrowItem()
     {
-        $result = mysqli_query($this->dbcon, "SELECT * FROM borrow,itemdata ");
+        $result = mysqli_query($this->dbcon, "SELECT borrow.id br_id,detail,brand FROM borrow,itemdata where borrow.id = itemdata.id group by borrow.id");
+        return $result;
+    }
+
+    function selectCountTreasury()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT detail,brand, borrow.status br_status,itemdata.status item_status, count(*) total from ceitdb.itemdata left join ceitdb.borrow 
+                                                on itemdata.id = borrow.id group by detail,brand,borrow.status,itemdata.status;");
         return $result;
     }
 }
