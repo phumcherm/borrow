@@ -69,6 +69,23 @@ $result_l = mysqli_query($con, $query);
         background-color: #ff5722;
     }
 
+    #cancle {
+        color: red;
+        border-style: solid;
+        border-color: #ff0000;
+        border-width: 5px;
+        padding: 15px 25px;
+        background-color: #fff;
+        border-radius: 7px;
+        margin-bottom: 15px;
+        box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;
+    }
+
+    #submit {
+        float: right;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;
+    }
+
     @media all and (max-width: 800px) {
         .section_area_grid {
             grid-template-columns: 1fr;
@@ -107,7 +124,7 @@ $result_l = mysqli_query($con, $query);
                         <!-- <h2 id="data4" name="data4"></h2> -->
                         <!-- <h2 id="result" ></h2> -->
                         <!-- <br><br> -->
-                        <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" name="activity" style="max-width: 500px;">
+                        <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
                         <div class="section_area_grid">
 
                             <div class="section_grid_bor">
@@ -135,8 +152,7 @@ $result_l = mysqli_query($con, $query);
 
                                 <div style="max-width: 1600px;margin-left: auto;">
                                     <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
-                                    <a style="float: right;padding: 15px 25px;background-color: #ff5722;border-radius: 7px;margin-bottom: 15px;" onclick="delAll_test()">ลบทั้งหมด</a>
-                                    <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;">
+                                    <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
                                         <thead class="table-dark">
                                             <th>
                                                 <center>id </center>
@@ -190,7 +206,8 @@ $result_l = mysqli_query($con, $query);
                                     }
                                 </script>
                                 <br>
-                                <button type="submit" id="submit" name="submit" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;">ยืนยันทั้งหมด</button>
+                                <a type="button" id="cancle" onclick="delAll_test()">ยกเลิก</a>
+                                <button type="submit" id="submit" name="submit">ยืนยันทั้งหมด</button>
 
                             </table>
                         </div>
