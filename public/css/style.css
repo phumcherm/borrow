@@ -57,36 +57,10 @@
     display: inline;
 
 } */
-<<<<<<< Updated upstream
- 
-        /* ***Desktop*** */
-
-        @media only screen and (max-width: 480px) {
-            .site-title {
-                font-size: 25px;
-            }
-        }
-        @media all and (min-width: 600px) {
-            ul.menu {
-                list-style-type: none;
-                display: flex;
-            }
-
-            ul {
-                padding-right: 0;
-                float: right;
-            }
-
-            .button a {
-                padding: 7px 15px;
-                border-radius: 7px;
-            }
-=======
 
         ul.menu {
             list-style-type: none;
             display: flex;
->>>>>>> Stashed changes
         }
 
         /* ***tablet*** */
@@ -119,14 +93,11 @@
             background-color: #ff5722;
         }
 
-<<<<<<< Updated upstream
-=======
         ul {
             padding-right: 0;
             float: right;
         }
 
->>>>>>> Stashed changes
         nav {
             height: auto;
             background-color: #837a7a;
@@ -165,65 +136,17 @@
         }
         
 
-<<<<<<< Updated upstream
-        .container {
-            max-height: 200px;
-
-=======
         .container { 
             height: 200px;
            
->>>>>>> Stashed changes
             position: relative;
             display: block;
             margin-left: auto;
             margin-right: auto;
-<<<<<<< Updated upstream
-        }
-
-        #myBtn {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 30px;
-            z-index: 99;
-            font-size: 18px;
-            border: none;
-            outline: none;
-            background-color: red;
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            border-radius: 4px;
-        }
-
-        #btn-back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none;
           }
 
-          /* //////   grid   ////// */
+          /* /////////////////////// repair /////////////////////// */
 
-          .section_area_grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 10px;
-        }
-        
-        .section_grid_bor {
-            margin: auto 0;
-            padding: 15px 15px;
-            z-index: 3;
-            border-radius: 7px;
-            /* ///////////////////////////////////////////////////        เงา        ////////////////////////// */
-            /* box-shadow: 5px 5px 20px #000000; */
-        }
-
-        
-=======
-          }
           
           
->>>>>>> Stashed changes
+          
