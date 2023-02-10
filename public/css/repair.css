@@ -79,12 +79,12 @@ form {
 }
 
 h2.heading {
-    font-size: 30px;
+    font-size: 50px;
     text-transform: uppercase;
     font-weight: 300;
     text-align: left;
-    color: #506982;
-    border-bottom: 3px solid #506982;
+    color: #224C60;
+    border-bottom: 3px solid #224C60;
     padding-bottom: 15px;
     margin-bottom: 50px;
 }
