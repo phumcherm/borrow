@@ -120,7 +120,6 @@ session_start();
                </div>
           </div>
 
-          <div class="grid">
 
                <div class="col-1-3 col-1-6-sm">
                     <div class="controls">
@@ -128,18 +127,12 @@ session_start();
                          <label for="brand" id="lb_brand">ยี่ห้อ</label>
                     </div>
                </div>
-               <div class="col-1-3 col-1-6-sm">
-                    <div class="controls">
-                         <input type="text" id="model" class="floatLabel  " name="model" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                         <label for="model">รุ่น</label>
-                    </div>
-               </div>
 
-               <div class="col-2-3 col-1-6-sm">
-                    <div class="controls">
-                         <input type="text" id="active" class="floatLabel  " name="active" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                         <label for="active">ใช้ในงาน</label>
-                    </div>
+
+          <div class="col-1-2 col-1-6">
+               <div class="controls">
+                    <input type="text" id="active" class="floatLabel  " name="active" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                    <label for="active">ใช้ในงาน</label>
                </div>
           </div>
           <div class="col-1-2 col-1-6">
@@ -149,15 +142,15 @@ session_start();
                </div>
           </div>
 
-             
-          </div>
-          </div> 
-          <br><br><br><br><br><br><br><br>
 
-          <button type="submit" value="Submit" class="col-1-4" style="  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px; ">Submit</button>
+          </div>
+          </div>
+          <br><br><br><br><br><br><br><br><br><br><br><br>
+
+          <button type="submit" value="Submit" class="col-1-4" style="      border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px; ">Submit</button>
           </div>
           <!--  Details -->
-
+          <br><br><br><br><br>
           <script>
                function selectItemOption() {
                     var selectedValues = document.getElementById("selectedItem").value;
