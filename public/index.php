@@ -249,26 +249,26 @@ $result_l = mysqli_query($con, $query);
                                 <td data-label="รายการ.">
                                     <center> <?php echo $row["detail"] ?></center>
                                 </td>
-                                <td data-label="ชื่อครุภัณฑ์.">
+                                <td data-label="ยี่ห้อ.">
                                     <center> <?php echo $row["brand"] ?></center>
                                 </td>
-                                <td data-label="ยี่ห้อ.">
+                                <td data-label="งานที่นำไปใช้.">
                                     <center> <?php echo $row["activity"] ?></center>
                                 </td>
 
-                                <td data-label="งานที่นำไปใช้.">
+                                <td data-label="สถานที่กิจกรรม.">
                                     <center><?php echo $row["location"] ?></center>
                                 </td>
-                                <td data-label="สถานที่กิจกรรม.">
+                                <td data-label="ฝ่าย.">
                                     <center> <?php echo $row["room"] ?></center>
                                 </td>
-                                <td data-label="ฝ่าย.">
+                                <td data-label="วันที่ยืม.">
                                     <?php echo $row["br_time"] ?>
                                 </td>
-                                <td data-label="วันที่ยืม.">
+                                <td data-label="วันที่ต้องคืน.">
                                     <center><?php echo $row["br_date"] ?></center>
                                 </td>
-                                <td data-label="วันที่ต้องคืน.">
+                                <td data-label="สถานะ">
 
                                     <center>
                                         <?php
