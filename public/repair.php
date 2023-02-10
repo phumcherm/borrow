@@ -10,7 +10,7 @@ session_start();
 
 <head>
      <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <!--  <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>คืนวัสดุ ครุภัณฑ์</title>
      <meta charset="UTF-8">
@@ -19,9 +19,26 @@ session_start();
      <link rel="stylesheet" type="text/css" href="../../public/css/repair.css">
      <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <style>
+       #grad {
+        /*     background: #7F8487; */
+            /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient(left top, #F7F5F2, #DFDFDE, #7F8487);
+            /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(bottom right, #F7F5F2, #DFDFDE, #7F8487);
+            /* For Opera 11.1 to 12.0 */
+            background: -o-linear-gradient(bottom right, #F7F5F2, #DFDFDE, #7F8487);
+            /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(bottom right, #F7F5F2, #DFDFDE, #7F8487);
+            /* For Firefox 3.6 to 15 */
+            background: linear-gradient(to bottom right, #F7F5F2, #DFDFDE, #7F8487);
+            /* Standard syntax */
+        }
+     </style>
+
 </head>
 
-<body>
+<body >
      <?php
      include "nav_user.php";
      require_once "../app/views/session_status.php";
@@ -43,18 +60,26 @@ session_start();
      }
 
      ?>
-     <form action="">
-          <!--  General -->
-          <div class="form-group">
-               <h2 class="heading">กรอกรายละเอียดแจ้งซ่อม</h2>
-               <div class="grid">
+
+
+
+     <div id="grad" style= "   background-color:aliceblue;   width: auto; height: 1030px;margin: 15px;  border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;  ">
+          <form action="">
+               <!--  General -->
+               <div class="form-group">
+               <div><!-- text-shadow:1px 2px 11px #000; -->
+            <h2  class="heading"  style="color: #224C60;font-family: SUT_Bold;   ">
+               กรอกรายละเอียดแจ้งซ่อม
+            </h2>
+        </div>
+                    <!-- <b><h2 class="heading">กรอกรายละเอียดแจ้งซ่อม</h2></b> -->
+
                     <div class="col-1-4 col-1-4-sm">
                          <div class="controls">
                               <input type="date" id="arrive" class="floatLabel" name="arrive" value="<?php echo date('Y-m-d'); ?>" style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
                               <label for="arrive" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;วันที่แจ้งซ่อม</label>
                          </div>
                     </div>
-
                     <div class="col-1-4 col-1-4-sm">
                          <div class="controls">
 
@@ -70,57 +95,51 @@ session_start();
 
                          </div>
                     </div>
-
+               </div>
+               <div class="col-1-2 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="name" class="floatLabel  " name="name" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="name">ชื่อ - สกุล</label>
+                    </div>
+               </div>
+               <div class="col-1-3 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="position" class="floatLabel  " name="position" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="position">ตำแหน่ง</label>
+                    </div>
                </div>
 
-          </div>
+               <div class="col-1-3 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="affiliation" class="floatLabel  " name="affiliation" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="affiliation">สังกัด</label>
+                    </div>
+               </div>
+               <div class="col-1-3 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="Phone" class="floatLabel  " name="Phone" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="Phone">โทรศัพท์</label>
+                    </div>
+               </div>
+               <div class="col-1-2 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="repair" class="floatLabel  " name="repair" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="repair" id="lb_repair">ขอแจ้งซ่อม/ตรวจสอบอุปกรณ์</label>
+                    </div>
+               </div>
+               <div class="col-1-3 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="commoditynumber" class="floatLabel  " name="commoditynumber" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="commoditynumber" id="lb_commoditynumber">หมายเลขครุภัณฑ์</label>
+                    </div>
+               </div>
 
-          <div class="col-1-2 col-1-6">
-               <div class="controls">
-                    <input type="text" id="name" class="floatLabel  " name="name" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                    <label for="name">ชื่อ - สกุล</label>
+               <div class="col-1-3 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="machinenumber" class="floatLabel  " name="machinenumber" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="machinenumber" id="lb_machinenumber">หมายเลขเครื่อง</label>
+                    </div>
                </div>
-          </div>
-          <div class="col-1-3 col-1-6">
-               <div class="controls">
-                    <input type="text" id="position" class="floatLabel  " name="position" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                    <label for="position">ตำแหน่ง</label>
-               </div>
-          </div>
-
-          <div class="col-1-3 col-1-6">
-               <div class="controls">
-                    <input type="text" id="affiliation" class="floatLabel  " name="affiliation" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                    <label for="affiliation">สังกัด</label>
-               </div>
-          </div>
-          <div class="col-1-3 col-1-6">
-               <div class="controls">
-                    <input type="text" id="Phone" class="floatLabel  " name="Phone" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                    <label for="Phone">โทรศัพท์</label>
-               </div>
-          </div>
-          <div class="col-1-2 col-1-6">
-               <div class="controls">
-                    <input type="text" id="repair" class="floatLabel  " name="repair" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                    <label for="repair" id="lb_repair">ขอแจ้งซ่อม/ตรวจสอบอุปกรณ์</label>
-               </div>
-          </div>
-          <div class="col-1-3 col-1-6">
-               <div class="controls">
-                    <input type="text" id="commoditynumber" class="floatLabel  " name="commoditynumber" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                    <label for="commoditynumber" id="lb_commoditynumber">หมายเลขครุภัณฑ์</label>
-               </div>
-          </div>
-
-          <div class="col-1-3 col-1-6">
-               <div class="controls">
-                    <input type="text" id="machinenumber" class="floatLabel  " name="machinenumber" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                    <label for="machinenumber" id="lb_machinenumber">หมายเลขเครื่อง</label>
-               </div>
-          </div>
-
-
                <div class="col-1-3 col-1-6-sm">
                     <div class="controls">
                          <input type="text" id="brand" class="floatLabel  " name="brand" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
@@ -129,68 +148,64 @@ session_start();
                </div>
 
 
-          <div class="col-1-2 col-1-6">
-               <div class="controls">
-                    <input type="text" id="active" class="floatLabel  " name="active" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                    <label for="active">ใช้ในงาน</label>
+               <div class="col-1-2 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="active" class="floatLabel  " name="active" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="active">ใช้ในงาน</label>
+                    </div>
                </div>
-          </div>
-          <div class="col-1-2 col-1-6">
-               <div class="controls">
-                    <input type="text" id="Symptoms" class="floatLabel  " name="Symptoms" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                    <label for="Symptoms">อาการที่พบ</label>
+               <div class="col-1-2 col-1-6">
+                    <div class="controls">
+                         <input type="text" id="Symptoms" class="floatLabel  " name="Symptoms" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                         <label for="Symptoms">อาการที่พบ</label>
+                    </div>
                </div>
-          </div>
+               <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
+               <button type="submit" value="Submit" class="col-1-4" style="      border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px; ">Submit</button>
+               <script>
+                    function selectItemOption() {
+                         var selectedValues = document.getElementById("selectedItem").value;
 
-          </div>
-          </div>
-          <br><br><br><br><br><br><br><br><br><br><br><br>
+                         console.log(selectedValues)
 
-          <button type="submit" value="Submit" class="col-1-4" style="      border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px; ">Submit</button>
-          </div>
-          <!--  Details -->
-          <br><br><br><br><br>
-          <script>
-               function selectItemOption() {
-                    var selectedValues = document.getElementById("selectedItem").value;
+                         var ajax = new XMLHttpRequest();
+                         // console.log(ajax)
+                         var method = "GET";
+                         var url = "data4.php";
+                         var data = "?selectedValues=" + selectedValues;
+                         var asynchronous = true;
 
-                    console.log(selectedValues)
+                         ajax.open(method, url + data, asynchronous);
+                         ajax.send();
+                         ajax.onreadystatechange = function() {
+                              if (this.readyState == 4 && this.status == 200) {
+                                   var data = JSON.parse(this.responseText);
+                                   console.log(data);
+                                   // console.log("data");
 
-                    var ajax = new XMLHttpRequest();
-                    // console.log(ajax)
-                    var method = "GET";
-                    var url = "data4.php";
-                    var data = "?selectedValues=" + selectedValues;
-                    var asynchronous = true;
+                                   document.getElementById('repair').value = data.detail;
+                                   document.getElementById('lb_repair').classList.add("active");
 
-                    ajax.open(method, url + data, asynchronous);
-                    ajax.send();
-                    ajax.onreadystatechange = function() {
-                         if (this.readyState == 4 && this.status == 200) {
-                              var data = JSON.parse(this.responseText);
-                              console.log(data);
-                              // console.log("data");
+                                   document.getElementById('commoditynumber').value = data.itemCode;
+                                   document.getElementById('lb_commoditynumber').classList.add("active");
 
-                              document.getElementById('repair').value = data.detail;
-                              document.getElementById('lb_repair').classList.add("active");
+                                   document.getElementById('machinenumber').value = data.serialNumber;
+                                   document.getElementById('lb_machinenumber').classList.add("active");
 
-                              document.getElementById('commoditynumber').value = data.itemCode;
-                              document.getElementById('lb_commoditynumber').classList.add("active");
+                                   document.getElementById('brand').value = data.brand;
+                                   document.getElementById('lb_brand').classList.add("active");
+                              }
 
-                              document.getElementById('machinenumber').value = data.serialNumber;
-                              document.getElementById('lb_machinenumber').classList.add("active");
-
-                              document.getElementById('brand').value = data.brand;
-                              document.getElementById('lb_brand').classList.add("active");
+                              // document.getElementById("data4").innerHTML = data;
                          }
-
-                         // document.getElementById("data4").innerHTML = data;
                     }
-               }
-          </script>
+               </script>
 
-     </form>
+          </form>
+     </div>
+
+
      <script>
           (function($) {
                function floatLabel(inputType) {
