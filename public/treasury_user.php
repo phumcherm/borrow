@@ -64,6 +64,61 @@ require_once "../app/models/db.php";
   background: -moz-linear-gradient(bottom right, #4F4848,#686060,#827A7A,#CFC7C7); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to bottom right,#4F4848,#686060,#827A7A,#CFC7C7); /* Standard syntax */
 }
+
+.pagination {
+            background: #DDDDDD;
+            padding: 5px;
+            display: inline-flex;
+            position: relative;
+        }
+
+        .pagination li a.page-link {
+            background: #DDDDDD;
+            background: transparent;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 35px;
+            height: 35px;
+            width: 30px;
+            padding: 0;
+            margin: 0 5px;
+            border: none;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            transition: all 0.5s ease 0s;
+        }
+
+
+
+
+        .pagination li:first-child a.page-link,
+        .pagination li:last-child a.page-link {
+            font-size: 15px;
+            line-height: 37px;
+            width: auto;
+            padding: 0 8px;
+            border-radius: 0;
+        }
+
+        .pagination li a.page-link:before {
+            content: '';
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #434242;
+            border-radius: 5px;
+            transform: scale(0);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            transition: all 0.3s ease 0s;
+        }
+
+        .pagination li a.page-link:hover:before {
+            transform: scale(1);
+        }
     </style>
 
 </head>
@@ -87,16 +142,15 @@ require_once "../app/models/db.php";
         <div class='pagination-container'>
             <p Align=right>
             <nav aria-label="Page navigation example">
-                <ul class="pagination">
-
+                <ul class="pagination" style="box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 10px;">
                     <li data-page="prev" class="page-item">
-                        <a class="page-link" href="#" style=" border-color:#5B5B5B; color:#000000; ">Previous
+                        <a class="page-link" href="#" style=" border-color:#5B5B5B; color:#434242; "><b><i class="fas fa-angle-left"></i>Previous</b>
                             <span>
                                 <span class="sr-only">(current)
                                 </span></a>
                     </li>
                     <li data-page="next" class="page-item">
-                        <a class="page-link" href="#" style=" border-color:#5B5B5B; color:#000000;">Next
+                        <a class="page-link" href="#"  style=" border-color:#5B5B5B; color:#434242;"><b>Next&nbsp;&nbsp;<i class="fas fa-angle-right"></i></b>
                             <span> <span class="sr-only">(current)</span></span></a>
                     </li>
                 </ul>
@@ -106,7 +160,7 @@ require_once "../app/models/db.php";
 
             <br><br><br>
             <p Align=right>
-                <select name="state" id="maxRows" style=" border-color:#5B5B5B;box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.3);  ">
+                <select name="state" id="maxRows" style=" border-color:#5B5B5B; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 10px; ">
                     <option value="5000">Show ALL Rows</option>
                     <option value="5">5</option>
                     <option value="10">10</option>
