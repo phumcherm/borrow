@@ -141,9 +141,12 @@ $result_l = mysqli_query($con, $query);
                         </h2> -->
                     <!-- <h2 id="result" ></h2> -->
                     <!-- <br><br> -->
+<<<<<<< HEAD
                     <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
                     <div class="section_area_grid">
 
+=======
+>>>>>>> d6738648145eb4227fae734c094168acd12a9a5a
                         <!--  //<h2 id="data4" name="data4"></h2>
                         //<h2 id="result" ></h2>
                        // <br><br> -->
@@ -151,10 +154,16 @@ $result_l = mysqli_query($con, $query);
                             <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
                         </div>
 
+<<<<<<< HEAD
 
                         <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
                             <div class="section_area_grid">
 
+=======
+                        <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                            <div class="section_area_grid">
+
+>>>>>>> d6738648145eb4227fae734c094168acd12a9a5a
                                 <div class="section_grid_bor">
                                     <div class="section_grid_item">
                                         <!--        //<h5 style="padding-left: 0;">ระบุสถานที่<h5> -->
@@ -181,6 +190,12 @@ $result_l = mysqli_query($con, $query);
 
 
                 <!--  </div> -->
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> d6738648145eb4227fae734c094168acd12a9a5a
                 <div style="max-width: 1600px;margin-left: auto;">
                     <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
                     <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
@@ -242,6 +257,7 @@ $result_l = mysqli_query($con, $query);
 
 
 
+<<<<<<< HEAD
                 <div class="table-responsive">
                     <div>
                         <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
@@ -310,6 +326,8 @@ $result_l = mysqli_query($con, $query);
                         </table>
                     </div>
                 </div>
+=======
+>>>>>>> d6738648145eb4227fae734c094168acd12a9a5a
             </form>
             <!-- </div> -->
             <br>
