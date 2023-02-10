@@ -14,15 +14,15 @@ require_once "../../app/models/db.php";
 </head>
 <style>
     #search {
-        width: 30%;
-        padding: 12px 10px;
-        background-color: transparent;
+        width: 50%;
+        padding: 17px 10px;
+        background-color: #fff;
         transition: transform 250ms ease-in-out;
-        font-size: 14px;
+        font-size: 20px;
         line-height: 18px;
         border-radius: 50px;
-        border: 1px solid #00009a;
-
+        border: 1px solid #E6581D;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
     }
 </style>
@@ -30,14 +30,13 @@ require_once "../../app/models/db.php";
 <body>
     <?php include 'a_navbar.php' ?>
     <div>
-        <h2 style="color: #00009a;font-family: SUT_Bold;text-align: center;">
-            ▶ รายการแจ้งซ้อมครุภัณฑ์
+        <h2 style="color: #E6581D;font-family: SUT_Bold;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-caret-right" style="font-size:48px"></i>&nbsp; แจ้งซ่อมครุภัณฑ์
         </h2>
     </div>
     <br>
-    <br>
     <center>
-        <input type="search" id="search" onkeyup="SearchBox()" placeholder="ค้นหา" title="Type in a name">
+        <input type="search" id="search" onkeyup="SearchBox()" placeholder="&nbsp;&nbsp;ค้นหา" title="Type in a name">
     </center>
 
     <div class="table-responsive " style="padding: 25px;">

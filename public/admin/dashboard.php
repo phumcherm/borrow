@@ -39,7 +39,7 @@ $back = mysqli_fetch_array($sql);
                 <div class="w3-right">
                     <h3><?php echo $row['total_sum'] ?> ชิ้น</h3>
                 </div>
-                <div class="w3-clear"><a style="color: white;" href="#">
+                <div class="w3-clear"><a style="color: white;" href="index.php?p=itemdata">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
@@ -55,7 +55,7 @@ $back = mysqli_fetch_array($sql);
                 <div class="w3-right">
                     <h3> 125 ชิ้น</h3>
                 </div>
-                <div class="w3-clear"><a style="color: white;" href="#">
+                <div class="w3-clear"><a style="color: white;" href="index.php?p=status">
                         <span class="float-left">รายละเอียด </span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
@@ -72,7 +72,7 @@ $back = mysqli_fetch_array($sql);
                     <h3><?php echo $back['total_back'] ?> ชิ้น</h3>
                 </div>
                 <div class="w3-left"><i class="	far fa-calendar-check w3-xxxlarge"></i></div>
-                <div class="w3-clear"><a style="color: white;" href="#">
+                <div class="w3-clear"><a style="color: white;" href="index.php?p=back">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
@@ -88,7 +88,7 @@ $back = mysqli_fetch_array($sql);
                 <div class="w3-right">
                     <h3> <?php echo $borrow['total_borrow'] ?> ชิ้น</h3>
                 </div>
-                <div class="w3-clear"> <a style="color: white;" href="#">
+                <div class="w3-clear"> <a style="color: white;" href="index.php?p=borrow">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
@@ -108,7 +108,7 @@ $back = mysqli_fetch_array($sql);
                 <div class="w3-right">
                     <h3>3 ชิ้น</h3>
                 </div>
-                <div class="w3-clear"><a style="color: white;" href="#">
+                <div class="w3-clear"><a style="color: white;" href="a_repair.php">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
@@ -124,7 +124,7 @@ $back = mysqli_fetch_array($sql);
                 <div class="w3-right">
                     <h3> 1940 ชิ้น</h3>
                 </div>
-                <div class="w3-clear"><a style="color: white;" href="#">
+                <div class="w3-clear"><a style="color: white;" href="index.php?p=stock">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
@@ -141,7 +141,7 @@ $back = mysqli_fetch_array($sql);
                     <h3> 6 ครั้ง </h3>
                 </div>
                 <div class="w3-left"><i class="	fa fa-id-card  w3-xxxlarge"></i></div>
-                <div class="w3-clear"><a style="color: white;" href="#">
+                <div class="w3-clear"><a style="color: white;" href="index.php?p=office">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
@@ -157,7 +157,7 @@ $back = mysqli_fetch_array($sql);
                 <div class="w3-right">
                     <h3> 50 คน</h3>
                 </div>
-                <div class="w3-clear"> <a style="color: white;" href="#">
+                <div class="w3-clear"> <a style="color: white;" href="index.php?p=user">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
