@@ -1,10 +1,14 @@
 <?php
 require_once "../app/models/function.php";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 40c557a2107a79cb1ce49fbb7e378ccc6f168b39
 require_once "../app/models/db.php";
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>E - Borrow</title>
     <meta charset="UTF-8">
@@ -55,6 +59,70 @@ require_once "../app/models/db.php";
         .pagination li:hover {
             cursor: pointer;
         }
+
+        #grad {
+  background: #827A7A; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top,#4F4848,#686060,#827A7A,#CFC7C7); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right,#4F4848,#686060,#827A7A,#CFC7C7); /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(bottom right,#4F4848,#686060,#827A7A,#CFC7C7); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #4F4848,#686060,#827A7A,#CFC7C7); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right,#4F4848,#686060,#827A7A,#CFC7C7); /* Standard syntax */
+}
+
+.pagination {
+            background: #DDDDDD;
+            padding: 5px;
+            display: inline-flex;
+            position: relative;
+        }
+
+        .pagination li a.page-link {
+            background: #DDDDDD;
+            background: transparent;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 35px;
+            height: 35px;
+            width: 30px;
+            padding: 0;
+            margin: 0 5px;
+            border: none;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            transition: all 0.5s ease 0s;
+        }
+
+
+
+
+        .pagination li:first-child a.page-link,
+        .pagination li:last-child a.page-link {
+            font-size: 15px;
+            line-height: 37px;
+            width: auto;
+            padding: 0 8px;
+            border-radius: 0;
+        }
+
+        .pagination li a.page-link:before {
+            content: '';
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #434242;
+            border-radius: 5px;
+            transform: scale(0);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            transition: all 0.3s ease 0s;
+        }
+
+        .pagination li a.page-link:hover:before {
+            transform: scale(1);
+        }
     </style>
 
 </head>
@@ -63,9 +131,9 @@ require_once "../app/models/db.php";
     <?php
     include "nav_user.php";
     ?>
-    <div style="background-color:#827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+    <div id="grad"  style="background-color:#827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
         <div>
-            <h2 style="color: #fff;font-family: SUT_Bold;">
+            <h2 style="color: #fff;font-family: SUT_Bold;  text-shadow:2px 3px 10px #000;">
                 <i class="fa fa-caret-right" style="font-size:48px"></i>รายการครุภัณฑ์
 
             </h2>
@@ -78,16 +146,15 @@ require_once "../app/models/db.php";
         <div class='pagination-container'>
             <p Align=right>
             <nav aria-label="Page navigation example">
-                <ul class="pagination">
-
+                <ul class="pagination" style="box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 10px;">
                     <li data-page="prev" class="page-item">
-                        <a class="page-link" href="#" style=" border-color:#5B5B5B; color:#000000; ">Previous
+                        <a class="page-link" href="#" style=" border-color:#5B5B5B; color:#434242; "><b><i class="fas fa-angle-left"></i>Previous</b>
                             <span>
                                 <span class="sr-only">(current)
                                 </span></a>
                     </li>
                     <li data-page="next" class="page-item">
-                        <a class="page-link" href="#" style=" border-color:#5B5B5B; color:#000000;">Next
+                        <a class="page-link" href="#"  style=" border-color:#5B5B5B; color:#434242;"><b>Next&nbsp;&nbsp;<i class="fas fa-angle-right"></i></b>
                             <span> <span class="sr-only">(current)</span></span></a>
                     </li>
                 </ul>
@@ -97,7 +164,7 @@ require_once "../app/models/db.php";
 
             <br><br><br>
             <p Align=right>
-                <select name="state" id="maxRows" style=" border-color:#5B5B5B;box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.3);  ">
+                <select name="state" id="maxRows" style=" border-color:#5B5B5B; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 10px; ">
                     <option value="5000">Show ALL Rows</option>
                     <option value="5">5</option>
                     <option value="10">10</option>
@@ -119,79 +186,58 @@ require_once "../app/models/db.php";
                     <div>
                         <thead class="table-dark">
                             <th>
-                                <center>id </center>
+                                <center>ชื่อครุภัณฑ์</center>
                             </th>
                             <th>
-                                <center>updateTime</center>
+                                <center>ยี่ห้อ</center>
                             </th>
                             <th>
-                                <center>itemCode</center>
+                                <center>จำนวน</center>
                             </th>
                             <th>
-                                <center>detail</center>
+                                <center>สถานะการยืม</center>
                             </th>
                             <th>
-                                <center>checkInDate</center>
-                            </th>
-                            <th>
-                                <center>brand</center>
-                            </th>
-                            <th>
-                                <center>serialNumber</center>
-                            </th>
-                            <th>
-                                <center>price</center>
-                            </th>
-                            <th>
-                                <center>refDoc</center>
-                            </th>
-                            <th>
-                                <center>room</center>
-                            </th>
-                            <th>
-                                <center>status</center>
+                                <center>สถานะการใช้งาน</center>
                             </th>
                         </thead>
 
                         <tbody>
                             <?php
-                            $selectAll = new DB_con();
-                            $sql = $selectAll->selectAll();
+                            $selectCountTreasury = new DB_con();
+                            $sql = $selectCountTreasury->selectCountTreasury();
                             while ($row = mysqli_fetch_array($sql)) {
                             ?>
-                                <td>
-                                    <center><?php echo $row["id"] ?></center>
-                                </td>
-                                <td>
-                                    <center> <?php echo $row["updateTime"] ?></center>
-                                </td>
-                                <td>
-                                    <center> <?php echo $row["itemCode"] ?></center>
-                                </td>
-
                                 <td>
                                     <center><?php echo $row["detail"] ?></center>
                                 </td>
                                 <td>
-                                    <?php echo $row["checkInDate"] ?>
+                                    <center> <?php echo $row["brand"] ?></center>
                                 </td>
                                 <td>
-                                    <center><?php echo $row["brand"] ?></center>
+                                    <center><?php echo $row["total"] ?></center>
                                 </td>
                                 <td>
-                                    <center> <?php echo $row["serialNumber"] ?></center>
+                                    <center>
+                                        <?php if ($row['br_status'] == '') { ?>
+                                            <!-- <center> <?php echo $row["br_status"] ?></center> -->
+                                            <p style="background-color: green;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">ว่าง</p>
+                                        <?php } elseif ($row['br_status'] == 0) { ?>
+                                            <p style="background-color: red;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">ไม่ว่าง</p>
+                                        <?php } else { ?>
+                                            <p style="background-color: green;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">ว่าง</p>
+                                        <?php } ?>
+                                    </center>
                                 </td>
                                 <td>
-                                    <center> <?php echo $row["price"] ?></center>
-                                </td>
-                                <td>
-                                    <center> <?php echo $row["refDoc"] ?></center>
-                                </td>
-                                <td>
-                                    <center><?php echo $row["room"] ?></center>
-                                </td>
-                                <td>
-                                    <center><?php echo $row["status"] ?></center>
+                                    <center><?php if ($row['item_status'] == "ใช้งานได้") {
+                                                echo "<p style='background-color: green;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;'>ใช้งานได้</p>";
+                                            } elseif ($row['item_status'] == "ชำรุดรอการซ่อม") {
+                                                echo "<p style='background-color: #ffcc00;padding: 5px 10px;color: black;border-radius: 7px;margin: 0px;'>ชำรุดรอการซ่อม</p>";
+                                            } else {
+                                                echo "<p style='background-color: red;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;'>" . $row['item_status'] . "</p>";
+                                            }  ?>
+                                    </center>
                                 </td>
                         </tbody>
                     <?php } ?>
@@ -424,4 +470,5 @@ require_once "../app/models/db.php";
         }
     </script>
 </body>
+
 </html>

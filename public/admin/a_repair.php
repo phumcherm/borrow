@@ -13,7 +13,11 @@ require_once "../../app/models/db.php";
     <title>Admin borrow</title>
 </head>
 <style>
+<<<<<<< HEAD
     #search {
+=======
+      #search {
+>>>>>>> 40c557a2107a79cb1ce49fbb7e378ccc6f168b39
         width: 50%;
         padding: 17px 10px;
         background-color: #fff;
@@ -31,7 +35,11 @@ require_once "../../app/models/db.php";
     <?php include 'a_navbar.php' ?>
     <div>
         <h2 style="color: #E6581D;font-family: SUT_Bold;">
+<<<<<<< HEAD
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-caret-right" style="font-size:48px"></i>&nbsp; แจ้งซ่อมครุภัณฑ์
+=======
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <i class="fa fa-caret-right" style="font-size:48px"></i> รายการแจ้งซ่อมครุภัณฑ์
+>>>>>>> 40c557a2107a79cb1ce49fbb7e378ccc6f168b39
         </h2>
     </div>
     <br>
@@ -49,10 +57,9 @@ require_once "../../app/models/db.php";
                                 <th>Id</th>
                                 <th>หมายเลขครุภัณฑ์</th>
                                 <th>ชื่ออุปกรณ์</th>
-                                <th>วันที่ยืม</th>
-                                <th>วันที่คืน</th>
+                                <th>วันที่แจ้งซ่อม</th>
                                 <th>สถานะ</th>
-                                <th></th>
+                                <th>รายละเอียดเพิ่มเติม</th>
 
                             </tr>
                         </thead>
@@ -67,12 +74,11 @@ require_once "../../app/models/db.php";
                                     <td data-label="Id."><?php echo $row['id'] ?></td>
                                     <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td>
                                     <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
-                                    <td data-label="วันที่ยืม."><!-- <?php /* echo $row['dateCreate'] */ ?> -->รอข้อมูลยืม</td>
-                                    <td data-label="วันที่คืน."><span style="color: red;"><!-- <?php /* echo $row['Backdate']  */ ?> -->รอข้อมูลคืน</span> </td>
+                                    <td data-label="วันที่แจ้งซ่อม."><!-- <?php /* echo $row['dateCreate'] */ ?> -->รอข้อมูลวันที่</td>
                                     <td data-label="สถานะ.">
                                         <p><a href="a_repair2.php" class="text-muted">รอดำเนินการ</a></p>
                                     </td>
-                                    <td><a data-id="" href="" class="btn btn-warning">ข้อมูล</a></td>
+                                    <td><a data-id="" href="detailrepair.php" class="btn btn-warning">ข้อมูล</a></td>
                                 </tr>
                         </tbody>
                     <?php

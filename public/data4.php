@@ -27,8 +27,29 @@ if (isset($_GET['code']) && !empty(isset($_GET['code']))) {
     $sql = $selectWhereId->selectWhereId($tb_id);
     $row = mysqli_fetch_array($sql);
     $data = $row;
+<<<<<<< HEAD
+=======
+    echo json_encode($data);
+} elseif (isset($_GET['selectedValues'])) {
+    $selectedValues = $_GET['selectedValues'];
+
+    $selectWhereId2 = new DB_con();
+    $sql = $selectWhereId2->selectWhereId2($selectedValues);
+    $row = mysqli_fetch_array($sql);
+    $data = $row;
+>>>>>>> 40c557a2107a79cb1ce49fbb7e378ccc6f168b39
     echo json_encode($data);
 } else {
     $data[] = "พังละ";
     echo json_encode($data);
-}
+};
+
+// if (isset($_GET['selectedValues'])) {
+//     $selectedValues = $_GET['selectedValues'];
+
+//     $selectWhereId2 = new DB_con();
+//     $sql = $selectWhereId2->selectWhereId2($selectedValues);
+//     $row = mysqli_fetch_array($sql);
+//     $data[] = $row;
+//     echo json_encode($data);
+// }

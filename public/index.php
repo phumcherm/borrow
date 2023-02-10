@@ -15,7 +15,7 @@ $start_from = ($page - 1) * 49;
 
 
 $query = "SELECT * FROM itemdata limit $start_from,$num_par_page";
-$result_l = mysqli_query($con, $query); 
+$result_l = mysqli_query($con, $query);
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +55,7 @@ $result_l = mysqli_query($con, $query);
         #myUL li a {
             border: 6px solid #ddd;
             margin-top: -1px;
-         
+
             background-color: #f6f6f6;
             padding: 12px;
             text-decoration: none;
@@ -67,6 +67,78 @@ $result_l = mysqli_query($con, $query);
         #myUL li a:hover:not(.header) {
             background-color: #eee;
         }
+
+        #grad {
+            background: #827A7A;
+            /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient(left top, #4F4848, #686060, #827A7A, #CFC7C7);
+            /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(bottom right, #4F4848, #686060, #827A7A, #CFC7C7);
+            /* For Opera 11.1 to 12.0 */
+            background: -o-linear-gradient(bottom right, #4F4848, #686060, #827A7A, #CFC7C7);
+            /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(bottom right, #4F4848, #686060, #827A7A, #CFC7C7);
+            /* For Firefox 3.6 to 15 */
+            background: linear-gradient(to bottom right, #4F4848, #686060, #827A7A, #CFC7C7);
+            /* Standard syntax */
+        }
+
+        .pagination {
+            background: #DDDDDD;
+            padding: 5px;
+            display: inline-flex;
+            position: relative;
+        }
+
+        .pagination li a.page-link {
+            background: #DDDDDD;
+            background: transparent;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 35px;
+            height: 35px;
+            width: 30px;
+            padding: 0;
+            margin: 0 5px;
+            border: none;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            transition: all 0.5s ease 0s;
+        }
+
+
+
+
+        .pagination li:first-child a.page-link,
+        .pagination li:last-child a.page-link {
+            font-size: 15px;
+            line-height: 37px;
+            width: auto;
+            padding: 0 8px;
+            border-radius: 0;
+        }
+
+        .pagination li a.page-link:before {
+            content: '';
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #434242;
+            border-radius: 5px;
+            transform: scale(0);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            transition: all 0.3s ease 0s;
+        }
+
+        .pagination li a.page-link:hover:before {
+            transform: scale(1);
+        }
+
+        
     </style>
 
 </head>
@@ -76,11 +148,11 @@ $result_l = mysqli_query($con, $query);
     include "nav_user.php";
     require_once "../app/views/session_status.php";
     ?>
-    
-    <div style="background-color:#827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+
+    <div id="grad" style="background-color:#827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
         <div>
-            <h2 style="color: #fff;font-family: SUT_Bold;">
-                <i class="fa fa-caret-right" style="font-size:48px"></i>รายการครุภัณฑ์
+            <h2 style="color: #fff;font-family: SUT_Bold;  text-shadow:2px 3px 10px #000; ">
+                <i class="fa fa-caret-right" style="font-size:48px"></i>รายการยืม-คืนล่าสุด
             </h2>
         </div>
         <br>
@@ -93,15 +165,15 @@ $result_l = mysqli_query($con, $query);
         <div class='pagination-container'>
             <p Align=right>
             <nav aria-label="Page navigation example ">
-                <ul class="pagination">
-                    <li data-page="prev" class="page-item">
-                        <a class="page-link" href="#" style=" border-color:#5B5B5B; color:#000000; ">Previous
+                <ul class="pagination" style="box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 10px;">
+                    <li data-page="prev" class="page-item ">
+                        <a class="page-link" href="#" style=" border-color:#5B5B5B; color:#434242; "><b><i class="fas fa-angle-left"></i>Previous</b>
                             <span>
                                 <span class="sr-only">(current)
                                 </span></a>
-                    </li>
-                    <li data-page="next" class="page-item">
-                        <a class="page-link" href="#" style=" border-color:#5B5B5B; color:#000000;">Next
+                    </li><!-- page-item -->
+                    <li data-page="next" class="page-item ">
+                        <a class="page-link" href="#" style=" border-color:#5B5B5B; color:#434242;"><b>Next</b>&nbsp;&nbsp;<i class="fas fa-angle-right"></i>
                             <span> <span class="sr-only">(current)</span></span></a>
                     </li>
                 </ul>
@@ -111,7 +183,7 @@ $result_l = mysqli_query($con, $query);
 
             <br><br><br>
             <p Align=right>
-                <select name="state" id="maxRows" style=" border-color:#5B5B5B; box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.3); ">
+                <select   name="state" id="maxRows"  style=" border-color:#5B5B5B; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 10px;">
                     <option value="5000">Show ALL Rows</option>
                     <option value="5">5</option>
                     <option value="10">10</option>
@@ -134,14 +206,14 @@ $result_l = mysqli_query($con, $query);
                             <th>
                                 <center>Borrow ID</center>
                             </th>
-                            <th>
+                            <!--  <th>
                                 <center>Item ID</center>
-                            </th>
+                            </th> -->
                             <th>
                                 <center>รายการ</center>
                             </th>
                             <th>
-                                <center>Brand</center>
+                                <center>ยี่ห้อ</center>
                             </th>
                             <th>
                                 <center>งานที่นำไปใช้</center>
@@ -159,7 +231,7 @@ $result_l = mysqli_query($con, $query);
                                 <center>วันที่ต้องคืน</center>
                             </th>
                             <th>
-                                <center>status</center>
+                                <center>สถานะ</center>
                             </th>
                         </thead>
 
@@ -172,9 +244,9 @@ $result_l = mysqli_query($con, $query);
                                 <td>
                                     <center><?php echo $row["br_id"] ?></center>
                                 </td>
-                                <td>
-                                    <center> <?php echo $row["id"] ?></center>
-                                </td>
+                                <!--  <td>
+                                    <center> <?php /* echo $row["id"]  */ ?></center>
+                                </td> -->
                                 <td>
                                     <center> <?php echo $row["detail"] ?></center>
                                 </td>
