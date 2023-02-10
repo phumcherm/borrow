@@ -1,3 +1,4 @@
+
 let btn = document.querySelector(".button");
 let qr_code_element = document.querySelector(".qr-code");
 

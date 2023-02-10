@@ -105,8 +105,8 @@
                 <div class="mb-3">
 
                     <button type="submit" name="btn_insert" class="btn btn-success fa fa-save" value=""> บันทึก</button>
-                    <a href="index.php" class="btn btn-danger fa fa-sign-out">ยกเลิก</a>
-                    <button class="btn btn-primary button" data-toggle="modal" data-target="#myModal">Genarate QRcode</button>
+                    <a href="index.php" class="btn btn-danger fa fa-window-close"> ยกเลิก</a>
+                    <button class="btn btn-primary button" data-toggle="modal" data-target="#myModal"><i class="fa fa-qrcode"></i> Genarate QRcode</button>
                     <!-- <a href="a_qrcode.php" class="btn btn-primary ">Genarate QRcode</a> -->
                 </div>
             </div>

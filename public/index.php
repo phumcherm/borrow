@@ -27,6 +27,7 @@ $result_l = mysqli_query($con, $query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="/borrow/public/css/style.css">
+    <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" href="/borrow/public/css/icons.png">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -137,8 +138,6 @@ $result_l = mysqli_query($con, $query);
         .pagination li a.page-link:hover:before {
             transform: scale(1);
         }
-
-        
     </style>
 
 </head>
@@ -183,7 +182,7 @@ $result_l = mysqli_query($con, $query);
 
             <br><br><br>
             <p Align=right>
-                <select   name="state" id="maxRows"  style=" border-color:#5B5B5B; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 10px;">
+                <select name="state" id="maxRows" style=" border-color:#5B5B5B; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 10px;">
                     <option value="5000">Show ALL Rows</option>
                     <option value="5">5</option>
                     <option value="10">10</option>
@@ -241,35 +240,35 @@ $result_l = mysqli_query($con, $query);
                             $sql = $selectBorrow->selectBorrow();
                             while ($row = mysqli_fetch_array($sql)) {
                             ?>
-                                <td>
+                                <td data-label="Borrow ID.">
                                     <center><?php echo $row["br_id"] ?></center>
                                 </td>
                                 <!--  <td>
                                     <center> <?php /* echo $row["id"]  */ ?></center>
                                 </td> -->
-                                <td>
+                                <td data-label="รายการ.">
                                     <center> <?php echo $row["detail"] ?></center>
                                 </td>
-                                <td>
+                                <td data-label="ชื่อครุภัณฑ์.">
                                     <center> <?php echo $row["brand"] ?></center>
                                 </td>
-                                <td>
+                                <td data-label="ยี่ห้อ.">
                                     <center> <?php echo $row["activity"] ?></center>
                                 </td>
 
-                                <td>
+                                <td data-label="งานที่นำไปใช้.">
                                     <center><?php echo $row["location"] ?></center>
                                 </td>
-                                <td>
+                                <td data-label="สถานที่กิจกรรม.">
                                     <center> <?php echo $row["room"] ?></center>
                                 </td>
-                                <td>
+                                <td data-label="ฝ่าย.">
                                     <?php echo $row["br_time"] ?>
                                 </td>
-                                <td>
+                                <td data-label="วันที่ยืม.">
                                     <center><?php echo $row["br_date"] ?></center>
                                 </td>
-                                <td>
+                                <td data-label="วันที่ต้องคืน.">
 
                                     <center>
                                         <?php

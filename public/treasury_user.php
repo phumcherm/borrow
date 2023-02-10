@@ -11,6 +11,7 @@ require_once "../app/models/db.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/table.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
@@ -210,16 +211,16 @@ require_once "../app/models/db.php";
                             $sql = $selectCountTreasury->selectCountTreasury();
                             while ($row = mysqli_fetch_array($sql)) {
                             ?>
-                                <td>
+                                <td data-label="ชื่อครุภัณฑ์.">
                                     <center><?php echo $row["detail"] ?></center>
                                 </td>
-                                <td>
+                                <td data-label="ยี่ห้อ.">
                                     <center> <?php echo $row["brand"] ?></center>
                                 </td>
-                                <td>
+                                <td data-label="จำนวน.">
                                     <center><?php echo $row["total"] ?></center>
                                 </td>
-                                <td>
+                                <td data-label="สถานะการยืม.">
                                     <center>
                                         <?php if ($row['br_status'] == '') { ?>
                                             <!-- <center> <?php echo $row["br_status"] ?></center> -->
@@ -231,7 +232,7 @@ require_once "../app/models/db.php";
                                         <?php } ?>
                                     </center>
                                 </td>
-                                <td>
+                                <td data-label="สถานะการใช้งาน.">
                                     <center><?php if ($row['item_status'] == "ใช้งานได้") {
                                                 echo "<p style='background-color: green;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;'>ใช้งานได้</p>";
                                             } elseif ($row['item_status'] == "ชำรุดรอการซ่อม") {
