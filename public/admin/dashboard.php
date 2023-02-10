@@ -189,15 +189,15 @@ $back = mysqli_fetch_array($sql);
         <div class="w3-quarter">
             <div class="w3-container  w3-padding-16" id="sky" style="border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
                 <h4>จำนวนครุภัณฑ์ที่คืนแล้ว</h4>
-
+             
                 <div class="w3-right">
                     <h3><?php echo $back['total_back'] ?> ชิ้น</h3>
                 </div>
-                <div class="w3-left"><i class="	far fa-calendar-check w3-xxxlarge"></i></div>
+                <div class="w3-left"><i class="	far fa-calendar-check w3-xxxlarge" style="color:#fff"></i></div>
                 <div class="w3-clear"><a style="color: white;" href="index.php?p=back">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
-                            <i class="fa fa-angle-right"></i>
+                            <i class="fa fa-angle-right" ></i>
                         </span>
                     </a></div>
             </div>
@@ -258,11 +258,11 @@ $back = mysqli_fetch_array($sql);
         <div class="w3-quarter">
             <div class="w3-container w3-padding-16" id="pink" style="border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
                 <h4>จำนวนหน่วยงานที่ยืมอุปกรณ์</h4>
-
+             
                 <div class="w3-right">
                     <h3> 6 ครั้ง </h3>
                 </div>
-                <div class="w3-left"><i class="	fa fa-id-card  w3-xxxlarge"></i></div>
+                <div class="w3-left"><i class="	fa fa-id-card  w3-xxxlarge " style="color:#fff"></i></div>
                 <div class="w3-clear"><a style="color: white;" href="index.php?p=office">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
