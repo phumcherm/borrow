@@ -13,11 +13,7 @@ require_once "../../app/models/db.php";
     <title>Admin borrow</title>
 </head>
 <style>
-<<<<<<< HEAD
     #search {
-=======
-      #search {
->>>>>>> 40c557a2107a79cb1ce49fbb7e378ccc6f168b39
         width: 50%;
         padding: 17px 10px;
         background-color: #fff;
@@ -35,11 +31,7 @@ require_once "../../app/models/db.php";
     <?php include 'a_navbar.php' ?>
     <div>
         <h2 style="color: #E6581D;font-family: SUT_Bold;">
-<<<<<<< HEAD
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-caret-right" style="font-size:48px"></i>&nbsp; แจ้งซ่อมครุภัณฑ์
-=======
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <i class="fa fa-caret-right" style="font-size:48px"></i> รายการแจ้งซ่อมครุภัณฑ์
->>>>>>> 40c557a2107a79cb1ce49fbb7e378ccc6f168b39
         </h2>
     </div>
     <br>

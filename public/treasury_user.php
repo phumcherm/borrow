@@ -1,9 +1,5 @@
 <?php
 require_once "../app/models/function.php";
-<<<<<<< HEAD
-
-=======
->>>>>>> 40c557a2107a79cb1ce49fbb7e378ccc6f168b39
 require_once "../app/models/db.php";
 ?>
 <!DOCTYPE html>
@@ -61,15 +57,21 @@ require_once "../app/models/db.php";
         }
 
         #grad {
-  background: #827A7A; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top,#4F4848,#686060,#827A7A,#CFC7C7); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right,#4F4848,#686060,#827A7A,#CFC7C7); /* For Opera 11.1 to 12.0 */
-  background: -o-linear-gradient(bottom right,#4F4848,#686060,#827A7A,#CFC7C7); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, #4F4848,#686060,#827A7A,#CFC7C7); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right,#4F4848,#686060,#827A7A,#CFC7C7); /* Standard syntax */
-}
+            background: #827A7A;
+            /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient(left top, #4F4848, #686060, #827A7A, #CFC7C7);
+            /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(bottom right, #4F4848, #686060, #827A7A, #CFC7C7);
+            /* For Opera 11.1 to 12.0 */
+            background: -o-linear-gradient(bottom right, #4F4848, #686060, #827A7A, #CFC7C7);
+            /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(bottom right, #4F4848, #686060, #827A7A, #CFC7C7);
+            /* For Firefox 3.6 to 15 */
+            background: linear-gradient(to bottom right, #4F4848, #686060, #827A7A, #CFC7C7);
+            /* Standard syntax */
+        }
 
-.pagination {
+        .pagination {
             background: #DDDDDD;
             padding: 5px;
             display: inline-flex;
@@ -131,7 +133,7 @@ require_once "../app/models/db.php";
     <?php
     include "nav_user.php";
     ?>
-    <div id="grad"  style="background-color:#827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+    <div id="grad" style="background-color:#827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
         <div>
             <h2 style="color: #fff;font-family: SUT_Bold;  text-shadow:2px 3px 10px #000;">
                 <i class="fa fa-caret-right" style="font-size:48px"></i>รายการครุภัณฑ์
@@ -154,7 +156,7 @@ require_once "../app/models/db.php";
                                 </span></a>
                     </li>
                     <li data-page="next" class="page-item">
-                        <a class="page-link" href="#"  style=" border-color:#5B5B5B; color:#434242;"><b>Next&nbsp;&nbsp;<i class="fas fa-angle-right"></i></b>
+                        <a class="page-link" href="#" style=" border-color:#5B5B5B; color:#434242;"><b>Next&nbsp;&nbsp;<i class="fas fa-angle-right"></i></b>
                             <span> <span class="sr-only">(current)</span></span></a>
                     </li>
                 </ul>
