@@ -119,8 +119,8 @@ session_start();
 
     ?>
     <div>
-        <div style="background-color: #827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-            <h2 style="color: #fff;font-family: SUT_Bold;">
+        <div id="grad" style="background-color: #827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+            <h2 style="color: #fff;font-family: SUT_Bold; text-shadow:2px 3px 10px #000; ">
                 <i class="fa fa-caret-right" style="font-size:48px"></i>คืนวัสดุ ครุภัณฑ์
             </h2>
             <!--   1300px -->
