@@ -34,7 +34,7 @@ require_once "../../app/models/db.php";
 <body>
     <?php include 'a_navbar.php' ?>
     <div>
-        <h2 style="color: #E6581D;font-family: SUT_Bold;">
+        <h2 style="color: #E6581D;font-family: SUT_Bold; text-shadow:2px 3px 10px #686060; ">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <i class="fa fa-caret-right" style="font-size:48px"></i>  ข้อมูลยืมครุภัณฑ์
         </h2>
     </div>
