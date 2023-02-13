@@ -239,10 +239,6 @@ $result_l = mysqli_query($con, $query);
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> fc15ccb08fd2e569f7628e16dce0fe89adcfdd18
             </form>
             <!-- </div> -->
             <br>
