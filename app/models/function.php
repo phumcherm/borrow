@@ -51,12 +51,36 @@ class DB_con
         $result = mysqli_query($this->dbcon, "SELECT  
         itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location 
         FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  
-       AND borrow.status = 0");
+        AND borrow.status = 0");
         return $result;
     }
+
+    function dataTotelBorrow()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT  
+        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location 
+        FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  ");
+        return $result;
+    }
+
+    function dataBack()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT  
+        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location 
+        FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  
+        AND borrow.status = 1");
+        return $result;
+    }
+    
     function selectCountData()
     {
         $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_sum FROM itemdata");
+        return $result;
+    }
+
+    function selectTotelBorrow()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total FROM borrow ");
         return $result;
     }
     function selectCountBorrow()
@@ -67,7 +91,7 @@ class DB_con
 
     function selectCountBack()
     {
-        $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_back FROM back");
+        $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_back FROM borrow WHERE  status = 1");
         return $result;
     }
 
@@ -102,7 +126,7 @@ class DB_con
 
     function updateStatusBorrow()
     {
-        $result = mysqli_query($this->dbcon, "UPDATE borrow set status = 1 where br_id in (SELECT br_id FROM back );");
+        $result = mysqli_query($this->dbcon, "UPDATE borrow set status = 1 where br_id in (SELECT br_id FROM back);");
         return $result;
     }
 
