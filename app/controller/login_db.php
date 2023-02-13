@@ -68,7 +68,8 @@ if (isset($_POST['submit'])) {
         //     header("location: login.php");
         // }
 
-    } catch (PDOException $e) {
+    }
+     catch (PDOException $e) {
         echo $e->getMessage();
     }
 } else {
