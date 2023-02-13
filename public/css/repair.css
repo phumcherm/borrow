@@ -104,14 +104,14 @@ h2.heading {
 .controls select {
     padding: 20px;
     font-size: 20px;
-    border: 2px solid #686060;
+    border: 1px solid #686060;
     width: 100%;
     margin-bottom: 18px;
     color: #686060;
     font-size: 16px;
     font-weight: 300;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
     border-radius: 20px;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
@@ -185,7 +185,7 @@ h2.heading {
     color: #686060;
     font-size: 17px;
     display: inline-block;
-    padding: 1px 10px;
+    padding: 1px 30px;
     font-weight: 100%;
     background-color: rgba(255, 255, 255, 0);
     -moz-transition: color 0.3s, top 0.3s, background-color 0.8s;
@@ -198,6 +198,7 @@ h2.heading {
 .controls label.active {
     top: -20px;
     color: #686060;
+    border-radius: 20px;
     background-color: transparent;
     width: auto;
 }
@@ -211,9 +212,10 @@ h2.heading {
 button {
     cursor: pointer;
     background-color: #686060;
-    border: none;
+    /* border: none; */
+    border-radius: 20px;
     color: transparent;
-    padding: 12px 0;
+    padding: 30px;
     float: right;
 }
 
@@ -281,7 +283,7 @@ button:hover {
 }
 
 input {
-    border-radius: 7px;
+    border-radius: 20px;
     border: none;
     width: auto;
     height: 40px;
@@ -302,7 +304,7 @@ center a {
     padding: 15px 10px;
     margin-top: 15px;
     text-decoration: none;
-    border-radius: 7px;
+    border-radius: 20px;
 }
 
 button {
@@ -310,7 +312,7 @@ button {
     background-color: #e6581d;
     padding: 15px;
     border: none;
-    border-radius: 7px;
+    border-radius: 20px;
 }
 
 a {
