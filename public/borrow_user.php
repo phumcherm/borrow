@@ -183,7 +183,7 @@ $result_l = mysqli_query($con, $query);
                 <!--  </div> -->
                 <div style="max-width: 1600px;margin-left: auto;">
                     <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
-                    <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                    <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
                         <thead class="table-dark">
                             <th>
                                 <center>id </center>
@@ -239,7 +239,6 @@ $result_l = mysqli_query($con, $query);
                 <br>
                 <a type="button" id="cancle" onclick="delAll_test()">ยกเลิก</a>
                 <button type="submit" id="submit" name="submit">ยืนยันทั้งหมด</button>
-
                 </table>
         </div>
     </div>
