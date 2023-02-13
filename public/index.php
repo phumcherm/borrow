@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../app/models/Database.php";
 require_once "../app/models/function.php";
 
@@ -178,7 +179,6 @@ $result_l = mysqli_query($con, $query);
                 </ul>
             </nav>
             </p>
-
 
             <br><br><br>
             <p Align=right>

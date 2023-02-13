@@ -1,6 +1,7 @@
 <?php
 require_once "function.php";
 
+session_start();
 if (isset($_POST['submit'])) {
     $itemcode = $_POST['data4'];
     $activity = $_POST['activity'];
@@ -18,7 +19,7 @@ if (isset($_POST['submit'])) {
         }
 
         if ($sql) {
-            $_SESSION['status'] = "คืนครุภัณฑ์สำเร็จ";
+            $_SESSION['success'] = "ยืมครุภัณฑ์สำเร็จ!";
             header("location: /public/index.php");
             // foreach ($arr_code as $v) {
             //     print $v;
@@ -32,7 +33,8 @@ if (isset($_POST['submit'])) {
             // echo $location . "<br>"; 
             // echo $br_date . "<br>";
         } else {
-            echo "พังงง000";
+            $_SESSION['error'] = "มีบางอย่างผิดพลาด";
+                    header("location: /public/borrow_user.php");
         }
     } else {
 ?><script>

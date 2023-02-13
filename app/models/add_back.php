@@ -5,6 +5,7 @@ session_start();
 
 if (isset($_POST['submit'])) {
     $itemcode = $_POST['data4'];
+    $problem = $_POST['problem'];
 
     $arr_code = explode(",", $itemcode);
 
@@ -13,7 +14,7 @@ if (isset($_POST['submit'])) {
     if ($total_rows > 0) {
         for ($i = 0; $i < $total_rows; $i++) {
             $insertBack = new DB_con();
-            $sql = $insertBack->insertBack($arr_code[$i]);
+            $sql = $insertBack->insertBack($arr_code[$i],$problem);
         }
 
         if ($sql) {
@@ -22,7 +23,7 @@ if (isset($_POST['submit'])) {
             if ($sql) {
 
                 //after insert or update 
-                $_SESSION['status'] = "ยืมครุภัณฑ์สำเร็จ";
+                $_SESSION['success'] = "คืนครุภัณฑ์สำเร็จ!";
                 header("location: /public/index.php");
                 // foreach ($arr_code as $v) {
                 //     print $v;
@@ -40,7 +41,8 @@ if (isset($_POST['submit'])) {
                 echo "พังงง UPDATE";
             }
         } else {
-            echo "พังงง000";
+            $_SESSION['error'] = "มีบางอย่างผิดพลาด";
+            header("location: /public/back_user.php");
         }
     } else {
 ?><script>
