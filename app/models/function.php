@@ -83,11 +83,12 @@ class DB_con
         return $result;
     }
 
-    function insertBack($itemcode)
+    function insertBack($itemcode,$problem)
     {
-        $result = mysqli_query($this->dbcon, "INSERT INTO back(id,br_id) values(
+        $result = mysqli_query($this->dbcon, "INSERT INTO back(id,br_id,bk_problem) values(
                                             (select id from itemdata where itemCode = '$itemcode'),
-                                            (SELECT br_id FROM borrow,itemdata where borrow.id = itemdata.id and itemCode = '$itemcode' and borrow.status = 0))");
+                                            (SELECT br_id FROM borrow,itemdata where borrow.id = itemdata.id and itemCode = '$itemcode' and borrow.status = 0),
+                                            '$problem')");
         return $result;
     }
 
@@ -113,6 +114,12 @@ class DB_con
     {
         $result = mysqli_query($this->dbcon, "SELECT detail,brand, borrow.status br_status,itemdata.status item_status, count(*) total from ceitdb.itemdata left join ceitdb.borrow 
                                                 on itemdata.id = borrow.id group by detail,brand,borrow.status,itemdata.status;");
+        return $result;
+    }
+
+    function selectUserWhere($user,$pass)
+    {
+        $result = mysqli_query($this->dbcon, "SELECT * FROM user WHERE user_name = '$user' AND user_pass = '$pass' ");
         return $result;
     }
 }
