@@ -69,7 +69,7 @@ require_once "../../app/models/db.php";
 
             <div class="col-md-4">
             <h2 style="color: #E6581D;font-family: SUT_Bold; text-shadow:2px 3px 10px #686060; ">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-caret-right" style="font-size:48px"></i> รายการเเจ้งซ่อม
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!--  <i class="fa fa-caret-right" style="font-size:48px"></i> --> เลือก
         </h2>
         <br>
                 <div class="container md-4">
