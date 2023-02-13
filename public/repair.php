@@ -70,7 +70,7 @@ session_start();
                     <div class="col-1-4 col-1-4-sm">
                          <div class="controls">
 
-                              <select class="form-select" id="selectedItem" onchange="selectItemOption();" class="floatLabel" name="selectedItem" style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                              <select class="form-select bg-lavender" id="selectedItem" onchange="selectItemOption();" class="floatLabel" name="selectedItem" style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
 
                                    <option for="arrive" class="label-date" >&nbsp;&nbsp;เลือกจากประวัติการยืมครุภัณฑ์</option>
                                    <?php $selectBorrowItem = new DB_con();
