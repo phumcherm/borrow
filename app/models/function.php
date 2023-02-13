@@ -124,4 +124,10 @@ class DB_con
                                                 on itemdata.id = borrow.id group by detail,brand,borrow.status,itemdata.status;");
         return $result;
     }
+
+    function selectUserWhere($user,$pass)
+    {
+        $result = mysqli_query($this->dbcon, "SELECT * FROM user WHERE user_name = '$user' AND user_pass = '$pass' ");
+        return $result;
+    }
 }

@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html>
 
@@ -102,12 +103,17 @@
         }
     </style>
 </head>
+<?php
+
+require_once "../app/views/session_status.php";
+?>
 
 <body>
     <div class="fullscreen-block colorwhite">
-        <br><br> <center><img src="../../app/asset/ceit_logo.jpg" style=" box-shadow: rgba(0, 0, 0,0.70) 0px 5px 15px;  width:120px  " class="w3-circle w3-margin-right"></center>
+        <br><br>
+        <center><img src="../../app/asset/ceit_logo.jpg" style=" box-shadow: rgba(0, 0, 0,0.70) 0px 5px 15px;  width:120px  " class="w3-circle w3-margin-right"></center>
         <section class="w3-center">
-            
+
             <div><b>
                     <h1 style="text-shadow:2px 3px 10px #000; ">E - Borrow</h1>
                 </b></div>

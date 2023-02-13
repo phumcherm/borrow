@@ -323,7 +323,7 @@ header('location:login.php');
                                 <a class="nav-link" href="repair.php"><i class="fas fa-tools"></i>แจ้งซ่อม</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" name="logout" href="login.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
+                                <a class="nav-link" name="logout" href="../app/controller/log_out.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
                             </li>
                         </ul>
                     </div>
