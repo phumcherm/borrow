@@ -230,7 +230,7 @@ $back = mysqli_fetch_array($sql);
                 <div class="w3-right">
                     <h3>3 ชิ้น</h3>
                 </div>
-                <div class="w3-clear"><a style="color: white;" href="a_repair.php">
+                <div class="w3-clear"><a style="color: white;" href="a_repair2.php">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
