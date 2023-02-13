@@ -130,4 +130,4 @@ class DB_con
         $result = mysqli_query($this->dbcon, "SELECT * FROM user WHERE user_name = '$user' AND user_pass = '$pass' ");
         return $result;
     }
-}
+} 
