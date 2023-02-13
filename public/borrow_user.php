@@ -111,6 +111,7 @@ $result_l = mysqli_query($con, $query);
 <body>
     <?php
     include "nav_user.php";
+    require_once "../app/views/session_status.php";
     ?>
     <!-- <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button> -->
     <!--    background-color: #827A7A; -->
@@ -141,35 +142,46 @@ $result_l = mysqli_query($con, $query);
                         </h2> -->
                     <!-- <h2 id="result" ></h2> -->
                     <!-- <br><br> -->
+<<<<<<< HEAD
                         <!--  //<h2 id="data4" name="data4"></h2>
+=======
+
+                    <!--  //<h2 id="data4" name="data4"></h2>
+>>>>>>> fc15ccb08fd2e569f7628e16dce0fe89adcfdd18
                         //<h2 id="result" ></h2>
                        // <br><br> -->
-                        <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-                            <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
-                        </div>
+                    <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                        <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                    </div>
 
+<<<<<<< HEAD
                         <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
                             <div class="section_area_grid">
+=======
 
-                                <div class="section_grid_bor">
-                                    <div class="section_grid_item">
-                                        <!--        //<h5 style="padding-left: 0;">ระบุสถานที่<h5> -->
-                                        <br>
-                                        <input class="w3-input w3-animate-input demo" id="location" name="location" type="text" required placeholder="ระบุสถานที่" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; ">
-                                    </div>
-                                </div>
-                            </div>
-                            <!--    // <p id="demo">CODE</p> -->
-                            <br>
-                            <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-                                <div class="section_grid_bor">
-                                    <div class="section_grid_item">
-                                        <div style="font-size: 25px;">วันที่คืน*</div>
-                                        <input class="w3-input w3-animate-input" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;" type="date" id="date" name="date" required>
-                                    </div>
+                    <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                        <div class="section_area_grid">
+>>>>>>> fc15ccb08fd2e569f7628e16dce0fe89adcfdd18
+
+                            <div class="section_grid_bor">
+                                <div class="section_grid_item">
+                                    <!--        //<h5 style="padding-left: 0;">ระบุสถานที่<h5> -->
+                                    <br>
+                                    <input class="w3-input w3-animate-input demo" id="location" name="location" type="text" required placeholder="ระบุสถานที่" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; ">
                                 </div>
                             </div>
                         </div>
+                        <!--    // <p id="demo">CODE</p> -->
+                        <br>
+                        <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                            <div class="section_grid_bor">
+                                <div class="section_grid_item">
+                                    <div style="font-size: 25px;">วันที่คืน*</div>
+                                    <input class="w3-input w3-animate-input" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;" type="date" id="date" name="date" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </center>
                 <br><br>
 
@@ -238,6 +250,10 @@ $result_l = mysqli_query($con, $query);
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fc15ccb08fd2e569f7628e16dce0fe89adcfdd18
             </form>
             <!-- </div> -->
             <br>
