@@ -100,6 +100,7 @@ session_start();
 <body>
     <?php
     include "nav_user.php";
+    require_once "../app/views/session_status.php";
     ?>
     <!-- <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button> -->
 
@@ -135,8 +136,6 @@ session_start();
                 //     echo $_GET['code'];
                 // } 
                 ?>
-                <br>
-                <br>
 
                 <center>
                     <input class="w3-input" type="text" required placeholder="code" id="data4" name="data4" style="max-width: 500px;visibility: hidden; ">
@@ -204,6 +203,10 @@ session_start();
                                     tableFunc()
                                 }
                             </script>
+                            <br><br>
+                            <center>
+                                <input class="w3-input" type="text" required placeholder="ปัญหาในการใช้งาน" id="problem" name="problem" style="max-width: 500px; ">
+                            </center>
                             <br>
                             <a type="button" id="cancle" onclick="delAll_test()">ยกเลิก</a>
                             <button type="submit" id="submit" name="submit">ยืนยันทั้งหมด</button>

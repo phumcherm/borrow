@@ -20,20 +20,7 @@ session_start();
      <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
      <style>
-       #grad {
-        /*     background: #7F8487; */
-            /* For browsers that do not support gradients */
-            background: -webkit-linear-gradient(left top, #F7F5F2, #DFDFDE, #7F8487);
-            /* For Safari 5.1 to 6.0 */
-            background: -o-linear-gradient(bottom right, #F7F5F2, #DFDFDE, #7F8487);
-            /* For Opera 11.1 to 12.0 */
-            background: -o-linear-gradient(bottom right, #F7F5F2, #DFDFDE, #7F8487);
-            /* For Opera 11.1 to 12.0 */
-            background: -moz-linear-gradient(bottom right, #F7F5F2, #DFDFDE, #7F8487);
-            /* For Firefox 3.6 to 15 */
-            background: linear-gradient(to bottom right, #F7F5F2, #DFDFDE, #7F8487);
-            /* Standard syntax */
-        }
+ 
      </style>
 
 </head>
@@ -63,12 +50,12 @@ session_start();
 
 
 
-     <div id="grad" style= "   background-color:aliceblue;   width: auto; height: 1030px;margin: 15px;  border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;  ">
+    
           <form action="">
                <!--  General -->
                <div class="form-group">
                <div><!-- text-shadow:1px 2px 11px #000; -->
-            <h2  class="heading"  style="color: #224C60;font-family: SUT_Bold;   ">
+            <h2  class="heading"  style="color: #686060;font-family: SUT_Bold;   ">
                กรอกรายละเอียดแจ้งซ่อม
             </h2>
         </div>
@@ -76,16 +63,16 @@ session_start();
 
                     <div class="col-1-4 col-1-4-sm">
                          <div class="controls">
-                              <input type="date" id="arrive" class="floatLabel" name="arrive" value="<?php echo date('Y-m-d'); ?>" style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                              <label for="arrive" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;วันที่แจ้งซ่อม</label>
+                              <input type="date" id="arrive" class="floatLabel" name="arrive" value="<?php echo date('Y-m-d'); ?>" style="  max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                              <label for="arrive" class="label-date"><i class="fa fa-calendar" ></i>&nbsp;&nbsp;วันที่แจ้งซ่อม</label>
                          </div>
                     </div>
                     <div class="col-1-4 col-1-4-sm">
                          <div class="controls">
 
-                              <select class="form-select" id="selectedItem" onchange="selectItemOption();" class="floatLabel" name="selectedItem" style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                              <select class="form-select bg-lavender" id="selectedItem" onchange="selectItemOption();" class="floatLabel" name="selectedItem" style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
 
-                                   <option for="arrive" class="label-date">&nbsp;&nbsp;เลือกจากประวัติการยืมครุภัณฑ์</option>
+                                   <option for="arrive" class="label-date" >&nbsp;&nbsp;เลือกจากประวัติการยืมครุภัณฑ์</option>
                                    <?php $selectBorrowItem = new DB_con();
                                    $sql = $selectBorrowItem->selectBorrowItem();
                                    while ($row = mysqli_fetch_array($sql)) { ?>
@@ -163,6 +150,7 @@ session_start();
                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
                <button type="submit" value="Submit" class="col-1-4" style="      border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px; ">Submit</button>
+               <br><br>
                <script>
                     function selectItemOption() {
                          var selectedValues = document.getElementById("selectedItem").value;
@@ -203,7 +191,7 @@ session_start();
                </script>
 
           </form>
-     </div>
+     
 
 
      <script>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../app/models/Database.php";
 require_once "../app/models/function.php";
 
@@ -179,7 +180,6 @@ $result_l = mysqli_query($con, $query);
             </nav>
             </p>
 
-
             <br><br><br>
             <p Align=right>
                 <select name="state" id="maxRows" style=" border-color:#5B5B5B; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 10px;">
@@ -249,26 +249,26 @@ $result_l = mysqli_query($con, $query);
                                 <td data-label="รายการ.">
                                     <center> <?php echo $row["detail"] ?></center>
                                 </td>
-                                <td data-label="ยี่ห้อ.">
+                                <td data-label="ชื่อครุภัณฑ์.">
                                     <center> <?php echo $row["brand"] ?></center>
                                 </td>
-                                <td data-label="งานที่นำไปใช้.">
+                                <td data-label="ยี่ห้อ.">
                                     <center> <?php echo $row["activity"] ?></center>
                                 </td>
 
-                                <td data-label="สถานที่กิจกรรม.">
+                                <td data-label="งานที่นำไปใช้.">
                                     <center><?php echo $row["location"] ?></center>
                                 </td>
-                                <td data-label="ฝ่าย.">
+                                <td data-label="สถานที่กิจกรรม.">
                                     <center> <?php echo $row["room"] ?></center>
                                 </td>
-                                <td data-label="วันที่ยืม.">
+                                <td data-label="ฝ่าย.">
                                     <?php echo $row["br_time"] ?>
                                 </td>
-                                <td data-label="วันที่ต้องคืน.">
+                                <td data-label="วันที่ยืม.">
                                     <center><?php echo $row["br_date"] ?></center>
                                 </td>
-                                <td data-label="สถานะ">
+                                <td data-label="วันที่ต้องคืน.">
 
                                     <center>
                                         <?php

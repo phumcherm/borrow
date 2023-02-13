@@ -83,8 +83,8 @@ h2.heading {
     text-transform: uppercase;
     font-weight: 300;
     text-align: left;
-    color: #224C60;
-    border-bottom: 3px solid #224C60;
+    color: #686060;
+    border-bottom: 3px solid #686060;
     padding-bottom: 15px;
     margin-bottom: 50px;
 }
@@ -104,15 +104,15 @@ h2.heading {
 .controls select {
     padding: 20px;
     font-size: 20px;
-    border: 2px solid #224C60;
+    border: 1px solid #686060;
     width: 100%;
     margin-bottom: 18px;
-    color: #224C60;
+    color: #686060;
     font-size: 16px;
     font-weight: 300;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 5px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
     -webkit-transition: all 0.3s;
@@ -138,7 +138,7 @@ h2.heading {
 .controls select:focus,
 .controls select:hover {
     outline: none;
-    border-color: #224C60;
+    border-color: #686060;
 }
 
 .controls input[type="position"]:focus+label,
@@ -159,7 +159,7 @@ h2.heading {
 .controls button:hover+label,
 .controls select:focus+label,
 .controls select:hover+label {
-    color: #224C60;
+    color: #686060;
     cursor: text;
 }
 
@@ -167,7 +167,7 @@ h2.heading {
     position: absolute;
     right: 10px;
     top: 17px;
-    color: #224C60;
+    color: #686060;
 }
 
 .controls select {
@@ -182,10 +182,10 @@ h2.heading {
     left: 8px;
     top: 12px;
     width: 60%;
-    color: #224C60;
+    color: #686060;
     font-size: 17px;
     display: inline-block;
-    padding: 1px 10px;
+    padding: 1px 30px;
     font-weight: 100%;
     background-color: rgba(255, 255, 255, 0);
     -moz-transition: color 0.3s, top 0.3s, background-color 0.8s;
@@ -197,7 +197,8 @@ h2.heading {
 
 .controls label.active {
     top: -20px;
-    color: #224C60;
+    color: #686060;
+    border-radius: 20px;
     background-color: transparent;
     width: auto;
 }
@@ -210,15 +211,16 @@ h2.heading {
 /*text*/
 button {
     cursor: pointer;
-    background-color: #1b3d4d;
-    border: none;
+    background-color: #686060;
+    /* border: none; */
+    border-radius: 20px;
     color: transparent;
-    padding: 12px 0;
+    padding: 30px;
     float: right;
 }
 
 button:hover {
-    background-color: #224c60;
+    background-color: #686060;
 }
 
 .clear:after {
@@ -281,7 +283,7 @@ button:hover {
 }
 
 input {
-    border-radius: 7px;
+    border-radius: 20px;
     border: none;
     width: auto;
     height: 40px;
@@ -302,7 +304,7 @@ center a {
     padding: 15px 10px;
     margin-top: 15px;
     text-decoration: none;
-    border-radius: 7px;
+    border-radius: 20px;
 }
 
 button {
@@ -310,7 +312,7 @@ button {
     background-color: #e6581d;
     padding: 15px;
     border: none;
-    border-radius: 7px;
+    border-radius: 20px;
 }
 
 a {

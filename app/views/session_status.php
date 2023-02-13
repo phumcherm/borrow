@@ -1,10 +1,11 @@
+
 <?php if (isset($_SESSION['success'])) { ?>
     <div class="alert alert-success">
         <center>
-            <h4>
+            <h4 style="color:black;">
                 <?php
                 echo $_SESSION['success'];
-                // unset($_SESSION['success']);
+                unset($_SESSION['success']);
                 ?>
             </h4>
         </center>
