@@ -143,14 +143,12 @@ $result_l = mysqli_query($con, $query);
                         </h2> -->
                     <!-- <h2 id="result" ></h2> -->
                     <!-- <br><br> -->
-
                     <!--  //<h2 id="data4" name="data4"></h2>
                         //<h2 id="result" ></h2>
                        // <br><br> -->
                     <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
                         <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
                     </div>
-
 
                     <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
                         <div class="section_area_grid">
@@ -239,7 +237,13 @@ $result_l = mysqli_query($con, $query);
                 <br>
                 <a type="button" id="cancle" onclick="delAll_test()">ยกเลิก</a>
                 <button type="submit" id="submit" name="submit">ยืนยันทั้งหมด</button>
+
                 </table>
+
+            </form>
+            <!-- </div> -->
+            <br>
+
         </div>
     </div>
     </form>

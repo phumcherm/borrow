@@ -1,6 +1,6 @@
 <?php
 
-define('DB_SERVER', '172.17.0.1:9906');
+define('DB_SERVER', '172.18.0.1:9906');
 define('DB_USER', 'ceitdb');
 define('DB_PASS', '12345678');
 define('DB_NAME', 'ceitdb');
