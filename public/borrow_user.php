@@ -27,6 +27,7 @@ $result_l = mysqli_query($con, $query);
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/table.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -250,7 +251,7 @@ $result_l = mysqli_query($con, $query);
 
                             <div style="max-width: 1600px;margin-left: auto;">
                                 <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
-                                <table class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                                <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
                                     <thead class="table-dark">
                                         <th>
                                             <center>id </center>

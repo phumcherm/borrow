@@ -146,6 +146,27 @@ $back = mysqli_fetch_array($sql);
             background: linear-gradient(to bottom right, #F49D1A, #FFBF00, #FFE15D);
             /* Standard syntax */
         }
+
+        a {
+            color: white;
+        }
+
+        a:hover {
+            background-color: blue;
+            color: white;
+            cursor: pointer
+        }
+
+        /* .w3-clear a {
+            background-color: white;
+            color: black;
+            border: 2px solid #008CBA;
+        }
+
+        .w3-clear a:hover {
+            background-color: #008CBA;
+            color: white;
+        } */
     </style>
 
 </head>
@@ -154,17 +175,18 @@ $back = mysqli_fetch_array($sql);
     <div class="w3-row-padding w3-margin-bottom">
         <div class="w3-quarter">
             <div class="w3-container  w3-padding-16" id="teal" style="border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-                <h4>จำนวนครุภัณฑ์ทั้งหมด</h4>
+                <h4 style="color:white">จำนวนครุภัณฑ์ทั้งหมด</h4>
                 <div class="w3-left"><i class="fa fa-laptop w3-xxxlarge" style="color:#fff"></i></div>
                 <div class="w3-right">
-                    <h3><?php echo $row['total_sum'] ?> ชิ้น</h3>
+                    <h3 style="color:white"><?php echo $row['total_sum'] ?> ชิ้น</h3>
                 </div>
-                <div class="w3-clear"><a style="color: white;" href="index.php?p=itemdata">
+                <div class=" w3-clear"><a style=" color: white;font-size: 30px;" href="index.php?p=itemdata">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
                         </span>
-                    </a></div>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -175,7 +197,7 @@ $back = mysqli_fetch_array($sql);
                 <div class="w3-right">
                     <h3> 125 ชิ้น</h3>
                 </div>
-                <div class="w3-clear"><a style="color: white;" href="index.php?p=status">
+                <div class="w3-clear"><a style="color: white;font-size: 30px;" href="index.php?p=status">
                         <span class="float-left">รายละเอียด </span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
@@ -188,16 +210,17 @@ $back = mysqli_fetch_array($sql);
 
         <div class="w3-quarter">
             <div class="w3-container  w3-padding-16" id="sky" style="border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-                <h4>จำนวนครุภัณฑ์ที่คืนแล้ว</h4>
-             
+                <h4 style="color:white">จำนวนครุภัณฑ์ที่คืนแล้ว</h4>
+
                 <div class="w3-right">
-                    <h3><?php echo $back['total_back'] ?> ชิ้น</h3>
+                    <h3 style="color:white"><?php echo $back['total_back'] ?> ชิ้น</h3>
                 </div>
-                <div class="w3-left"><i class="	far fa-calendar-check w3-xxxlarge" style="color:#fff"></i></div>
-                <div class="w3-clear"><a style="color: white;" href="index.php?p=back">
+                <div class=" w3-left"><i class="	far fa-calendar-check w3-xxxlarge" style="color:#fff"></i>
+                </div>
+                <div class="w3-clear"><a style="color: white;font-size: 30px; " href="index.php?p=back">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
-                            <i class="fa fa-angle-right" ></i>
+                            <i class="fa fa-angle-right"></i>
                         </span>
                     </a></div>
             </div>
@@ -210,7 +233,7 @@ $back = mysqli_fetch_array($sql);
                 <div class="w3-right">
                     <h3> <?php echo $borrow['total_borrow'] ?> ชิ้น</h3>
                 </div>
-                <div class="w3-clear"> <a style="color: white;" href="index.php?p=borrow">
+                <div class="w3-clear"> <a style="color: white;font-size: 30px;" href="index.php?p=borrow">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
@@ -225,12 +248,12 @@ $back = mysqli_fetch_array($sql);
     <div class="w3-row-padding w3-margin-bottom">
         <div class="w3-quarter">
             <div class="w3-container w3-padding-16" id="blue" style="border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-                <h4>จำนวนแจ้งซ่อมครุภัณฑ์</h4>
+                <h4 style="color:white">จำนวนแจ้งซ่อมครุภัณฑ์</h4>
                 <div class="w3-left"><i class="fas fa-tools w3-xxxlarge" style="color:#fff"></i></div>
                 <div class="w3-right">
-                    <h3>3 ชิ้น</h3>
+                    <h3 style="color:white">3 ชิ้น</h3>
                 </div>
-                <div class="w3-clear"><a style="color: white;" href="a_repair.php">
+                <div class="w3-clear"><a style="color: white;font-size: 30px;" href="a_repair.php">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
@@ -241,12 +264,12 @@ $back = mysqli_fetch_array($sql);
 
         <div class="w3-quarter">
             <div class="w3-container  w3-padding-16" id="brown" style="border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-                <h4>จำนวนครุภัณฑ์คงเหลือ </h4>
+                <h4 style="color:white">จำนวนครุภัณฑ์คงเหลือ </h4>
                 <div class="w3-left"><i class="fa fa-upload w3-xxxlarge" style="color:#fff"></i></div>
                 <div class="w3-right">
-                    <h3> 1940 ชิ้น</h3>
+                    <h3 style="color:white"> 1940 ชิ้น</h3>
                 </div>
-                <div class="w3-clear"><a style="color: white;" href="index.php?p=stock">
+                <div class="w3-clear"><a style=" color: white;font-size: 30px;" href="index.php?p=stock">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
@@ -257,13 +280,13 @@ $back = mysqli_fetch_array($sql);
 
         <div class="w3-quarter">
             <div class="w3-container w3-padding-16" id="pink" style="border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-                <h4>จำนวนหน่วยงานที่ยืมอุปกรณ์</h4>
-             
+                <h4 style="color:white">จำนวนหน่วยงานที่ยืมอุปกรณ์</h4>
+
                 <div class="w3-right">
-                    <h3> 6 ครั้ง </h3>
+                    <h3 style="color:white"> 6 ครั้ง </h3>
                 </div>
                 <div class="w3-left"><i class="	fa fa-id-card  w3-xxxlarge " style="color:#fff"></i></div>
-                <div class="w3-clear"><a style="color: white;" href="index.php?p=office">
+                <div class="w3-clear"><a style="color: white;font-size: 30px;" href="index.php?p=office">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
@@ -279,7 +302,7 @@ $back = mysqli_fetch_array($sql);
                 <div class="w3-right">
                     <h3> 50 คน</h3>
                 </div>
-                <div class="w3-clear"> <a style="color: white;" href="index.php?p=user">
+                <div class="w3-clear"> <a style="color: white;font-size: 30px;" href="index.php?p=user">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>

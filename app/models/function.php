@@ -46,6 +46,14 @@ class DB_con
         $result = mysqli_query($this->dbcon, "select count(id) as num from itemdata");
         return $result;
     }
+    function dataBorrow()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT  
+        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location 
+        FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  
+       AND borrow.status = 0");
+        return $result;
+    }
     function selectCountData()
     {
         $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_sum FROM itemdata");
@@ -53,7 +61,7 @@ class DB_con
     }
     function selectCountBorrow()
     {
-        $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_borrow FROM borrow");
+        $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_borrow FROM borrow WHERE status = 0");
         return $result;
     }
 
