@@ -1,14 +1,5 @@
 <?php
 require('../../app/models/db.php');
-
-
-
-if (isset($_SESSION['admin_login'])) {
-  $admin_id = $_SESSION['admin_login'];
-  $a_stmt = $db->query("SELECT * FROM tbl_user WHERE u_id = $admin_id");
-  $a_stmt->execute();
-  $row = $a_stmt->fetch(PDO::FETCH_ASSOC);
-}
 ?>
 
 

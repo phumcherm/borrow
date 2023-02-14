@@ -62,7 +62,7 @@ require_once "../../app/models/db.php";
     } elseif ($p == 'back') {
         include('a_fuctionBack.php');
     } elseif ($p == 'status') {
-        include('a_functiontotelborrow.php');
+        include('a_fuctionTotalborrow.php');
     } elseif ($p == 'repair') {
         include('a_fuctionRepair.php');
     } elseif ($p == 'stock') {
