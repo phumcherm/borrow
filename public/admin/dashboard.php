@@ -17,6 +17,9 @@ $coutBack = new DB_con();
 $sql = $coutBack->selectCountBack();
 $back = mysqli_fetch_array($sql);
 
+$TotelBorrow = new DB_con();
+$sql = $TotelBorrow->selectTotelBorrow();
+$borrow_totel = mysqli_fetch_array($sql);
 ?>
 
 <html lang="en">
@@ -199,7 +202,7 @@ $back = mysqli_fetch_array($sql);
                 <h4>จำนวนครุภัณฑ์ที่ถูกยืม </h4>
                 <div class="w3-left"><i class="fa fa-download w3-xxxlarge" style="color:#fff"></i></div>
                 <div class="w3-right">
-                    <h3> <?php echo $backall['total_backAll'] ?> ชิ้น</h3>
+                    <h3 style="color:white"><?php echo $borrow_totel['total'] ?> ชิ้น</h3>
                 </div>
                 <div class="w3-clear"><a style="color: white;font-size: 30px;" href="index.php?p=status">
                         <span class="float-left">รายละเอียด </span>
@@ -257,12 +260,15 @@ $back = mysqli_fetch_array($sql);
                 <div class="w3-right">
                     <h3 style="color:white">3 ชิ้น</h3>
                 </div>
-                <div class="w3-clear"><a style="color: white;font-size: 30px;" href="index.php?p=repair">
-                        <span class="float-left">รายละเอียด</span>
-                        <span class="float-right">
-                            <i class="fa fa-angle-right"></i>
-                        </span>
-                    </a></div>
+                <<<<<<< HEAD <div class="w3-clear"><a style="color: white;font-size: 30px;" href="index.php?p=repair">
+                        =======
+                        <div class="w3-clear"><a style="color: white;font-size: 30px;" href="a_repair2.php">
+                                >>>>>>> bb066e063e5beca0d84d1af6e81d625d4c9d6f98
+                                <span class="float-left">รายละเอียด</span>
+                                <span class="float-right">
+                                    <i class="fa fa-angle-right"></i>
+                                </span>
+                            </a></div>
             </div>
         </div>
 

@@ -82,12 +82,12 @@ if (isset($_SESSION['admin_login'])) {
       <a href="index.php" class="w3-bar-item w3-button w3-padding">
         <h5><i class="fas fa-home"></i> หน้าหลัก</h5>
       </a>
-      <!-- <a href="a_borrow.php" class="w3-bar-item w3-button w3-padding">
+      <a href="a_borrow.php" class="w3-bar-item w3-button w3-padding">
         <h5><i class="fas fa-file-download"></i>  ข้อมูลยืมครุภัณฑ์</h5>
       </a>
       <a href="a_back.php" class="w3-bar-item w3-button w3-padding">
         <h5><i class="fas fa-file-upload"></i>  ข้อมูลคืนครุภัณฑ์</h5>
-      </a> -->
+      </a>
       <a href="a_item.php" class="w3-bar-item w3-button w3-padding">
         <h5><i class="fas fa-file-invoice"></i>  จัดการข้อมูลครุภัณฑ์</h5>
       </a>
