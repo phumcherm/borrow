@@ -208,7 +208,7 @@ require_once "../app/models/db.php";
                         <tbody>
                             <?php
                             $selectCountTreasury = new DB_con();
-                            $sql = $selectCountTreasury->selectCountTreasury();
+                            $sql = $selectCountTreasury->selectCountTreasury(); 
                             while ($row = mysqli_fetch_array($sql)) {
                             ?>
                                 <td data-label="ชื่อครุภัณฑ์.">
