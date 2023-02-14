@@ -54,11 +54,12 @@ class DB_con
         AND borrow.status = 0");
         return $result;
     }
-    function dataBackAll()
+    function dataBorrowAll()
     {
         $result = mysqli_query($this->dbcon, "SELECT  
-        itemdata.id,detail,itemCode,back.bk_id ,back.bk_time 
-        FROM `itemdata`,back  WHERE itemdata.id = back.id ORDER BY back.bk_time DESC");
+        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location 
+        FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  
+     ");
         return $result;
     }
     function dataBack()
@@ -69,6 +70,16 @@ class DB_con
        AND borrow.status = 1");
         return $result;
     }
+
+    //tbl_Back
+    function dataBackAll()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT  
+        itemdata.id,detail,itemCode,back.bk_id ,back.bk_time 
+        FROM `itemdata`,back  WHERE itemdata.id = back.id ORDER BY back.bk_time DESC");
+        return $result;
+    }
+
     function selectCountData()
     {
         $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_sum FROM itemdata");
@@ -158,9 +169,9 @@ class DB_con
         return $result;
     }
 
-    function selectUserWhere($user, $pass)
+    function selectUserWhere($user)
     {
-        $result = mysqli_query($this->dbcon, "SELECT * FROM user WHERE user_name = '$user' AND user_pass = '$pass' ");
+        $result = mysqli_query($this->dbcon, "SELECT * FROM user WHERE user_name = '$user'");
         return $result;
     }
 }
