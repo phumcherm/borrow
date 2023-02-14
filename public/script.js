@@ -1,7 +1,7 @@
 
         var ajax = new XMLHttpRequest();
         var method = "GET";
-        var url = "data.php";
+        var url = "stock_data.php";
         var asynchronous = true;
 
         ajax.open(method, url, asynchronous);

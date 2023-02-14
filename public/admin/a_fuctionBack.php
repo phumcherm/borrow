@@ -65,7 +65,7 @@
 </style>
 
 <body>
-    <div class="modal" id="showborrow" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal" id="showback" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -92,10 +92,21 @@
                         <div class="row">
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">ชื่อ</h7>
-                                <input type="text" disabled class="form-control" name="txt_fname" id="txt_fname" placeholder="ชื่อ...">
+                                <input type="text" disabled class="form-control" name="txt_fname" id="txt_fname" placeholder="">
                             </div>
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">นามสกุล</h7>
+                                <input type="text" disabled class="form-control" name="txt_lname" id="txt_lname" placeholder="">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">ตำแหน่ง</h7>
+                                <input type="text" disabled class="form-control" name="txt_fname" id="txt_fname" placeholder="">
+                            </div>
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">ฝ่าย</h7>
                                 <input type="text" disabled class="form-control" name="txt_lname" id="txt_lname" placeholder="">
                             </div>
                         </div>
@@ -124,7 +135,18 @@
 
                         </div>
                         <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">วันที่คืน</h7>
+                                <input type="text" disabled class="form-control" name="txt_tel" id="txt_tell" placeholder="" minlength="10" maxlength="10">
+                            </div>
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">เบอร์โทร</h7>
+                                <input type="text" disabled name="txt_date" id="txt_date" class="form-control">
+                            </div>
 
+                        </div>
+                        <br>
                         <div class="modal-footer ">
                         </div>
                 </div>
@@ -159,7 +181,7 @@
                                     <td data-label="รหัสยืม."><?php echo $row['br_id'] ?></td>
                                     <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td>
                                     <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
-                                    <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow"> ข้อมูล</button></td>
+                                    <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showback"> ข้อมูล</button></td>
 
                                 </tr>
                         </tbody>
