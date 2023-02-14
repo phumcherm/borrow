@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <<<<<<< HEAD <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
-        =======
-        <!-- css -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        <!-- js Bootstap -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-        >>>>>>> bb066e063e5beca0d84d1af6e81d625d4c9d6f98
-        <title></title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- js Bootstap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <title></title>
 </head>
 <style>
     /*chart */
@@ -159,8 +159,8 @@
                                     <td data-label="รหัสยืม."><?php echo $row['br_id'] ?></td>
                                     <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td>
                                     <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
-                                    <!-- <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow"> ข้อมูล</button></td>
-                                -->
+                                    <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow"> ข้อมูล</button></td>
+
                                 </tr>
                         </tbody>
                     <?php
@@ -171,54 +171,20 @@
             </div>
         </div>
     </div>
-    <!--   <div class="graphBox">
-        <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
-            <p style="font-size: 36px;text-align: center;color: #E6581D;">จำนวนครุภัณฑ์ที่คืนแล้ว</p>
-
-            <div>
-                <div class="table-container">
-                    <table id="databack" class="table" style="text-align: center;">
-                        <thead style="color:white; background-color:#E6581D;">
-                            <tr>
-                                <th>รหัสยืม</th>
-                                <th>รหัสครุภัณฑ์</th>
-                                <th>ชื่ออุปกรณ์</th>
-
-                                <th></th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $selectAll = new DB_con();
-                            $sql = $selectAll->dataBack();
-                            while ($row = mysqli_fetch_array($sql)) {
-                            ?>
-                                <tr>
-                                    <td data-label="รหัสยืม."><?php echo $row['br_id'] ?></td>
-                                    <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td>
-                                    <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
-
-                                    <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow"> ข้อมูล</button></td>
-                                </tr>
-                        </tbody>
-
-                    <?php
-                            }
-                    ?>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <<<<<<< HEAD <!-- script Datatable -->
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-        <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
 
 
-        =======
-        <!--    <script>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- script Datatable -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+
+
+
+    <!--    <script>
         const numChart = document.getElementById('myChart');
         const timeChart = document.getElementById('testChart');
         new Chart(numChart, {
@@ -295,11 +261,11 @@
             }
         });
     </script> -->
-        <!-- chart -->
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js" integrity="sha512-qKyIokLnyh6oSnWsc5h21uwMAQtljqMZZT17CIMXuCQNIfFSFF4tJdMOaJHL9fQdJUANid6OB6DRR0zdHrbWAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        >>>>>>> bb066e063e5beca0d84d1af6e81d625d4c9d6f98
+    <!-- chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js" integrity="sha512-qKyIokLnyh6oSnWsc5h21uwMAQtljqMZZT17CIMXuCQNIfFSFF4tJdMOaJHL9fQdJUANid6OB6DRR0zdHrbWAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 

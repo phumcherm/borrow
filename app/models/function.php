@@ -54,24 +54,21 @@ class DB_con
         AND borrow.status = 0");
         return $result;
     }
-
-    function dataTotelBorrow()
+    function dataBackAll()
     {
         $result = mysqli_query($this->dbcon, "SELECT  
-        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location 
-        FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  ");
+        itemdata.id,detail,itemCode,back.bk_id ,back.bk_time 
+        FROM `itemdata`,back  WHERE itemdata.id = back.id ORDER BY back.bk_time DESC");
         return $result;
     }
-
     function dataBack()
     {
         $result = mysqli_query($this->dbcon, "SELECT  
         itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location 
         FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  
-        AND borrow.status = 1");
+       AND borrow.status = 1");
         return $result;
     }
-
     function selectCountData()
     {
         $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_sum FROM itemdata");
@@ -91,7 +88,12 @@ class DB_con
 
     function selectCountBackAll()
     {
-        $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_back FROM borrow WHERE  status = 1");
+        $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_backAll FROM borrow");
+        return $result;
+    }
+    function selectCountBack()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_back FROM borrow WHERE status = 1");
         return $result;
     }
     function selectWhereId($tb_id)
