@@ -1,6 +1,6 @@
 <?php
 
-define('DB_SERVER', '172.17.0.1:9906');
+define('DB_SERVER', '172.18.0.1:9906');
 define('DB_USER', 'ceitdb');
 define('DB_PASS', '12345678');
 define('DB_NAME', 'ceitdb');
@@ -76,6 +76,14 @@ class DB_con
     }
 
     function selectTotelBorrow()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT  
+        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location as totel
+        FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  ");
+        return $result;
+    }
+
+    function selectCountTotelBorrow()
     {
         $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total FROM borrow ");
         return $result;
