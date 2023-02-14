@@ -159,6 +159,9 @@
     <div class="graphBox">
         <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
             <p style="font-size: 36px;text-align: center;color: #E6581D;">จำนวนครุภัณฑ์ที่ถูกยืม</p>
+            <input type="date">
+            <input type="date">
+            <button class="btn btn-primary" type="submit">ค้นหา</button>
             <div>
                 <div class="table-container">
                     <table class="table" id="data" style="text-align: center;">
