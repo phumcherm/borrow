@@ -1,5 +1,16 @@
 <?php
+<<<<<<< HEAD
 require('../../app/models/db.php');
+=======
+// require('../../app/models/db.php');
+
+// if (isset($_SESSION['admin_login'])) {
+//   $admin_id = $_SESSION['admin_login'];
+//   $a_stmt = $db->query("SELECT * FROM tbl_user WHERE u_id = $admin_id");
+//   $a_stmt->execute();
+//   $row = $a_stmt->fetch(PDO::FETCH_ASSOC);
+// }
+>>>>>>> d9eb36ec7b56e7cd28d3f6d947bc348fdc29efe4
 ?>
 
 
@@ -73,12 +84,12 @@ require('../../app/models/db.php');
       <a href="index.php" class="w3-bar-item w3-button w3-padding">
         <h5><i class="fas fa-home"></i> หน้าหลัก</h5>
       </a>
-      <!-- <a href="a_borrow.php" class="w3-bar-item w3-button w3-padding">
+      <a href="a_borrow.php" class="w3-bar-item w3-button w3-padding">
         <h5><i class="fas fa-file-download"></i>  ข้อมูลยืมครุภัณฑ์</h5>
       </a>
       <a href="a_back.php" class="w3-bar-item w3-button w3-padding">
         <h5><i class="fas fa-file-upload"></i>  ข้อมูลคืนครุภัณฑ์</h5>
-      </a> -->
+      </a>
       <a href="a_item.php" class="w3-bar-item w3-button w3-padding">
         <h5><i class="fas fa-file-invoice"></i>  จัดการข้อมูลครุภัณฑ์</h5>
       </a>
@@ -88,7 +99,7 @@ require('../../app/models/db.php');
       <a href="a_repair.php" class="w3-bar-item w3-button w3-padding">
         <h5><i class="fas fa-tools"></i>  แจ้งซ่อมรายการครุภัณฑ์</h5>
       </a>
-      <a data-id="logout" href="../login.php?logout='1'" class="w3-bar-item w3-button w3-padding">
+      <a data-id="logout" href="../../app/controller/log_out.php" class="w3-bar-item w3-button w3-padding">
         <h5><i class="fas fa-sign-out-alt"></i>  ออกจากระบบ</h5>
       </a>
 

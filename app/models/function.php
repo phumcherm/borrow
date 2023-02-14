@@ -161,9 +161,9 @@ class DB_con
         return $result;
     }
 
-    function selectUserWhere($user, $pass)
+    function selectUserWhere($user)
     {
-        $result = mysqli_query($this->dbcon, "SELECT * FROM user WHERE user_name = '$user' AND user_pass = '$pass' ");
+        $result = mysqli_query($this->dbcon, "SELECT * FROM user WHERE user_name = '$user'");
         return $result;
     }
 }
