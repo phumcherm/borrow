@@ -46,7 +46,7 @@ require_once "../../app/models/db.php";
 
     <div>
         <h2 style="color: #E6581D;font-family: SUT_Bold; text-shadow:2px 3px 10px #686060; ">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <i class="fa fa-caret-right" style="font-size:48px"></i> รายการครุภัณฑ์
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-caret-right" style="font-size:48px"></i> รายการครุภัณฑ์
         </h2>
     </div>
     <br>
@@ -62,11 +62,7 @@ require_once "../../app/models/db.php";
     } elseif ($p == 'back') {
         include('a_fuctionBack.php');
     } elseif ($p == 'status') {
-<<<<<<< HEAD
-        include('a_fuctionTotalborrow.php');
-=======
         include('a_fuctionStatus.php');
->>>>>>> d9eb36ec7b56e7cd28d3f6d947bc348fdc29efe4
     } elseif ($p == 'repair') {
         include('a_fuctionRepair.php');
     } elseif ($p == 'stock') {

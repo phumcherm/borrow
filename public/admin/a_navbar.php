@@ -1,19 +1,3 @@
-<?php
-<<<<<<< HEAD
-require('../../app/models/db.php');
-=======
-// require('../../app/models/db.php');
-
-// if (isset($_SESSION['admin_login'])) {
-//   $admin_id = $_SESSION['admin_login'];
-//   $a_stmt = $db->query("SELECT * FROM tbl_user WHERE u_id = $admin_id");
-//   $a_stmt->execute();
-//   $row = $a_stmt->fetch(PDO::FETCH_ASSOC);
-// }
->>>>>>> d9eb36ec7b56e7cd28d3f6d947bc348fdc29efe4
-?>
-
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
