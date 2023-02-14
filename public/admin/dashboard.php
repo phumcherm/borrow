@@ -246,7 +246,7 @@ $borrow_totel = mysqli_fetch_array($sql);
         </div>
     </div>
     <!--  -->
-    <div class="w3-row-padding w3-margin-bottom">
+  <!--   <div class="w3-row-padding w3-margin-bottom">
         <div class="w3-quarter">
             <div class="w3-container w3-padding-16" id="blue" style="border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
                 <h4 style="color:white">จำนวนแจ้งซ่อมครุภัณฑ์</h4>
@@ -314,7 +314,7 @@ $borrow_totel = mysqli_fetch_array($sql);
             </div>
 
         </div>
-    </div>
+    </div> -->
 
 </body>
 

@@ -66,9 +66,38 @@
         <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
             <p style="font-size: 36px;text-align: center;color: #E6581D;">จำนวนผู้ใช้งานระบบ</p>
             <div>
-                <canvas id="testChart"></canvas>
+                <div class="table-container">
+                    <table class="table" id="data" style="text-align: center;">
+                        <thead style="color:white; background-color:#E6581D;">
+                            <tr>
+                                <th>รหัสยืม</th>
+                                <th>รหัสครุภัณฑ์</th>
+                                <th>ชื่ออุปกรณ์</th>
+                                <th></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $selectAll = new DB_con();
+                            $sql = $selectAll->dataBorrow();
+                            while ($row = mysqli_fetch_array($sql)) {
+                            ?>
+                                <tr>
+                                    <td data-label="รหัสยืม."><?php echo $row['br_id'] ?></td>
+                                    <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td>
+                                    <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
+                                    <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow"> ข้อมูล</button></td>
+                                </tr>
+                        </tbody>
+                    <?php
+                            }
+                    ?>
+                    </table>
+                </div>
             </div>
         </div>
+    </div>
     </div>
 
     <script>
