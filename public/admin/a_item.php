@@ -89,7 +89,7 @@
             <div class="row">
                 <div class="col-6">
                     <h7 class="text-center" style="color:black">Type</h7>
-                    <input type="number" required class="form-control" name="txt_doctor" placeholder="รายละเอียด (เช่น ระบบตัดต่อคอม)">
+                    <input type="text" required class="form-control" name="txt_doctor" placeholder="รายละเอียด (เช่น ระบบตัดต่อคอม)">
                 </div>
                 <div class="col-6">
                     <h7 class="text-center" style="color:black">Active</h7>

@@ -1,6 +1,6 @@
 <?php
 
-define('DB_SERVER', '172.18.0.1:9906');
+define('DB_SERVER', '172.17.0.1:9906');
 define('DB_USER', 'ceitdb');
 define('DB_PASS', '12345678');
 define('DB_NAME', 'ceitdb');
@@ -49,9 +49,24 @@ class DB_con
     function dataBorrow()
     {
         $result = mysqli_query($this->dbcon, "SELECT  
-        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location 
+        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location ,borrow.br_date , borrow.br_time
         FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  
        AND borrow.status = 0");
+        return $result;
+    }
+    function dataBackAll()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT  
+        itemdata.id,detail,itemCode,back.bk_id ,back.bk_time 
+        FROM `itemdata`,back  WHERE itemdata.id = back.id ORDER BY back.bk_time DESC");
+        return $result;
+    }
+    function dataBack()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT  
+        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location 
+        FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  
+       AND borrow.status = 1");
         return $result;
     }
     function selectCountData()
@@ -65,12 +80,16 @@ class DB_con
         return $result;
     }
 
-    function selectCountBack()
+    function selectCountBackAll()
     {
-        $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_back FROM back");
+        $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_backAll FROM borrow");
         return $result;
     }
-
+    function selectCountBack()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_back FROM borrow WHERE status = 1");
+        return $result;
+    }
     function selectWhereId($tb_id)
     {
         $result = mysqli_query($this->dbcon, "SELECT itemCode FROM itemdata WHERE id = $tb_id ");
@@ -91,7 +110,7 @@ class DB_con
         return $result;
     }
 
-    function insertBack($itemcode,$problem)
+    function insertBack($itemcode, $problem)
     {
         $result = mysqli_query($this->dbcon, "INSERT INTO back(id,br_id,bk_problem) values(
                                             (select id from itemdata where itemCode = '$itemcode'),
@@ -125,7 +144,7 @@ class DB_con
         return $result;
     }
 
-    function selectUserWhere($user,$pass)
+    function selectUserWhere($user, $pass)
     {
         $result = mysqli_query($this->dbcon, "SELECT * FROM user WHERE user_name = '$user' AND user_pass = '$pass' ");
         return $result;

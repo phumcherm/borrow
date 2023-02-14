@@ -9,6 +9,10 @@ $coutBorrow = new DB_con();
 $sql = $coutBorrow->selectCountBorrow();
 $borrow = mysqli_fetch_array($sql);
 
+$coutBackAll = new DB_con();
+$sql = $coutBackAll->selectCountBackAll();
+$backall = mysqli_fetch_array($sql);
+
 $coutBack = new DB_con();
 $sql = $coutBack->selectCountBack();
 $back = mysqli_fetch_array($sql);
@@ -195,7 +199,7 @@ $back = mysqli_fetch_array($sql);
                 <h4>จำนวนครุภัณฑ์ที่ถูกยืม </h4>
                 <div class="w3-left"><i class="fa fa-download w3-xxxlarge" style="color:#fff"></i></div>
                 <div class="w3-right">
-                    <h3> 125 ชิ้น</h3>
+                    <h3> <?php echo $backall['total_backAll'] ?> ชิ้น</h3>
                 </div>
                 <div class="w3-clear"><a style="color: white;font-size: 30px;" href="index.php?p=status">
                         <span class="float-left">รายละเอียด </span>
@@ -253,7 +257,7 @@ $back = mysqli_fetch_array($sql);
                 <div class="w3-right">
                     <h3 style="color:white">3 ชิ้น</h3>
                 </div>
-                <div class="w3-clear"><a style="color: white;font-size: 30px;" href="a_repair.php">
+                <div class="w3-clear"><a style="color: white;font-size: 30px;" href="index.php?p=repair">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
