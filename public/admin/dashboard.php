@@ -9,6 +9,10 @@ $coutBorrow = new DB_con();
 $sql = $coutBorrow->selectCountBorrow();
 $borrow = mysqli_fetch_array($sql);
 
+$coutBackAll = new DB_con();
+$sql = $coutBackAll->selectCountBackAll();
+$backall = mysqli_fetch_array($sql);
+
 $coutBack = new DB_con();
 $sql = $coutBack->selectCountBack();
 $back = mysqli_fetch_array($sql);
@@ -198,23 +202,20 @@ $borrow_totel = mysqli_fetch_array($sql);
                 <h4>จำนวนครุภัณฑ์ที่ถูกยืม </h4>
                 <div class="w3-left"><i class="fa fa-download w3-xxxlarge" style="color:#fff"></i></div>
                 <div class="w3-right">
-                <h3 style="color:white"><?php echo $borrow_totel['total'] ?> ชิ้น</h3>
+                    <h3> <?php echo $backall['total_backAll'] ?> ชิ้น</h3>
                 </div>
                 <div class="w3-clear"><a style="color: white;font-size: 30px;" href="index.php?p=status">
                         <span class="float-left">รายละเอียด </span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
                         </span>
-                    </a></div>
+                    </a>
+                </div>
             </div>
         </div>
-
-
-
         <div class="w3-quarter">
             <div class="w3-container  w3-padding-16" id="sky" style="border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
                 <h4 style="color:white">จำนวนครุภัณฑ์ที่คืนแล้ว</h4>
-
                 <div class="w3-right">
                     <h3 style="color:white"><?php echo $back['total_back'] ?> ชิ้น</h3>
                 </div>
@@ -228,7 +229,6 @@ $borrow_totel = mysqli_fetch_array($sql);
                     </a></div>
             </div>
         </div>
-
         <div class="w3-quarter">
             <div class="w3-container w3-text-white w3-padding-16" id="red" style="border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
                 <h4>จำนวนครุภัณฑ์ที่ยังไม่คืน</h4>
@@ -242,9 +242,7 @@ $borrow_totel = mysqli_fetch_array($sql);
                             <i class="fa fa-angle-right"></i>
                         </span>
                     </a></div>
-
             </div>
-
         </div>
     </div>
     <!--  -->
@@ -256,7 +254,7 @@ $borrow_totel = mysqli_fetch_array($sql);
                 <div class="w3-right">
                     <h3 style="color:white">3 ชิ้น</h3>
                 </div>
-                <div class="w3-clear"><a style="color: white;font-size: 30px;" href="a_repair2.php">
+                <div class="w3-clear"><a style="color: white;font-size: 30px;" href="index.php?p=repair">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
@@ -264,6 +262,7 @@ $borrow_totel = mysqli_fetch_array($sql);
                     </a></div>
             </div>
         </div>
+
 
         <div class="w3-quarter">
             <div class="w3-container  w3-padding-16" id="brown" style="border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">

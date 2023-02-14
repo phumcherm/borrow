@@ -91,10 +91,21 @@
                         <div class="row">
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">ชื่อ</h7>
-                                <input type="text" disabled class="form-control" name="txt_fname" id="txt_fname" placeholder="ชื่อ...">
+                                <input type="text" disabled class="form-control" name="txt_fname" id="txt_fname" placeholder="">
                             </div>
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">นามสกุล</h7>
+                                <input type="text" disabled class="form-control" name="txt_lname" id="txt_lname" placeholder="">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">ตำแหน่ง</h7>
+                                <input type="text" disabled class="form-control" name="txt_fname" id="txt_fname" placeholder="">
+                            </div>
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">ฝ่าย</h7>
                                 <input type="text" disabled class="form-control" name="txt_lname" id="txt_lname" placeholder="">
                             </div>
                         </div>
@@ -123,6 +134,18 @@
 
                         </div>
                         <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">วันที่คืน</h7>
+                                <input type="text" disabled class="form-control" name="txt_tel" id="txt_tell" placeholder="" minlength="10" maxlength="10">
+                            </div>
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">เบอร์โทร</h7>
+                                <input type="text" disabled name="txt_date" id="txt_date" class="form-control">
+                            </div>
+
+                        </div>
+                        <br>
 
                         <div class="modal-footer ">
                         </div>
@@ -140,9 +163,12 @@
                     <table class="table" id="data" style="text-align: center;">
                         <thead style="color:white; background-color:#E6581D;">
                             <tr>
-                                <th>รหัสยืม</th>
-                                <th>รหัสครุภัณฑ์</th>
+                                <th>ชื่อ - นามสกุล</th>
+                                <!-- <th>รหัสครุภัณฑ์</th> -->
                                 <th>ชื่ออุปกรณ์</th>
+                                <th>สถานที่</th>
+                                <th>วันที่ยืม</th>
+                                <th>กำหนดคืน</th>
                                 <th></th>
 
                             </tr>
@@ -154,10 +180,13 @@
                             while ($row = mysqli_fetch_array($sql)) {
                             ?>
                                 <tr>
-                                    <td data-label="รหัสยืม."><?php echo $row['br_id'] ?></td>
-                                    <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td>
+                                    <td data-label="ชื่อ - นามสกุล.">สังคัง สังขาร</td>
+                                    <!-- <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td> -->
                                     <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
-                                    <!-- <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow"> ข้อมูล</button></td> -->
+                                    <td data-label="สถานที่."><?php echo $row['location'] ?></td>
+                                    <td data-label="วันที่ยืม."><?php echo $row['br_time'] ?></td>
+                                    <td data-label="กำหนดคืน."><?php echo $row['br_date'] ?></td>
+                                    <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow"> ข้อมูล</button></td>
                                 </tr>
                         </tbody>
                     <?php
@@ -168,88 +197,6 @@
             </div>
         </div>
     </div>
-<!-- 
-    <script>
-        const numChart = document.getElementById('myChart');
-        const timeChart = document.getElementById('testChart');
-        new Chart(numChart, {
-            type: 'bar',
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
-
-        new Chart(timeChart, {
-            type: 'bar',
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
-    </script> -->
-    <!-- chart -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js" integrity="sha512-qKyIokLnyh6oSnWsc5h21uwMAQtljqMZZT17CIMXuCQNIfFSFF4tJdMOaJHL9fQdJUANid6OB6DRR0zdHrbWAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

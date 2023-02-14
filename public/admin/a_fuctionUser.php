@@ -58,13 +58,13 @@
 <body>
     <div class="graphBox">
         <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
-            <p style="font-size: 24px;text-align: center;">จำนวนผู้ใช้งานระบบ</p>
+            <p style="font-size: 36px;text-align: center;color: #E6581D;">จำนวนผู้ใช้งานระบบ</p>
             <div>
                 <canvas id="myChart"></canvas>
             </div>
         </div>
         <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
-            <p style="font-size: 24px;text-align: center;">จำนวนผู้ใช้งานระบบ</p>
+            <p style="font-size: 36px;text-align: center;color: #E6581D;">จำนวนผู้ใช้งานระบบ</p>
             <div>
                 <div class="table-container">
                     <table class="table" id="data" style="text-align: center;">
