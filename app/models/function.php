@@ -1,6 +1,6 @@
 <?php
 
-define('DB_SERVER', '172.17.0.1:9906');
+define('DB_SERVER', '172.18.0.1:9906');
 define('DB_USER', 'ceitdb');
 define('DB_PASS', '12345678');
 define('DB_NAME', 'ceitdb');
@@ -54,11 +54,12 @@ class DB_con
         AND borrow.status = 0");
         return $result;
     }
-    function dataBackAll()
+    function dataBorrowAll()
     {
         $result = mysqli_query($this->dbcon, "SELECT  
-        itemdata.id,detail,itemCode,back.bk_id ,back.bk_time 
-        FROM `itemdata`,back  WHERE itemdata.id = back.id ORDER BY back.bk_time DESC");
+        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location 
+        FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  
+     ");
         return $result;
     }
     function dataBack()
@@ -69,6 +70,16 @@ class DB_con
        AND borrow.status = 1");
         return $result;
     }
+
+    //tbl_Back
+    function dataBackAll()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT  
+        itemdata.id,detail,itemCode,back.bk_id ,back.bk_time 
+        FROM `itemdata`,back  WHERE itemdata.id = back.id ORDER BY back.bk_time DESC");
+        return $result;
+    }
+
     function selectCountData()
     {
         $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total_sum FROM itemdata");
@@ -76,6 +87,14 @@ class DB_con
     }
 
     function selectTotelBorrow()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT  
+        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location as totel
+        FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  ");
+        return $result;
+    }
+
+    function selectCountTotelBorrow()
     {
         $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total FROM borrow ");
         return $result;

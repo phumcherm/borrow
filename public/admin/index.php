@@ -46,7 +46,7 @@ require_once "../../app/models/db.php";
 
     <div>
         <h2 style="color: #E6581D;font-family: SUT_Bold; text-shadow:2px 3px 10px #686060; ">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <i class="fa fa-caret-right" style="font-size:48px"></i> รายการครุภัณฑ์
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-caret-right" style="font-size:48px"></i> ระบบยืม-คืนครุภัณฑ์ ฝ่ายเทคนิควิศวกร
         </h2>
     </div>
     <br>
@@ -62,7 +62,7 @@ require_once "../../app/models/db.php";
     } elseif ($p == 'back') {
         include('a_fuctionBack.php');
     } elseif ($p == 'status') {
-        include('a_fuctionStatus.php');
+        include('a_fuctionTotalborrow.php');
     } elseif ($p == 'repair') {
         include('a_fuctionRepair.php');
     } elseif ($p == 'stock') {
