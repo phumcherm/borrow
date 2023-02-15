@@ -7,6 +7,7 @@
 //   $a_stmt->execute();
 //   $row = $a_stmt->fetch(PDO::FETCH_ASSOC);
 // }
+// session_start();
 ?>
 
 
@@ -51,7 +52,7 @@
 
   <!-- Top container -->
   <div class="w3-bar w3-top  w3-large  " style="z-index:4; background-color: #E6581D; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; ">
-    <button class="w3-bar-item w3-button w3-hide-large  w3-hover-text-light-grey" onclick="w3_open();" style="color: #fff;"><i class="fa fa-bars"></i>  Menu</button>
+    <button class="w3-bar-item w3-button w3-hide-large  w3-hover-text-light-grey" onclick="w3_open();" style="color: #fff;"><i class="fa fa-bars"></i>  Menu</button>    <span class="w3-bar-item w3-right" style="color: #fff;"><?php echo $_SESSION['fname_login']. " " . $_SESSION['lname_login'] ?> </span>
     <span class="w3-bar-item w3-right" style="color: #fff;">แอดมิน </span>
   </div>
 
