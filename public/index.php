@@ -263,10 +263,10 @@ $result_l = mysqli_query($con, $query);
                                     <center> <?php echo $row["room"] ?></center>
                                 </td>
                                 <td data-label="วันที่ยืม.">
-                                    <?php echo $row["br_time"] ?>
+                                    <?php echo $row["borrow_date"] ?>
                                 </td>
                                 <td data-label="วันที่ต้องคืน.">
-                                    <center><?php echo $row["br_date"] ?></center>
+                                    <center><?php echo $row["back_date"] ?></center>
                                 </td>
                                 <td data-label="สถานะ">
 

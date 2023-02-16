@@ -5,6 +5,7 @@ session_start();
 
 if (isset($_POST['submit'])) {
     $itemcode = $_POST['data4'];
+    $user_id = $_SESSION['id_login'];
     $problem = $_POST['problem'];
 
     $arr_code = explode(",", $itemcode);
@@ -14,7 +15,7 @@ if (isset($_POST['submit'])) {
     if ($total_rows > 0) {
         for ($i = 0; $i < $total_rows; $i++) {
             $insertBack = new DB_con();
-            $sql = $insertBack->insertBack($arr_code[$i],$problem);
+            $sql = $insertBack->insertBack($arr_code[$i],$user_id,$problem);
         }
 
         if ($sql) {

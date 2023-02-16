@@ -88,6 +88,14 @@ class DB_con
 
     function selectTotelBorrow()
     {
+        $result = mysqli_query($this->dbcon, "SELECT  
+        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location as totel
+        FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  ");
+        return $result;
+    }
+
+    function selectCountTotelBorrow()
+    {
         $result = mysqli_query($this->dbcon, "SELECT COUNT(*) as total FROM borrow ");
         return $result;
     }
@@ -119,20 +127,20 @@ class DB_con
         return $result;
     }
 
-    function insertBorrow($itemcode, $activity, $location, $br_date)
+    function insertBorrow($itemcode, $user_id, $activity, $location, $br_date)
     {
-        $result = mysqli_query($this->dbcon, "INSERT INTO borrow(id,activity,location,br_date,status) values(
+        $result = mysqli_query($this->dbcon, "INSERT INTO borrow(id,user_id,activity,location,br_date,status) values(
                                             (select id from itemdata where itemCode = '$itemcode'),
-                                            '$activity','$location','$br_date',0)");
+                                            $user_id,'$activity','$location','$br_date',0)");
         return $result;
     }
 
-    function insertBack($itemcode, $problem)
+    function insertBack($itemcode, $user_id, $problem)
     {
-        $result = mysqli_query($this->dbcon, "INSERT INTO back(id,br_id,bk_problem) values(
+        $result = mysqli_query($this->dbcon, "INSERT INTO back(id,br_id,user_id,bk_problem) values(
                                             (select id from itemdata where itemCode = '$itemcode'),
                                             (SELECT br_id FROM borrow,itemdata where borrow.id = itemdata.id and itemCode = '$itemcode' and borrow.status = 0),
-                                            '$problem')");
+                                            $user_id,'$problem')");
         return $result;
     }
 
@@ -144,7 +152,8 @@ class DB_con
 
     function selectBorrow()
     {
-        $result = mysqli_query($this->dbcon, "SELECT *,borrow.status br_stat FROM borrow,itemdata where borrow.id = itemdata.id  order by br_id desc");
+        $result = mysqli_query($this->dbcon, "SELECT *,borrow.status br_stat,DATE_FORMAT(br_time, '%M / %d / %Y') borrow_date,DATE_FORMAT(br_date, '%M / %d / %Y') back_date
+                                                 FROM borrow,itemdata where borrow.id = itemdata.id  order by br_id desc");
         return $result;
     }
 
@@ -164,6 +173,12 @@ class DB_con
     function selectUserWhere($user)
     {
         $result = mysqli_query($this->dbcon, "SELECT * FROM user WHERE user_name = '$user'");
+        return $result;
+    }
+
+    function selectActivity($item_id)
+    {
+        $result = mysqli_query($this->dbcon, "SELECT activity FROM ceitdb.borrow where id = $item_id group by activity;");
         return $result;
     }
 }

@@ -19,29 +19,33 @@
 -- Table structure for table `back`
 --
 
-DROP TABLE IF EXISTS ceitdb.`back`;
+DROP TABLE IF EXISTS `back`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE ceitdb.`back` (
+CREATE TABLE `back` (
   `bk_id` int NOT NULL AUTO_INCREMENT,
   `id` int DEFAULT NULL,
   `br_id` int DEFAULT NULL,
+  `user_id` int DEFAULT NULL,
   `bk_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `bk_problem` text,
   PRIMARY KEY (`bk_id`),
   KEY `id_itendata_fk_idx` (`id`),
   KEY `bk_br_id_fk_idx` (`br_id`),
+  KEY `bk_uid_user_fk_idx` (`user_id`),
   CONSTRAINT `bk_br_id_fk` FOREIGN KEY (`br_id`) REFERENCES `borrow` (`br_id`),
-  CONSTRAINT `bk_id_itemdata_fk` FOREIGN KEY (`id`) REFERENCES `itemdata` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `bk_id_itemdata_fk` FOREIGN KEY (`id`) REFERENCES `itemdata` (`id`),
+  CONSTRAINT `bk_uid_user_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `back`
 --
 
-LOCK TABLES ceitdb.`back` WRITE;
+LOCK TABLES `back` WRITE;
 /*!40000 ALTER TABLE `back` DISABLE KEYS */;
-INSERT INTO ceitdb.`back` VALUES (1,548,11,'2023-02-03 03:59:16'),(2,563,10,'2023-02-03 04:10:53'),(3,545,9,'2023-02-03 06:39:06'),(4,545,12,'2023-02-03 06:45:49'),(5,545,13,'2023-02-03 06:51:42'),(6,548,11,'2023-02-03 08:44:42'),(7,548,11,'2023-02-03 08:46:24'),(8,548,NULL,'2023-02-03 08:47:49'),(9,548,NULL,'2023-02-03 08:48:27'),(10,563,15,'2023-02-03 08:48:27');
+INSERT INTO `back` VALUES (1,548,11,NULL,'2023-02-03 03:59:16',NULL),(2,563,10,NULL,'2023-02-03 04:10:53',NULL),(3,545,9,NULL,'2023-02-03 06:39:06',NULL),(4,545,12,NULL,'2023-02-03 06:45:49',NULL),(5,545,13,NULL,'2023-02-03 06:51:42',NULL),(6,548,11,NULL,'2023-02-03 08:44:42',NULL),(7,548,11,NULL,'2023-02-03 08:46:24',NULL),(8,548,NULL,NULL,'2023-02-03 08:47:49',NULL),(9,548,NULL,NULL,'2023-02-03 08:48:27',NULL),(10,563,15,NULL,'2023-02-03 08:48:27',NULL),(11,548,18,NULL,'2023-02-06 06:47:58',NULL),(12,NULL,NULL,NULL,'2023-02-10 06:46:09',NULL),(13,548,20,NULL,'2023-02-10 06:50:00',NULL),(14,548,21,NULL,'2023-02-10 07:42:09',NULL),(15,548,22,NULL,'2023-02-10 07:48:29',NULL),(16,548,23,NULL,'2023-02-10 07:50:38',NULL),(17,548,24,NULL,'2023-02-10 08:24:50',NULL),(18,548,25,NULL,'2023-02-13 03:13:16','ตู้บินได้'),(19,548,26,1,'2023-02-15 04:18:58','ตู้บินได้');
 /*!40000 ALTER TABLE `back` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-06 11:36:39
+-- Dump completed on 2023-02-16 11:22:29

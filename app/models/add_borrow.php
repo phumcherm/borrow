@@ -4,6 +4,8 @@ require_once "function.php";
 session_start();
 if (isset($_POST['submit'])) {
     $itemcode = $_POST['data4'];
+    $user_id = $_SESSION['id_login'];
+
     $activity = $_POST['activity'];
     $location = $_POST['location'];
     $br_date = $_POST['date'];
@@ -15,7 +17,7 @@ if (isset($_POST['submit'])) {
     if ($total_rows > 0) {
         for ($i = 0; $i < $total_rows; $i++) {
             $insertBorrow = new DB_con();
-            $sql = $insertBorrow->insertBorrow($arr_code[$i], $activity, $location, $br_date);
+            $sql = $insertBorrow->insertBorrow($arr_code[$i],$user_id, $activity, $location, $br_date);
         }
 
         if ($sql) {
