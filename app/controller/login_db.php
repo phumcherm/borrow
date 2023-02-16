@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
             if ($username == $row['user_name']) {
                 if (($password == $row['user_pass'])) {
                     if ($row['fname'] == 'วิษณุ' && $row['lname'] == 'กุหลาบ') {
-                        $_SESSION['admin_login'] = $row['user_id'];
+                        $_SESSION['admin_login'] = $row['user_id']; 
                         $_SESSION['id_login'] = $row['user_id'];
                         $_SESSION['user_login'] = $row['user_name'];
                         $_SESSION['pass_login'] = $row['user_pass'];
