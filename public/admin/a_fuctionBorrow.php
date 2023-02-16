@@ -73,17 +73,17 @@
                         <span aria-hidden="true">✕</span>
                     </button>
                 </div>
-                <input type="hidden" name="u_id" id="u_id">
+                <input type="hidden" name="br_id" id="br_id">
                 <div class="modal-body">
                     <form action="controller/update.php" method="post">
                         <div class="row">
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">itemCode</h7>
-                                <input type="text" disabled name="bb_id" id="bb_id" class="form-control">
+                                <input type="text" disabled name="txt_data" id="txt_data" class="form-control">
                             </div>
                             <div class="col-6">
                                 <h7 class="text-center ">ชื่อครุภัณฑ์</h7>
-                                <input type="text" disabled class="form-control" name="txt_number" id="txt_number" minlength="13" maxlength="13">
+                                <input type="text" disabled class="form-control" name="txt_name" id="txt_name" minlength="13" maxlength="13">
 
                             </div>
                         </div>
@@ -102,22 +102,22 @@
                         <div class="row">
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">ตำแหน่ง</h7>
-                                <input type="text" disabled class="form-control" name="txt_fname" id="txt_fname" placeholder="">
+                                <input type="text" disabled class="form-control" name="txt_position" id="txt_position" placeholder="">
                             </div>
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">ฝ่าย</h7>
-                                <input type="text" disabled class="form-control" name="txt_lname" id="txt_lname" placeholder="">
+                                <input type="text" disabled class="form-control" name="txt_hr" id="txt_hr" placeholder="">
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">งานที่ยืม</h7>
-                                <input type="text" disabled class="form-control" name="txt_age" id="txt_age" placeholder="">
+                                <input type="text" disabled class="form-control" name="txt_work" id="txt_work" placeholder="">
                             </div>
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">สถานที่</h7>
-                                <input type="text" disabled name="txt_group" id="txt_group" class="form-control">
+                                <input type="text" disabled name="txt_location" id="txt_location" class="form-control">
                             </div>
 
                         </div>
@@ -125,7 +125,7 @@
                         <div class="row">
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">วันที่ยืม</h7>
-                                <input type="text" disabled class="form-control" name="txt_tel" id="txt_tell" placeholder="" minlength="10" maxlength="10">
+                                <input type="text" disabled class="form-control" name="txt_dateBorrow" id="txt_dateBorrow" placeholder="" minlength="10" maxlength="10">
                             </div>
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">กำหนดวันคืน</h7>
@@ -137,11 +137,11 @@
                         <div class="row">
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">วันที่คืน</h7>
-                                <input type="text" disabled class="form-control" name="txt_tel" id="txt_tell" placeholder="" minlength="10" maxlength="10">
+                                <input type="text" disabled class="form-control" name="txt_dateBack" id="txt_dateBack" placeholder="" minlength="10" maxlength="10">
                             </div>
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">เบอร์โทร</h7>
-                                <input type="text" disabled name="txt_date" id="txt_date" class="form-control">
+                                <input type="text" disabled name="txt_phon" id="txt_phon" class="form-control">
                             </div>
 
                         </div>
@@ -186,7 +186,7 @@
                                     <td data-label="สถานที่."><?php echo $row['location'] ?></td>
                                     <td data-label="วันที่ยืม."><?php echo $row['br_time'] ?></td>
                                     <td data-label="กำหนดคืน."><?php echo $row['br_date'] ?></td>
-                                    <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow"> ข้อมูล</button></td>
+                                    <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow" onclick="Databorrow('<?php echo $row['br_id'] ?>')"> ข้อมูล</button></td>
                                 </tr>
                         </tbody>
                     <?php
@@ -197,6 +197,36 @@
             </div>
         </div>
     </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        async function Databorrow(br_id) {
+            console.log(br_id)
+
+            $.ajax({
+                url: "a_borrowDeteil.php",
+                method: "post",
+                dataType: 'json',
+                data: {
+                    br_id: br_id,
+                },
+                success: function(response) {
+                    console.log(response)
+                    document.getElementById("br_id").value = response.br_id;
+                    document.getElementById("txt_data").value = response.itemCode;
+                    document.getElementById("txt_name").value = response.detail;
+                    document.getElementById("txt_work").value = response.activity;
+                    document.getElementById("txt_location").value = response.location;
+                    document.getElementById("txt_date").value = response.br_date;
+                    document.getElementById("txt_dateBorrow").value = response.br_time;
+
+                }
+            });
+        }
+    </script>
+
+
 </body>
 
 </html>
