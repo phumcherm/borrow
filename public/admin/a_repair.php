@@ -80,19 +80,29 @@ require_once "../../app/models/db.php";
         width: 20px;
         height: 20px;
     }
-    #submit {
-        float: right;
-       
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;
-    }
+  
     
     #text {
+
         color: #E6581D;
         border-style: solid;
-        border-color: #ff0000;
+        border-color: #E6581D;
         border-width: 3px;
         padding: 10px 10px;
         background-color: #fff;
+        border-radius: 5px;
+        float: right;
+        margin-right: 50px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;
+    }
+
+    #text2 {
+        color: #fff;
+        border-style: solid;
+        border-color: #E6581D;
+        border-width: 3px;
+        padding: 10px 10px;
+        background-color: #E6581D;
         border-radius: 5px;
         float: right;
         margin-right: 50px;
@@ -112,7 +122,7 @@ require_once "../../app/models/db.php";
     </div>
     <form>
     <div align="center">
-    <a href="a_repair2.php"  type="submit" id="text" ><b>สถานะการแจ้งซ่อมครุภัณฑ์<b></a>
+    <a href="a_repair2.php"  type="submit" id="text" >สถานะการแจ้งซ่อมครุภัณฑ์</a>
 	</div>
 </form>
     <br>
@@ -127,6 +137,7 @@ require_once "../../app/models/db.php";
                             <th>หมายเลขครุภัณฑ์</th>
                             <th>ชื่ออุปกรณ์</th>
                             <th>วันที่แจ้งซ่อม</th>
+                          
                             <th>สถานะ</th>
                         </tr>
                     </thead>
@@ -164,28 +175,76 @@ require_once "../../app/models/db.php";
                 <div class="card-panel row">
                     <div class="col">
                         <fieldset>
-                            <legend>Checkboxes</legend>
+                            <legend>ผู้รับมอบหมาย</legend>
                             <div class="row">
                                 <div class="col">
                                     <div class="form-check">
                                         <div class="checkbox">
-                                            <label class="form-check-label">
+                                            <label class="form-check-label" style="font-size: 30px;">
                                                 <input type="checkbox" id="checkbox_1" class="larger">
-                                                <span class="check"></span>
-                                                First checkbox
+                                            <span class="check"   ></span>
+                                                &nbsp;&nbsp;  วิษณุ  กุหลาบ
                                             </label>
                                         </div>
                                     </div>
                                     <div class="form-check">
                                         <div class="checkbox">
-                                            <label class="form-check-label">
+                                            <label class="form-check-label" style="font-size: 30px;">
                                                 <input type="checkbox" id="checkbox_1" class="larger">
                                                 <span class="check"></span>
-                                                Second checkbox
+                                                &nbsp;&nbsp; มนตรี  อุ่นใจ
                                             </label>
                                         </div>
                                     </div>
-
+                                    <div class="form-check">
+                                        <div class="checkbox">
+                                            <label class="form-check-label" style="font-size: 30px;">
+                                                <input type="checkbox" id="checkbox_1" class="larger">
+                                                <span class="check"></span>
+                                                &nbsp;&nbsp; วุฒินันท์  วามะกัน
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="checkbox">
+                                            <label class="form-check-label" style="font-size: 30px;">
+                                                <input type="checkbox" id="checkbox_1" class="larger">
+                                                <span class="check"></span>
+                                                &nbsp;&nbsp; รพีพงศ์  คินขุนทด
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="checkbox">
+                                            <label class="form-check-label" style="font-size: 30px;">
+                                                <input type="checkbox" id="checkbox_1" class="larger">
+                                                <span class="check"></span>
+                                                &nbsp;&nbsp; นิธิกร  หลุ่มใส
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="checkbox">
+                                            <label class="form-check-label" style="font-size: 30px;">
+                                                <input type="checkbox" id="checkbox_1" class="larger">
+                                                <span class="check"></span>
+                                                &nbsp;&nbsp; นิยม  ประทุมมา
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="checkbox">
+                                            <label class="form-check-label" style="font-size: 30px;">
+                                                <input type="checkbox" id="checkbox_1" class="larger">
+                                                <span class="check"></span>
+                                                &nbsp;&nbsp; เปรมฤทัย  สีแปลก
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div align="right">
+    <a href="a_repair2.php"  type="submit" id="text2" >มอบหมาย</a>
+	</div>
+                                   
                                 </div>
                             </div>
                     </div>
