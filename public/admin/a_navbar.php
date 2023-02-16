@@ -44,6 +44,7 @@
 
       font-family: SUT_Regular;
     }
+
   </style>
 </head>
 <!-- style="background-color: #E6581D;" -->
@@ -89,7 +90,8 @@
       </a>
       <a href="a_repair.php" class="w3-bar-item w3-button w3-padding">
         <h5><i class="fas fa-tools"></i>  แจ้งซ่อมรายการครุภัณฑ์</h5>
-      </a>
+</a>
+
       <a data-id="logout" href="../../app/controller/log_out.php" class="w3-bar-item w3-button w3-padding">
         <h5><i class="fas fa-sign-out-alt"></i>  ออกจากระบบ</h5>
       </a>
