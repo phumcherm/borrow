@@ -47,6 +47,7 @@ session_start();
                </div>
                <!-- <b><h2 class="heading">กรอกรายละเอียดแจ้งซ่อม</h2></b> -->
 
+              
                <div class="col-1-4 col-1-4-sm">
                     <div class="controls">
                          <input type="date" id="arrive" class="floatLabel" name="arrive" value="<?php echo date('Y-m-d'); ?>" style="  max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
@@ -55,10 +56,8 @@ session_start();
                </div>
                <div class="col-1-4 col-1-4-sm">
                     <div class="controls">
-
-                         <select class="form-select bg-lavender" id="selectedItem" onchange="selectItemOption();" class="floatLabel" name="selectedItem" style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-
-                              <option for="arrive" class="label-date">&nbsp;&nbsp;เลือกจากประวัติการยืมครุภัณฑ์</option>
+                    <label for="arrive" class="label-date"><option >&nbsp;&nbsp;เลือกจากประวัติการยืมครุภัณฑ์</option></label>
+                         <select class="form-select bg-lavender" id="selectedItem" onchange="selectItemOption();" class="floatLabel" name="selectedItem" style="max-width: 20;  height: 40px; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
                               <?php $selectBorrowItem = new DB_con();
                               $sql = $selectBorrowItem->selectBorrowItem();
                               while ($row = mysqli_fetch_array($sql)) { ?>
@@ -129,8 +128,9 @@ session_start();
           </div> -->
           <div class="col-1-4 col-1-4-sm">
                <div class="controls">
-                    <select class="floatLabel  " id="active" onchange="selectItemOption();" class="floatLabel" name="active" style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                         <option for="active" class="label-date">&nbsp;&nbsp;เลือกจากประวัติการยืมครุภัณฑ์</option>
+               <label for="arrive" class="label-date"><option >&nbsp;&nbsp;เลือกจากประวัติการยืมครุภัณฑ์</option></label>
+                    <select class="floatLabel  " id="active" onchange="selectItemOption();" class="floatLabel" name="active" style="max-width: 100%;   height: 40px;box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                      
                     </select>
                </div>
           </div>
