@@ -1,6 +1,6 @@
 <?php
 
-define('DB_SERVER', '172.17.0.1:9906');
+define('DB_SERVER', '172.18.0.1:9906');
 define('DB_USER', 'ceitdb');
 define('DB_PASS', '12345678');
 define('DB_NAME', 'ceitdb');
@@ -57,7 +57,7 @@ class DB_con
     function dataBorrowAll()
     {
         $result = mysqli_query($this->dbcon, "SELECT  
-        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location 
+        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location ,borrow.status
         FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  
      ");
         return $result;
@@ -65,9 +65,9 @@ class DB_con
     function dataBack()
     {
         $result = mysqli_query($this->dbcon, "SELECT  
-        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location 
+        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location ,borrow.br_date , borrow.br_time
         FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  
-       AND borrow.status = 1");
+        AND borrow.status = 1");
         return $result;
     }
 

@@ -90,104 +90,20 @@ require_once "../../app/models/db.php";
         </h2>
     </div>
     <br>
-    <!-- <center>
-        <input type="search" id="search" onkeyup="SearchBox()" placeholder="&nbsp;&nbsp;ค้นหา" title="Type in a name">
-    </center>
-   -->
-
-
-    <!-- 
-    <div class="table-responsive " style="padding: 25px;">
-        <div class="row">
-            <div class="" style="max-width: 1600px;margin-left: auto;">
-                <div class="table-container">
-                    <table class="table" id="data" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-                        <thead style="color:white;text-align: center; background-color:#E6581D; ">
-                            <tr>
-                                <th>Select</th>
-                                <th>Id</th>
-                                <th>หมายเลขครุภัณฑ์</th>
-                                <th>ชื่ออุปกรณ์</th>
-                                <th>วันที่แจ้งซ่อม</th>
-                                <th>สถานะ</th>
-
-
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <?php
-                            $selectAll = new DB_con();
-                            $sql = $selectAll->selectAll();
-                            while ($row = mysqli_fetch_array($sql)) {
-                            ?>
-                                <tr>
-                                    <th><input class="form-check-input" type="checkbox"></th>
-                                    <td data-label="Id."><?php echo $row['id'] ?></td>
-                                    <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td>
-                                    <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
-                                    <td data-label="วันที่แจ้งซ่อม.">รอข้อมูลวันที่</td><?php echo $row['dateCreate'] ?>
-                                    <td data-label="สถานะ.">
-                                        <p><a href="a_repair2.php" class="text-muted">รอดำเนินการ</a></p>
-                                    </td>
-
-                                </tr>
-                        </tbody>
-                    <?php
-                            }
-                    ?>
-                    </table>
-                    <br>
-
-                </div>
-            </div>
-
-             <div class="col-md-4">
-                <h2 style="color: #E6581D;font-family: SUT_Bold; text-shadow:2px 3px 10px #686060; ">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; เลือก
-                </h2>
-                <br>
-                <div class="container md-4">
-                    <form action="/action_page.php">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked>
-                            <label class="form-check-label" for="check1">Option 1</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
-                            <label class="form-check-label" for="check2">Option 2</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
-                            <label class="form-check-label" for="check2">Option 2</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
-                            <label class="form-check-label" for="check2">Option 2</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
-                            <label class="form-check-label" for="check2">Option 2</label>
-                        </div>
-
-
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div> -->
+  
     <div class="BoxTable">
         <div class="boxt" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
             <div class="table-container">
                 <table class="table" id="data">
                     <thead style="color:white;text-align: center; background-color:#E6581D;">
                         <tr>
-                            <th>Select</th>
-                            <th>Id</th>
+
                             <th>หมายเลขครุภัณฑ์</th>
                             <th>ชื่ออุปกรณ์</th>
                             <th>วันที่แจ้งซ่อม</th>
-                            <th>สถานะ</th>
+                            <th>วันที่มอบหมายงาน</th>
+                            <th>ผู้ได้รับมอบหมาย</th>
+                             <th>สถานะ</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -201,8 +117,6 @@ require_once "../../app/models/db.php";
                         foreach ($sql as $row) {
                         ?> -->
                             <tr>
-                              
-                                <td data-label="Id."><?php echo $row['id'] ?></td>
                                 <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td>
                                 <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
                                 <td data-label="วันที่แจ้งซ่อม."><!-- <?php /* echo $row['dateCreate'] */ ?> -->รอข้อมูลวันที่</td>
@@ -229,28 +143,28 @@ require_once "../../app/models/db.php";
                         <div class="col">
                             <div class="form-check">
                                 <div class="checkbox">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" id="checkbox_1" class="larger">
+                                    <label class="form-check-label" style="font-size: 30px;">
+                                        <input type="checkbox" id="checkbox_1" class="larger" >
                                         <span class="check"></span>
-                                        มอบหมายเเล้ว
+                                        &nbsp;&nbsp;  มอบหมายเเล้ว
                                     </label>
                                 </div>
                             </div>
                             <div class="form-check">
                                 <div class="checkbox">
-                                    <label class="form-check-label">
+                                    <label class="form-check-label" style="font-size: 30px;">
                                         <input type="checkbox" id="checkbox_1" class="larger">
                                         <span class="check"></span>
-                                        เสร็จสิ้นเเล้ว
+                                        &nbsp;&nbsp;  เสร็จสิ้นเเล้ว
                                     </label>
                                 </div>
                             </div>
                             <div class="form-check">
                                 <div class="checkbox">
-                                    <label class="form-check-label">
+                                    <label class="form-check-label" style="font-size: 30px;">
                                         <input type="checkbox" id="checkbox_1" class="larger">
                                         <span class="check"></span>
-                                        กำลังดำเนินงาน
+                                        &nbsp;&nbsp;  กำลังดำเนินงาน
                                     </label>
                                 </div>
                             </div>

@@ -71,9 +71,9 @@
                             <tr>
                                 <th>รหัสยืม</th>
                                 <th>วันที่คืน</th>
-                                <!-- <th>วันที่กำหนด</th> -->
                                 <th>เลขครุภัณฑ์</th>
                                 <th>ชื่ออุปกรณ์</th>
+                                <th>สถานะ</th>
                                 <th></th>
 
                             </tr>
@@ -90,6 +90,24 @@
                                     <!-- <td data-label="วันที่กำหนด."><?php echo $row['br_date'] ?></td> -->
                                     <td data-label="เลขครุภัณฑ์."><?php echo $row['itemCode'] ?></td>
                                     <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
+                                    <td data-label="สถานะ">
+                                        <?php
+                                        if ($row["br_stat"] == 0) {
+                                        ?>
+                                            <p style="background-color: red;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">รอดำเนินการ</p>
+
+                                        <?php
+                                        } else {
+                                        ?>
+
+                                            <p style="background-color: green;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">คืนแล้ว</p>
+
+                                        <?php
+                                        }
+                                        ?>
+                                        <?php echo $row["borrow.status"] ?>
+
+                                    </td>
                                     <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow"> ข้อมูล</button></td>
                                 </tr>
                         </tbody>
