@@ -150,14 +150,14 @@
                         <tbody>
                             <?php
                             $selectAll = new DB_con();
-                            $sql = $selectAll->dataTotelBorrow();
+                            $sql = $selectAll->selectTotelBorrow();
                             while ($row = mysqli_fetch_array($sql)) {
                             ?>
                                 <tr>
                                     <td data-label="รหัสยืม."><?php echo $row['br_id'] ?></td>
                                     <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td>
                                     <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
-                                   <!--  <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow"> ข้อมูล</button></td> -->
+                                    <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow"> ข้อมูล</button></td>
                                 </tr>
                         </tbody>
                     <?php
