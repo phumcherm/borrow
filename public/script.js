@@ -216,86 +216,44 @@
             }
         }
 
-// const houses = [
-//     {
-//         code: "SM",
-//         name: "Smith"
-//     },
-//     {
-//         code: "JD",
-//         name: "Jordan"
-//     },
-//     {
-//         code: "BL",
-//         name: "Billy"
-//     }
-// ]
+        function selectActive() {
 
-// const getFamily = houseCode => {
-//     switch (houseCode) {
-//         case "SM":
-//             return ["Mario", "Karen", "Tayler"];
-//         case "JD":
-//             return ["Deen", "Jasmin", "Atlanta", "Lilly"];
-//         case "BL":
-//             return ["Robert", "Lulu", "Sia"];
-//         default:
-//             return [];
-//     }
-// }
+            var selectedValues = document.getElementById("selectedItem").value;
 
-// const createOptionElement = (text, value) => {
-//     const element = document.createElement("option");
-//     element.textContent = text;
-//     element.value = value;
-//     return element;
-// }
+            var dropdown = document.getElementById("active");
 
-// const createLiElement = text => {
-//     const element = document.createElement("li");
-//     element.textContent = text;
-//     return element;
-// }
+            console.log(selectedValues)
 
-// const houseElment = document.querySelector("select");
+            var ajax = new XMLHttpRequest();
+            // console.log(ajax)
+            var method = "GET";
+            var url = "data_repair.php";
+            var data = "?selectedActive=" + selectedValues;
+            var asynchronous = true;
 
-// houses.forEach(house => {
-//     houseElment.appendChild(createOptionElement(house.name, house.code));
-// })
+            ajax.open(method, url + data, asynchronous);
+            ajax.send();
+            ajax.onreadystatechange = function() {
+                 if (this.readyState == 4 && this.status == 200) {
+                      var data = JSON.parse(this.responseText);
 
-// houseElment.addEventListener("change", e => {
-//     const fams = getFamily(e.target.value);
-//     const famsElement = document.getElementById("family");
+                      const selectElement = document.getElementById("active");
+                      selectElement.innerHTML = "";
 
-//     famsElement.innerHTML = "";
-//     fams.forEach(fam => {
-//         famsElement.appendChild(createLiElement(fam));
-//     })
-// })
 
-//Get the button
-// let mybutton = document.getElementById("btn-back-to-top");
+                      for (var i = 0; i < data.length; i++) {
+                           var option = document.createElement("option");
+                           console.log("action : " + data[i].activity);
 
-// // When the user scrolls down 20px from the top of the document, show the button
-// window.onscroll = function () {
-//     scrollFunction();
-// };
+                           option.text = data[i].activity;
+                           option.value = data[i].activity;
+                           dropdown.add(option);
 
-// function scrollFunction() {
-//     if (
-//         document.body.scrollTop > 20 ||
-//         document.documentElement.scrollTop > 20
-//     ) {
-//         mybutton.style.display = "block";
-//     } else {
-//         mybutton.style.display = "none";
-//     }
-// }
-// // When the user clicks on the button, scroll to the top of the document
-// mybutton.addEventListener("click", backToTop);
+                      }
 
-// function backToTop() {
-//     document.body.scrollTop = 0;
-//     document.documentElement.scrollTop = 0;
-// }
 
+                 }
+
+                 // document.getElementById("data4").innerHTML = data;
+            }
+       }
