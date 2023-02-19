@@ -56,7 +56,7 @@ session_start();
                </div>
                <div class="col-1-4 col-1-4-sm">
                     <div class="controls">
-                    <label for="arrive" class="label-date"><option >&nbsp;&nbsp;เลือกจากประวัติการยืมครุภัณฑ์</option></label>
+                    <label for="arrive" class="floatLabel"><option >&nbsp;&nbsp;เลือกจากประวัติการยืมครุภัณฑ์</option></label>
                          <select class="form-select bg-lavender" id="selectedItem" onchange="selectItemOption();" class="floatLabel" name="selectedItem" style="max-width: 20;  height: 40px; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
                               <?php $selectBorrowItem = new DB_con();
                               $sql = $selectBorrowItem->selectBorrowItem();
@@ -133,7 +133,7 @@ session_start();
           </select> -->
           <div class="col-1-4 col-1-4-sm">
                <div class="controls">
-               <label for="arrive" class="label-date"><option >&nbsp;&nbsp;เลือกจากประวัติการยืมครุภัณฑ์</option></label>
+               <label for="arrive"class="floatLabel  " name="active1"><option >&nbsp;&nbsp;เลือกจากประวัติการยืมครุภัณฑ์</option></label>
                     <select class="floatLabel  " id="active" onchange="selectItemOption();" class="floatLabel" name="active" style="max-width: 100%;   height: 40px;box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
                       
                     </select>
