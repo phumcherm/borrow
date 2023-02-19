@@ -120,7 +120,7 @@ require_once "../app/views/session_status.php";
         </section>
         <section class="w3-center">
             <div><b>
-                    <h3 style="text-shadow:2px 3px 10px #000; ">ระบบ ยืม - คืน วัสดุและครุภัณฑ์ฝ่ายเทคนิควิศวกรรม</h3>
+                    <h3 style="text-shadow:2px 3px 10px #000; ">ระบบ ยืม - คืน วัสดุและครุภัณฑ์ ศูนย์นวัตกรรมและเทคโนโลยีการศึกษา</h3>
                 </b></div>
         </section>
         <br>
