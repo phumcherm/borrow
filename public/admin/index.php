@@ -46,7 +46,7 @@ require_once "../../app/models/db.php";
 
     <div>
         <h2 style="color: #E6581D;font-family: SUT_Bold; text-shadow:2px 3px 10px #686060; ">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-caret-right" style="font-size:48px"></i> ระบบยืม-คืนครุภัณฑ์ ฝ่ายเทคนิควิศวกร
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-caret-right" style="font-size:48px"></i> ระบบยืม-คืนครุภัณฑ์ ศูนย์นวัตกรรมและเทคโนโลยีการศึกษา
         </h2>
     </div>
     <br>
