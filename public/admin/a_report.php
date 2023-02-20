@@ -60,6 +60,7 @@ require_once "../../app/models/function.php";
             height: auto;
         }
     }
+
 </style>
 
 <body>
