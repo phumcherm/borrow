@@ -142,11 +142,12 @@
                             </div>
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">เบอร์โทร</h7>
-                                <input type="text" disabled name="txt_phon" id="txt_phon" class="form-control">
+                                <input type="text" disabled name="txt_phon" id="txt_phone" class="form-control">
                             </div>
 
                         </div>
                         <br>
+
                         <div class="modal-footer ">
                         </div>
                 </div>
@@ -158,7 +159,7 @@
     <!-- Card -->
     <div class="graphBox">
         <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
-            <p style="font-size: 36px;text-align: center;color: #E6581D;">จำนวนครุภัณฑ์ที่ถูกยืม</p>
+            <p style="font-size: 36px;text-align: center;color: #E6581D;">รายการครุภัณฑ์ที่ถูกยืม</p>
             <input type="date">
             <input type="date">
             <button class="btn btn-primary" type="submit">ค้นหา</button>
@@ -228,6 +229,12 @@
                     document.getElementById("txt_location").value = response.location;
                     document.getElementById("txt_date").value = response.br_date;
                     document.getElementById("txt_dateBorrow").value = response.br_time;
+                    document.getElementById("txt_fname").value = response.fname;
+                    document.getElementById("txt_lname").value = response.lname;
+                    document.getElementById("txt_position").value = response.post;
+                    document.getElementById("txt_hr").value = response.department;
+                    document.getElementById("txt_phone").value = response.phone_num;
+                    document.getElementById("txt_dateBack").value = response.bk_date;
 
                 }
             });

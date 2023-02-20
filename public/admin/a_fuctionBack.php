@@ -141,7 +141,7 @@
                             </div>
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">เบอร์โทร</h7>
-                                <input type="text" disabled name="txt_phon" id="txt_phon" class="form-control">
+                                <input type="text" disabled name="txt_phon" id="txt_phone" class="form-control">
                             </div>
 
                         </div>
@@ -175,17 +175,18 @@
                         </thead>
                         <tbody>
                             <?php
+                            
                             $selectAll = new DB_con();
                             $sql = $selectAll->dataBack();
                             while ($row = mysqli_fetch_array($sql)) {
                             ?>
                                 <tr>
-                                    <td data-label="ชื่อ - นามสกุล.">สังคัง สังขาร</td>
+                                    <td data-label="ชื่อ - นามสกุล."><?php echo $row['fname'] . " " . $row['lname']  ?></td>
                                     <!-- <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td> -->
                                     <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
                                     <td data-label="สถานที่."><?php echo $row['location'] ?></td>
-                                    <td data-label="วันที่ยืม."><?php echo $row['br_time'] ?></td>
-                                    <td data-label="กำหนดคืน."><?php echo $row['br_date'] ?></td>
+                                    <td data-label="วันที่ยืม."><?php echo $row['borrow_date'] ?></td>
+                                    <td data-label="กำหนดคืน."><?php echo $row['borrow_bk_date'] ?></td>
                                     <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow" onclick="Databorrow('<?php echo $row['br_id'] ?>')"> ข้อมูล</button></td>
                                 </tr>
                         </tbody>
@@ -220,6 +221,12 @@
                     document.getElementById("txt_location").value = response.location;
                     document.getElementById("txt_date").value = response.br_date;
                     document.getElementById("txt_dateBorrow").value = response.br_time;
+                    document.getElementById("txt_fname").value = response.fname;
+                    document.getElementById("txt_lname").value = response.lname;
+                    document.getElementById("txt_position").value = response.post;
+                    document.getElementById("txt_hr").value = response.department;
+                    document.getElementById("txt_phone").value = response.phone_num;
+                    document.getElementById("txt_dateBack").value = response.bk_date;
 
                 }
             });

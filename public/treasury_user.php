@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 require_once "../app/models/function.php";
 require_once "../app/models/db.php";
 ?>
@@ -136,6 +138,9 @@ require_once "../app/models/db.php";
     ?>
     <div id="grad" style="background-color:#827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
         <div>
+            <p style="float: right;">
+                <?php echo $_SESSION['fname_login'] . " " . $_SESSION['lname_login'] ?>
+            </p>
             <h2 style="color: #fff;font-family: SUT_Bold;  text-shadow:2px 3px 10px #000;">
                 <i class="fa fa-caret-right" style="font-size:48px"></i>รายการครุภัณฑ์
 
@@ -208,7 +213,7 @@ require_once "../app/models/db.php";
                         <tbody>
                             <?php
                             $selectCountTreasury = new DB_con();
-                            $sql = $selectCountTreasury->selectCountTreasury(); 
+                            $sql = $selectCountTreasury->selectCountTreasury();
                             while ($row = mysqli_fetch_array($sql)) {
                             ?>
                                 <td data-label="ชื่อครุภัณฑ์.">

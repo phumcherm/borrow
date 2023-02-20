@@ -136,10 +136,6 @@
                         <br>
                         <div class="row">
                             <div class="col-6">
-                                <h7 class="text-center" style="color:black">วันที่คืน</h7>
-                                <input type="text" disabled class="form-control" name="txt_dateBack" id="txt_dateBack" placeholder="" minlength="10" maxlength="10">
-                            </div>
-                            <div class="col-6">
                                 <h7 class="text-center" style="color:black">เบอร์โทร</h7>
                                 <input type="text" disabled name="txt_phon" id="txt_phon" class="form-control">
                             </div>
@@ -220,6 +216,12 @@
                     document.getElementById("txt_location").value = response.location;
                     document.getElementById("txt_date").value = response.br_date;
                     document.getElementById("txt_dateBorrow").value = response.br_time;
+                    document.getElementById("txt_fname").value = response.fname;
+                    document.getElementById("txt_lname").value = response.lname;
+                    document.getElementById("txt_position").value = response.post;
+                    document.getElementById("txt_hr").value = response.department;
+                    document.getElementById("txt_phone").value = response.phone_num;
+                    document.getElementById("txt_dateBack").value = response.bk_date;
 
                 }
             });
