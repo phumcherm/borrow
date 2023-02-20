@@ -74,6 +74,8 @@
                     </button>
                 </div>
                 <input type="hidden" name="br_id" id="br_id">
+                <input type="hidden" name="bk_id" id="bk_id">
+                <input type="hidden" name="user_id" id="user_id">
                 <div class="modal-body">
                     <form action="controller/update.php" method="post">
                         <div class="row">
@@ -215,6 +217,8 @@
                 success: function(response) {
                     console.log(response)
                     document.getElementById("br_id").value = response.br_id;
+                    document.getElementById("bk_id").value = response.bk_id;
+                    document.getElementById("user_id").value = response.user_id;
                     document.getElementById("txt_data").value = response.itemCode;
                     document.getElementById("txt_name").value = response.detail;
                     document.getElementById("txt_work").value = response.activity;
