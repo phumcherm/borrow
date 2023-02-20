@@ -182,7 +182,7 @@
                                     <!-- <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td> -->
                                     <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
                                     <td data-label="สถานที่."><?php echo $row['location'] ?></td>
-                                    <td data-label="วันที่ยืม."><?php echo $row['br_time'] ?></td>
+                                    <td data-label="วันที่ยืม."><?php echo $row['borrow_date'] ?></td>
                                     <td data-label="กำหนดคืน."><?php echo $row['br_date'] ?></td>
                                     <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow" onclick="Databorrow('<?php echo $row['br_id'] ?>')"> ข้อมูล</button></td>
                                 </tr>

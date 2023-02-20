@@ -52,7 +52,7 @@ class DB_con
         *, DATE_FORMAT(bk_time, '%M / %d / %Y') bk_date
     FROM ceitdb.`borrow` left join ceitdb.itemdata on borrow.id = itemdata.id left join ceitdb.user on borrow.user_id = user.user_id 
     left join ceitdb.back on borrow.br_id = back.br_id
-    where borrow.status = 1");
+    where borrow.status = 0");
         return $result;
     }
     function dataBorrowAll()
@@ -65,10 +65,10 @@ class DB_con
     }
     function dataBack()
     {
-        $result = mysqli_query($this->dbcon, "SELECT  *, DATE_FORMAT(bk_time, '%M / %d / %Y') bk_date
+        $result = mysqli_query($this->dbcon, "SELECT  *, DATE_FORMAT(bk_time, '%M / %d / %Y') bk_date,DATE_FORMAT(br_time, '%M / %d / %Y') borrow_date
         FROM ceitdb.`borrow` left join ceitdb.itemdata on borrow.id = itemdata.id left join ceitdb.user on borrow.user_id = user.user_id 
         left join ceitdb.back on borrow.br_id = back.br_id
-        where borrow.status = 0");
+        where borrow.status = 1");
         return $result;
     }
 
