@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
     if ($total_rows > 0) {
         for ($i = 0; $i < $total_rows; $i++) {
             $insertBorrow = new DB_con();
-            $sql = $insertBorrow->insertBorrow($arr_code[$i],$user_id, $activity, $location, $br_date);
+            $sql = $insertBorrow->insertBorrow($arr_code[$i], $user_id, $activity, $location, $br_date);
         }
 
         if ($sql) {
@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
             // echo $br_date . "<br>";
         } else {
             $_SESSION['error'] = "มีบางอย่างผิดพลาด";
-                    header("location: /public/borrow_user.php");
+            header("location: /public/borrow_user.php");
         }
     } else {
 ?><script>

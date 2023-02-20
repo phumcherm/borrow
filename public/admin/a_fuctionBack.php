@@ -143,7 +143,7 @@
                             </div>
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">เบอร์โทร</h7>
-                                <input type="text" disabled name="txt_phon" id="txt_phone" class="form-control">
+                                <input type="text" disabled name="txt_phone" id="txt_phone" class="form-control">
                             </div>
 
                         </div>
@@ -177,7 +177,7 @@
                         </thead>
                         <tbody>
                             <?php
-                            
+
                             $selectAll = new DB_con();
                             $sql = $selectAll->dataBack();
                             while ($row = mysqli_fetch_array($sql)) {
