@@ -16,6 +16,7 @@ if (!$conn) {
 <?php
 if (isset($_POST['br_id'])) {
     $br_id = $_POST['br_id'];
+
     $query = "SELECT  *, DATE_FORMAT(bk_time, '%M / %d / %Y') bk_date
     FROM ceitdb.`borrow` left join ceitdb.itemdata on borrow.id = itemdata.id left join ceitdb.user on borrow.user_id = user.user_id 
     left join ceitdb.back on borrow.br_id = back.br_id
@@ -24,6 +25,8 @@ if (isset($_POST['br_id'])) {
     $data = mysqli_fetch_array($result);
     $jasonArray = array(
         'br_id' => $data['br_id'],
+        'bk_id' => $data['bk_id'],
+        'user_id' => $data['user_id'],
         'id' => $data['id'],
         'detail' => $data['detail'],
         'itemCode' => $data['itemCode'],

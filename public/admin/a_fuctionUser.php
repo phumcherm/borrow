@@ -11,10 +11,10 @@
     /*chart */
     .graphBox {
         position: relative;
-        width: 100%;
+        width: 900px;
         padding: 20px;
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 2fr;
         grid-gap: 20px;
         min-height: 200px;
     }
@@ -59,44 +59,14 @@
     <div class="graphBox">
         <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
             <p style="font-size: 36px;text-align: center;color: #E6581D;">จำนวนผู้ใช้งานระบบ</p>
+            <input type="date">
+            <input type="date">
+            <button class="btn btn-primary" type="submit">ค้นหา</button>
             <div>
                 <canvas id="myChart"></canvas>
             </div>
         </div>
-        <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
-            <p style="font-size: 36px;text-align: center;color: #E6581D;">จำนวนผู้ใช้งานระบบ</p>
-            <div>
-                <div class="table-container">
-                    <table class="table" id="data" style="text-align: center;">
-                        <thead style="color:white; background-color:#E6581D;">
-                            <tr>
-                                <th>รหัสยืม</th>
-                                <th>รหัสครุภัณฑ์</th>
-                                <th>ชื่ออุปกรณ์</th>
-                                <th></th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $selectAll = new DB_con();
-                            $sql = $selectAll->dataBorrow();
-                            while ($row = mysqli_fetch_array($sql)) {
-                            ?>
-                                <tr>
-                                    <td data-label="รหัสยืม."><?php echo $row['br_id'] ?></td>
-                                    <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td>
-                                    <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
-                                    <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow"> ข้อมูล</button></td>
-                                </tr>
-                        </tbody>
-                    <?php
-                            }
-                    ?>
-                    </table>
-                </div>
-            </div>
-        </div>
+    </div>
     </div>
     </div>
 
@@ -104,12 +74,12 @@
         const numChart = document.getElementById('myChart');
         const timeChart = document.getElementById('testChart');
         new Chart(numChart, {
-            type: 'polarArea',
+            type: 'bar',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['17/02/2565', '18/02/2566', '19/02/2566', '20/02/2566'],
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: 'จำนวน ',
+                    data: [3, 5, 6, 7, 5],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',

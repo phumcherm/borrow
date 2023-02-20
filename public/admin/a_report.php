@@ -21,7 +21,7 @@ require_once "../../app/models/function.php";
         width: 100%;
         padding: 20px;
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 2fr 2fr;
         grid-gap: 30px;
         min-height: 200px;
     }
@@ -69,13 +69,9 @@ require_once "../../app/models/function.php";
 
     <div class="graphBox">
         <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
-            <select required class="form-select col-12 form-control" aria-label="Default select example" name="num" id="num" style="border-color: #E6581D; box-shadow: rgba(0, 0, 0, 0.11) 0px 5px 5px  ;">
-
-                <optgroup label="เลือกดูการใช้งาน">
-                    <option id="y" value="">รายปี</option>
-                    <option id="m" value="">รายเดือน</option>
-                    <option id="d" value="">รายวัน</option>
-            </select>
+            <input type="date">
+            <input type="date">
+            <button class="btn btn-primary" type="submit">ค้นหา</button>
             <!--  <button type="button" onclick="fittertem()">ค้นหา</button> -->
             <br><br>
             <div>
@@ -114,13 +110,10 @@ require_once "../../app/models/function.php";
                     <tbody>
                         <?php
                         $selectAll = new DB_con();
-                        $sql = $selectAll->selectAll();
+                        $sql = $selectAll->dataBackAll();
                         while ($row = mysqli_fetch_array($sql)) {
                         ?>
-                            <!--   $back = new Borrow();
-                        $sql = $back->fetch_back();
-                        foreach ($sql as $row) {
-                        ?> -->
+
                             <tr>
                                 <td data-label="Id."><?php echo $row['id'] ?></td>
                                 <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td>
@@ -153,13 +146,9 @@ require_once "../../app/models/function.php";
                     <tbody>
                         <?php
                         $selectAll = new DB_con();
-                        $sql = $selectAll->selectAll();
+                        $sql = $selectAll->dataBackAll();
                         while ($row = mysqli_fetch_array($sql)) {
                         ?>
-                            <!--   $back = new Borrow();
-                        $sql = $back->fetch_back();
-                        foreach ($sql as $row) {
-                        ?> -->
                             <tr>
                                 <td data-label="Id."><?php echo $row['id'] ?></td>
                                 <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td>
@@ -177,7 +166,9 @@ require_once "../../app/models/function.php";
     <!-- chart -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js" integrity="sha512-qKyIokLnyh6oSnWsc5h21uwMAQtljqMZZT17CIMXuCQNIfFSFF4tJdMOaJHL9fQdJUANid6OB6DRR0zdHrbWAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="chart.js"></script>
+    <script src="chartReport.js">
+
+    </script>
     <!-- ///// -->
 </body>
 
