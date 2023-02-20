@@ -248,7 +248,7 @@ $borrow_totel = mysqli_fetch_array($sql);
         </div>
     </div>
     <!--  -->
-    <div class="w3-row-padding w3-margin-bottom">
+   <!--  <div class="w3-row-padding w3-margin-bottom">
         <div class="w3-quarter">
             <div class="w3-container w3-padding-16" id="blue" style="border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
                 <h4 style="color:white">จำนวนแจ้งซ่อมครุภัณฑ์</h4>
@@ -256,7 +256,7 @@ $borrow_totel = mysqli_fetch_array($sql);
                 <div class="w3-right">
                     <h3 style="color:white">3 ชิ้น</h3>
                 </div>
-                <div class="w3-clear"><a style="color: white;font-size: 30px;" href="a_repair2.php">
+                <div class="w3-clear"><a style="color: white;font-size: 30px;" href="a_repair.php">
                         <span class="float-left">รายละเอียด</span>
                         <span class="float-right">
                             <i class="fa fa-angle-right"></i>
@@ -315,7 +315,7 @@ $borrow_totel = mysqli_fetch_array($sql);
             </div>
 
         </div>
-    </div>
+    </div> -->
 
 </body>
 

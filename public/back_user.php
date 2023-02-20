@@ -16,6 +16,7 @@ session_start();
     <title>คืนวัสดุ ครุภัณฑ์</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -126,7 +127,7 @@ session_start();
                 <?php echo $_SESSION['fname_login'] . " " . $_SESSION['lname_login'] ?>
             </p>
             <h2 style="color: #fff;font-family: SUT_Bold; text-shadow:2px 3px 10px #000; ">
-                <i class="fa fa-caret-right" style="font-size:48px"></i>คืนวัสดุ ครุภัณฑ์
+                <i class="fa fa-caret-right" style="font-size:48px"></i>คืนครุภัณฑ์
             </h2>
             <!--   1300px -->
             <!--  <div style="max-width: auto; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;">
