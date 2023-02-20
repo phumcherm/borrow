@@ -1,6 +1,6 @@
 <?php
 
-define('DB_SERVER', '172.17.0.1:9906');
+define('DB_SERVER', '172.18.0.1:9906');
 define('DB_USER', 'ceitdb');
 define('DB_PASS', '12345678');
 define('DB_NAME', 'ceitdb');
@@ -65,9 +65,10 @@ class DB_con
     function dataBack()
     {
         $result = mysqli_query($this->dbcon, "SELECT  
-        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location ,borrow.br_date , borrow.br_time
-        FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  
-        AND borrow.status = 1");
+        itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location ,borrow.br_date , borrow.br_time, fname, lname,
+         DATE_FORMAT(br_time, '%M / %d / %Y') borrow_date, DATE_FORMAT(br_date, '%M / %d / %Y') borrow_bk_date
+        FROM ceitdb.`borrow` left join ceitdb.itemdata on borrow.id = itemdata.id left join ceitdb.user on borrow.user_id = user.user_id 
+        where borrow.status = 1");
         return $result;
     }
 
@@ -150,10 +151,10 @@ class DB_con
         return $result;
     }
 
-    function selectBorrow()
+    function selectBorrow($user_id)
     {
         $result = mysqli_query($this->dbcon, "SELECT *,borrow.status br_stat,DATE_FORMAT(br_time, '%M / %d / %Y') borrow_date,DATE_FORMAT(br_date, '%M / %d / %Y') back_date
-                                                 FROM borrow,itemdata where borrow.id = itemdata.id  order by br_id desc");
+                                                 FROM borrow,itemdata where borrow.id = itemdata.id and user_id = $user_id order by br_id desc");
         return $result;
     }
 
@@ -179,6 +180,13 @@ class DB_con
     function selectActivity($item_id)
     {
         $result = mysqli_query($this->dbcon, "SELECT activity FROM ceitdb.borrow where id = $item_id group by activity;");
+        return $result;
+    }
+
+    function insertRepair($user_id, $item_id, $rp_activity, $problem)
+    {
+        $result = mysqli_query($this->dbcon, "INSERT INTO `ceitdb`.`repair`(`user_id`,`id`,`rp_activity`,`problem`,rp_status)
+                                                VALUES($user_id,$item_id,'$rp_activity','$problem',0);");
         return $result;
     }
 }

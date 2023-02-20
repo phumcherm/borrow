@@ -311,17 +311,17 @@ header('location:login.php');
                                 <a class="nav-link" href="index.php"><i class="fas fa-tachometer-alt"></i>หน้าหลัก</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="borrow_user.php"><i class="far fa-address-book"></i>ยืมวัสดุ ครุภัณฑ์</a>
+                                <a class="nav-link" href="borrow_user.php"><i class="far fa-address-book"></i>ยืมครุภัณฑ์</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="back_user.php"><i class="far fa-clone"></i>คืนวัสดุ ครุภัณฑ์</a>
+                                <a class="nav-link" href="back_user.php"><i class="far fa-clone"></i>คืนครุภัณฑ์</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="treasury_user.php"><i class="far fa-calendar-alt"></i>คลังวัสดุ ครุภัณฑ์</a>
+                                <a class="nav-link" href="treasury_user.php"><i class="far fa-calendar-alt"></i>คลังครุภัณฑ์</a>
                             </li>
-                            <li class="nav-item">
+                         <!--    <li class="nav-item">
                                 <a class="nav-link" href="repair.php"><i class="fas fa-tools"></i>แจ้งซ่อม</a>
-                            </li>
+                            </li> -->
                             <li class="nav-item">
                                 <a class="nav-link" name="logout" href="../app/controller/log_out.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
                             </li>

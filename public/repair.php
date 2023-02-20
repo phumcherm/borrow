@@ -37,11 +37,11 @@ session_start();
      require_once "../app/views/session_status.php";
      ?>
 
-     <form action="">
+     <form action="../app/models/add_repair.php">
           <!--  General -->
           <div class="form-group">
                <div><!-- text-shadow:1px 2px 11px #000; -->
-                    <h2 class="heading" style="color: #686060;font-family: SUT_Bold;   ">
+                    <h2 class="heading" style="color: #686060;font-family: SUT_Bold;" >
                          กรอกรายละเอียดแจ้งซ่อม
                     </h2>
                </div>
@@ -121,16 +121,21 @@ session_start();
           </div>
 
 
-          <!-- <div class="col-1-2 col-1-6">
+          <div class="col-1-2 col-1-6">
                <div class="controls">
-                    <input type="text" id="active" class="floatLabel  " name="active" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                    <label style="border-radius: 10px;" for="active">ใช้ในงาน</label>
+                    <input type="text" id="active1" class="floatLabel  " name="active1" required style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+                    <label style="border-radius: 10px;" for="active1">ใช้ในงาน</label>
                </div>
-          </div> -->
+          </div>
+          <!-- <select id="my-dropdown" style="display:none">
+               <option value="option1">Option 1</option>
+               <option value="option2">Option 2</option>
+               <option value="option3">Option 3</option>
+          </select> -->
           <div class="col-1-4 col-1-4-sm">
                <div class="controls">
-                    <select class="floatLabel  " id="active" onchange="selectItemOption();" class="floatLabel" name="active" style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                         <option for="active" class="label-date">&nbsp;&nbsp;เลือกจากประวัติการยืมครุภัณฑ์</option>
+                    <select class="floatLabel  " id="active" class="floatLabel" name="active" style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px;display:none; ">
+                         <option for="active" class="label-date">&nbsp;&nbsp;ใช้ในงาน</option>
                     </select>
                </div>
           </div>
@@ -185,6 +190,28 @@ session_start();
                     selectActive();
                }
           </script>
+          <script>
+               const input = document.getElementById("active1");
+               const dropdown = document.getElementById("active");
+
+               input.addEventListener("input", () => {
+                    selectActive()
+                    const inputVal = input.value.toLowerCase();
+                    for (let option of dropdown.options) {
+                         if (option.text.toLowerCase().includes(inputVal)) {
+                              option.style.display = "block";
+                         } else {
+                              option.style.display = "none";
+                         }
+                    }
+                    dropdown.style.display = "block";
+               });
+
+               dropdown.addEventListener("change", () => {
+                    input.value = dropdown.value;
+                    dropdown.style.display = "none";
+               });
+          </script>
 
      </form>
 
@@ -209,48 +236,7 @@ session_start();
                floatLabel(".floatLabel");
           })(jQuery);
      </script>
-     <script>
-          function selectActive() {
-
-               var selectedValues = document.getElementById("selectedItem").value;
-
-               var dropdown = document.getElementById("active");
-
-               console.log(selectedValues)
-
-               var ajax = new XMLHttpRequest();
-               // console.log(ajax)
-               var method = "GET";
-               var url = "data_repair.php";
-               var data = "?selectedActive=" + selectedValues;
-               var asynchronous = true;
-
-               ajax.open(method, url + data, asynchronous);
-               ajax.send();
-               ajax.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                         var data = JSON.parse(this.responseText);
-                         console.log(data);
-                         // console.log("data");
-
-                         for (var i = 0; i < data.length; i++) {
-                              var option = document.createElement("option");
-                              option.text = data[i].name;
-                              option.value = data[i].id;
-                              dropdown.add(option);
-                         }
-
-                         // var e = document.getElementById("active");
-                         // var value = e.options[e.selectedIndex].value;
-                         // var text = e.options[e.selectedIndex].text;
-
-                         // document.getElementById('active').value
-                    }
-
-                    // document.getElementById("data4").innerHTML = data;
-               }
-          }
-     </script>
+     <script src="script.js"></script>
 </body>
 
 </html>
