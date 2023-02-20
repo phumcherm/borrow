@@ -77,9 +77,9 @@
         new Chart(numChart, {
             type: 'polarArea',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['ฝ่ายเทคนิควิศวกร', 'ฝ่ายสื่อโสตทัศน์', 'ฝ่ายผลิตสื่อ', 'ฝ่ายวิจัย', 'ฝ่ายนวัตรกรรม', 'ฝ่ายสำนักพิมพ์'],
                 datasets: [{
-                    label: '# of Votes',
+                    label: 'จำนวน',
                     data: [12, 19, 3, 5, 2, 3],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -114,9 +114,9 @@
         new Chart(timeChart, {
             type: 'bar',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['ฝ่ายเทคนิควิศวกร', 'ฝ่ายสื่อโสตทัศน์', 'ฝ่ายผลิตสื่อ', 'ฝ่ายวิจัย', 'ฝ่ายนวัตรกรรม', 'ฝ่ายสำนักพิมพ์'],
                 datasets: [{
-                    label: '# of Votes',
+                    label: 'จำนวน',
                     data: [12, 19, 3, 5, 2, 3],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',

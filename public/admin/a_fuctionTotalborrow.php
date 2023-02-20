@@ -228,7 +228,12 @@
                     document.getElementById("txt_location").value = response.location;
                     document.getElementById("txt_date").value = response.br_date;
                     document.getElementById("txt_dateBorrow").value = response.br_time;
-
+                    document.getElementById("txt_fname").value = response.fname;
+                    document.getElementById("txt_lname").value = response.lname;
+                    document.getElementById("txt_position").value = response.post;
+                    document.getElementById("txt_hr").value = response.department;
+                    document.getElementById("txt_phon").value = response.phone_num;
+                    document.getElementById("txt_dateBack").value = response.bk_time;
                 }
             });
         }
