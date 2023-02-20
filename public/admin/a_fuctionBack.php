@@ -177,13 +177,12 @@
                         </thead>
                         <tbody>
                             <?php
-
                             $selectAll = new DB_con();
                             $sql = $selectAll->dataBack();
                             while ($row = mysqli_fetch_array($sql)) {
                             ?>
                                 <tr>
-                                    <td data-label="ชื่อ - นามสกุล."><?php echo $row['fname'] . " " . $row['lname']  ?></td>
+                                    <td data-label="ชื่อ - นามสกุล."><?php echo $row['fname'] . "   " . $row['lname']  ?></td>
                                     <!-- <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td> -->
                                     <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
                                     <td data-label="สถานที่."><?php echo $row['location'] ?></td>
