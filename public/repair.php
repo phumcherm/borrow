@@ -37,17 +37,16 @@ session_start();
      require_once "../app/views/session_status.php";
      ?>
 
-     <form action="">
+     <form action="../app/models/add_repair.php">
           <!--  General -->
           <div class="form-group">
                <div><!-- text-shadow:1px 2px 11px #000; -->
-                    <h2 class="heading" style="color: #686060;font-family: SUT_Bold;   ">
+                    <h2 class="heading" style="color: #686060;font-family: SUT_Bold;" >
                          กรอกรายละเอียดแจ้งซ่อม
                     </h2>
                </div>
                <!-- <b><h2 class="heading">กรอกรายละเอียดแจ้งซ่อม</h2></b> -->
 
-              
                <div class="col-1-4 col-1-4-sm">
                     <div class="controls">
                          <input type="date" id="arrive" class="floatLabel" name="arrive" value="<?php echo date('Y-m-d'); ?>" style="  max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
@@ -56,8 +55,10 @@ session_start();
                </div>
                <div class="col-1-4 col-1-4-sm">
                     <div class="controls">
-                    <label for="arrive" class="label-date"><option >&nbsp;&nbsp;เลือกจากประวัติการยืมครุภัณฑ์</option></label>
-                         <select class="form-select bg-lavender" id="selectedItem" onchange="selectItemOption();" class="floatLabel" name="selectedItem" style="max-width: 20;  height: 40px; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+
+                         <select class="form-select bg-lavender" id="selectedItem" onchange="selectItemOption();" class="floatLabel" name="selectedItem" style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
+
+                              <option for="arrive" class="label-date">&nbsp;&nbsp;เลือกจากประวัติการยืมครุภัณฑ์</option>
                               <?php $selectBorrowItem = new DB_con();
                               $sql = $selectBorrowItem->selectBorrowItem();
                               while ($row = mysqli_fetch_array($sql)) { ?>
@@ -133,9 +134,8 @@ session_start();
           </select> -->
           <div class="col-1-4 col-1-4-sm">
                <div class="controls">
-               <label for="arrive" class="label-date"><option >&nbsp;&nbsp;เลือกจากประวัติการยืมครุภัณฑ์</option></label>
-                    <select class="floatLabel  " id="active" onchange="selectItemOption();" class="floatLabel" name="active" style="max-width: 100%;   height: 40px;box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px; ">
-                      
+                    <select class="floatLabel  " id="active" class="floatLabel" name="active" style="max-width: 100%; box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 10px;display:none; ">
+                         <option for="active" class="label-date">&nbsp;&nbsp;ใช้ในงาน</option>
                     </select>
                </div>
           </div>

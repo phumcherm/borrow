@@ -117,6 +117,10 @@ $result_l = mysqli_query($con, $query);
     <!--    background-color: #827A7A; -->
     <div>
         <div id="grad" style=" width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+
+            <p style="float: right;">
+                <?php echo $_SESSION['fname_login'] . " " . $_SESSION['lname_login'] ?>
+            </p>
             <h2 style="color: #fff;font-family: SUT_Bold; text-shadow:2px 3px 10px #000; ">
                 <i class="fa fa-caret-right" style="font-size:48px  "></i>ยืมวัสดุ ครุภัณฑ์
             </h2>
@@ -142,15 +146,15 @@ $result_l = mysqli_query($con, $query);
                         </h2> -->
                     <!-- <h2 id="result" ></h2> -->
                     <!-- <br><br> -->
-                        <!--  //<h2 id="data4" name="data4"></h2>
+                    <!--  //<h2 id="data4" name="data4"></h2>
                         //<h2 id="result" ></h2>
                        // <br><br> -->
                     <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
                         <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
                     </div>
 
-                        <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-                            <div class="section_area_grid">
+                    <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                        <div class="section_area_grid">
 
                             <div class="section_grid_bor">
                                 <div class="section_grid_item">

@@ -150,10 +150,10 @@ class DB_con
         return $result;
     }
 
-    function selectBorrow()
+    function selectBorrow($user_id)
     {
         $result = mysqli_query($this->dbcon, "SELECT *,borrow.status br_stat,DATE_FORMAT(br_time, '%M / %d / %Y') borrow_date,DATE_FORMAT(br_date, '%M / %d / %Y') back_date
-                                                 FROM borrow,itemdata where borrow.id = itemdata.id  order by br_id desc");
+                                                 FROM borrow,itemdata where borrow.id = itemdata.id and user_id = $user_id order by br_id desc");
         return $result;
     }
 
@@ -179,6 +179,13 @@ class DB_con
     function selectActivity($item_id)
     {
         $result = mysqli_query($this->dbcon, "SELECT activity FROM ceitdb.borrow where id = $item_id group by activity;");
+        return $result;
+    }
+
+    function insertRepair($user_id, $item_id, $rp_activity, $problem)
+    {
+        $result = mysqli_query($this->dbcon, "INSERT INTO `ceitdb`.`repair`(`user_id`,`id`,`rp_activity`,`problem`,rp_status)
+                                                VALUES($user_id,$item_id,'$rp_activity','$problem',0);");
         return $result;
     }
 }

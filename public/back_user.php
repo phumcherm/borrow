@@ -121,6 +121,10 @@ session_start();
     ?>
     <div>
         <div id="grad" style="background-color: #827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+
+            <p style="float: right;">
+                <?php echo $_SESSION['fname_login'] . " " . $_SESSION['lname_login'] ?>
+            </p>
             <h2 style="color: #fff;font-family: SUT_Bold; text-shadow:2px 3px 10px #000; ">
                 <i class="fa fa-caret-right" style="font-size:48px"></i>คืนวัสดุ ครุภัณฑ์
             </h2>
@@ -205,7 +209,7 @@ session_start();
                             </script>
                             <br><br>
                             <center>
-                                <input class="w3-input" type="text" required placeholder="ปัญหาในการใช้งาน" id="problem" name="problem"  style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                                <input class="w3-input" type="text" required placeholder="ปัญหาในการใช้งาน" id="problem" name="problem" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
                             </center>
                             <br>
                             <a type="button" id="cancle" onclick="delAll_test()">ยกเลิก</a>
