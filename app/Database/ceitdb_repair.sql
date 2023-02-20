@@ -16,33 +16,36 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user`
+-- Table structure for table `repair`
 --
 
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `repair`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user` (
-  `user_id` int NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(45) DEFAULT NULL,
-  `user_pass` varchar(45) DEFAULT NULL,
-  `fname` varchar(45) DEFAULT NULL,
-  `lname` varchar(45) DEFAULT NULL,
-  `post` varchar(45) DEFAULT NULL,
-  `department` varchar(45) DEFAULT NULL,
-  `phone_num` varchar(15) DEFAULT NULL,
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `repair` (
+  `rp_id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int DEFAULT NULL,
+  `id` int DEFAULT NULL,
+  `rp_activity` varchar(45) DEFAULT NULL,
+  `problem` text,
+  `rp_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `rp_status` int NOT NULL,
+  PRIMARY KEY (`rp_id`),
+  KEY `rp_uid_user_fk_idx` (`user_id`),
+  KEY `rp_item_id_fk_idx` (`id`),
+  CONSTRAINT `rp_item_id_fk` FOREIGN KEY (`id`) REFERENCES `itemdata` (`id`),
+  CONSTRAINT `rp_uid_user_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `repair`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'ceit012345678','ceit1234567','มนตรี','อุ่นใจ','งานพัฒนาระบบปฏิบัติการ','ฝ่ายเทคนิควิศวกรรม','0812345678'),(2,'admin12345678','admin12345678','วิษณุ','กุหลาบ','งานผลิตสื่ออิเล็กทรอนิกส์แบบผสมผสาน','ฝ่ายเทคนิควิศวกรรม','0912345678');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+LOCK TABLES `repair` WRITE;
+/*!40000 ALTER TABLE `repair` DISABLE KEYS */;
+INSERT INTO `repair` VALUES (1,1,545,'เดอะมอล์','ตู้เหาะได้','2023-02-16 09:29:02',0);
+/*!40000 ALTER TABLE `repair` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-20 11:03:04
+-- Dump completed on 2023-02-20 11:03:05
