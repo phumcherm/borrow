@@ -319,9 +319,9 @@ header('location:login.php');
                             <li class="nav-item">
                                 <a class="nav-link" href="treasury_user.php"><i class="far fa-calendar-alt"></i>คลังครุภัณฑ์</a>
                             </li>
-                            <li class="nav-item">
+                         <!--    <li class="nav-item">
                                 <a class="nav-link" href="repair.php"><i class="fas fa-tools"></i>แจ้งซ่อม</a>
-                            </li>
+                            </li> -->
                             <li class="nav-item">
                                 <a class="nav-link" name="logout" href="../app/controller/log_out.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
                             </li>
