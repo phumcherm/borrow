@@ -9,8 +9,6 @@ if (isset($_POST['submit'])) {
     $rp_activity = $_POST['location'];
     $problem = $_POST['date'];
 
-
-
             $insertRepair = new DB_con();
             $sql = $insertRepair->insertRepair($user_id, $item_id, $rp_activity, $problem);
 

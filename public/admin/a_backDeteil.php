@@ -16,10 +16,10 @@ if (!$conn) {
 <?php
 if (isset($_POST['br_id'])) {
     $br_id = $_POST['br_id'];
-    $query = "SELECT  
-    itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location ,borrow.br_date , borrow.br_time
-    FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  
-    AND borrow.status = 1  AND borrow.br_id = '$br_id'";
+    $query = "SELECT  *, DATE_FORMAT(bk_time, '%M / %d / %Y') bk_date
+        FROM ceitdb.`borrow` left join ceitdb.itemdata on borrow.id = itemdata.id left join ceitdb.user on borrow.user_id = user.user_id 
+        left join ceitdb.back on borrow.br_id = back.br_id
+        where borrow.status = 1  AND borrow.br_id = '$br_id'";
     $result = mysqli_query($conn, $query);
     $data = mysqli_fetch_array($result);
     $jasonArray = array(
@@ -31,6 +31,12 @@ if (isset($_POST['br_id'])) {
         'location' => $data['location'],
         'br_date' => $data['br_date'],
         'br_time' => $data['br_time'],
+        'fname' => $data['fname'],
+        'lname' => $data['lname'],
+        'phone_num' => $data['phone_num'],
+        'post' => $data['post'],
+        'department' => $data['department'],
+        'bk_date' => $data['bk_date']
 
     );
     exit(json_encode($jasonArray));

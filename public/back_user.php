@@ -210,7 +210,7 @@ session_start();
                             </script>
                             <br><br>
                             <center>
-                                <input class="w3-input" type="text" required placeholder="ปัญหาในการใช้งาน" id="problem" name="problem" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                                <input class="w3-input" type="text" placeholder="ปัญหาในการใช้งาน" id="problem" name="problem" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
                             </center>
                             <br>
                             <a type="button" id="cancle" onclick="delAll_test()">ยกเลิก</a>
