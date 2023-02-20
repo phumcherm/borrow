@@ -139,7 +139,7 @@
                         <div class="row">
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">เบอร์โทร</h7>
-                                <input type="text" disabled name="txt_phon" id="txt_phon" class="form-control">
+                                <input type="text" disabled name="txt_phone" id="txt_phone" class="form-control">
                             </div>
 
                         </div>
