@@ -27,7 +27,8 @@ $result_l = mysqli_query($con, $query);
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/table.css">
+    <!-- <link rel="stylesheet" href="css/table.css"> -->
+    <link rel="stylesheet" href="css/grid.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -93,6 +94,14 @@ $result_l = mysqli_query($con, $query);
         }
     }
 
+    @media (max-width: 768px) {
+        .table {
+            display: none;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+        }
+    }
+
     #grad {
         background: #827A7A;
         /* For browsers that do not support gradients */
@@ -141,6 +150,53 @@ $result_l = mysqli_query($con, $query);
                 <br>
                 <br>
 
+                <!--  </div> -->
+                <div style="max-width: 1600px;margin-left: auto;">
+                    <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
+                    <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+                        <thead class="table-dark">
+                            <th>
+                                <center>id </center>
+                            </th>
+                            <!-- <th>
+                                <center>updateTime</center>
+                            </th> -->
+                            <th>
+                                <center>itemCode</center>
+                            </th>
+                            <th>
+                                <center>detail</center>
+                            </th>
+                            <!-- <th>
+                                <center>checkInDate</center>
+                            </th> -->
+                            <th>
+                                <center>brand</center>
+                            </th>
+                            <!-- <th>
+                                <center>serialNumber</center>
+                            </th> -->
+                            <!-- <th>
+                                <center>price</center>
+                            </th> -->
+                            <!-- <th>
+                                <center>refDoc</center>
+                            </th> -->
+                            <th>
+                                <center>room</center>
+                            </th>
+                            <th>
+                                <center></center>
+                            </th>
+                        </thead>
+                        <tbody id="data">
+                            <p>
+                                <td colspan="10" class="text-center">แสกน QR Code ยืมครุภัณฑ์</td>
+                            </p>
+                        </tbody>
+                    </table>
+                </div>
+
                 <center>
                     <input class="w3-input" type="text" required placeholder="code" id="data4" name="data4" style="max-width: 500px;visibility: hidden; ">
                     <!-- <h2 id="data4" name="data4">
@@ -160,74 +216,37 @@ $result_l = mysqli_query($con, $query);
                             <div class="section_grid_bor">
                                 <div class="section_grid_item">
                                     <!--        //<h5 style="padding-left: 0;">ระบุสถานที่<h5> -->
-                                    <br>
-                                    <input class="w3-input w3-animate-input demo" id="location" name="location" type="text" required placeholder="ระบุสถานที่" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; ">
+                                    <!-- <br> -->
+                                    <!-- <h6 style="visibility: hidden;">c</h6> -->
+                                    <!-- <br> -->
+                                    <div style="font-size: 25px;visibility: hidden;">ระบุสถานที่*</div>
+                                    <input class="w3-input w3-animate-input demo" id="location" name="location" type="text" required placeholder="ระบุสถานที่" style="max-width: 400px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; ">
+
                                 </div>
                             </div>
-                        </div>
-                        <!--    // <p id="demo">CODE</p> -->
-                        <br>
-                        <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
                             <div class="section_grid_bor">
                                 <div class="section_grid_item">
                                     <div style="font-size: 25px;">วันที่คืน*</div>
-                                    <input class="w3-input w3-animate-input" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;" type="date" id="date" name="date" required>
+                                    <input class="w3-input " style="max-width: 400px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; " type="date" id="date" name="date" required>
+                                    <!-- <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;"> -->
+
                                 </div>
                             </div>
+
+                        </div>
+
+                    </div>
+                    <!--    // <p id="demo">CODE</p> -->
+                    <br>
+                    <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                        <div class="section_area_grid">
+
                         </div>
                     </div>
                 </center>
                 <br><br>
 
                 <!--  <div style="max-width: auto;  margin: 15px auto 15px auto;background-color: rgba(255, 255, 255, 0.4);border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;"> -->
-
-
-                <!--  </div> -->
-                <div style="max-width: 1600px;margin-left: auto;">
-                    <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
-                    <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-                        <thead class="table-dark">
-                            <th>
-                                <center>id </center>
-                            </th>
-                            <th>
-                                <center>updateTime</center>
-                            </th>
-                            <th>
-                                <center>itemCode</center>
-                            </th>
-                            <th>
-                                <center>detail</center>
-                            </th>
-                            <th>
-                                <center>checkInDate</center>
-                            </th>
-                            <th>
-                                <center>brand</center>
-                            </th>
-                            <th>
-                                <center>serialNumber</center>
-                            </th>
-                            <th>
-                                <center>price</center>
-                            </th>
-                            <th>
-                                <center>refDoc</center>
-                            </th>
-                            <th>
-                                <center>room</center>
-                            </th>
-                            <th>
-                                <center></center>
-                            </th>
-                        </thead>
-                        <tbody id="data">
-                            <p>
-                                <td colspan="10" class="text-center">แสกน QR Code ยืมครุภัณฑ์</td>
-                            </p>
-                        </tbody>
-                    </table>
-                </div>
 
                 <script>
                     function delAll_test() {
@@ -239,8 +258,11 @@ $result_l = mysqli_query($con, $query);
                     }
                 </script>
                 <br>
-                <a type="button" id="cancle" onclick="delAll_test()">ยกเลิก</a>
-                <button type="submit" id="submit" name="submit">ยืนยันทั้งหมด</button>
+                <div style="max-width: 500px;margin: auto;">
+
+                    <a type="button" id="cancle" onclick="delAll_test()">ยกเลิก</a>
+                    <button type="submit" id="submit" name="submit">ยืนยันทั้งหมด</button>
+                </div>
 
                 </table>
 
@@ -253,8 +275,6 @@ $result_l = mysqli_query($con, $query);
     </form>
     <!-- </div> -->
     <br>
-    </div>
-    </div>
 </body>
 
 </html>
