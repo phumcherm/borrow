@@ -207,10 +207,6 @@ $result_l = mysqli_query($con, $query);
             <!--  <div style="max-width: auto; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;"> -->
             <!--   <h3 style="color: #fff;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการ</h3> -->
 
-            <button onclick="includePage()">Include หน้าเพจ</button>
-
-
-            <button id="loadData">กดปุ่มเพื่อเรียกใช้</button>
             <!-- Modal -->
             <div id="modal" class="modal">
                 <div class="modal-content" style="padding: 10px; background-color: #ff5722;">
@@ -254,10 +250,14 @@ $result_l = mysqli_query($con, $query);
 
 
                 <!-- Button to open modal -->
-                <a type="button" id="open-modal">Open Modal</a>
+                <!-- <a type="button" id="open-modal">Open Modal</a> -->
 
 
                 <div id="content"></div>
+
+                <center>
+                    <a type="submit" id="submit" name="submit" style="float: none;" onclick="scaner()">SCAN QR CODE</a>
+                </center>
 
                 <? require "../app/controller/scaner.php" ?>
 
@@ -356,9 +356,9 @@ $result_l = mysqli_query($con, $query);
                     var span = document.getElementsByClassName("close")[0];
 
                     // When the user clicks on the button, open the modal
-                    btn.onclick = function() {
-                        modal.style.display = "block";
-                    }
+                    // btn.onclick = function() {
+                    //     modal.style.display = "block";
+                    // }
 
                     // When the user clicks on <span> (x), close the modal
                     span.onclick = function() {
@@ -370,7 +370,7 @@ $result_l = mysqli_query($con, $query);
                     window.onclick = function(event) {
                         if (event.target == modal) {
                             modal.style.display = "none";
-                        ModalNull()
+                            ModalNull()
                         }
                     }
                 </script>

@@ -36,6 +36,7 @@
     }
 </style>
 <main>
+    <br>
     <div id="reader"></div>
     <!-- <div id="result"></div> -->
     <br>
@@ -55,7 +56,11 @@
         fps: 1,
 
     });
-    scanner.render(success, error);
+
+    function scaner() {
+
+        scanner.render(success, error);
+    }
 
     const itemCode = []
     const arr_id = []
@@ -217,6 +222,9 @@
             }
 
             document.getElementById("data").innerHTML = html;
+            
+        scanner.clear();
+        document.getElementById('reader').innerHTML = "";
         }
     }
 
