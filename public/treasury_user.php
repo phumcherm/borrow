@@ -129,6 +129,66 @@ require_once "../app/models/db.php";
             transform: scale(1);
         }
     </style>
+    <style>
+        /* Style the button that opens the modal */
+        #open-modal {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: palevioletred;
+            margin: 15% auto;
+            /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 
 </head>
 
@@ -186,7 +246,23 @@ require_once "../app/models/db.php";
 
         </div>
 
+        <!-- Button to open modal -->
+        <button id="open-modal">Open Modal</button>
 
+
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;X</span>
+                <h2>Modal Title</h2>
+                <p>Modal Content</p>
+
+
+                <div id="result"></div>
+            </div>
+        </div>
+
+        
 
         <div class="table-responsive" style="padding: 25px;">
             <div>
@@ -202,33 +278,35 @@ require_once "../app/models/db.php";
                             <th>
                                 <center>จำนวน</center>
                             </th>
-                            <th>
+                            <!-- <!-- <th>
                                 <center>สถานะการยืม</center>
-                            </th>
+                            </th> -->
                             <th>
-                                <center>สถานะการใช้งาน</center>
+                                <center>เลือก</center>
                             </th>
                         </thead>
 
                         <tbody>
+
                             <?php
-                            $selectCountTreasury = new DB_con();
-                            $sql = $selectCountTreasury->selectCountTreasury();
+                            $selectCountMatchTreasury = new DB_con();
+                            $sql = $selectCountMatchTreasury->selectCountMatchTreasury();
                             while ($row = mysqli_fetch_array($sql)) {
                             ?>
-                                <td data-label="ชื่อครุภัณฑ์.">
-                                    <center><?php echo $row["detail"] ?></center>
-                                </td>
-                                <td data-label="ยี่ห้อ.">
-                                    <center> <?php echo $row["brand"] ?></center>
-                                </td>
-                                <td data-label="จำนวน.">
-                                    <center><?php echo $row["total"] ?></center>
-                                </td>
-                                <td data-label="สถานะการยืม.">
+                                <tr>
+                                    <td data-label="ชื่อครุภัณฑ์.">
+                                        <center><?php echo $row["detail"] ?></center>
+                                    </td>
+                                    <td data-label="ยี่ห้อ.">
+                                        <center> <?php echo $row["brand"] ?></center>
+                                    </td>
+                                    <td data-label="จำนวน.">
+                                        <center><?php echo $row["matching_rows"] . " / " . $row["total_rows"] ?></center>
+                                    </td>
+                                    <!-- <td data-label="สถานะการยืม.">
                                     <center>
                                         <?php if ($row['br_status'] == '') { ?>
-                                            <!-- <center> <?php echo $row["br_status"] ?></center> -->
+                                             <?php echo $row["br_status"] ?>
                                             <p style="background-color: green;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">ว่าง</p>
                                         <?php } elseif ($row['br_status'] == 0) { ?>
                                             <p style="background-color: red;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">ไม่ว่าง</p>
@@ -246,13 +324,94 @@ require_once "../app/models/db.php";
                                                 echo "<p style='background-color: red;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;'>" . $row['item_status'] . "</p>";
                                             }  ?>
                                     </center>
-                                </td>
+                                </td> -->
+                                    <td><input type="checkbox" name="selected[]" value="<?php echo $row['detail'] ?>"></td>
+                                </tr>
                         </tbody>
                     <?php } ?>
+                    <script>
+                        function highlightRow(row) {
+                            // Toggle highlight class on row
+                            row.classList.toggle('highlight');
+
+                            // Toggle checkbox state
+                            var checkbox = row.querySelector('input[type="checkbox"]');
+                            checkbox.checked = !checkbox.checked;
+                        }
+                    </script>
                 </table>
+
+
+
+                <script>
+                    // get the table and checkboxes
+                    var table = document.getElementById("datatable");
+                    var checkboxes = table.querySelectorAll('input[type=checkbox]');
+
+                    // add event listener to each checkbox
+                    checkboxes.forEach(function(checkbox) {
+                        checkbox.addEventListener('click', function() {
+                            // get the checked rows data
+                            var selectedRows = [];
+                            checkboxes.forEach(function(checkbox) {
+                                if (checkbox.checked) {
+                                    var row = checkbox.parentNode.parentNode;
+                                    var id = row.cells[0].innerText;
+                                    var name = row.cells[1].innerText;
+                                    // var email = row.cells[2].innerText;
+                                    selectedRows.push({
+                                        id: id,
+                                        name: name
+                                        // email: email
+                                    });
+                                }
+                            });
+
+                            // show the selected rows data as an array
+                            if (selectedRows.length > 0) {
+                                var resultHtml = "<ul>";
+                                selectedRows.forEach(function(row) {
+                                    resultHtml += "<li>" + row.id + " - " + row.name + "</li>";
+                                });
+                                resultHtml += "</ul>";
+                                document.getElementById("result").innerHTML = "Selected Rows: " + resultHtml;
+                            } else {
+                                document.getElementById("result").innerHTML = "";
+                            }
+                        });
+                    });
+                </script>
+                <script>
+                    // Get the modal element
+                    var modal = document.getElementById("modal");
+
+                    // Get the button that opens the modal
+                    var btn = document.getElementById("open-modal");
+
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+
+                    // When the user clicks on the button, open the modal
+                    btn.onclick = function() {
+                        modal.style.display = "block";
+                    }
+
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function() {
+                        modal.style.display = "none";
+                    }
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
             </div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 

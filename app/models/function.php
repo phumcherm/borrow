@@ -28,6 +28,11 @@ class DB_con
         $result = mysqli_query($this->dbcon, "SELECT * FROM itemdata WHERE itemCode IN ($itemCode) ");
         return $result;
     }
+    function selectAllWhereCode($itemCode)
+    {
+        $result = mysqli_query($this->dbcon, "SELECT * FROM itemdata WHERE itemCode = '$itemCode' ");
+        return $result;
+    }
 
     function selectPage($startRow, $rowPerPage)
     {
@@ -168,6 +173,22 @@ class DB_con
     {
         $result = mysqli_query($this->dbcon, "SELECT detail,brand, borrow.status br_status,itemdata.status item_status, count(*) total from ceitdb.itemdata left join ceitdb.borrow 
                                                 on itemdata.id = borrow.id group by detail,brand,borrow.status,itemdata.status;");
+        return $result;
+    }
+
+    function selectCountAllTreasury()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT detail,brand, count(*) total from ceitdb.itemdata left join ceitdb.borrow 
+                                                        on itemdata.id = borrow.id  group by detail,brand;");
+        return $result;
+    }
+
+    function selectCountMatchTreasury()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT detail,brand,COUNT(*) as total_rows, 
+        COUNT(CASE WHEN itemdata.status = 'ใช้งานได้' and borrow.status is null or borrow.status = 1 THEN 1 END) as matching_rows
+        from ceitdb.itemdata left join ceitdb.borrow on itemdata.id = borrow.id group by detail,brand;
+ ");
         return $result;
     }
 

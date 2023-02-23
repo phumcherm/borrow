@@ -156,10 +156,14 @@
             .section_grid_bor {
                 margin: auto 0;
                 padding: 15px 15px;
-                z-index: 3;
+                /* z-index: 3; */
                 border-radius: 7px;
                 /* ///////////////////////////////////////////////////        เงา        ////////////////////////// */
                 /* box-shadow: 5px 5px 20px #000000; */
             }
-          
+          @media (max-width: 400px) {
+            .section_area_grid {
+                grid-template-columns: 1fr;
+            }
+          }
           

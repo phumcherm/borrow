@@ -9,7 +9,7 @@
         align-items: center;
     }
 
-    video{
+    video {
         border-radius: 7px;
     }
 
@@ -62,15 +62,6 @@
 
     function success(code) {
 
-        const index = itemCode.findIndex(object => object === code);
-
-        if (index === -1) {
-            itemCode.push(code)
-        }
-
-        // var str_code = "'" + itemCode.join("','") + "'";
-        // console.log(str_code)
-        console.log(itemCode)
 
         // const urlParams = new URLSearchParams(queryString);
         // console.log("url" + urlParams)
@@ -84,10 +75,12 @@
         // document.getElementById("data").innerHTML = html;
 
 
-        tableFunc()
-        show_item()
-        // scanner.clear();
-        // document.getElementById('reader').remove();
+        // tableFunc()
+        modalFunc(code)
+        // show_item()
+
+        scanner.clear();
+        document.getElementById('reader').innerHTML = "";
         beepsound.play();
     }
 
@@ -98,7 +91,54 @@
         console.error("ไม่พบ QR CODE");
     }
 
+    function modalFunc(code) {
+        var str_code = code;
+        console.log(str_code)
+
+        var ajax = new XMLHttpRequest();
+        // console.log(ajax)
+        var method = "GET";
+        var url = "data4.php";
+        var data = "?modalCode=" + str_code;
+        var asynchronous = true;
+
+        ajax.open(method, url + data, asynchronous);
+        ajax.send();
+        ajax.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+
+                modal.style.display = "block";
+                var data = JSON.parse(this.responseText);
+                // console.log(data);
+
+                for (var a = 0; a < data.length; a++) {
+                    var id = data[a].id;
+                    var tb_itemCode = data[a].itemCode;
+                    var detail = data[a].detail;
+                    var brand = data[a].brand;
+                    var room = data[a].room;
+
+
+                    // console.log(tb_itemCode)
+                    document.getElementById("md_detail").value = detail;
+
+                    document.getElementById("md_id").value = id;
+
+                    document.getElementById("md_itemCode").value = tb_itemCode;
+
+                    document.getElementById("md_brand").value = brand;
+
+                    document.getElementById("md_room").value = room;
+
+                }
+
+            }
+        }
+    }
+
     function tableFunc() {
+
+        console.log(itemCode)
         var str_code = "'" + itemCode.join("','") + "'";
         console.log(str_code)
 
@@ -157,7 +197,7 @@
                     html += "</tr>";
                     // console.log(tb_itemCode)
 
-                    
+
 
                     // document.getElementById("del").onclick = function() {
                     //     del_itemcode(itemCode)
@@ -202,6 +242,21 @@
         tableFunc()
     }
 
+    function ModalNull() {
+
+        document.getElementById("md_detail").value = "";
+
+        document.getElementById("md_id").value = "";
+
+        document.getElementById("md_itemCode").value = "";
+
+        document.getElementById("md_brand").value = "";
+
+        document.getElementById("md_room").value = "";
+        scanner.render(success, error);
+        modal.style.display = "none";
+        tableFunc()
+    }
 
     function del_Func(tb_id) {
         // var str_code = "'" + itemCode.join("','") + "'";
@@ -239,6 +294,8 @@
         }
         return tb_id
     }
+
+
 
     // show_item()
 </script>

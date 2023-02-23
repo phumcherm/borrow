@@ -85,7 +85,14 @@ $result_l = mysqli_query($con, $query);
 
     #submit {
         float: right;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;
+        border-style: solid;
+        border-color: #ff5722;
+        border-width: 5px;
+        padding: 15px 25px;
+        background-color: #ff5722;
+        border-radius: 7px;
+        margin-bottom: 15px;
+        box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;
     }
 
     @media all and (max-width: 800px) {
@@ -117,6 +124,67 @@ $result_l = mysqli_query($con, $query);
         /* Standard syntax */
     }
 </style>
+<style>
+    /* Style the button that opens the modal */
+    #open-modal {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #ff5722;
+        margin: 15% auto;
+        /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
 
 <body>
     <?php
@@ -138,15 +206,63 @@ $result_l = mysqli_query($con, $query);
             <!--   1300px -->
             <!--  <div style="max-width: auto; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;"> -->
             <!--   <h3 style="color: #fff;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการ</h3> -->
+
+            <button onclick="includePage()">Include หน้าเพจ</button>
+
+
+            <button id="loadData">กดปุ่มเพื่อเรียกใช้</button>
+            <!-- Modal -->
+            <div id="modal" class="modal">
+                <div class="modal-content" style="padding: 10px; background-color: #ff5722;">
+                    <div>
+                        <div style="max-width: 1600px;margin-left: auto; background-color: #e8e3e3;padding: 30px;border-radius: 7px;"><span class="close" style="margin-left: auto;color: black;background-color: white;padding: 1px 7px;border-radius: 7px;"><i class="fa-sharp fa-solid fa-xmark" + style='margin-right: auto;'></i></span>
+
+                            <!-- <form action=""> -->
+
+                            <center>
+                                <h2 style="color: black;">รายละเอียดวัสดุ / ครุภัณฑ์</h2>
+                                <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-8">
+
+                                    <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_detail" type="text" name="md_detail" style="margin-bottom: 15px;max-width: 800px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                                </div>
+                                <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-8">
+                                    <div class="section_area_grid">
+
+                                        <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_id" type="text" name="md_id" style="margin-bottom: 15px;max-width: 380px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                                        <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_itemCode" type="text" name="md_itemCode" style="margin-bottom: 15px;max-width: 380px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+
+                                        <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_brand" type="text" name="md_brand" style="margin-bottom: 15px;max-width: 380px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                                        <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_room" type="text" name="md_room" style="margin-bottom: 15px;max-width: 380px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                                    </div>
+                                </div>
+
+                            </center>
+
+                            <div style="max-width: 500px;margin: auto;">
+
+                                <a type="button" id="cancle" onclick="ModalNull()">ยกเลิก</a>
+                                <a type="submit" id="submit" name="submit" onclick="ModalSubmit(document.getElementById('md_itemCode').value)">ยืนยันครุภัณฑ์</a>
+                            </div>
+                            <!-- </form> -->
+                        </div>
+
+                        <div id="result"></div>
+                    </div>
+                </div>
+            </div>
             <form action="../app/models/add_borrow.php" method="post">
+
+
+                <!-- Button to open modal -->
+                <a type="button" id="open-modal">Open Modal</a>
+
+
+                <div id="content"></div>
+
                 <? require "../app/controller/scaner.php" ?>
+
+
                 <!-- <center><a href="#"> Scan QR Code</a></center> -->
-                <?
-                // echo $itemCode;
-                // if (isset($_GET['code'])) {
-                //     echo $_GET['code'];
-                // } 
-                ?>
                 <br>
                 <br>
 
@@ -167,21 +283,9 @@ $result_l = mysqli_query($con, $query);
                             <th>
                                 <center>detail</center>
                             </th>
-                            <!-- <th>
-                                <center>checkInDate</center>
-                            </th> -->
                             <th>
                                 <center>brand</center>
                             </th>
-                            <!-- <th>
-                                <center>serialNumber</center>
-                            </th> -->
-                            <!-- <th>
-                                <center>price</center>
-                            </th> -->
-                            <!-- <th>
-                                <center>refDoc</center>
-                            </th> -->
                             <th>
                                 <center>room</center>
                             </th>
@@ -207,47 +311,69 @@ $result_l = mysqli_query($con, $query);
                         //<h2 id="result" ></h2>
                        // <br><br> -->
                     <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-                        <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+
+                        <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" type="text" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
                     </div>
 
                     <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
                         <div class="section_area_grid">
 
-                            <div class="section_grid_bor">
-                                <div class="section_grid_item">
-                                    <!--        //<h5 style="padding-left: 0;">ระบุสถานที่<h5> -->
-                                    <!-- <br> -->
-                                    <!-- <h6 style="visibility: hidden;">c</h6> -->
-                                    <!-- <br> -->
-                                    <div style="font-size: 25px;visibility: hidden;">ระบุสถานที่*</div>
-                                    <input class="w3-input w3-animate-input demo" id="location" name="location" type="text" required placeholder="ระบุสถานที่" style="max-width: 400px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; ">
+                            <!-- <div class="section_grid_bor"> -->
+                            <div class="section_grid_item">
+                                <!--        //<h5 style="padding-left: 0;">ระบุสถานที่<h5> -->
+                                <!-- <br> -->
+                                <!-- <h6 style="visibility: hidden;">c</h6> -->
+                                <!-- <br> -->
+                                <div style="font-size: 25px;visibility: hidden;">ระบุสถานที่*</div>
+                                <input class="w3-input w3-animate-input demo" id="location" name="location" type="text" required placeholder="ระบุสถานที่" style="max-width: 400px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; ">
 
-                                </div>
                             </div>
-                            <div class="section_grid_bor">
-                                <div class="section_grid_item">
-                                    <div style="font-size: 25px;">วันที่คืน*</div>
-                                    <input class="w3-input " style="max-width: 400px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; " type="date" id="date" name="date" required>
-                                    <!-- <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;"> -->
+                            <!-- </div> -->
+                            <!-- <div class="section_grid_bor"> -->
+                            <div class="section_grid_item">
+                                <div style="font-size: 25px;">วันที่คืน*</div>
+                                <input class="w3-input " style="max-width: 400px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; " type="date" id="date" name="date" required>
+                                <!-- <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;"> -->
 
-                                </div>
                             </div>
+                            <!-- </div> -->
 
                         </div>
 
-                    </div>
-                    <!--    // <p id="demo">CODE</p> -->
-                    <br>
-                    <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-                        <div class="section_area_grid">
-
-                        </div>
                     </div>
                 </center>
                 <br><br>
 
                 <!--  <div style="max-width: auto;  margin: 15px auto 15px auto;background-color: rgba(255, 255, 255, 0.4);border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;"> -->
+                <script>
+                    // Get the modal element
+                    var modal = document.getElementById("modal");
 
+                    // Get the button that opens the modal
+                    var btn = document.getElementById("open-modal");
+
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+
+                    // When the user clicks on the button, open the modal
+                    btn.onclick = function() {
+                        modal.style.display = "block";
+                    }
+
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function() {
+                        ModalNull()
+                        modal.style.display = "none";
+                    }
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        ModalNull()
+                        }
+                    }
+                </script>
                 <script>
                     function delAll_test() {
                         // document.getElementById("data4").innerHTML = code234
@@ -255,6 +381,19 @@ $result_l = mysqli_query($con, $query);
                         itemCode.length = 0
                         console.log("del = " + itemCode)
                         tableFunc()
+                    }
+
+                    function ModalSubmit(code) {
+
+                        const index = itemCode.findIndex(object => object === code);
+
+                        if (index === -1) {
+                            itemCode.push(code)
+                        }
+                        scanner.render(success, error);
+                        modal.style.display = "none";
+                        tableFunc()
+
                     }
                 </script>
                 <br>
@@ -270,6 +409,23 @@ $result_l = mysqli_query($con, $query);
             <!-- </div> -->
             <br>
 
+
+            <script>
+                function includePage() {
+                    // เช็คว่ามีข้อมูลที่ต้องการ include หรือไม่
+                    if (true) {
+                        // include หน้าเพจแสดงข้อมูล
+                        fetch('../app/controller/scaner.php')
+                            .then(response => response.text())
+                            .then(data => {
+                                document.getElementById('content').innerHTML = data;
+                            });
+                    } else {
+                        // แสดงข้อความเตือน
+                        alert('ไม่สามารถ include หน้าเพจได้');
+                    }
+                }
+            </script>
         </div>
     </div>
     </form>
