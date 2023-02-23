@@ -13,7 +13,7 @@ require_once "../app/models/db.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/table.css">
+<!--     <link rel="stylesheet" href="css/table.css"> -->
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
@@ -23,13 +23,14 @@ require_once "../app/models/db.php";
 
         #myInput {
             background-image: url('/css/icons.png');
-            background-position: 5px 12px;
+            background-position: 2px 5px;
             background-repeat: no-repeat;
-            width: 100%;
+            height: 20%;
+            width: 50%;
             font-size: 20px;
-            padding: 12px 5px 12px 10px;
-            border: 1px solid #ddd;
-            margin-bottom: 12px;
+            padding: 5px 5px 5px 5px;
+           
+            margin-bottom: 30px;
         }
 
         #myUL {
@@ -46,6 +47,7 @@ require_once "../app/models/db.php";
             padding: 12px;
             text-decoration: none;
             font-size: 18px;
+        
             color: black;
             display: block
         }
@@ -73,61 +75,51 @@ require_once "../app/models/db.php";
             background: linear-gradient(to bottom right, #4F4848, #686060, #827A7A, #CFC7C7);
             /* Standard syntax */
         }
+   .graphBox {
+        position: relative;
+        width: 100%;
+        padding: 20px;
+        display: grid;
 
-        .pagination {
-            background: #DDDDDD;
-            padding: 5px;
-            display: inline-flex;
-            position: relative;
+        grid-gap: 20px;
+        min-height: 200px;
+    }
+
+    .graphBox .box {
+        position: relative;
+        background: #fff;
+        padding: 20px;
+        width: 100%;
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+        border-radius: 20px;
+    }
+
+    .BoxTable {
+        position: relative;
+        width: 100%;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-gap: 30px;
+        min-height: 200px;
+    }
+
+    .BoxTable .boxt {
+        position: relative;
+        background: #fff;
+        padding: 20px;
+        width: 100%;
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+        border-radius: 20px;
+    }
+
+    @media(max-width: 991px) {
+        .graphBox {
+            grid-template-columns: 1fr;
+            height: auto;
         }
-
-        .pagination li a.page-link {
-            background: #DDDDDD;
-            background: transparent;
-            font-size: 18px;
-            font-weight: 500;
-            line-height: 35px;
-            height: 35px;
-            width: 30px;
-            padding: 0;
-            margin: 0 5px;
-            border: none;
-            overflow: hidden;
-            position: relative;
-            z-index: 1;
-            transition: all 0.5s ease 0s;
-        }
-
-
-
-
-        .pagination li:first-child a.page-link,
-        .pagination li:last-child a.page-link {
-            font-size: 15px;
-            line-height: 37px;
-            width: auto;
-            padding: 0 8px;
-            border-radius: 0;
-        }
-
-        .pagination li a.page-link:before {
-            content: '';
-            background: #fff;
-            width: 100%;
-            height: 100%;
-            border: 2px solid #434242;
-            border-radius: 5px;
-            transform: scale(0);
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: -1;
-            transition: all 0.3s ease 0s;
-        }
-
-        .pagination li a.page-link:hover:before {
-            transform: scale(1);
-        }
+    }
+      
     </style>
 
 </head>
@@ -138,66 +130,29 @@ require_once "../app/models/db.php";
     ?>
     <div id="grad" style="background-color:#827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
         <div>
-            <p style="float: right;">
-                <?php echo $_SESSION['fname_login'] . " " . $_SESSION['lname_login'] ?>
-            </p>
+            
             <h2 style="color: #fff;font-family: SUT_Bold;  text-shadow:2px 3px 10px #000;">
-                <i class="fa fa-caret-right" style="font-size:48px"></i>รายการครุภัณฑ์
+                <i class="fa fa-caret-right" style="font-size:48px"></i>&nbsp;&nbsp;&nbsp;รายการครุภัณฑ์
 
             </h2>
         </div>
         <br>
         <center>
-            <input class="w3-input " type="text" id="myInput" onkeyup="myFunction()" placeholder="Search .." style="max-width: 100%; max-height: 100%;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;" title="Type in a name">
+            <input class="w3-input " type="text" id="myInput" onkeyup="myFunction()" placeholder="Search .." style="margin: 15px;border-radius: 50px;padding: 13px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;" title="Type in a name">
         </center>
         <br>
-        <div class='pagination-container'>
-            <p Align=right>
-            <nav aria-label="Page navigation example">
-                <ul class="pagination" style="box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 10px;">
-                    <li data-page="prev" class="page-item">
-                        <a class="page-link" href="#" style=" border-color:#5B5B5B; color:#434242; "><b><i class="fas fa-angle-left"></i>Previous</b>
-                            <span>
-                                <span class="sr-only">(current)
-                                </span></a>
-                    </li>
-                    <li data-page="next" class="page-item">
-                        <a class="page-link" href="#" style=" border-color:#5B5B5B; color:#434242;"><b>Next&nbsp;&nbsp;<i class="fas fa-angle-right"></i></b>
-                            <span> <span class="sr-only">(current)</span></span></a>
-                    </li>
-                </ul>
-            </nav>
-            </p>
-
-
-            <br><br><br>
-            <p Align=right>
-                <select name="state" id="maxRows" style=" border-color:#5B5B5B; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 10px; ">
-                    <option value="5000">Show ALL Rows</option>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                    <option value="20">20</option>
-                    <option value="50">50</option>
-                    <option value="70">70</option>
-                    <option value="100">100</option>
-                </select>
-            </p>
-
-        </div>
-
-
-
-        <div class="table-responsive" style="padding: 25px;">
+         <div class="graphBox">
+                    <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
+                       
+        <div class="table-container">
             <div>
-                <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
-                    <div>
-                        <thead class="table-dark">
+                <table id="datatable" class="table" style="text-align: center;">
+                        <thead style="color:white; background-color:#E6581D; ">
                             <th>
                                 <center>ชื่อครุภัณฑ์</center>
                             </th>
                             <th>
-                                <center>ยี่ห้อ</center>
+                                <center>ยี่ห้อ/รุ่น</center>
                             </th>
                             <th>
                                 <center>จำนวน</center>
