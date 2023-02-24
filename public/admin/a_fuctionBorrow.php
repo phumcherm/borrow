@@ -138,6 +138,10 @@
                         <br>
                         <div class="row">
                             <div class="col-6">
+                                <h7 class="text-center" style="color:black">วันที่คืน</h7>
+                                <input type="text" disabled class="form-control" name="txt_dateBack" id="txt_dateBack" placeholder="" minlength="10" maxlength="10">
+                            </div>
+                            <div class="col-6">
                                 <h7 class="text-center" style="color:black">เบอร์โทร</h7>
                                 <input type="text" disabled name="txt_phone" id="txt_phone" class="form-control">
                             </div>
@@ -155,7 +159,7 @@
     <!-- Card -->
     <div class="graphBox">
         <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
-            <p style="font-size: 36px;text-align: center;color: #E6581D;">จำนวนครุภัณฑ์ที่ยังไม่คืน</p>
+            <p style="font-size: 36px;text-align: center;color: #E6581D;">จำนวนครุภัณฑ์ที่คืนแล้ว</p>
             <div>
                 <div class="table-container">
                     <table class="table" id="data" style="text-align: center;">
@@ -173,18 +177,19 @@
                         </thead>
                         <tbody>
                             <?php
+
                             $selectAll = new DB_con();
                             $sql = $selectAll->dataBorrow();
                             while ($row = mysqli_fetch_array($sql)) {
                             ?>
                                 <tr>
-                                    <td data-label="ชื่อ - นามสกุล."><?php echo $row['fname'] . " " . $row['lname'] ?></td>
+                                    <td data-label="ชื่อ - นามสกุล."><?php echo $row['fname'] . " " . $row['lname']  ?></td>
                                     <!-- <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td> -->
                                     <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
                                     <td data-label="สถานที่."><?php echo $row['location'] ?></td>
                                     <td data-label="วันที่ยืม."><?php echo $row['borrow_date'] ?></td>
-                                    <td data-label="กำหนดคืน."><?php echo $row['br_date'] ?></td>
-                                    <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow" onclick="Databorrow('<?php echo $row['br_id'] ?>')"> ข้อมูล</button></td>
+                                    <td data-label="กำหนดคืน."><?php echo $row['bk_date'] ?></td>
+                                    <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow" onclick="Databack('<?php echo $row['br_id'] ?>')"> ข้อมูล</button></td>
                                 </tr>
                         </tbody>
                     <?php
@@ -199,9 +204,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        async function Databorrow(br_id) {
+        async function Databack(br_id) {
             console.log(br_id)
-
             $.ajax({
                 url: "a_borrowDeteil.php",
                 method: "post",
