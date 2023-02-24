@@ -186,18 +186,18 @@
 
                     html += "<tr>";
                     html += "<center>";
-                    html += "<td>" + id + "</td>";
-                    html += "<td>" + updateTime + "</td>";
-                    html += "<td>" + tb_itemCode + "</td>";
-                    html += "<td>" + detail + "</td>";
-                    html += "<td>" + checkInDate + "</td>";
-                    html += "<td>" + brand + "</td>";
-                    html += "<td>" + serialNumber + "</td>";
-                    html += "<td>" + price + "</td>";
-                    html += "<td>" + refDoc + "</td>";
-                    html += "<td>" + room + "</td>";
-                    html += "<td onclick='del_Func(" + id + ")'>" + "<a style='padding: 8px 25px;background-color: #ff5722;border-radius: 7px;'><i class='fa-sharp fa-solid fa-xmark'" +
-                        "style='margin-right: 0 px;'></i></a>" + "</td>";
+                    html += "<td data-label='ชื่อครุภัณฑ์.'>" + id + "</td>";
+                    html += "<td data-label='เวลา.'>" + updateTime + "</td>";
+                    html += "<td data-label='ไอเทมโคเด.'>" + tb_itemCode + "</td>";
+                    html += "<td data-label='ชื่อครุภัณฑ์.'>" + detail + "</td>";
+                    html += "<td data-label='checkInDate.'>" + checkInDate + "</td>";
+                    html += "<td data-label='brand.'>" + brand + "</td>";
+                    html += "<td data-label='serialNumber.'>" + serialNumber + "</td>";
+                    html += "<td data-label='price.'>" + price + "</td>";
+                    html += "<td data-label='refDoc.'>" + refDoc + "</td>";
+                    html += "<td data-label='room.'>" + room + "</td>";
+                    html += "<td onclick='del_Func(" + id + ")'>" + "<a  style='padding: 8px 25px;background-color: #ff5722; cursor: pointer;border-radius: 7px;'><i class='fa-sharp fa-solid fa-xmark'" +
+                        "style='margin-right: 0 px; '></i></a>" + "</td>";
                     html += "</center>";
                     html += "</tr>";
                     // console.log(tb_itemCode)

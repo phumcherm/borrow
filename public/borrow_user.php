@@ -26,6 +26,7 @@ $result_l = mysqli_query($con, $query);
     <title>ยืมวัสดุ ครุภัณฑ์</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/table.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/table.css"> -->
     <link rel="stylesheet" href="css/grid.css">
