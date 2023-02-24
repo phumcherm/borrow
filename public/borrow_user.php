@@ -26,7 +26,6 @@ $result_l = mysqli_query($con, $query);
     <title>ยืมวัสดุ ครุภัณฑ์</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" type="text/css" href="../../public/css/table.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/table.css"> -->
     <link rel="stylesheet" href="css/grid.css">
@@ -39,8 +38,8 @@ $result_l = mysqli_query($con, $query);
         border: none;
         width: auto;
         height: 40px;
-        padding: 2px;
-        margin: 5px auto 5px auto;
+        padding: 20px;
+        margin: 15px auto 15px auto;
         text-align: center;
     }
 
@@ -86,7 +85,14 @@ $result_l = mysqli_query($con, $query);
 
     #submit {
         float: right;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;
+        border-style: solid;
+        border-color: #ff5722;
+        border-width: 5px;
+        padding: 15px 25px;
+        background-color: #ff5722;
+        border-radius: 7px;
+        margin-bottom: 15px;
+        box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;
     }
 
     @media all and (max-width: 800px) {
@@ -116,51 +122,6 @@ $result_l = mysqli_query($con, $query);
         /* For Firefox 3.6 to 15 */
         background: linear-gradient(to bottom right, #4F4848, #686060, #827A7A, #CFC7C7);
         /* Standard syntax */
-    }
-
-    .graphBox {
-        position: relative;
-        width: 100%;
-        padding: 20px;
-        display: grid;
-
-        grid-gap: 20px;
-        min-height: 200px;
-    }
-
-    .graphBox .box {
-        position: relative;
-        background: #fff;
-        padding: 20px;
-        width: 100%;
-        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-        border-radius: 20px;
-    }
-
-    .BoxTable {
-        position: relative;
-        width: 100%;
-        padding: 20px;
-        display: grid;
-        grid-template-columns: 2fr 2fr;
-        grid-gap: 30px;
-        min-height: 200px;
-    }
-
-    .BoxTable .boxt {
-        position: relative;
-        background: #fff;
-        padding: 20px;
-        width: 100%;
-        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-        border-radius: 20px;
-    }
-
-    @media(max-width: 991px) {
-        .graphBox {
-            grid-template-columns: 1fr;
-            height: auto;
-        }
     }
 </style>
 <style>
@@ -230,64 +191,58 @@ $result_l = mysqli_query($con, $query);
     include "nav_user.php";
     require_once "../app/views/session_status.php";
     ?>
-
+    <!-- <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button> -->
+    <!--    background-color: #827A7A; -->
     <div>
         <div id="grad" style=" width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
 
-
+            <p style="float: right;">
+                <?php echo $_SESSION['fname_login'] . " " . $_SESSION['lname_login'] ?>
+            </p>
             <h2 style="color: #fff;font-family: SUT_Bold; text-shadow:2px 3px 10px #000; ">
-                <i class="fa fa-caret-right" style="font-size:48px  "></i> &nbsp;&nbsp;&nbsp;ยืมครุภัณฑ์
+                <i class="fa fa-caret-right" style="font-size:48px  "></i>ยืมครุภัณฑ์
             </h2>
             <br><br>
             <!--   1300px -->
             <!--  <div style="max-width: auto; margin: 15px auto 15px auto;background-color: #b3abab; border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;"> -->
             <!--   <h3 style="color: #fff;font-family: SUT_Bold;"><i class="far fa-edit"></i>ทำรายการ</h3> -->
-            <form action="../app/models/add_borrow.php" method="post">
-                <? require "../app/controller/scaner.php" ?>
-                <!-- <center><a href="#"> Scan QR Code</a></center> -->
-                <?
-                // echo $itemCode;
-                // if (isset($_GET['code'])) {
-                //     echo $_GET['code'];
-                // } 
-                ?>
-                <br>
-                <br>
 
-                <center>
-                    <input class="w3-input" type="text" required placeholder="code" id="data4" name="data4" style="max-width: 500px;visibility: hidden; ">
-                    <!-- <h2 id="data4" name="data4">
-                        </h2> -->
-                    <!-- <h2 id="result" ></h2> -->
-                    <!-- <br><br> -->
-                    <!--  //<h2 id="data4" name="data4"></h2>
-                        //<h2 id="result" ></h2>
-                       // <br><br> -->
-                    <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-                        <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
-                    </div>
+            <!-- Modal -->
+            <div id="modal" class="modal">
+                <div class="modal-content" style="padding: 10px; background-color: #ff5722;">
+                    <div>
+                        <div style="max-width: 1600px;margin-left: auto; background-color: #e8e3e3;padding: 30px;border-radius: 7px;"><span class="close" style="margin-left: auto;color: black;background-color: white;padding: 1px 7px;border-radius: 7px;"><i class="fa-sharp fa-solid fa-xmark" + style='margin-right: auto;'></i></span>
 
-                    <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-                        <div class="section_area_grid">
+                            <!-- <form action=""> -->
 
-                            <div class="section_grid_bor">
-                                <div class="section_grid_item">
-                                    <!--        //<h5 style="padding-left: 0;">ระบุสถานที่<h5> -->
-                                    <br>
-                                    <input class="w3-input w3-animate-input demo" id="location" name="location" type="text" required placeholder="ระบุสถานที่" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; ">
+                            <center>
+                                <h2 style="color: black;">รายละเอียดวัสดุ / ครุภัณฑ์</h2>
+                                <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-8">
+
+                                    <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_detail" type="text" name="md_detail" style="margin-bottom: 15px;max-width: 800px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
                                 </div>
-                            </div>
-                        </div>
-                        <!--    // <p id="demo">CODE</p> -->
-                        <br>
-                        <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-                            <div class="section_grid_bor">
-                                <div class="section_grid_item">
-                                    <div style="font-size: 25px;">วันที่คืน*</div>
-                                    <input class="w3-input w3-animate-input" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;" type="date" id="date" name="date" required>
+                                <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-8">
+                                    <div class="section_area_grid">
+
+                                        <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_id" type="text" name="md_id" style="margin-bottom: 15px;max-width: 380px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                                        <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_itemCode" type="text" name="md_itemCode" style="margin-bottom: 15px;max-width: 380px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+
+                                        <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_brand" type="text" name="md_brand" style="margin-bottom: 15px;max-width: 380px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                                        <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_room" type="text" name="md_room" style="margin-bottom: 15px;max-width: 380px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                                    </div>
                                 </div>
+
+                            </center>
+
+                            <div style="max-width: 500px;margin: auto;">
+
+                                <a type="button" id="cancle" onclick="ModalNull()">ยกเลิก</a>
+                                <a type="submit" id="submit" name="submit" onclick="ModalSubmit(document.getElementById('md_itemCode').value)">ยืนยันครุภัณฑ์</a>
                             </div>
+                            <!-- </form> -->
                         </div>
+
+                        <div id="result"></div>
                     </div>
                 </div>
             </div>
@@ -303,10 +258,13 @@ $result_l = mysqli_query($con, $query);
                 <center>
                     <a type="submit" id="submit" name="submit" style="float: none;" onclick="scaner()">SCAN QR CODE</a>
                 </center>
-                <br><br>
 
-                <!--  <div style="max-width: auto;  margin: 15px auto 15px auto;background-color: rgba(255, 255, 255, 0.4);border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;"> -->
+                <? require "../app/controller/scaner.php" ?>
 
+
+                <!-- <center><a href="#"> Scan QR Code</a></center> -->
+                <br>
+                <br>
 
                 <!--  </div> -->
                 <div style="max-width: 1600px;margin-left: auto;">
@@ -316,9 +274,9 @@ $result_l = mysqli_query($con, $query);
                             <th>
                                 <center>id </center>
                             </th>
-                            <th>
+                            <!-- <th>
                                 <center>updateTime</center>
-                            </th>
+                            </th> -->
                             <th>
                                 <center>itemCode</center>
                             </th>
@@ -326,19 +284,7 @@ $result_l = mysqli_query($con, $query);
                                 <center>detail</center>
                             </th>
                             <th>
-                                <center>checkInDate</center>
-                            </th>
-                            <th>
                                 <center>brand</center>
-                            </th>
-                            <th>
-                                <center>serialNumber</center>
-                            </th>
-                            <th>
-                                <center>price</center>
-                            </th>
-                            <th>
-                                <center>refDoc</center>
                             </th>
                             <th>
                                 <center>room</center>
@@ -355,6 +301,79 @@ $result_l = mysqli_query($con, $query);
                     </table>
                 </div>
 
+                <center>
+                    <input class="w3-input" type="text" required placeholder="code" id="data4" name="data4" style="max-width: 500px;visibility: hidden; ">
+                    <!-- <h2 id="data4" name="data4">
+                        </h2> -->
+                    <!-- <h2 id="result" ></h2> -->
+                    <!-- <br><br> -->
+                    <!--  //<h2 id="data4" name="data4"></h2>
+                        //<h2 id="result" ></h2>
+                       // <br><br> -->
+                    <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+
+                        <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" type="text" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                        <div class="section_area_grid">
+
+                            <!-- <div class="section_grid_bor"> -->
+                            <div class="section_grid_item">
+                                <!--        //<h5 style="padding-left: 0;">ระบุสถานที่<h5> -->
+                                <!-- <br> -->
+                                <!-- <h6 style="visibility: hidden;">c</h6> -->
+                                <!-- <br> -->
+                                <div style="font-size: 25px;visibility: hidden;">ระบุสถานที่*</div>
+                                <input class="w3-input w3-animate-input demo" id="location" name="location" type="text" required placeholder="ระบุสถานที่" style="max-width: 400px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; ">
+
+                            </div>
+                            <!-- </div> -->
+                            <!-- <div class="section_grid_bor"> -->
+                            <div class="section_grid_item">
+                                <div style="font-size: 25px;">วันที่คืน*</div>
+                                <input class="w3-input " style="max-width: 400px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; " type="date" id="date" name="date" required>
+                                <!-- <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;"> -->
+
+                            </div>
+                            <!-- </div> -->
+
+                        </div>
+
+                    </div>
+                </center>
+                <br><br>
+
+                <!--  <div style="max-width: auto;  margin: 15px auto 15px auto;background-color: rgba(255, 255, 255, 0.4);border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;"> -->
+                <script>
+                    // Get the modal element
+                    var modal = document.getElementById("modal");
+
+                    // Get the button that opens the modal
+                    var btn = document.getElementById("open-modal");
+
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+
+                    // When the user clicks on the button, open the modal
+                    // btn.onclick = function() {
+                    //     modal.style.display = "block";
+                    // }
+
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function() {
+                        ModalNull()
+                        modal.style.display = "none";
+                    }
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                            ModalNull()
+                        }
+                    }
+                </script>
                 <script>
                     function delAll_test() {
                         // document.getElementById("data4").innerHTML = code234
@@ -386,13 +405,31 @@ $result_l = mysqli_query($con, $query);
 
                 </table>
 
-
             </form>
+            <!-- </div> -->
             <br>
 
+
+            <script>
+                function includePage() {
+                    // เช็คว่ามีข้อมูลที่ต้องการ include หรือไม่
+                    if (true) {
+                        // include หน้าเพจแสดงข้อมูล
+                        fetch('../app/controller/scaner.php')
+                            .then(response => response.text())
+                            .then(data => {
+                                document.getElementById('content').innerHTML = data;
+                            });
+                    } else {
+                        // แสดงข้อความเตือน
+                        alert('ไม่สามารถ include หน้าเพจได้');
+                    }
+                }
+            </script>
         </div>
     </div>
     </form>
+    <!-- </div> -->
     <br>
 </body>
 
