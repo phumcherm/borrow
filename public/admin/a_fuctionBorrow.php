@@ -64,7 +64,98 @@
 <body>
     <!-- Modal -->
     <!-- Modal Bed -->
-   
+    <div class="modal" id="showborrow" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="font-size: 24px;text-align: center;">ข้อมูลการยืมครุภัณฑ์</h5>
+                    <button type="button" class="close" data-dismiss="modal" onclick="Close()" aria-label="Close">
+                        <span aria-hidden="true">✕</span>
+                    </button>
+                </div>
+                <input type="hidden" name="br_id" id="br_id">
+                <input type="hidden" name="bk_id" id="bk_id">
+                <input type="hidden" name="user_id" id="user_id">
+                <div class="modal-body">
+                    <form action="controller/update.php" method="post">
+                    <div class="row">
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">itemCode</h7>
+                                <input type="text" disabled name="txt_data" id="txt_data" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <h7 class="text-center ">ชื่อครุภัณฑ์</h7>
+                                <input type="text" disabled class="form-control" name="txt_name" id="txt_name" minlength="13" maxlength="13">
+
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">ชื่อ</h7>
+                                <input type="text" disabled class="form-control" name="txt_fname" id="txt_fname" placeholder="">
+                            </div>
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">นามสกุล</h7>
+                                <input type="text" disabled class="form-control" name="txt_lname" id="txt_lname" placeholder="">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">ตำแหน่ง</h7>
+                                <input type="text" disabled class="form-control" name="txt_position" id="txt_position" placeholder="">
+                            </div>
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">ฝ่าย</h7>
+                                <input type="text" disabled class="form-control" name="txt_hr" id="txt_hr" placeholder="">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">งานที่ยืม</h7>
+                                <input type="text" disabled class="form-control" name="txt_work" id="txt_work" placeholder="">
+                            </div>
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">สถานที่</h7>
+                                <input type="text" disabled name="txt_location" id="txt_location" class="form-control">
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">วันที่ยืม</h7>
+                                <input type="text" disabled class="form-control" name="txt_dateBorrow" id="txt_dateBorrow" placeholder="" minlength="10" maxlength="10">
+                            </div>
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">กำหนดวันคืน</h7>
+                                <input type="text" disabled name="txt_date" id="txt_date" class="form-control">
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">วันที่คืน</h7>
+                                <input type="text" disabled class="form-control" name="txt_dateBack" id="txt_dateBack" placeholder="" minlength="10" maxlength="10">
+                            </div>
+                            <div class="col-6">
+                                <h7 class="text-center" style="color:black">เบอร์โทร</h7>
+                                <input type="text" disabled name="txt_phone" id="txt_phone" class="form-control">
+                            </div>
+
+                        </div>
+                        <br>
+
+                        <div class="modal-footer ">
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- Card -->
     <div class="graphBox">
         <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">

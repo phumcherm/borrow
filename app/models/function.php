@@ -1,6 +1,6 @@
 <?php
 
-define('DB_SERVER', '172.18.0.1:9906');
+define('DB_SERVER', '172.17.0.1:9906');
 define('DB_USER', 'ceitdb');
 define('DB_PASS', '12345678');
 define('DB_NAME', 'ceitdb');
@@ -28,6 +28,11 @@ class DB_con
         $result = mysqli_query($this->dbcon, "SELECT * FROM itemdata WHERE itemCode IN ($itemCode) ");
         return $result;
     }
+    function selectAllWhereCode($itemCode)
+    {
+        $result = mysqli_query($this->dbcon, "SELECT * FROM itemdata WHERE itemCode = '$itemCode' ");
+        return $result;
+    }
 
     function selectPage($startRow, $rowPerPage)
     {
@@ -52,14 +57,14 @@ class DB_con
         *, DATE_FORMAT(bk_time, '%M / %d / %Y') bk_date , DATE_FORMAT(br_time, '%M / %d / %Y') borrow_date
     FROM ceitdb.`borrow` left join ceitdb.itemdata on borrow.id = itemdata.id left join ceitdb.user on borrow.user_id = user.user_id 
     left join ceitdb.back on borrow.br_id = back.br_id
-    where borrow.status = 0");
+    where borrow.status = 0 order by borrow_date desc");
         return $result;
     }
     function dataBorrowAll()
     {
         $result = mysqli_query($this->dbcon, "SELECT  
         itemdata.id,detail,itemCode,borrow.br_id ,borrow.activity , borrow.location ,borrow.status
-        FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  
+        FROM `itemdata`,borrow WHERE itemdata.id = borrow.id  order by br_time desc
      ");
         return $result;
     }
@@ -68,7 +73,7 @@ class DB_con
         $result = mysqli_query($this->dbcon, "SELECT  *, DATE_FORMAT(bk_time, '%M / %d / %Y') bk_date,DATE_FORMAT(br_time, '%M / %d / %Y') borrow_date
         FROM ceitdb.`borrow` left join ceitdb.itemdata on borrow.id = itemdata.id left join ceitdb.user on borrow.user_id = user.user_id 
         left join ceitdb.back on borrow.br_id = back.br_id
-        where borrow.status = 1");
+        where borrow.status = 1 order by borrow_date desc");
         return $result;
     }
 
@@ -168,6 +173,22 @@ class DB_con
     {
         $result = mysqli_query($this->dbcon, "SELECT detail,brand, borrow.status br_status,itemdata.status item_status, count(*) total from ceitdb.itemdata left join ceitdb.borrow 
                                                 on itemdata.id = borrow.id group by detail,brand,borrow.status,itemdata.status;");
+        return $result;
+    }
+
+    function selectCountAllTreasury()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT detail,brand, count(*) total from ceitdb.itemdata left join ceitdb.borrow 
+                                                        on itemdata.id = borrow.id  group by detail,brand;");
+        return $result;
+    }
+
+    function selectCountMatchTreasury()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT detail,brand,COUNT(*) as total_rows, 
+        COUNT(CASE WHEN itemdata.status = 'ใช้งานได้' and borrow.status is null or borrow.status = 1 THEN 1 END) as matching_rows
+        from ceitdb.itemdata left join ceitdb.borrow on itemdata.id = borrow.id group by detail,brand;
+ ");
         return $result;
     }
 

@@ -193,42 +193,68 @@ session_start();
                         <div class="table-container">
                             <table id="datatable" class="table" sstyle="text-align: center;">
 
-                                <thead style="color:white; background-color:#E6581D; ">
-                                    <th>
-                                        <center>ชื่อรายการ</center>
-                                    </th>
-                                    <th>
-                                        <center>ยี่ห้อ/รุ่น</center>
-                                    </th>
-                                    <th>
-                                        <center></center>
-                                    </th>
-                                </thead>
-                                <tbody id="data">
-                                    <p>
-                                        <td colspan="10" class="text-center">แสกน QR Code คืนครุภัณฑ์</td>
-                                    </p>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                        <div style="max-width: 1600px;margin-left: auto;">
+                    <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
+                    <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+                        <thead class="table-dark">
+                            <th>
+                                <center>id </center>
+                            </th>
+                            <!-- <th>
+                                <center>updateTime</center>
+                            </th> -->
+                            <th>
+                                <center>itemCode</center>
+                            </th>
+                            <th>
+                                <center>detail</center>
+                            </th>
+                            <!-- <th>
+                                <center>checkInDate</center>
+                            </th> -->
+                            <th>
+                                <center>brand</center>
+                            </th>
+                            <!-- <th>
+                                <center>serialNumber</center>
+                            </th> -->
+                            <!-- <th>
+                                <center>price</center>
+                            </th> -->
+                            <!-- <th>
+                                <center>refDoc</center>
+                            </th> -->
+                            <th>
+                                <center>room</center>
+                            </th>
+                            <th>
+                                <center></center>
+                            </th>
+                        </thead>
+                        <tbody id="data">
+                            <p>
+                                <td colspan="10" class="text-center">แสกน QR Code คืนครุภัณฑ์</td>
+                            </p>
+                        </tbody>
+                    </table>
                 </div>
-                        <script>
-                            function delAll_test() {
-                                // document.getElementById("data4").innerHTML = code234
-                                // console.log(code234)
-                                itemCode.length = 0
-                                console.log("del = " + itemCode)
-                                tableFunc()
-                            }
-                        </script>
-                        <br><br>
-                        <center>
-                            <input class="w3-input" type="text" placeholder="ปัญหาในการใช้งาน" id="problem" name="problem" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
-                        </center>
-                        <br>
-                        <a type="button" id="cancle" onclick="delAll_test()">ยกเลิก</a>
-                        <button type="submit" id="submit" name="submit">ยืนยันทั้งหมด</button>
+
+                            <script>
+                                function delAll_test() {
+                                    // document.getElementById("data4").innerHTML = code234
+                                    // console.log(code234)
+                                    itemCode.length = 0
+                                    console.log("del = " + itemCode)
+                                    tableFunc()
+                                }
+                            </script>
+                            <br><br>
+                            <center>
+                                <input class="w3-input" type="text" placeholder="ปัญหาในการใช้งาน" id="problem" name="problem" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                            </center>
+                            <br>
+                            <a type="button" id="cancle" onclick="delAll_test()">ยกเลิก</a>
+                            <button type="submit" id="submit" name="submit">ยืนยันทั้งหมด</button>
 
                         </table>
                     </div>
