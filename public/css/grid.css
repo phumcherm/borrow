@@ -1,0 +1,18 @@
+.responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .responsive-table th,
+  .responsive-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  @media (min-width: 768px) {
+    .responsive-table {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+    }
+  }

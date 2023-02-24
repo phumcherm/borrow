@@ -36,6 +36,15 @@ if (isset($_GET['code']) && !empty(isset($_GET['code']))) {
     $row = mysqli_fetch_array($sql);
     $data = $row;
     echo json_encode($data);
+
+} elseif (isset($_GET['modalCode'])) {
+    $selectedValues = $_GET['modalCode'];
+
+    $selectAllWhereCode = new DB_con();
+    $sql = $selectAllWhereCode->selectAllWhereCode($selectedValues);
+    $row = mysqli_fetch_array($sql);
+    $data[] = $row;
+    echo json_encode($data);
 } else {
     $data[] = "พังละ";
     echo json_encode($data);
