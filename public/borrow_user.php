@@ -124,67 +124,6 @@ $result_l = mysqli_query($con, $query);
         /* Standard syntax */
     }
 </style>
-<style>
-    /* Style the button that opens the modal */
-    #open-modal {
-        background-color: #4CAF50;
-        border: none;
-        color: white;
-        padding: 10px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin-bottom: 20px;
-    }
-
-    /* The Modal (background) */
-    .modal {
-        display: none;
-        /* Hidden by default */
-        position: fixed;
-        /* Stay in place */
-        z-index: 1;
-        /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: auto;
-        overflow: auto;
-        /* Enable scroll if needed */
-        background-color: rgb(0, 0, 0);
-        /* Fallback color */
-        background-color: rgba(0, 0, 0, 0.4);
-        /* Black w/ opacity */
-    }
-
-    /* Modal Content/Box */
-    .modal-content {
-        background-color: #ff5722;
-        margin: 15% auto;
-        /* 15% from the top and centered */
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        /* Could be more or less, depending on screen size */
-    }
-
-    /* The Close Button */
-    .close {
-        color: #aaaaaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
-    }
-</style>
-
 
 <body>
     <?php
@@ -248,6 +187,7 @@ $result_l = mysqli_query($con, $query);
             </div>
             <form action="../app/models/add_borrow.php" method="post">
 
+                <? require "../app/controller/scaner.php" ?>
 
                 <!-- Button to open modal -->
                 <!-- <a type="button" id="open-modal">Open Modal</a> -->
@@ -256,15 +196,9 @@ $result_l = mysqli_query($con, $query);
                 <div id="content"></div>
 
                 <center>
-                    <a type="submit" id="submit" name="submit" style="float: none;" onclick="scaner()">SCAN QR CODE</a>
+                    <a type="submit" id="submit" name="submit" style="float: none;" onclick="scaner()">Scan QRcode <i class="fa-solid fa-qrcode"></i></a>
                 </center>
 
-                <? require "../app/controller/scaner.php" ?>
-
-
-                <!-- <center><a href="#"> Scan QR Code</a></center> -->
-                <br>
-                <br>
 
                 <!--  </div> -->
                 <div style="max-width: 1600px;margin-left: auto;">
@@ -344,36 +278,6 @@ $result_l = mysqli_query($con, $query);
                 </center>
                 <br><br>
 
-                <!--  <div style="max-width: auto;  margin: 15px auto 15px auto;background-color: rgba(255, 255, 255, 0.4);border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;"> -->
-                <script>
-                    // Get the modal element
-                    var modal = document.getElementById("modal");
-
-                    // Get the button that opens the modal
-                    var btn = document.getElementById("open-modal");
-
-                    // Get the <span> element that closes the modal
-                    var span = document.getElementsByClassName("close")[0];
-
-                    // When the user clicks on the button, open the modal
-                    // btn.onclick = function() {
-                    //     modal.style.display = "block";
-                    // }
-
-                    // When the user clicks on <span> (x), close the modal
-                    span.onclick = function() {
-                        ModalNull()
-                        modal.style.display = "none";
-                    }
-
-                    // When the user clicks anywhere outside of the modal, close it
-                    window.onclick = function(event) {
-                        if (event.target == modal) {
-                            modal.style.display = "none";
-                            ModalNull()
-                        }
-                    }
-                </script>
                 <script>
                     function delAll_test() {
                         // document.getElementById("data4").innerHTML = code234
@@ -432,5 +336,6 @@ $result_l = mysqli_query($con, $query);
     <!-- </div> -->
     <br>
 </body>
+<script src="script.js"></script>
 
 </html>
