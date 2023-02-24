@@ -80,13 +80,10 @@ require_once "../../app/models/function.php";
             </div>
         </div>
         <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
-            <select required class="form-select col-12 form-control" aria-label="Default select example" name="txt_bed" style="border-color: #E6581D; box-shadow: rgba(0, 0, 0, 0.11) 0px 5px 5px  ;">
-                <optgroup label="เลือกดูการใช้งาน">
-                    <option id="y" value="">รายปี</option>
-                    <option id="m" value="">รายเดือน</option>
-                    <option id="d" value="">รายวัน</option>
-            </select>
-            <!--  <button type="button" onclick="fittertem()">ค้นหา</button> -->
+            <input type="date" id="start_item">
+            <input type="date" id="end_item">
+            <button class="btn btn-primary" type="button" onclick="fitterItem()">ค้นหา</button>
+            <br><br>
             <canvas id="myTest"></canvas>
         </div>
     </div>
@@ -208,7 +205,7 @@ require_once "../../app/models/function.php";
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js" integrity="sha512-qKyIokLnyh6oSnWsc5h21uwMAQtljqMZZT17CIMXuCQNIfFSFF4tJdMOaJHL9fQdJUANid6OB6DRR0zdHrbWAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="chart_data.js"> </script>
+    <script src="chart.js"> </script>
     <!-- ///// -->
 </body>
 

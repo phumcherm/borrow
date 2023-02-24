@@ -225,15 +225,15 @@ $(document).ready(function() {
           let xtotal_data = [];
   let yitem_data = [];
   
-  async function fitterData() {
+  async function fitterItem() {
     xtotal_data = [];
     yitem_data = [];
   
-    let star_dataItem = document.getElementById("start").value;
-    let end_dataItem = document.getElementById("end").value;
+    let star_dataItem = document.getElementById("start_item").value;
+    let end_dataItem = document.getElementById("end_item").value;
     let dataTotal = {
         "datastart": star_dataItem,
-        "dataend": end_dataItem
+        "endstart": end_dataItem
     }
     console.log(dataTotal)
    
@@ -246,32 +246,32 @@ $(document).ready(function() {
             console.log(respon_json)
   
             for (let i in respon_json) {
-                xtotal_data.push(respon_json[i].COUNT)
-                yitem_data.push(respon_json[i].br_time)
+                xtotal_data.push(respon_json[i].total)
+                yitem_data.push(respon_json[i].detail)
             }
-            chart_dataTem()
+            fitterItem()
         }
     });
   }
   
-   // Date tem
-   async function chart_dataTem() {
-    console.log(xcount_data)
-    console.log(ytime_data)
-    let ChartStatustem = Chart.getChart("myChart");
+   // Dateitem
+   async function fitterItem() {
+    console.log(xtotal_data)
+    console.log(yitem_data)
+    let ChartStatustem = Chart.getChart("myTest");
     if (ChartStatustem != undefined) {
         ChartStatustem.destroy();
     }
   
-    let chartdataTem = {
-        labels: ytime_data,
+    let chartdataItem = {
+        labels: yitem_data,
         datasets: [{
             label: 'จำนวนครุภัณฑ์ที่ถูกยืม',
             backgroudColor: '#49e2ff',
             borderColor: '#46d5f1',
             hoverBackgroundColor: '#CCCCCC',
             hoverBorderColor: '#666666',
-            data: xcount_data,
+            data: xtotal_data,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -291,10 +291,10 @@ $(document).ready(function() {
             borderWidth: 1
         }]
     };
-    let graphTarget = $('#myChart');
+    let graphTarget = $('#myTest');
     let barGraph = new Chart(graphTarget, {
         type: 'bar',
-        data: chartdataTem,
+        data: chartdataItem,
         options: {
             scales: {
                 y: {
