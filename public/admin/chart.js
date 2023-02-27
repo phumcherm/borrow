@@ -195,10 +195,10 @@ $(document).ready(function() {
                       hoverBorderColor: '#666666',
                       data: total,
                       backgroundColor: [
-                          'rgba(54, 162, 235, 0.2)',
+                          'rgb(0, 0, 255)',
                       ],
                       borderColor: [
-                          'rgba(54, 162, 235, 1)',
+                          'rgb(0, 0, 255)',
                       ],
                       borderWidth: 1
                   }]

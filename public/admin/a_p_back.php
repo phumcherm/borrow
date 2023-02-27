@@ -196,7 +196,7 @@ require_once "../../app/models/db.php";
 
                                     <tbody>
                                         <?php
-
+                                        $i = 0;
                                         $selectAll = new DB_con();
                                         $sql = $selectAll->dataBack();
                                         while ($row = mysqli_fetch_array($sql)) {

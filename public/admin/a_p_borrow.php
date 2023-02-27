@@ -194,14 +194,15 @@ require_once "../../app/models/db.php";
 
                                     <tbody>
                                         <?php
-
+                                        $i = 0;
                                         $selectAll = new DB_con();
                                         $sql = $selectAll->dataBorrow();
                                         while ($row = mysqli_fetch_array($sql)) {
+                                            $i++;
                                         ?>
                                             <tr>
 
-                                                <td data-label="ลำดับที่."><?php echo $row['br_id'] ?></td>
+                                                <td data-label="ลำดับที่."><?php echo $i ?></td>
                                                 <td data-label="ชื่อ - นามสกุล."><?php echo $row['fname'] . " " . $row['lname']  ?></td>
                                                 <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
                                                 <td data-label="สถานที่."><?php echo $row['location'] ?></td>

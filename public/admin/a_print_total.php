@@ -157,11 +157,7 @@ require_once "../../app/models/db.php";
     }
 </style>
 
-
 <body>
-
-
-
     <div class="BoxTable">
         <div class="boxt" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
             <div class="row">
@@ -245,7 +241,7 @@ where borrow.status = 1  between '" . $search_text . "' and  '" . $search_text1 
 
                                     <tbody>
                                         <?php
-
+                                        $i = 0;
                                         foreach ($data as $row) {
                                             $i++;
                                         ?>
