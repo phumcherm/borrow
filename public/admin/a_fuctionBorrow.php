@@ -78,7 +78,7 @@
                 <input type="hidden" name="user_id" id="user_id">
                 <div class="modal-body">
                     <form action="controller/update.php" method="post">
-                    <div class="row">
+                        <div class="row">
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">itemCode</h7>
                                 <input type="text" disabled name="txt_data" id="txt_data" class="form-control">
@@ -159,7 +159,7 @@
     <!-- Card -->
     <div class="graphBox">
         <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
-            <p style="font-size: 36px;text-align: center;color: #E6581D;">จำนวนครุภัณฑ์ที่ยังไม่คืน</p>
+            <p style="font-size: 36px;text-align: center;color: #E6581D;">ครุภัณฑ์ที่ยังไม่คืน</p>
             <div>
                 <div class="table-container">
                     <table class="table" id="data" style="text-align: center;">
@@ -170,24 +170,26 @@
                                 <th>สถานที่</th>
                                 <th>วันที่ยืม</th>
                                 <th>กำหนดคืน</th>
-                               
+                                <th></th>
 
                             </tr>
                         </thead>
                         <tbody>
                             <?php
+
                             $selectAll = new DB_con();
                             $sql = $selectAll->dataBorrow();
                             while ($row = mysqli_fetch_array($sql)) {
                             ?>
                                 <tr>
-                                    <td data-label="ชื่อ - นามสกุล."><?php echo $row['fname'] . " " . $row['lname'] ?></td>
+                                    <td data-label="ชื่อ - นามสกุล."><?php echo $row['fname'] . " " . $row['lname']  ?></td>
                                     <!-- <td data-label="รหัสครุภัณฑ์."><?php echo $row['itemCode'] ?></td> -->
                                     <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
                                     <td data-label="สถานที่."><?php echo $row['location'] ?></td>
                                     <td data-label="วันที่ยืม."><?php echo $row['borrow_date'] ?></td>
                                     <td data-label="กำหนดคืน."><?php echo $row['br_date'] ?></td>
-                                     </tr>
+                                    <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow" onclick="Databack('<?php echo $row['br_id'] ?>')"> ข้อมูล</button></td>
+                                </tr>
                         </tbody>
                     <?php
                             }
@@ -201,9 +203,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        async function Databorrow(br_id) {
+        async function Databack(br_id) {
             console.log(br_id)
-
             $.ajax({
                 url: "a_borrowDeteil.php",
                 method: "post",
@@ -233,9 +234,9 @@
             });
         }
     </script>
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 
 </body>

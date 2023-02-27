@@ -64,7 +64,7 @@ require_once "../../app/models/db.php";
                                     <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
                                     <td data-label="ยี่ห้อ."><?php echo $row['brand'] ?></td>
                                     <td data-label="เจ้าหน้าที่."><?php echo $row['notation'] ?></td>
-                                    <td><a class="btn btn-warning far fa-edit" href="a_editdata"><i></i></a></td>
+                                    <td><a class="btn btn-warning far fa-edit" href="a_edit_data.php?edit_id=<?php echo $row['id'] ?>"><i></i></a></td>
                                 <?php
                             }
                                 ?>

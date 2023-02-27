@@ -22,45 +22,45 @@ session_start();
             <div class="row">
                 <div class="col-6">
                     <h7 class="text-center ">Qr-code</h7>
-                    <input type="text" required class="form-control" nname="input_text" id="input_text" autocomplete="off" placeholder="Qr-code">
+                    <input type="text" required class="form-control" nname="txt_itemCode" id="input_text" autocomplete="off" placeholder="Qr-code">
 
                 </div>
                 <div class="col-6">
                     <h7 class="text-center" style="color:black">Detail</h7>
-                    <input type="text" required class="form-control" name="txt_number" placeholder="ชื่อครุภัณฑ์">
+                    <input type="text" required class="form-control" name="txt_detail" placeholder="ชื่อครุภัณฑ์">
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="col-6">
                     <h7 class="text-center" style="color:black">CheckIn-Date</h7>
-                    <input type="text" class="form-control" required name="txt_fname" placeholder="วันที่ได้อุปกรณ์ ระบุ (เช่น 1 ม.ค. 2565)">
+                    <input type="text" class="form-control" required name="txt_check_date" placeholder="วันที่ได้อุปกรณ์ ระบุ (เช่น 1 ม.ค. 2565)">
                 </div>
                 <div class="col-6">
                     <h7 class="text-center" style="color:black">Brand</h7>
-                    <input type="text" required class="form-control" name="txt_lname" placeholder="ยี่ห้อครุภัณฑ์">
+                    <input type="text" required class="form-control" name="txt_brand" placeholder="ยี่ห้อครุภัณฑ์">
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="col-6">
                     <h7 class="text-center" style="color:black">Serial-number </h7>
-                    <input type="text" required class="form-control" name="txt_age" placeholder="หมายเลขครุภัณฑ์ (ไม่มีให้ใส่ - )">
+                    <input type="text" required class="form-control" name="txt_Serial" placeholder="หมายเลขครุภัณฑ์ (ไม่มีให้ใส่ - )">
                 </div>
                 <div class="col-6">
                     <h7 class="text-center" style="color:black">Price</h7>
-                    <input type="text" required class="form-control" name="txt_tell" placeholder="ราคา">
+                    <input type="text" required class="form-control" name="txt_price" placeholder="ราคา">
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="col-6">
                     <h7 class="text-center" style="color:black">Refdoc </h7>
-                    <input type="text" required class="form-control" name="txt_age" placeholder="สัญญา">
+                    <input type="text" required class="form-control" name="txt_refdoc" placeholder="สัญญา">
                 </div>
                 <div class="col-6">
                     <h7 class="text-center" style="color:black">Room</h7>
-                    <input type="text" required class="form-control" name="txt_tell" placeholder="ห้องที่จัดเก็บครุภัณฑ์">
+                    <input type="text" required class="form-control" name="txt_room" placeholder="ห้องที่จัดเก็บครุภัณฑ์">
                 </div>
             </div>
 
@@ -68,11 +68,11 @@ session_start();
             <div class="row">
                 <div class="col-6">
                     <h7 class="text-center" style="color:black">Status </h7>
-                    <input type="text" required class="form-control" name="txt_age" placeholder="สถานะการใช้งาน">
+                    <input type="text" required class="form-control" name="txt_status" placeholder="สถานะการใช้งาน">
                 </div>
                 <div class="col-6">
                     <h7 class="text-center" style="color:black">Notation</h7>
-                    <input type="text" required class="form-control" name="txt_tell" placeholder="ผู้รับผิดชอบ (ระบุ ชื่อ/ฝ่าย)">
+                    <input type="text" required class="form-control" name="txt_Notation" placeholder="ผู้รับผิดชอบ (ระบุ ชื่อ/ฝ่าย)">
                 </div>
 
             </div>
@@ -80,11 +80,11 @@ session_start();
             <div class="row">
                 <div class="col-6">
                     <h7 class="text-center" style="color:black">misConfirmer</h7>
-                    <input type="number" required class="form-control" name="txt_doctor" placeholder="คอนเฟิร์ม">
+                    <input type="number" required class="form-control" name="txt_misCon" placeholder="คอนเฟิร์ม">
                 </div>
                 <div class="col-6">
                     <h7 class="text-center" style="color:black">Organization</h7>
-                    <input type="text" required class="form-control" name="txt_tell" placeholder="องค์กร (เช่น ศทน.)">
+                    <input type="text" required class="form-control" name="txt_Organiza" placeholder="องค์กร (เช่น ศทน.)">
                 </div>
 
             </div>
@@ -92,11 +92,11 @@ session_start();
             <div class="row">
                 <div class="col-6">
                     <h7 class="text-center" style="color:black">Type</h7>
-                    <input type="text" required class="form-control" name="txt_doctor" placeholder="รายละเอียด (เช่น ระบบตัดต่อคอม)">
+                    <input type="text" required class="form-control" name="txt_Type" placeholder="รายละเอียด (เช่น ระบบตัดต่อคอม)">
                 </div>
                 <div class="col-6">
                     <h7 class="text-center" style="color:black">Active</h7>
-                    <select required class="form-select col-12 form-control" aria-label="Default select example" name="txt_group">
+                    <select required class="form-select col-12 form-control" aria-label="Default select example" name="txt_Ative">
                         <option selected disabled value="">สถานภาพ</option>
                         <option value="0">ไม่พร้อมใช้งาน</option>
                         <option value="1">พร้อมใช้งาน</option>
@@ -110,9 +110,7 @@ session_start();
 
                     <button type="submit" name="btn_insert" class="btn btn-success fa fa-save" value=""> บันทึก</button>
                     <a href="a_edit.php" style="color: white;" class="btn btn-warning far fa-edit"> แก้ไข</a>
-                    <!-- <a href="index.php" class="btn btn-danger fa fa-window-close"> ยกเลิก</a> -->
                     <button class="btn btn-primary button" data-toggle="modal" data-target="#myModal"><i class="fa fa-qrcode"></i> Genarate QRcode</button>
-                    <!-- <a href="a_qrcode.php" class="btn btn-primary ">Genarate QRcode</a> -->
                 </div>
             </div>
     </div>

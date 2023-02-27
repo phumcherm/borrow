@@ -23,6 +23,12 @@ class DB_con
         return $result;
     }
 
+    function selectEdit($id)
+    {
+        $result = mysqli_query($this->dbcon, "SELECT * FROM itemdata WHERE id = $id");
+        return $result;
+    }
+
     function selectWhereCode($itemCode)
     {
         $result = mysqli_query($this->dbcon, "SELECT * FROM itemdata WHERE itemCode IN ($itemCode) ");
@@ -52,6 +58,19 @@ class DB_con
         $result = mysqli_query($this->dbcon, "SELECT *,count(*) FROM itemdata limit $startRow,$rowPerPage");
         return $result;
     }
+    function selectSum()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT  borrow.id,detail,brand ,COUNT(detail) AS COUNT   FROM itemdata,borrow WHERE itemdata.id = borrow.id  GROUP BY id,detail,brand ORDER BY COUNT DESC;");
+        return $result;
+    }
+    function selectAvg()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT detail, AVG(br_id) as avg
+        FROM borrow ,itemdata
+        WHERE borrow.id = itemdata.id group by detail ORDER BY avg DESC;");
+        return $result;
+    }
+
 
     function selectCount()
     {
@@ -64,7 +83,7 @@ class DB_con
         *, DATE_FORMAT(bk_time, '%M / %d / %Y') bk_date , DATE_FORMAT(br_time, '%M / %d / %Y') borrow_date
     FROM ceitdb.`borrow` left join ceitdb.itemdata on borrow.id = itemdata.id left join ceitdb.user on borrow.user_id = user.user_id 
     left join ceitdb.back on borrow.br_id = back.br_id
-    where borrow.status = 0 order by borrow_date desc");
+    where borrow.status = 0 ");
         return $result;
     }
     function dataBorrowAll()
@@ -81,6 +100,15 @@ class DB_con
         FROM ceitdb.`borrow` left join ceitdb.itemdata on borrow.id = itemdata.id left join ceitdb.user on borrow.user_id = user.user_id 
         left join ceitdb.back on borrow.br_id = back.br_id
         where borrow.status = 1 order by borrow_date desc");
+        return $result;
+    }
+
+    function dataPrint()
+    {
+        $result = mysqli_query($this->dbcon, "SELECT  *, DATE_FORMAT(bk_time, '%d / %m / %Y') bk_date,DATE_FORMAT(br_time, '%d / %m / %Y') borrow_date
+        FROM ceitdb.`borrow` left join ceitdb.itemdata on borrow.id = itemdata.id left join ceitdb.user on borrow.user_id = user.user_id 
+        left join ceitdb.back on borrow.br_id = back.br_id
+        where borrow.status = 1");
         return $result;
     }
 
