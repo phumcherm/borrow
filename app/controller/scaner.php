@@ -36,11 +36,8 @@
     }
 </style>
 <main>
-    <br>
     <div id="reader"></div>
     <!-- <div id="result"></div> -->
-    <br>
-    <br>
     <!-- <input type="text" id="result" name="result"> -->
     <!-- <h2 id="data4" name="data4">555 :</h2> -->
 </main>
@@ -222,9 +219,9 @@
             }
 
             document.getElementById("data").innerHTML = html;
-            
-        scanner.clear();
-        document.getElementById('reader').innerHTML = "";
+
+            scanner.clear();
+            document.getElementById('reader').innerHTML = "";
         }
     }
 
@@ -304,6 +301,18 @@
     }
 
 
+    function ModalSubmit(code) {
+
+        const index = itemCode.findIndex(object => object === code);
+
+        if (index === -1) {
+            itemCode.push(code)
+        }
+        scanner.render(success, error);
+        modal.style.display = "none";
+        tableFunc()
+
+    }
 
     // show_item()
 </script>

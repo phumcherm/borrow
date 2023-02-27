@@ -34,6 +34,13 @@ class DB_con
         return $result;
     }
 
+    function CheckBeforeInsBorrow($itemCode)
+    {
+        $result = mysqli_query($this->dbcon, "SELECT itemCode FROM borrow,itemdata where borrow.id = itemdata.id 
+                                                and itemCode = '$itemCode' and borrow.status = 0;");
+        return $result;
+    }
+
     function selectPage($startRow, $rowPerPage)
     {
         $result = mysqli_query($this->dbcon, "SELECT * FROM itemdata limit $startRow,$rowPerPage");

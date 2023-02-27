@@ -13,9 +13,11 @@ require_once "../app/models/db.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
-<!--     <link rel="stylesheet" href="css/table.css"> -->
+    <link rel="stylesheet" href="css/table.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-R0nsdNty9v+t8xk+FdQyt/VDlz0cIJb/gNcOwWlI7idKbQkZmJduPr9m67pYcfYxsOKO/hyJwV5vy5ikfmkKjA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
     <style>
         * {
             box-sizing: border-box;
@@ -29,7 +31,7 @@ require_once "../app/models/db.php";
             width: 50%;
             font-size: 20px;
             padding: 5px 5px 5px 5px;
-           
+
             margin-bottom: 30px;
         }
 
@@ -47,7 +49,7 @@ require_once "../app/models/db.php";
             padding: 12px;
             text-decoration: none;
             font-size: 18px;
-        
+
             color: black;
             display: block
         }
@@ -60,126 +62,6 @@ require_once "../app/models/db.php";
         .pagination li:hover {
             cursor: pointer;
         }
-
-        #grad {
-            background: #827A7A;
-            /* For browsers that do not support gradients */
-            background: -webkit-linear-gradient(left top, #4F4848, #686060, #827A7A, #CFC7C7);
-            /* For Safari 5.1 to 6.0 */
-            background: -o-linear-gradient(bottom right, #4F4848, #686060, #827A7A, #CFC7C7);
-            /* For Opera 11.1 to 12.0 */
-            background: -o-linear-gradient(bottom right, #4F4848, #686060, #827A7A, #CFC7C7);
-            /* For Opera 11.1 to 12.0 */
-            background: -moz-linear-gradient(bottom right, #4F4848, #686060, #827A7A, #CFC7C7);
-            /* For Firefox 3.6 to 15 */
-            background: linear-gradient(to bottom right, #4F4848, #686060, #827A7A, #CFC7C7);
-            /* Standard syntax */
-        }
-   .graphBox {
-        position: relative;
-        width: 100%;
-        padding: 20px;
-        display: grid;
-
-        grid-gap: 20px;
-        min-height: 200px;
-    }
-
-    .graphBox .box {
-        position: relative;
-        background: #fff;
-        padding: 20px;
-        width: 100%;
-        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-        border-radius: 20px;
-    }
-
-    .BoxTable {
-        position: relative;
-        width: 100%;
-        padding: 20px;
-        display: grid;
-        grid-template-columns: 2fr 2fr;
-        grid-gap: 30px;
-        min-height: 200px;
-    }
-
-    .BoxTable .boxt {
-        position: relative;
-        background: #fff;
-        padding: 20px;
-        width: 100%;
-        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-        border-radius: 20px;
-    }
-
-    @media(max-width: 991px) {
-        .graphBox {
-            grid-template-columns: 1fr;
-            height: auto;
-        }
-    }
-      
-    </style>
-    <style>
-        /* Style the button that opens the modal */
-        #open-modal {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        /* The Modal (background) */
-        .modal {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            /* Stay in place */
-            z-index: 1;
-            /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0);
-            /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.4);
-            /* Black w/ opacity */
-        }
-
-        /* Modal Content/Box */
-        .modal-content {
-            background-color: palevioletred;
-            margin: 15% auto;
-            /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            /* Could be more or less, depending on screen size */
-        }
-
-        /* The Close Button */
-        .close {
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
     </style>
 
 </head>
@@ -190,7 +72,7 @@ require_once "../app/models/db.php";
     ?>
     <div id="grad" style="background-color:#827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
         <div>
-            
+
             <h2 style="color: #fff;font-family: SUT_Bold;  text-shadow:2px 3px 10px #000;">
                 <i class="fa fa-caret-right" style="font-size:48px"></i>&nbsp;&nbsp;&nbsp;รายการครุภัณฑ์
 
@@ -220,7 +102,7 @@ require_once "../app/models/db.php";
             </p>
 
 
-            
+
 
             <br><br><br>
             <p Align=right>
@@ -244,57 +126,94 @@ require_once "../app/models/db.php";
 
         <!-- Modal -->
         <div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;X</span>
-                <h2>Modal Title</h2>
-                <p>Modal Content</p>
+            <div class="modal-content" style="padding: 10px; background-color: #ff5722;">
+                <div>
+                    <div style="max-width: 1600px;margin-left: auto; background-color: #e8e3e3;padding: 30px;border-radius: 7px;">
+                        <span class="close" style="margin-left: auto;color: black;background-color: white;padding: 1px 7px;border-radius: 7px;"><i class="fa-solid fa-xmark"></i></span>
+
+                        <!-- <form action=""> -->
+
+                        <center>
+                            <h2 style="color: black;">รายละเอียดวัสดุ / ครุภัณฑ์ <i class="fa-sharp fa-solid fa-xmark"></i></h2>
+                            <div class="table-responsive" style="padding: 25px;">
+                                <div>
+                                    <table id="datatable2" class="table" style="text-align: center;">
+                                        <thead style="color:white; background-color:#E6581D; ">
+                                            <th>
+                                                <center>ชื่อครุภัณฑ์</center>
+                                            </th>
+                                            <th>
+                                                <center>ยี่ห้อ/รุ่น</center>
+                                            </th>
+                                            <th>
+                                                <center>จำนวน</center>
+                                            </th>
+                                            <!-- <!-- <th>
+                                <center>สถานะการยืม</center>
+                            </th> -->
+                                            <th>
+                                                <center>เลือก</center>
+                                            </th>
+                                        </thead>
+
+                                        <tbody id="result">
 
 
-                <div id="result"></div>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </center>
+
+                        <!-- </form> -->
+
+                    </div>
+
+                    <div id="result"></div>
+                </div>
             </div>
         </div>
-
-        
 
         <div class="table-responsive" style="padding: 25px;">
             <div>
                 <table id="datatable" class="table" style="text-align: center;">
-                        <thead style="color:white; background-color:#E6581D; ">
-                            <th>
-                                <center>ชื่อครุภัณฑ์</center>
-                            </th>
-                            <th>
-                                <center>ยี่ห้อ/รุ่น</center>
-                            </th>
-                            <th>
-                                <center>จำนวน</center>
-                            </th>
-                            <!-- <!-- <th>
+                    <thead style="color:white; background-color:#E6581D; ">
+                        <th>
+                            <center>ชื่อครุภัณฑ์</center>
+                        </th>
+                        <th>
+                            <center>ยี่ห้อ/รุ่น</center>
+                        </th>
+                        <th>
+                            <center>จำนวน</center>
+                        </th>
+                        <!-- <!-- <th>
                                 <center>สถานะการยืม</center>
                             </th> -->
-                            <th>
-                                <center>เลือก</center>
-                            </th>
-                        </thead>
+                        <th>
+                            <center>เลือก</center>
+                        </th>
+                    </thead>
 
-                        <tbody>
+                    <tbody>
 
-                            <?php
-                            $selectCountMatchTreasury = new DB_con();
-                            $sql = $selectCountMatchTreasury->selectCountMatchTreasury();
-                            while ($row = mysqli_fetch_array($sql)) {
-                            ?>
-                                <tr>
-                                    <td data-label="ชื่อครุภัณฑ์.">
-                                        <center><?php echo $row["detail"] ?></center>
-                                    </td>
-                                    <td data-label="ยี่ห้อ.">
-                                        <center> <?php echo $row["brand"] ?></center>
-                                    </td>
-                                    <td data-label="จำนวน.">
-                                        <center><?php echo $row["matching_rows"] . " / " . $row["total_rows"] ?></center>
-                                    </td>
-                                    <!-- <td data-label="สถานะการยืม.">
+                        <?php
+                        $selectCountMatchTreasury = new DB_con();
+                        $sql = $selectCountMatchTreasury->selectCountMatchTreasury();
+                        while ($row = mysqli_fetch_array($sql)) {
+                        ?>
+                            <tr>
+                                <td data-label="ชื่อครุภัณฑ์.">
+                                    <center><?php echo $row["detail"] ?></center>
+                                </td>
+                                <td data-label="ยี่ห้อ.">
+                                    <center> <?php echo $row["brand"] ?></center>
+                                </td>
+                                <td data-label="จำนวน.">
+                                    <center><?php echo $row["matching_rows"] . " / " . $row["total_rows"] ?></center>
+                                </td>
+                                <!-- <td data-label="สถานะการยืม.">
                                     <center>
                                         <?php if ($row['br_status'] == '') { ?>
                                              <?php echo $row["br_status"] ?>
@@ -316,94 +235,105 @@ require_once "../app/models/db.php";
                                             }  ?>
                                     </center>
                                 </td> -->
-                                    <td><input type="checkbox" name="selected[]" value="<?php echo $row['detail'] ?>"></td>
-                                </tr>
-                        </tbody>
-                    <?php } ?>
-                    <script>
-                        function highlightRow(row) {
-                            // Toggle highlight class on row
-                            row.classList.toggle('highlight');
+                                <td><input type="checkbox" name="selected[]" value="<?php echo $row['detail'] ?>"></td>
+                            </tr>
+                    </tbody>
+                <?php } ?>
+                <script>
+                    function highlightRow(row) {
+                        // Toggle highlight class on row
+                        row.classList.toggle('highlight');
 
-                            // Toggle checkbox state
-                            var checkbox = row.querySelector('input[type="checkbox"]');
-                            checkbox.checked = !checkbox.checked;
-                        }
-                    </script>
+                        // Toggle checkbox state
+                        var checkbox = row.querySelector('input[type="checkbox"]');
+                        checkbox.checked = !checkbox.checked;
+                    }
+                </script>
                 </table>
 
-
-
-                <script>
-                    // get the table and checkboxes
-                    var table = document.getElementById("datatable");
-                    var checkboxes = table.querySelectorAll('input[type=checkbox]');
-
-                    // add event listener to each checkbox
-                    checkboxes.forEach(function(checkbox) {
-                        checkbox.addEventListener('click', function() {
-                            // get the checked rows data
-                            var selectedRows = [];
-                            checkboxes.forEach(function(checkbox) {
-                                if (checkbox.checked) {
-                                    var row = checkbox.parentNode.parentNode;
-                                    var id = row.cells[0].innerText;
-                                    var name = row.cells[1].innerText;
-                                    // var email = row.cells[2].innerText;
-                                    selectedRows.push({
-                                        id: id,
-                                        name: name
-                                        // email: email
-                                    });
-                                }
-                            });
-
-                            // show the selected rows data as an array
-                            if (selectedRows.length > 0) {
-                                var resultHtml = "<ul>";
-                                selectedRows.forEach(function(row) {
-                                    resultHtml += "<li>" + row.id + " - " + row.name + "</li>";
-                                });
-                                resultHtml += "</ul>";
-                                document.getElementById("result").innerHTML = "Selected Rows: " + resultHtml;
-                            } else {
-                                document.getElementById("result").innerHTML = "";
-                            }
-                        });
-                    });
-                </script>
-                <script>
-                    // Get the modal element
-                    var modal = document.getElementById("modal");
-
-                    // Get the button that opens the modal
-                    var btn = document.getElementById("open-modal");
-
-                    // Get the <span> element that closes the modal
-                    var span = document.getElementsByClassName("close")[0];
-
-                    // When the user clicks on the button, open the modal
-                    btn.onclick = function() {
-                        modal.style.display = "block";
-                    }
-
-                    // When the user clicks on <span> (x), close the modal
-                    span.onclick = function() {
-                        modal.style.display = "none";
-                    }
-
-                    // When the user clicks anywhere outside of the modal, close it
-                    window.onclick = function(event) {
-                        if (event.target == modal) {
-                            modal.style.display = "none";
-                        }
-                    }
-                </script>
             </div>
         </div>
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // When the user clicks on the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+    </script>
+
+    <script>
+        // get the table and checkboxes
+        var table = document.getElementById("datatable");
+        var checkboxes = table.querySelectorAll('input[type=checkbox]');
+
+        // add event listener to each checkbox
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('click', function() {
+                // get the checked rows data
+                var selectedRows = [];
+                checkboxes.forEach(function(checkbox) {
+                    if (checkbox.checked) {
+                        var row = checkbox.parentNode.parentNode;
+                        var id = row.cells[0].innerText;
+                        var name = row.cells[1].innerText;
+                        // var email = row.cells[2].innerText;
+                        selectedRows.push({
+                            id: id,
+                            name: name
+                            // email: email
+                        });
+                    }
+                });
+
+                // show the selected rows data as an array
+                if (selectedRows.length > 0) {
+                    var resultHtml = "<tr>";
+                    selectedRows.forEach(function(row) {
+                        resultHtml += "<td>" + row.id + "</td>";
+                        resultHtml += "<td>" + row.name + "</td>";
+                        resultHtml += "</tr>";
+                        document.getElementById("result").innerHTML = resultHtml;
+
+
+                    });
+                } else {
+                    document.getElementById("result").innerHTML = "";
+                }
+            });
+        });
+    </script>
+    <script>
+        //////////////////////////////////////// เปิด / ปิด Modal /////////////////////////////////
+        // Get the modal element
+        var modal = document.getElementById("modal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("open-modal");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        // btn.onclick = function() {
+        //     modal.style.display = "block";
+        // }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            // ModalNull()
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                // ModalNull()
+            }
+        }
+    </script>
 </body>
 
 </html>

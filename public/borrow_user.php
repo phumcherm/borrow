@@ -123,6 +123,7 @@ $result_l = mysqli_query($con, $query);
         background: linear-gradient(to bottom right, #4F4848, #686060, #827A7A, #CFC7C7);
         /* Standard syntax */
     }
+    
 </style>
 
 <body>
@@ -150,7 +151,8 @@ $result_l = mysqli_query($con, $query);
             <div id="modal" class="modal">
                 <div class="modal-content" style="padding: 10px; background-color: #ff5722;">
                     <div>
-                        <div style="max-width: 1600px;margin-left: auto; background-color: #e8e3e3;padding: 30px;border-radius: 7px;"><span class="close" style="margin-left: auto;color: black;background-color: white;padding: 1px 7px;border-radius: 7px;"><i class="fa-sharp fa-solid fa-xmark" + style='margin-right: auto;'></i></span>
+                        <div style="max-width: 1600px;margin-left: auto; background-color: #e8e3e3;padding: 30px;border-radius: 7px;">
+                        <span class="close" style="margin-left: auto;color: black;background-color: white;padding: 1px 7px;border-radius: 7px;"><i class="fa-sharp fa-solid fa-xmark" + style='margin-right: auto;'></i></span>
 
                             <!-- <form action=""> -->
 
@@ -179,6 +181,7 @@ $result_l = mysqli_query($con, $query);
                                 <a type="submit" id="submit" name="submit" onclick="ModalSubmit(document.getElementById('md_itemCode').value)">ยืนยันครุภัณฑ์</a>
                             </div>
                             <!-- </form> -->
+                            
                         </div>
 
                         <div id="result"></div>
@@ -287,18 +290,6 @@ $result_l = mysqli_query($con, $query);
                         tableFunc()
                     }
 
-                    function ModalSubmit(code) {
-
-                        const index = itemCode.findIndex(object => object === code);
-
-                        if (index === -1) {
-                            itemCode.push(code)
-                        }
-                        scanner.render(success, error);
-                        modal.style.display = "none";
-                        tableFunc()
-
-                    }
                 </script>
                 <br>
                 <div style="max-width: 500px;margin: auto;">
@@ -313,23 +304,6 @@ $result_l = mysqli_query($con, $query);
             <!-- </div> -->
             <br>
 
-
-            <script>
-                function includePage() {
-                    // เช็คว่ามีข้อมูลที่ต้องการ include หรือไม่
-                    if (true) {
-                        // include หน้าเพจแสดงข้อมูล
-                        fetch('../app/controller/scaner.php')
-                            .then(response => response.text())
-                            .then(data => {
-                                document.getElementById('content').innerHTML = data;
-                            });
-                    } else {
-                        // แสดงข้อความเตือน
-                        alert('ไม่สามารถ include หน้าเพจได้');
-                    }
-                }
-            </script>
         </div>
     </div>
     </form>

@@ -221,7 +221,6 @@ session_start();
                 <? require "../app/controller/scaner.php" ?>
                 <!-- <center><a href="#"> Scan QR Code</a></center> -->
 
-
                 <div id="content"></div>
 
                 <center>
@@ -229,6 +228,7 @@ session_start();
                 </center>
 
                 <? require "../app/controller/scaner.php" ?>
+
 
                 <div class="graphBox">
                     <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
@@ -290,7 +290,12 @@ session_start();
                                         tableFunc()
                                     }
                                 </script>
-                                <br><br>
+                                <center>
+                                    <input class="w3-input" type="text" required placeholder="code" id="data4" name="data4" style="max-width: 500px;visibility: hidden; ">
+                                    <!-- <h2 id="data4" name="data4"></h2> -->
+                                    <!-- <h2 id="result" ></h2> -->
+                                    <!-- <br><br> -->
+                                </center>
                                 <center>
                                     <input class="w3-input" type="text" placeholder="ปัญหาในการใช้งาน" id="problem" name="problem" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
                                 </center>
@@ -305,12 +310,6 @@ session_start();
                     </div>
                 </div>
 
-                <center>
-                    <input class="w3-input" type="text" required placeholder="code" id="data4" name="data4" style="max-width: 500px;visibility: hidden; ">
-                    <!-- <h2 id="data4" name="data4"></h2> -->
-                    <!-- <h2 id="result" ></h2> -->
-                    <!-- <br><br> -->
-                </center>
             </form>
             <!--  </div> -->
             <br>
