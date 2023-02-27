@@ -102,6 +102,7 @@ require_once "../../app/models/function.php";
                             <th>รหัสครุภัณฑ์</th>
                             <th>ชื่ออุปกรณ์</th>
                             <th>ยี่ห่อ-รุ่น</th>
+
                             <th>จำนวนที่ถูกยืม</th>
                         </tr>
                     </thead>

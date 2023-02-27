@@ -159,7 +159,7 @@
     <!-- Card -->
     <div class="graphBox">
         <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
-            <p style="font-size: 36px;text-align: center;color: #E6581D;">จำนวนครุภัณฑ์ที่คืนแล้ว</p>
+            <p style="font-size: 36px;text-align: center;color: #E6581D;">ครุภัณฑ์ที่ยังไม่คืน</p>
             <div>
                 <div class="table-container">
                     <table class="table" id="data" style="text-align: center;">
@@ -170,7 +170,7 @@
                                 <th>สถานที่</th>
                                 <th>วันที่ยืม</th>
                                 <th>กำหนดคืน</th>
-
+                                <th></th>
 
                             </tr>
                         </thead>
@@ -187,7 +187,7 @@
                                     <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
                                     <td data-label="สถานที่."><?php echo $row['location'] ?></td>
                                     <td data-label="วันที่ยืม."><?php echo $row['borrow_date'] ?></td>
-                                    <td data-label="กำหนดคืน."><?php echo $row['bk_date'] ?></td>
+                                    <td data-label="กำหนดคืน."><?php echo $row['br_date'] ?></td>
                                     <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow" onclick="Databack('<?php echo $row['br_id'] ?>')"> ข้อมูล</button></td>
                                 </tr>
                         </tbody>
