@@ -160,16 +160,16 @@ $result_l = mysqli_query($con, $query);
                                 <h2 style="color: black;">รายละเอียดวัสดุ / ครุภัณฑ์</h2>
                                 <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-8">
 
-                                    <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_detail" type="text" name="md_detail" style="margin-bottom: 15px;max-width: 800px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                                    <input class="w3-input" required disabled placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_detail" type="text" name="md_detail" style="margin-bottom: 15px;max-width: 800px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
                                 </div>
                                 <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-8">
                                     <div class="section_area_grid">
 
-                                        <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_id" type="text" name="md_id" style="margin-bottom: 15px;max-width: 380px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
-                                        <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_itemCode" type="text" name="md_itemCode" style="margin-bottom: 15px;max-width: 380px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                                        <input class="w3-input" required disabled placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_id" type="text" name="md_id" style="margin-bottom: 15px;max-width: 380px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                                        <input class="w3-input" required disabled placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_itemCode" type="text" name="md_itemCode" style="margin-bottom: 15px;max-width: 380px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
 
-                                        <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_brand" type="text" name="md_brand" style="margin-bottom: 15px;max-width: 380px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
-                                        <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_room" type="text" name="md_room" style="margin-bottom: 15px;max-width: 380px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                                        <input class="w3-input" required disabled placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_brand" type="text" name="md_brand" style="margin-bottom: 15px;max-width: 380px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
+                                        <input class="w3-input" required disabled placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="md_room" type="text" name="md_room" style="margin-bottom: 15px;max-width: 380px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
                                     </div>
                                 </div>
 
@@ -209,22 +209,22 @@ $result_l = mysqli_query($con, $query);
                     <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
                         <thead class="table-dark">
                             <th>
-                                <center>id </center>
+                                <center>ID ครุภัณฑ์</center>
                             </th>
                             <!-- <th>
                                 <center>updateTime</center>
                             </th> -->
                             <th>
-                                <center>itemCode</center>
+                                <center>ITEM CODE</center>
                             </th>
                             <th>
-                                <center>detail</center>
+                                <center>ชื่อครุภัณฑ์</center>
                             </th>
                             <th>
-                                <center>brand</center>
+                                <center>ยี่ห้อ/รุ่น</center>
                             </th>
                             <th>
-                                <center>room</center>
+                                <center>ฝ่าย</center>
                             </th>
                             <th>
                                 <center></center>

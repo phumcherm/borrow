@@ -62,6 +62,21 @@ require_once "../app/models/db.php";
         .pagination li:hover {
             cursor: pointer;
         }
+
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th,
+        table td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        button {
+            margin-right: 10px;
+        }
     </style>
 
 </head>
@@ -135,8 +150,10 @@ require_once "../app/models/db.php";
 
                         <center>
                             <h2 style="color: black;">รายละเอียดวัสดุ / ครุภัณฑ์ <i class="fa-sharp fa-solid fa-xmark"></i></h2>
+
                             <div class="table-responsive" style="padding: 25px;">
                                 <div>
+                                    <p style="color: #000 ;">จำนวนครุภัณฑ์ที่เลือก : <span id="totalPrice">0</span></p>
                                     <table id="datatable2" class="table" style="text-align: center;">
                                         <thead style="color:white; background-color:#E6581D; ">
                                             <th>
@@ -170,7 +187,11 @@ require_once "../app/models/db.php";
 
                     </div>
 
-                    <div id="result"></div>
+                    <div>
+                        <!-- <h3>Shopping Cart:</h3> -->
+                        <!-- <div id="shoppingCart"></div> -->
+                    </div>
+                    <!-- <div id="result"></div> -->
                 </div>
             </div>
         </div>
@@ -201,13 +222,13 @@ require_once "../app/models/db.php";
                         while ($row = mysqli_fetch_array($sql)) {
                         ?>
                             <tr>
-                                <td data-label="ชื่อครุภัณฑ์.">
+                                <td style="width: 500px;" data-label="ชื่อครุภัณฑ์.">
                                     <center><?php echo $row["detail"] ?></center>
                                 </td>
                                 <td data-label="ยี่ห้อ.">
                                     <center> <?php echo $row["brand"] ?></center>
                                 </td>
-                                <td data-label="จำนวน.">
+                                <td style="width: 150px;" data-label="จำนวน.">
                                     <center><?php echo $row["matching_rows"] . " / " . $row["total_rows"] ?></center>
                                 </td>
 
@@ -308,6 +329,77 @@ require_once "../app/models/db.php";
                 modal.style.display = "none";
                 // ModalNull()
             }
+        }
+    </script>
+    <script>
+        ///////////////////////////////// function เพิ่มครุภัณฑ์ที่ต้องการยืมลงใน modal /////////////////////////////////
+        const shoppingCart = {};
+
+        function addToCart(button, isSelected) {
+            const row = button.parentNode.parentNode;
+            const itemName = row.cells[0, 1].textContent;
+            const itemPrice = row.cells[0].textContent;
+
+            if (isSelected) {
+                if (shoppingCart[itemName]) {
+                    shoppingCart[itemName].quantity += 1;
+                } else {
+                    shoppingCart[itemName] = {
+                        price: itemPrice,
+                        quantity: 1
+                    };
+                }
+            } else {
+                if (shoppingCart[itemName]) {
+                    shoppingCart[itemName].quantity -= 1;
+                    if (shoppingCart[itemName].quantity === 0) {
+                        delete shoppingCart[itemName];
+                    }
+                }
+            }
+
+            updateShoppingCart();
+        }
+
+        function updateShoppingCart() {
+            const cart = document.getElementById("result");
+            cart.innerHTML = "";
+
+            let totalPrice = 0;
+            var resultHtml = "<tr>";
+            // if (totalPrice.length > 0) {
+            for (const [itemName, itemData] of Object.entries(shoppingCart)) {
+                const itemPrice = itemData.price;
+                const itemQuantity = itemData.quantity;
+                // const itemTotalPrice = itemPrice * itemQuantity;
+                totalPrice += itemQuantity;
+
+                // const p = document.createElement("p");
+                // // p.textContent += "<td>";
+                // p.textContent += itemPrice ;
+                // p.textContent += itemName ;
+                // p.textContent += itemQuantity ;
+                // // p.textContent += "</td>";
+                // // p.textContent = `${itemName} x ${itemQuantity} = ${itemTotalPrice}`;
+                // cart.appendChild(p);
+
+                resultHtml += "<td style='width: 300px;'>" + itemPrice + "</td>";
+                resultHtml += "<td>" + itemName + "</td>";
+                resultHtml += "<td style='width: 150px';>" + itemQuantity + "</td>";
+                resultHtml += "<td style='width: 200px;'>"
+                resultHtml += "<button style='padding: 5px 15px;margin: auto 10px;background-color: #827A7A;color: white;border-radius: 10px;border: none;' onclick='addToCart(this, false)'>-</button>"
+                resultHtml += "<button style='padding: 5px 15px;margin: auto 10px;background-color: #ff5722;color: white;border-radius: 10px;border: none;' onclick='addToCart(this, true)'>+</button>";
+                resultHtml += "</td>"
+                resultHtml += "</tr>";
+                document.getElementById("result").innerHTML = resultHtml;
+
+            }
+            // } else {
+            //     document.getElementById("result").innerHTML = "";
+            // }
+
+            const total = document.getElementById("totalPrice");
+            total.textContent = totalPrice;
         }
     </script>
 </body>

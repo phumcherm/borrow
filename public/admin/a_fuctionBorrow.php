@@ -137,10 +137,10 @@
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-6">
+                            <!-- <div class="col-6">
                                 <h7 class="text-center" style="color:black">วันที่คืน</h7>
                                 <input type="text" disabled class="form-control" name="txt_dateBack" id="txt_dateBack" placeholder="" minlength="10" maxlength="10">
-                            </div>
+                            </div> -->
                             <div class="col-6">
                                 <h7 class="text-center" style="color:black">เบอร์โทร</h7>
                                 <input type="text" disabled name="txt_phone" id="txt_phone" class="form-control">
@@ -159,17 +159,18 @@
     <!-- Card -->
     <div class="graphBox">
         <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
-            <p style="font-size: 36px;text-align: center;color: #E6581D;">ครุภัณฑ์ที่ยังไม่คืน</p>
+            <p style="font-size: 36px;text-align: center;color: #E6581D;">ครุภัณฑ์ที่คืนแล้ว</p>
             <div>
                 <div class="table-container">
                     <table class="table" id="data" style="text-align: center;">
                         <thead style="color:white; background-color:#E6581D;">
                             <tr>
                                 <th>ชื่อ - นามสกุล</th>
+                                <!-- <th>รหัสครุภัณฑ์</th> -->
                                 <th>ชื่ออุปกรณ์</th>
                                 <th>สถานที่</th>
                                 <th>วันที่ยืม</th>
-                                <th>กำหนดคืน</th>
+                                <th>วันที่คืน</th>
                                 <th></th>
 
                             </tr>
@@ -187,7 +188,7 @@
                                     <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
                                     <td data-label="สถานที่."><?php echo $row['location'] ?></td>
                                     <td data-label="วันที่ยืม."><?php echo $row['borrow_date'] ?></td>
-                                    <td data-label="กำหนดคืน."><?php echo $row['br_date'] ?></td>
+                                    <!-- <td data-label="วันที่คืน."><?php echo $row['bk_date'] ?></td> -->
                                     <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow" onclick="Databack('<?php echo $row['br_id'] ?>')"> ข้อมูล</button></td>
                                 </tr>
                         </tbody>
@@ -234,9 +235,6 @@
             });
         }
     </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 
 </body>
