@@ -171,6 +171,7 @@
                                 <th>สถานที่</th>
                                 <th>วันที่ยืม</th>
                                 <th>วันที่คืน</th>
+                                <th>คืนครุภัณฑ์ล่าช้า</th>
                                 <th></th>
 
                             </tr>
@@ -189,7 +190,28 @@
                                     <td data-label="สถานที่."><?php echo $row['location'] ?></td>
                                     <td data-label="วันที่ยืม."><?php echo $row['borrow_date'] ?></td>
                                     <td data-label="วันที่คืน."><?php echo $row['bk_date'] ?></td>
-                                    <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow" onclick="Databack('<?php echo $row['borrow_id'] ?>')"> ข้อมูล</button></td>
+                                    <td data-label="คืนครุภัณฑ์ล่าช้า.">
+                                        <?php
+                                        $datestart = $row["br_date"];
+                                        $dateend = $row["bk_date"];
+
+                                        $calculate = strtotime("$datestart") - strtotime("$dateend");
+                                        $sumdate1 = floor($calculate / 86400); // 86400 มาจาก 24*360 (1วัน = 24 ชม.);
+
+                                        $sm1 = $sumdate1;
+                                        if ($sm1 >= 500) {
+                                            echo "-";
+                                        } elseif ($sm1 <= 0) {
+                                            echo $sm1;
+                                            echo ' วัน';
+                                        } else {
+                                            echo $sm1;
+                                            echo ' วัน';
+                                            echo "</td> ";
+                                        }
+                                        ?>
+                                    </td>
+                                    <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow" onclick="Databack('<?php echo $row['br_id'] ?>')"> ข้อมูล</button></td>
                                 </tr>
                         </tbody>
                     <?php

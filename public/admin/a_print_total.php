@@ -11,182 +11,16 @@ require_once "../../app/models/db.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="print.css">
     <title>Admin borrow</title>
 </head>
-<style>
-    #search {
-        width: 50%;
-        padding: 17px 10px;
-        background-color: #fff;
-        transition: transform 250ms ease-in-out;
-        font-size: 20px;
-        line-height: 18px;
-        border-radius: 50px;
-        border: 1px solid #E6581D;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-    }
-
-    .graphBox {
-        position: relative;
-        width: 100%;
-        padding: 20px;
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-gap: 30px;
-        min-height: 200px;
-    }
-
-    .graphBox .box {
-        position: relative;
-        background: #fff;
-        padding: 20px;
-        width: 100%;
-        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-        border-radius: 20px;
-    }
-
-    .BoxTable {
-        position: relative;
-        width: 100%;
-        padding: 20px;
-        display: grid;
-        grid-template-columns: 2fr;
-        grid-gap: 30px;
-        min-height: 200px;
-    }
-
-    .BoxTable .boxt {
-        position: relative;
-        background: #fff;
-        padding: 20px;
-        width: 100%;
-        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-        border-radius: 20px;
-    }
-
-    @media(max-width: 991px) {
-        .graphBox {
-            grid-template-columns: 1fr;
-            height: auto;
-        }
-    }
-
-    #checkbox_1 {
-        accent-color: #E6581D;
-    }
-
-    input.larger {
-        width: 20px;
-        height: 20px;
-    }
-
-
-    #text {
-
-        color: #E6581D;
-        border-style: solid;
-        border-color: #E6581D;
-        border-width: 3px;
-        padding: 10px 10px;
-        background-color: #fff;
-        border-radius: 5px;
-        float: right;
-        margin-right: 50px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;
-    }
-
-    #text2 {
-        color: #fff;
-        border-style: solid;
-        border-color: #E6581D;
-        border-width: 3px;
-        padding: 10px 10px;
-        background-color: #E6581D;
-        border-radius: 5px;
-        float: right;
-        margin-right: 50px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;
-    }
-</style>
-<style type="text/css">
-    @media print {
-        #hid {
-            display: none;
-            /*
-             ซ่อน  */
-        }
-
-        #hid1 {
-            display: none;
-            /* ซ่อน  */
-        }
-
-        #txt_keyword {
-            display: none;
-            /* ซ่อน  */
-        }
-
-        #txt_keyword1 {
-            display: none;
-            /* ซ่อน  */
-        }
-
-        #text {
-            display: none;
-            /* ซ่อน  */
-        }
-
-        #img {
-            width: 1500px;
-        }
-
-        #p {
-            font-size: 24px;
-
-        }
-
-        #p1 {
-            font-size: 24px;
-
-        }
-
-        #data {
-            font-size: 18px;
-        }
-    }
-</style>
 
 
 <body>
 
-
-
     <div class="BoxTable">
         <div class="boxt" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
             <div class="row">
-                <?php
-                $search_text = isset($_GET['txt_keyword']) ? $_GET['txt_keyword'] : '';
-                $search_text1 = isset($_GET['txt_keyword1']) ? $_GET['txt_keyword1'] : '';
-                $data = array();
-                $sql = "SELECT  *, DATE_FORMAT(bk_time, '%d / %m / %Y') bk_date,DATE_FORMAT(br_time, '%d / %m / %Y') borrow_date
-FROM ceitdb.`borrow` left join ceitdb.itemdata on borrow.id = itemdata.id left join ceitdb.user on borrow.user_id = user.user_id 
-left join ceitdb.back on borrow.br_id = back.br_id
-where borrow.status = 1  between '" . $search_text . "' and  '" . $search_text1 . "' or br_time LIKE '%$search_text%'and br_time LIKE '%$search_text1%'";
-                if ($result = $con->query($sql)) {
-                    //printf("Select returned %d rows.\n", $result->num_rows);
-                    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                        //print_r($row);echo '<br>';
-                        $data[] = $row;
-                    }
-                    /* free result set */
-                    $result->close();
-                }
-                $con->close();
-
-
-                //echo '<pre>', print_r($data, true), '</pre>';
-                ?>
                 <form name="frmSearch" method="GET" action="">
                     <table width="500" border="0">
                         <tr>
@@ -198,6 +32,27 @@ where borrow.status = 1  between '" . $search_text . "' and  '" . $search_text1 
                         </tr>
                     </table>
                 </form>
+                <?php
+                $search_text = isset($_GET['txt_keyword']) ? $_GET['txt_keyword'] : '';
+                $search_text1 = isset($_GET['txt_keyword1']) ? $_GET['txt_keyword1'] : '';
+                $data = array();
+                $sql = "SELECT  *, DATE_FORMAT(bk_time, '%d / %m / %Y') bk_date,DATE_FORMAT(br_time, '%d / %m / %Y') borrow_date
+FROM ceitdb.`borrow` left join ceitdb.itemdata on borrow.id = itemdata.id left join ceitdb.user on borrow.user_id = user.user_id 
+left join ceitdb.back on borrow.br_id = back.br_id
+where borrow.status = 1 AND br_time between '" . $search_text . "' and  '" . $search_text1 . "' or br_time LIKE '%$search_text%'and br_time LIKE '%$search_text1%'";
+                if ($result = $con->query($sql)) {
+                    //printf("Select returned %d rows.\n", $result->num_rows);
+                    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                        //print_r($row);echo '<br>';
+                        $data[] = $row;
+                    }
+                    /* free result set */
+                    $result->close();
+                }
+                $con->close();
+                //echo '<pre>', print_r($data, true), '</pre>';
+                ?>
+
                 <div class="col-md-12 ">
                     <div class="col-sm-2" align="right"> </div>
                     <div class="col-sm-12" align="left">
@@ -238,6 +93,7 @@ where borrow.status = 1  between '" . $search_text . "' and  '" . $search_text1 
                                             <th>สถานที่</th>
                                             <th>วันที่ยืม</th>
                                             <th>วันที่คืน</th>
+                                            <th>คืนครุภัณฑ์ล่าช้า</th>
                                             <th>รายงานปัญหา</th>
 
                                         </tr>
@@ -257,6 +113,27 @@ where borrow.status = 1  between '" . $search_text . "' and  '" . $search_text1 
                                                 <td data-label="สถานที่."><?php echo $row['location'] ?></td>
                                                 <td data-label="วันที่ยืม."><?php echo $row['borrow_date'] ?></td>
                                                 <td data-label="วันที่คืน."><?php echo $row['bk_date'] ?></td>
+                                                <td data-label="คืนครุภัณฑ์ล่าช้า.">
+                                                    <?php
+                                                    $datestart = $row["br_date"];
+                                                    $dateend = $row["bk_date"];
+
+                                                    $calculate = strtotime("$datestart") - strtotime("$dateend");
+                                                    $sumdate1 = floor($calculate / 86400); // 86400 มาจาก 24*360 (1วัน = 24 ชม.);
+
+                                                    $sm1 = $sumdate1;
+                                                    if ($sm1 >= 500) {
+                                                        echo "-";
+                                                    } elseif ($sm1 <= 0) {
+                                                        echo $sm1;
+                                                        echo ' วัน';
+                                                    } else {
+                                                        echo $sm1;
+                                                        echo ' วัน';
+                                                        echo "</td> ";
+                                                    }
+                                                    ?>
+                                                </td>
                                                 <td data-label="กำหนดคืน."><?php echo $row['bk_problem'] ?></td>
 
                                             </tr>
