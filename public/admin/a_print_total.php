@@ -245,7 +245,7 @@ where borrow.status = 1  between '" . $search_text . "' and  '" . $search_text1 
 
                                     <tbody>
                                         <?php
-
+                                        $i = 0;
                                         foreach ($data as $row) {
                                             $i++;
                                         ?>

@@ -189,7 +189,7 @@
                                     <td data-label="สถานที่."><?php echo $row['location'] ?></td>
                                     <td data-label="วันที่ยืม."><?php echo $row['borrow_date'] ?></td>
                                     <td data-label="วันที่คืน."><?php echo $row['bk_date'] ?></td>
-                                    <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow" onclick="Databack('<?php echo $row['br_id'] ?>')"> ข้อมูล</button></td>
+                                    <td><button class="btn btn-primary button" data-toggle="modal" data-target="#showborrow" onclick="Databack('<?php echo $row['borrow_id'] ?>')"> ข้อมูล</button></td>
                                 </tr>
                         </tbody>
                     <?php
