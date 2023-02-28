@@ -188,9 +188,6 @@ require_once "../app/models/db.php";
                         <th>
                             <center>จำนวน</center>
                         </th>
-                        <!-- <!-- <th>
-                                <center>สถานะการยืม</center>
-                            </th> -->
                         <th>
                             <center>เลือก</center>
                         </th>
@@ -213,28 +210,7 @@ require_once "../app/models/db.php";
                                 <td data-label="จำนวน.">
                                     <center><?php echo $row["matching_rows"] . " / " . $row["total_rows"] ?></center>
                                 </td>
-                                <!-- <td data-label="สถานะการยืม.">
-                                    <center>
-                                        <?php if ($row['br_status'] == '') { ?>
-                                             <?php echo $row["br_status"] ?>
-                                            <p style="background-color: green;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">ว่าง</p>
-                                        <?php } elseif ($row['br_status'] == 0) { ?>
-                                            <p style="background-color: red;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">ไม่ว่าง</p>
-                                        <?php } else { ?>
-                                            <p style="background-color: green;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">ว่าง</p>
-                                        <?php } ?>
-                                    </center>
-                                </td>
-                                <td data-label="สถานะการใช้งาน.">
-                                    <center><?php if ($row['item_status'] == "ใช้งานได้") {
-                                                echo "<p style='background-color: green;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;'>ใช้งานได้</p>";
-                                            } elseif ($row['item_status'] == "ชำรุดรอการซ่อม") {
-                                                echo "<p style='background-color: #ffcc00;padding: 5px 10px;color: black;border-radius: 7px;margin: 0px;'>ชำรุดรอการซ่อม</p>";
-                                            } else {
-                                                echo "<p style='background-color: red;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;'>" . $row['item_status'] . "</p>";
-                                            }  ?>
-                                    </center>
-                                </td> -->
+
                                 <td><input type="checkbox" name="selected[]" value="<?php echo $row['detail'] ?>"></td>
                             </tr>
                     </tbody>
