@@ -174,6 +174,9 @@ session_start();
     <div>
         <div id="grad" style="background-color: #827A7A;width: auto; height: auto;margin: 15px;border-radius: 7px;padding: 30px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
 
+            <p style="float: right;">
+                <?php echo $_SESSION['fname_login'] . " " . $_SESSION['lname_login'] ?>
+            </p>
 
             <h2 style="color: #fff;font-family: SUT_Bold; text-shadow:2px 3px 10px #000; ">
                 <i class="fa fa-caret-right" style="font-size:48px"></i> &nbsp;&nbsp;&nbsp;คืนครุภัณฑ์
@@ -233,7 +236,7 @@ session_start();
                 <div class="graphBox">
                     <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
                         <div class="table-container">
-                            <table id="datatable" class="table" sstyle="text-align: center;">
+                            <table id="datatable" class="table" style="text-align: center;">
 
                                 <div style="max-width: 1600px;margin-left: auto;">
                                     <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
@@ -242,18 +245,13 @@ session_start();
                                             <th>
                                                 <center>id </center>
                                             </th>
-                                            <!-- <th>
-                                <center>updateTime</center>
-                            </th> -->
+                                            
                                             <th>
                                                 <center>itemCode</center>
                                             </th>
                                             <th>
                                                 <center>detail</center>
                                             </th>
-                                            <!-- <th>
-                                <center>checkInDate</center>
-                            </th> -->
                                             <th>
                                                 <center>brand</center>
                                             </th>

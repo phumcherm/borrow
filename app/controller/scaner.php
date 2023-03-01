@@ -199,8 +199,6 @@
                     html += "</tr>";
                     // console.log(tb_itemCode)
 
-
-
                     // document.getElementById("del").onclick = function() {
                     //     del_itemcode(itemCode)
                     // };
@@ -214,7 +212,6 @@
                 }
 
                 document.getElementById("data4").value = itemCode;
-
 
             }
 

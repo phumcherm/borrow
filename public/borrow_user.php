@@ -123,7 +123,6 @@ $result_l = mysqli_query($con, $query);
         background: linear-gradient(to bottom right, #4F4848, #686060, #827A7A, #CFC7C7);
         /* Standard syntax */
     }
-    
 </style>
 
 <body>
@@ -152,7 +151,7 @@ $result_l = mysqli_query($con, $query);
                 <div class="modal-content" style="padding: 10px; background-color: #ff5722;">
                     <div>
                         <div style="max-width: 1600px;margin-left: auto; background-color: #e8e3e3;padding: 30px;border-radius: 7px;">
-                        <span class="close" style="margin-left: auto;color: black;background-color: white;padding: 1px 7px;border-radius: 7px;"><i class="fa-sharp fa-solid fa-xmark" + style='margin-right: auto;'></i></span>
+                            <span class="close" style="margin-left: auto;color: black;background-color: white;padding: 1px 7px;border-radius: 7px;"><i class="fa-sharp fa-solid fa-xmark" + style='margin-right: auto;'></i></span>
 
                             <!-- <form action=""> -->
 
@@ -181,7 +180,7 @@ $result_l = mysqli_query($con, $query);
                                 <a type="submit" id="submit" name="submit" onclick="ModalSubmit(document.getElementById('md_itemCode').value)">ยืนยันครุภัณฑ์</a>
                             </div>
                             <!-- </form> -->
-                            
+
                         </div>
 
                         <div id="result"></div>
@@ -189,22 +188,17 @@ $result_l = mysqli_query($con, $query);
                 </div>
             </div>
             <form action="../app/models/add_borrow.php" method="post">
-
                 <? require "../app/controller/scaner.php" ?>
 
                 <!-- Button to open modal -->
                 <!-- <a type="button" id="open-modal">Open Modal</a> -->
-
-
                 <div id="content"></div>
 
                 <center>
                     <a type="submit" id="submit" name="submit" style="float: none;" onclick="scaner()">Scan QRcode <i class="fa-solid fa-qrcode"></i></a>
                 </center>
-
-
                 <!--  </div> -->
-                <div style="max-width: 1600px;margin-left: auto;">
+                <div style="max-width: 1600px;margin-left: auto;background-color: #e8e3e3; padding: 25px;border-radius: 7px;">
                     <!-- <h2 style="padding-left: 200px;">รายละเอียดการยืม</h2> -->
                     <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
                         <thead class="table-dark">
@@ -236,70 +230,69 @@ $result_l = mysqli_query($con, $query);
                             </p>
                         </tbody>
                     </table>
-                </div>
 
-                <center>
-                    <input class="w3-input" type="text" required placeholder="code" id="data4" name="data4" style="max-width: 500px;visibility: hidden; ">
-                    <!-- <h2 id="data4" name="data4">
+                    <center>
+                        <input class="w3-input" type="text" required placeholder="code" id="data4" name="data4" style="max-width: 500px;visibility: hidden; ">
+                        <!-- <h2 id="data4" name="data4">
                         </h2> -->
-                    <!-- <h2 id="result" ></h2> -->
-                    <!-- <br><br> -->
-                    <!--  //<h2 id="data4" name="data4"></h2>
+                        <!-- <h2 id="result" ></h2> -->
+                        <!-- <br><br> -->
+                        <!--  //<h2 id="data4" name="data4"></h2>
                         //<h2 id="result" ></h2>
                        // <br><br> -->
-                    <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                        <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
 
-                        <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" type="text" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
-                    </div>
-
-                    <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-                        <div class="section_area_grid">
-
-                            <!-- <div class="section_grid_bor"> -->
-                            <div class="section_grid_item">
-                                <!--        //<h5 style="padding-left: 0;">ระบุสถานที่<h5> -->
-                                <!-- <br> -->
-                                <!-- <h6 style="visibility: hidden;">c</h6> -->
-                                <!-- <br> -->
-                                <div style="font-size: 25px;visibility: hidden;">ระบุสถานที่*</div>
-                                <input class="w3-input w3-animate-input demo" id="location" name="location" type="text" required placeholder="ระบุสถานที่" style="max-width: 400px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; ">
-
-                            </div>
-                            <!-- </div> -->
-                            <!-- <div class="section_grid_bor"> -->
-                            <div class="section_grid_item">
-                                <div style="font-size: 25px;">วันที่คืน*</div>
-                                <input class="w3-input " style="max-width: 400px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; " type="date" id="date" name="date" required>
-                                <!-- <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;"> -->
-
-                            </div>
-                            <!-- </div> -->
-
+                            <input class="w3-input" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" type="text" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;">
                         </div>
 
+                        <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                            <div class="section_area_grid">
+
+                                <!-- <div class="section_grid_bor"> -->
+                                <div class="section_grid_item">
+                                    <!--        //<h5 style="padding-left: 0;">ระบุสถานที่<h5> -->
+                                    <!-- <br> -->
+                                    <!-- <h6 style="visibility: hidden;">c</h6> -->
+                                    <!-- <br> -->
+                                    <div style="font-size: 25px;visibility: hidden;">ระบุสถานที่*</div>
+                                    <input class="w3-input w3-animate-input demo" id="location" name="location" type="text" required placeholder="ระบุสถานที่" style="max-width: 400px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; ">
+
+                                </div>
+                                <!-- </div> -->
+                                <!-- <div class="section_grid_bor"> -->
+                                <div class="section_grid_item">
+                                    <div style="font-size: 25px;">วันที่คืน*</div>
+                                    <input class="w3-input " style="max-width: 400px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px; " type="date" id="date" name="date" required>
+                                    <!-- <input class="w3-input" type="text" required placeholder="ระบุงานที่จะนำไปใช้ทำกิจกรรม" id="activity" name="activity" style="max-width: 500px; box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;"> -->
+
+                                </div>
+                                <!-- </div> -->
+
+                            </div>
+
+                        </div>
+                    </center>
+                    <br><br>
+
+                    <script>
+                        function delAll_test() {
+                            // document.getElementById("data4").innerHTML = code234
+                            // console.log(code234)
+                            itemCode.length = 0
+                            console.log("del = " + itemCode)
+                            tableFunc()
+                        }
+                    </script>
+                    <br>
+                    <div style="max-width: 500px;margin: auto;">
+
+                        <a type="button" id="cancle" onclick="delAll_test()">ยกเลิก</a>
+                        <button type="submit" id="submit" name="submit">ยืนยันทั้งหมด</button>
                     </div>
-                </center>
-                <br><br>
 
-                <script>
-                    function delAll_test() {
-                        // document.getElementById("data4").innerHTML = code234
-                        // console.log(code234)
-                        itemCode.length = 0
-                        console.log("del = " + itemCode)
-                        tableFunc()
-                    }
+                    <!-- </table> -->
 
-                </script>
-                <br>
-                <div style="max-width: 500px;margin: auto;">
-
-                    <a type="button" id="cancle" onclick="delAll_test()">ยกเลิก</a>
-                    <button type="submit" id="submit" name="submit">ยืนยันทั้งหมด</button>
                 </div>
-
-                </table>
-
             </form>
             <!-- </div> -->
             <br>

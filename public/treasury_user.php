@@ -63,7 +63,7 @@ require_once "../app/models/db.php";
             cursor: pointer;
         }
 
-        table {
+        /* table {
             border-collapse: collapse;
             margin-bottom: 20px;
         }
@@ -76,7 +76,7 @@ require_once "../app/models/db.php";
 
         button {
             margin-right: 10px;
-        }
+        } */
     </style>
 
 </head>
@@ -90,14 +90,11 @@ require_once "../app/models/db.php";
 
             <h2 style="color: #fff;font-family: SUT_Bold;  text-shadow:2px 3px 10px #000;">
                 <i class="fa fa-caret-right" style="font-size:48px"></i>&nbsp;&nbsp;&nbsp;รายการครุภัณฑ์
-
             </h2>
         </div>
-        <br>
         <center>
             <input class="w3-input " type="text" id="myInput" onkeyup="myFunction()" placeholder="Search .." style="margin: 15px;border-radius: 50px;padding: 13px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;" title="Type in a name">
         </center>
-        <br>
         <div class='pagination-container'>
             <p Align=right>
             <nav aria-label="Page navigation example">
@@ -136,14 +133,14 @@ require_once "../app/models/db.php";
         </div>
 
         <!-- Button to open modal -->
-        <button id="open-modal">Open Modal</button>
+        <a style="width: 150px; height: 45px;background-color: #E6581D;" type="button" id="open-modal">Open Modal<p style="float: right;" id="numBut"></p></a>
 
 
         <!-- Modal -->
         <div id="modal" class="modal">
             <div class="modal-content" style="padding: 10px; background-color: #ff5722;">
                 <div>
-                    <div style="max-width: 1600px;margin-left: auto; background-color: #e8e3e3;padding: 30px;border-radius: 7px;">
+                    <div style="max-width: 1600px;margin-left: auto; background-color: white;padding: 30px;border-radius: 7px;">
                         <span class="close" style="margin-left: auto;color: black;background-color: white;padding: 1px 7px;border-radius: 7px;"><i class="fa-solid fa-xmark"></i></span>
 
                         <!-- <form action=""> -->
@@ -259,6 +256,7 @@ require_once "../app/models/db.php";
                                 <!-- <td><input type="checkbox" name="selected[]" value="<?php echo $row['detail'] ?>"></td> -->
                                 <td style="width: 200px;">
                                     <button style="padding: 5px 15px;margin: auto 10px;background-color: #827A7A;color: white;border-radius: 10px;border: none;" onclick="addToCart(this, false)">-</button>
+                                    <!-- <p id="itemNum[<?php echo $row ?>]">0</p> -->
                                     <button style="padding: 5px 15px;margin: auto 10px;background-color: #ff5722;color: white;border-radius: 10px;border: none;" onclick="addToCart(this, true)">+</button>
                                 </td>
                             </tr>
@@ -371,6 +369,7 @@ require_once "../app/models/db.php";
             if (isSelected) {
                 if (shoppingCart[itemName]) {
                     shoppingCart[itemName].quantity += 1;
+
                 } else {
                     shoppingCart[itemName] = {
                         price: itemPrice,
@@ -391,7 +390,7 @@ require_once "../app/models/db.php";
 
         function updateShoppingCart() {
             const cart = document.getElementById("result");
-            cart.innerHTML = "";
+            cart.innerHTML = "<p><td colspan='10' class='text-center'>โปรดเพิ่มครุภัณฑ์</td></p>";
 
             let totalPrice = 0;
             var resultHtml = "<tr>";
@@ -401,15 +400,6 @@ require_once "../app/models/db.php";
                 const itemQuantity = itemData.quantity;
                 // const itemTotalPrice = itemPrice * itemQuantity;
                 totalPrice += itemQuantity;
-
-                // const p = document.createElement("p");
-                // // p.textContent += "<td>";
-                // p.textContent += itemPrice ;
-                // p.textContent += itemName ;
-                // p.textContent += itemQuantity ;
-                // // p.textContent += "</td>";
-                // // p.textContent = `${itemName} x ${itemQuantity} = ${itemTotalPrice}`;
-                // cart.appendChild(p);
 
                 resultHtml += "<td style='width: 300px;'>" + itemPrice + "</td>";
                 resultHtml += "<td>" + itemName + "</td>";
@@ -421,13 +411,17 @@ require_once "../app/models/db.php";
                 resultHtml += "</tr>";
                 document.getElementById("result").innerHTML = resultHtml;
 
+                // document.getElementById("itemNum["+[itemName, itemData]+"]").innerHTML = itemQuantity;
             }
-            // } else {
-            //     document.getElementById("result").innerHTML = "";
-            // }
 
             const total = document.getElementById("totalPrice");
             total.textContent = totalPrice;
+
+            const numBut = document.getElementById("numBut");
+            numBut.textContent = "( " + totalPrice + " )";
+
+            // const itemNum = document.getElementById("itemNum");
+            //         itemNum.textContent = "( " + totalPrice + " )";
         }
     </script>
 </body>

@@ -202,7 +202,7 @@ $result_l = mysqli_query($con, $query);
 
         <div class="table-responsive" style="padding: 25px;">
             <div>
-                <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: white;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
+                <table id="datatable" class="table" style="max-width: 1200px;margin: auto; padding: 16px;background-color: none;border-radius: 7px;text-align: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;">
                     <div>
                         <thead class="table-dark">
                             <th>
@@ -237,54 +237,54 @@ $result_l = mysqli_query($con, $query);
                             </th>
                         </thead>
 
-                        <tbody>
+                        <tbody >
                             <?php
                             $user_id = $_SESSION['id_login'];
                             $selectBorrow = new DB_con();
                             $sql = $selectBorrow->selectBorrow($user_id);
                             while ($row = mysqli_fetch_array($sql)) {
                             ?>
-                                <td data-label="Borrow ID.">
-                                    <center><?php echo $row["br_id"] ?></center>
+                                <td data-label="Borrow ID." style="background-color: white;">
+                                    <center>#<?php echo $row["br_id"] ?></center>
                                 </td>
                                 <!--  <td>
                                     <center> <?php /* echo $row["id"]  */ ?></center>
                                 </td> -->
-                                <td data-label="รายการ.">
+                                <td data-label="รายการ." style="background-color: white;">
                                     <center> <?php echo $row["detail"] ?></center>
                                 </td>
-                                <td data-label="ยี่ห้อ.">
+                                <td data-label="ยี่ห้อ." style="background-color: white;">
                                     <center> <?php echo $row["brand"] ?></center>
                                 </td>
-                                <td data-label="งานที่นำไปใช้.">
+                                <td data-label="งานที่นำไปใช้." style="background-color: white;">
                                     <center> <?php echo $row["activity"] ?></center>
                                 </td>
 
-                                <td data-label="สถานที่กิจกรรม.">
+                                <td data-label="สถานที่กิจกรรม." style="background-color: white;">
                                     <center><?php echo $row["location"] ?></center>
                                 </td>
-                                <td data-label="ฝ่าย.">
+                                <td data-label="ฝ่าย." style="background-color: white;">
                                     <center> <?php echo $row["room"] ?></center>
                                 </td>
-                                <td data-label="วันที่ยืม.">
+                                <td data-label="วันที่ยืม." style="background-color: white;">
                                     <?php echo $row["borrow_date"] ?>
                                 </td>
-                                <td data-label="วันที่ต้องคืน.">
+                                <td data-label="วันที่ต้องคืน." style="background-color: white;">
                                     <center><?php echo $row["back_date"] ?></center>
                                 </td>
-                                <td data-label="สถานะ">
+                                <td data-label="สถานะ" style="background-color: white;">
 
                                     <center>
                                         <?php
                                         if ($row["br_stat"] == 0) {
                                         ?>
-                                            <p style="background-color: red;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">รอดำเนินการ</p>
+                                            <p style="background-color: #827A7A;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">รอดำเนินการ</p>
                                     </center>
                                 <?php
                                         } else {
                                 ?>
                                     <center>
-                                        <p style="background-color: green;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">คืนแล้ว</p>
+                                        <p style="background-color: #ff5722;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">คืนแล้ว</p>
 
                                     <?php
                                         }

@@ -67,14 +67,14 @@ where borrow.status = 1 AND br_time between '" . $search_text . "' and  '" . $se
                             <center>
                                 <p id="p1">บุคลากรที่ยืมอุปกรณ์: ระหว่างวันที่
                                     <?php
-                                    if ($_GET['txt_keyword'] < 01 / 01 / 2001) {
+                                    if (isset($_GET['txt_keyword']) < 01 / 01 / 2001) {
                                         echo " - ";
                                     } else {
                                         echo date('d/m/Y', strtotime($_GET['txt_keyword']));
                                     } ?>
                                     ถึงวันที่
                                     <?php
-                                    if ($_GET['txt_keyword1'] < 01 / 01 / 2001) {
+                                    if (isset($_GET['txt_keyword1']) < 01 / 01 / 2001) {
                                         echo " - ";
                                     } else {
                                         echo date('d/m/Y', strtotime($_GET['txt_keyword1']));
