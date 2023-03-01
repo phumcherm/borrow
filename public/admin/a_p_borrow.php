@@ -14,12 +14,51 @@ require_once "../../app/models/db.php";
     <link rel="stylesheet" type="text/css" href="print.css">
     <title>Admin borrow</title>
 </head>
+<style>
+    @media print {
+        #maxRows {
+            display: none;
+            /* ซ่อน  */
+        }
+    }
+</style>
 
 <body>
     <div class="BoxTable">
         <div class="boxt" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
             <div class="row">
-
+                <table id="datatableBorrow" width="300" border="0">
+                    <tr>
+                        <th>
+                            <div class='pagination-container'>
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                        <li data-page="prev" class="page-item">
+                                            <a id="hid1" class="page-link" href="#" style=" border-color:#5B5B5B; color:#434242; "><b><i class="fas fa-angle-left"></i>Previous</b>
+                                                <span>
+                                                    <span class="sr-only">(current)
+                                                    </span></a>
+                                        </li>
+                                        <li data-page="next" class="page-item">
+                                            <a id="hid1" class="page-link" href="#" style=" border-color:#5B5B5B; color:#434242;"><b>Next&nbsp;&nbsp;<i class="fas fa-angle-right"></i></b>
+                                                <span> <span class="sr-only">(current)</span></span></a>
+                                        </li>
+                                        <select name="state" id="maxRows" style="margin: 12px; border-color:#5B5B5B; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 10px; ">
+                                            <option value="5000">Show ALL Rows</option>
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="50">50</option>
+                                            <option value="70">70</option>
+                                            <option value="100">100</option>
+                                        </select>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </th>
+                    </tr>
+                </table>
                 <div class="col-md-12 ">
                     <div class="col-sm-2" align="right"> </div>
                     <div class="col-sm-12" align="left">
@@ -31,8 +70,9 @@ require_once "../../app/models/db.php";
                         <p id="p1" style="text-align: center;">มหาวิทยาลัยเทคโนโลยีสุรนารี</p>
                         <p id="p1" style="text-align: center;">พิมพ์โดยคุณ: <?php echo $_SESSION['fname_login'] . " " . $_SESSION['lname_login'] ?></p>
                         <div>
+
                             <div class="table-container">
-                                <table class="table" id="data" style="text-align: center;">
+                                <table class="table" id="datatableBorrow" style="text-align: center;">
                                     <thead style="color:white; background-color:#E6581D;">
                                         <tr>
                                             <th>ลำดับ</th>
@@ -78,12 +118,8 @@ require_once "../../app/models/db.php";
         </div>
     </div>
 
-    <!-- js Bootstap -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="borrow_print.js"></script>
 
 
 </body>

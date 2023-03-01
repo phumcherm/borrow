@@ -1,7 +1,5 @@
 <?php
-
 require_once "../../app/models/function.php";
-
 require_once "../../app/models/db.php";
 ?>
 <!DOCTYPE html>
@@ -14,17 +12,51 @@ require_once "../../app/models/db.php";
     <link rel="stylesheet" type="text/css" href="print.css">
     <title>Admin borrow</title>
 </head>
-
+<style>
+    @media print {
+        #maxRows {
+            display: none;
+            /* ซ่อน  */
+        }
+    }
+</style>
 
 <body>
-
-
-
     <div class="BoxTable">
         <div class="boxt" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
             <div class="row">
-
-
+                <table width="300" border="0">
+                    <tr>
+                        <th>
+                            <div class='pagination-container'>
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                        <li data-page="prev" class="page-item">
+                                            <a id="hid1" class="page-link" href="#" style=" border-color:#5B5B5B; color:#434242; "><b><i class="fas fa-angle-left"></i>Previous</b>
+                                                <span>
+                                                    <span class="sr-only">(current)
+                                                    </span></a>
+                                        </li>
+                                        <li data-page="next" class="page-item">
+                                            <a id="hid1" class="page-link" href="#" style=" border-color:#5B5B5B; color:#434242;"><b>Next&nbsp;&nbsp;<i class="fas fa-angle-right"></i></b>
+                                                <span> <span class="sr-only">(current)</span></span></a>
+                                        </li>
+                                        <select name="state" id="maxRows" style="margin: 12px; border-color:#5B5B5B; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 10px; ">
+                                            <option value="5000">Show ALL Rows</option>
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="50">50</option>
+                                            <option value="70">70</option>
+                                            <option value="100">100</option>
+                                        </select>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </th>
+                    </tr>
+                </table>
                 <div class="col-md-12 ">
                     <div class="col-sm-2" align="right"> </div>
                     <div class="col-sm-12" align="left">
@@ -38,7 +70,7 @@ require_once "../../app/models/db.php";
 
                         <div>
                             <div class="table-container">
-                                <table class="table" id="data" style="text-align: center;">
+                                <table class="table" id="datatableBack" style="text-align: center;">
                                     <thead style="color:white; background-color:#E6581D;">
                                         <tr>
                                             <th>ลำดับ</th>
@@ -47,11 +79,10 @@ require_once "../../app/models/db.php";
                                             <th>สถานที่</th>
                                             <th>วันที่ยืม</th>
                                             <th>วันที่คืน</th>
+                                            <th>คืนล่าช้า</th>
                                             <th>รายงานปัญหา</th>
-
                                         </tr>
                                     </thead>
-
                                     <tbody>
                                         <?php
                                         $i = 0;
@@ -61,20 +92,53 @@ require_once "../../app/models/db.php";
                                             $i++;
                                         ?>
                                             <tr>
-
                                                 <td data-label="ลำดับที่."><?php echo $i ?></td>
                                                 <td data-label="ชื่อ - นามสกุล."><?php echo $row['fname'] . " " . $row['lname']  ?></td>
                                                 <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
                                                 <td data-label="สถานที่."><?php echo $row['location'] ?></td>
                                                 <td data-label="วันที่ยืม."><?php echo $row['borrow_date'] ?></td>
                                                 <td data-label="วันที่คืน."><?php echo $row['bk_date'] ?></td>
-                                                <td data-label="กำหนดคืน."><?php echo $row['bk_problem'] ?></td>
+                                                <td data-label="คืนล่าช้า."> <?php
+                                                                                $datestart = $row["br_date"];
+                                                                                $dateend = $row["bk_date"];
 
+                                                                                $calculate = strtotime("$datestart") - strtotime("$dateend");
+                                                                                $sumdate1 = floor($calculate / 86400); // 86400 มาจาก 24*360 (1วัน = 24 ชม.);
+
+                                                                                $sm1 = $sumdate1;
+                                                                                if ($sm1 >= 500) {
+                                                                                    echo "-";
+                                                                                } elseif ($sm1 <= 0) {
+                                                                                    echo $sm1;
+                                                                                    echo ' วัน';
+                                                                                } else {
+                                                                                    echo $sm1;
+                                                                                    echo ' วัน';
+                                                                                    echo "</td> ";
+                                                                                }
+                                                                                ?></td>
+                                                <td data-label="รายงานปัญหา."><?php
+                                                                                if (empty($row['bk_problem'])) {
+                                                                                    echo "-";
+                                                                                } else {
+                                                                                    echo $row['bk_problem'];
+                                                                                }
+                                                                                ?></td>
                                             </tr>
                                     </tbody>
                                 <?php
                                         }
                                 ?>
+                                <script>
+                                    function highlightRow(row) {
+                                        // Toggle highlight class on row
+                                        row.classList.toggle('highlight');
+
+                                        // Toggle checkbox state
+                                        var checkbox = row.querySelector('input[type="checkbox"]');
+                                        checkbox.checked = !checkbox.checked;
+                                    }
+                                </script>
                                 </table>
                             </div>
                         </div>
@@ -83,15 +147,8 @@ require_once "../../app/models/db.php";
             </div>
         </div>
     </div>
-
-    <!-- js Bootstap -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    </div>
-
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="back_print.js"></script>
 </body>
 
 </html>

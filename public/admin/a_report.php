@@ -90,49 +90,72 @@ require_once "../../app/models/function.php";
     <!-- Table report -->
     <div class="BoxTable">
         <div class="boxt" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
-            <!-- <button style="background-color:#E6581D;  color:#fff;  border-color:#fff;border-radius: 7px;">รายวัน</button>
-            <button style="background-color:#E6581D;  color:#fff;  border-color:#fff;border-radius: 7px;">รายเดือน</button>
-            <button style="background-color:#E6581D;  color:#fff;  border-color:#fff;border-radius: 7px;">รายปี</button> -->
-            <br><br>
+            <input type="search" id="search" onkeyup="SearchTable()" placeholder="&nbsp;&nbsp;ค้นหา" title="Type in a name" style="text-align: center; margin: 16px; padding: 5px; border-radius: 50px; box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 10px; ">
+            <select name="state" id="maxRows" style="text-align: center;  border-color:#5B5B5B; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 10px; ">
+                <option value="5000">Show ALL Rows</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
             <div class="table-container">
-                <table class="table" id="dataSum">
+                <table id="datatableReport1" class="table">
                     <thead style="color:white;text-align: center; background-color:#E6581D;">
                         <tr>
-                            <!-- <th>Id</th> -->
-                            <th>รหัสครุภัณฑ์</th>
+                            <th>วันที่</th>
                             <th>ชื่ออุปกรณ์</th>
                             <th>ยี่ห่อ-รุ่น</th>
-
-                            <th>จำนวนที่ถูกยืม</th>
+                            <th>จำนวน</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
+                        $i = 0;
+
                         $selectAll = new DB_con();
                         $sql = $selectAll->selectSum();
                         while ($row = mysqli_fetch_array($sql)) {
+                            $i++;
                         ?>
                             <tr>
-                                <!-- <td data-label="Id."><?php echo $row['id'] ?></td> -->
-                                <td style="text-align: center;" data-label="รหัสครุภัณฑ์."><?php echo $row['id'] ?></td>
+                                <td style="text-align: center;" data-label="รหัสครุภัณฑ์."><?php echo $row['time'] ?></td>
                                 <td style="text-align: center;" data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
                                 <td style="text-align: center;" data-label="ยี่ห่อ-รุ่น."><?php echo $row['brand'] ?></td>
-                                <td style="text-align: center;" data-label="จำนวนการใช้."> <?php echo $row['COUNT'] ?></td>
+                                <td style="text-align: center;" data-label="จำนวน."> <?php echo $row['COUNT'] ?> ครั้ง</td>
                             </tr>
                     </tbody>
                 <?php
                         }
                 ?>
+
+                </table>
+                <table width="350" border="0">
+                    <tr>
+                        <th>
+                            <div class='pagination-container'>
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                        <li data-page="prev" class="page-item">
+                                            <a id="hid1" class="page-link" href="#" style=" border-color:#5B5B5B; color:#434242; "><b><i class="fas fa-angle-left"></i>Previous</b>
+                                                <span>
+                                                    <span class="sr-only">(current)
+                                                    </span></a>
+                                        </li>
+                                        <li data-page="next" class="page-item">
+                                            <a id="hid1" class="page-link" href="#" style=" border-color:#5B5B5B; color:#434242;"><b>Next&nbsp;&nbsp;<i class="fas fa-angle-right"></i></b>
+                                                <span> <span class="sr-only">(current)</span></span></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </th>
+                    </tr>
                 </table>
             </div>
         </div><!--  #E6581D; -->
         <div class="boxt" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
-            <!-- <button style="background-color:#E6581D;  color:#fff;  border-color:#fff;border-radius: 7px;">รายวัน</button>
-            <button style="background-color:#E6581D;  color:#fff;  border-color:#fff;border-radius: 7px;">รายเดือน</button>
-            <button style="background-color:#E6581D;  color:#fff;  border-color:#fff;border-radius: 7px;">รายปี</button> -->
-            <br><br>
             <div class="table-container">
-                <table class="table" id="dataAvg">
+                <table id="datatableReport1" class="table">
                     <thead style="color:white;text-align: center; background-color:#E6581D;">
                         <tr>
                             <!-- <th>Id</th>
@@ -166,47 +189,15 @@ require_once "../../app/models/function.php";
             </div>
         </div>
     </div>
-
-    <!-- datatable -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#dataSum').DataTable({
-
-                scrollY: '250px',
-                scrollCollapse: true,
-
-                language: {
-                    search: "ค้นหา :",
-                    searchPlaceholder: "ค้นหา..."
-
-                },
-            });
-
-        });
-
-        $(document).ready(function() {
-            $('#dataAvg').DataTable({
-
-                scrollY: '250px',
-                scrollCollapse: true,
-
-                language: {
-                    search: "ค้นหา :",
-                    searchPlaceholder: "ค้นหา..."
-
-                },
-            });
-
-        });
-    </script>
+    <!-- js nextpadge -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="report_table.js"></script>
     <!-- chart -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js" integrity="sha512-qKyIokLnyh6oSnWsc5h21uwMAQtljqMZZT17CIMXuCQNIfFSFF4tJdMOaJHL9fQdJUANid6OB6DRR0zdHrbWAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="chart_data.js"> </script>
+    <script src="chart.js"> </script>
     <!-- ///// -->
 </body>
 

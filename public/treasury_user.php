@@ -206,9 +206,6 @@ require_once "../app/models/db.php";
                         <th>
                             <center>จำนวน</center>
                         </th>
-                        <!-- <!-- <th>
-                                <center>สถานะการยืม</center>
-                            </th> -->
                         <th>
                             <center>เลือก</center>
                         </th>

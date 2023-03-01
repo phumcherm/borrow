@@ -278,56 +278,57 @@
         }
     </style>
 
-<?php 
-if(isset($_GET['logout'])){
-    //Destroy entire session data.
-session_destroy();
+    <?php
+    if (isset($_GET['logout'])) {
+        //Destroy entire session data.
+        session_destroy();
 
-//redirect page to index.php
-header('location:login.php');
-}
-?>
+        //redirect page to index.php
+        header('location:login.php');
+    }
+    ?>
 
 </head>
 
 <!DOCTYPE html>
 <html>
 <!-- <button onclick="topFunction()" id="myBtn" title="Go to top" style="opacity: 0.5;background-color: #ff5722;width: 50px; height: 50px;"><i class="fas fa-chevron-circle-up"></i></button> -->
+
 <body>
-                <nav class="navbar navbar-expand-custom navbar-mainbg">
-                    <a class="navbar-brand " href="#">
-                        <h3 style="margin-left: 60px;">E - Borrow</h3>
-                    </a>
-                    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-bars text-white"></i>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto">
-                            <div class="hori-selector">
-                                <div class="left"></div>
-                                <div class="right"></div>
-                            </div>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php"><i class="fas fa-tachometer-alt"></i>หน้าหลัก</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="borrow_user.php"><i class="far fa-address-book"></i>ยืมครุภัณฑ์</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="back_user.php"><i class="far fa-clone"></i>คืนครุภัณฑ์</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="treasury_user.php"><i class="far fa-calendar-alt"></i>คลังครุภัณฑ์</a>
-                            </li>
-                         <!--    <li class="nav-item">
+    <nav class="navbar navbar-expand-custom navbar-mainbg">
+        <a class="navbar-brand " href="#">
+            <h3 style="margin-left: 60px;">E - Borrow</h3>
+        </a>
+        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php"><i class="fas fa-tachometer-alt"></i>หน้าหลัก</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="borrow_user.php"><i class="far fa-address-book"></i>ยืมครุภัณฑ์</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="back_user.php"><i class="far fa-clone"></i>คืนครุภัณฑ์</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="treasury_user.php"><i class="far fa-calendar-alt"></i>คลังครุภัณฑ์</a>
+                </li>
+                <!--    <li class="nav-item">
                                 <a class="nav-link" href="repair.php"><i class="fas fa-tools"></i>แจ้งซ่อม</a>
                             </li> -->
-                            <li class="nav-item">
-                                <a class="nav-link" name="logout" href="../app/controller/log_out.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                <li class="nav-item">
+                    <a class="nav-link" name="logout" href="../app/controller/log_out.php"><i class="far fa-chart-bar"></i>ออกจากระบบ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
@@ -390,7 +391,7 @@ header('location:login.php');
             // Account for home page with empty path
             if (path == '') {
                 path = '';
-                
+
             }
 
             var target = $('#navbarSupportedContent ul li a[href="' + path + '"]');
@@ -399,4 +400,5 @@ header('location:login.php');
         });
     </script>
 </body>
+
 </html>

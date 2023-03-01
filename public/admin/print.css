@@ -115,6 +115,10 @@ input.larger {
         display: none;
         /* ซ่อน  */
     }
+    #maxRows {
+        display: none;
+        /* ซ่อน  */
+    }
     #img {
         width: 1500px;
     }
@@ -129,4 +133,5 @@ input.larger {
     #data {
         font-size: 18px;
     }
+    
 }

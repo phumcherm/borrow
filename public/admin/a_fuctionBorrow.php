@@ -159,7 +159,7 @@
     <!-- Card -->
     <div class="graphBox">
         <div class="box" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
-            <p style="font-size: 36px;text-align: center;color: #E6581D;">ครุภัณฑ์ที่คืนแล้ว</p>
+            <p style="font-size: 36px;text-align: center;color: #E6581D;">ครุภัณฑ์ที่ยังไม่คืนแล้ว</p>
             <div>
                 <div class="table-container">
                     <table class="table" id="data" style="text-align: center;">
