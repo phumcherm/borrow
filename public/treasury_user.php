@@ -229,7 +229,7 @@ require_once "../app/models/db.php";
                                     <center><?php echo $row["matching_rows"] . " / " . $row["total_rows"] ?></center>
                                 </td>
                                 <!-- <td data-label="สถานะการยืม.">
-                                    <center>
+                                    <center> 
                                         <?php if ($row['br_status'] == '') { ?>
                                              <?php echo $row["br_status"] ?>
                                             <p style="background-color: green;padding: 5px 10px;color: #fff;border-radius: 7px;margin: 0px;">ว่าง</p>
