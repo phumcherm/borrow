@@ -63,6 +63,70 @@ $(document).ready(function() {
   
     })
   }
+
+
+  async function fitterData() {
+    let respone = await fetch("chart_data1.php", {
+        method: 'GET', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+  
+    })
+  
+    let body = await respone.json();
+    console.log(body)
+    gentGraphTem(body)
+  }
+  
+  
+  function gentGraphTem(data) {
+  
+    let count = [];
+    let time = [];
+  
+    for (let i in data) {
+        count.push(data[i].COUNT);
+        time.push(data[i].br_time);
+    }
+    let chatdataTem = {
+        labels: time,
+        datasets: [{
+            label: 'ครุภัณฑ์ที่ถูกยืมทั้งหมด',
+            backgroudColor: '#49e2ff',
+            borderColor: '#46d5f1',
+            hoverBackgroundColor: '#CCCCCC',
+            hoverBorderColor: '#666666',
+            data: count,
+            backgroundColor: [
+                'rgb(0, 0, 255)',
+            ],
+            borderColor: [
+                'rgb(0, 0, 255)',
+            ],
+            borderWidth: 1
+        }]
+    };
+    let graphTarget = $('#myChart');
+    let barGraph = new Chart(graphTarget, {
+        type: 'bar',
+        data: chatdataTem,
+        options: {
+            scales: {
+                y: {
+                    ticks: {
+                        // Include a dollar sign in the ticks
+                        callback: function(value, index, ticks) {
+                            return value + '';
+                        }
+                    }
+                }
+            }
+        }
+  
+    })
+  }
+
   let xcount_data = [];
   let ytime_data = [];
   
@@ -181,7 +245,7 @@ $(document).ready(function() {
               let item = [];
   
               for (let i in data) {
-                  total.push(data[i].total);
+                  total.push(data[i].time);
                   item.push(data[i].detail);
                
               }

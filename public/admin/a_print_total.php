@@ -17,7 +17,6 @@ require_once "../../app/models/db.php";
 
 
 <body>
-
     <div class="BoxTable">
         <div class="boxt" style=" box-shadow: rgba(0, 0.35, 0, 0.35) 0px 0px 15px  ;">
             <div class="row">
@@ -67,14 +66,14 @@ where borrow.status = 1 AND br_time between '" . $search_text . "' and  '" . $se
                             <center>
                                 <p id="p1">บุคลากรที่ยืมอุปกรณ์: ระหว่างวันที่
                                     <?php
-                                    if ($_GET['txt_keyword'] < 01 / 01 / 2001) {
+                                    if ($_GET['txt_keyword'] < 01 / 01 / 2021) {
                                         echo " - ";
                                     } else {
                                         echo date('d/m/Y', strtotime($_GET['txt_keyword']));
                                     } ?>
                                     ถึงวันที่
                                     <?php
-                                    if ($_GET['txt_keyword1'] < 01 / 01 / 2001) {
+                                    if ($_GET['txt_keyword1'] < 01 / 01 / 2021) {
                                         echo " - ";
                                     } else {
                                         echo date('d/m/Y', strtotime($_GET['txt_keyword1']));
@@ -112,7 +111,13 @@ where borrow.status = 1 AND br_time between '" . $search_text . "' and  '" . $se
                                                 <td data-label="ชื่ออุปกรณ์."><?php echo $row['detail'] ?></td>
                                                 <td data-label="สถานที่."><?php echo $row['location'] ?></td>
                                                 <td data-label="วันที่ยืม."><?php echo $row['borrow_date'] ?></td>
-                                                <td data-label="วันที่คืน."><?php echo $row['bk_date'] ?></td>
+                                                <td data-label="วันที่คืน."> <?php
+                                                                                if ($row['bk_date'] < 01 / 01 / 2001) {
+                                                                                    echo "-";
+                                                                                } else {
+                                                                                    echo $row['bk_date'];
+                                                                                }
+                                                                                ?>
                                                 <td data-label="คืนครุภัณฑ์ล่าช้า.">
                                                     <?php
                                                     $datestart = $row["br_date"];
@@ -134,8 +139,13 @@ where borrow.status = 1 AND br_time between '" . $search_text . "' and  '" . $se
                                                     }
                                                     ?>
                                                 </td>
-                                                <td data-label="กำหนดคืน."><?php echo $row['bk_problem'] ?></td>
-
+                                                <td data-label="รายงานปัญหา."><?php
+                                                                                if (empty($row['bk_problem'])) {
+                                                                                    echo "-";
+                                                                                } else {
+                                                                                    echo $row['bk_problem'];
+                                                                                }
+                                                                                ?></td>
                                             </tr>
                                     </tbody>
                                 <?php

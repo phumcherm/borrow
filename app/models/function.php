@@ -60,7 +60,8 @@ class DB_con
     }
     function selectSum()
     {
-        $result = mysqli_query($this->dbcon, "SELECT  borrow.id,detail,brand ,COUNT(detail) AS COUNT   FROM itemdata,borrow WHERE itemdata.id = borrow.id  GROUP BY id,detail,brand ORDER BY COUNT DESC;");
+        $result = mysqli_query($this->dbcon, "SELECT  borrow.id,detail,brand ,DATE_FORMAT( br_time, '%d%-%M%-%Y')  AS time ,COUNT(detail) as COUNT   FROM itemdata,borrow
+        WHERE itemdata.id = borrow.id  GROUP BY DATE_FORMAT( br_time, '%d%-%M%-%Y')   , id,detail,brand ORDER BY time DESC;");
         return $result;
     }
     function selectAvg()

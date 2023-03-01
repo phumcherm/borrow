@@ -1,7 +1,5 @@
 <?php
-
 require_once "../../app/models/function.php";
-
 require_once "../../app/models/db.php";
 ?>
 <!DOCTYPE html>
@@ -12,7 +10,6 @@ require_once "../../app/models/db.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="print.css">
-
     <title>Admin borrow</title>
 </head>
 <style>
@@ -82,6 +79,7 @@ require_once "../../app/models/db.php";
                                             <th>สถานที่</th>
                                             <th>วันที่ยืม</th>
                                             <th>วันที่คืน</th>
+                                            <th>คืนล่าช้า</th>
                                             <th>รายงานปัญหา</th>
                                         </tr>
                                     </thead>
@@ -100,7 +98,32 @@ require_once "../../app/models/db.php";
                                                 <td data-label="สถานที่."><?php echo $row['location'] ?></td>
                                                 <td data-label="วันที่ยืม."><?php echo $row['borrow_date'] ?></td>
                                                 <td data-label="วันที่คืน."><?php echo $row['bk_date'] ?></td>
-                                                <td data-label="กำหนดคืน."><?php echo $row['bk_problem'] ?></td>
+                                                <td data-label="คืนล่าช้า."> <?php
+                                                                                $datestart = $row["br_date"];
+                                                                                $dateend = $row["bk_date"];
+
+                                                                                $calculate = strtotime("$datestart") - strtotime("$dateend");
+                                                                                $sumdate1 = floor($calculate / 86400); // 86400 มาจาก 24*360 (1วัน = 24 ชม.);
+
+                                                                                $sm1 = $sumdate1;
+                                                                                if ($sm1 >= 500) {
+                                                                                    echo "-";
+                                                                                } elseif ($sm1 <= 0) {
+                                                                                    echo $sm1;
+                                                                                    echo ' วัน';
+                                                                                } else {
+                                                                                    echo $sm1;
+                                                                                    echo ' วัน';
+                                                                                    echo "</td> ";
+                                                                                }
+                                                                                ?></td>
+                                                <td data-label="รายงานปัญหา."><?php
+                                                                                if (empty($row['bk_problem'])) {
+                                                                                    echo "-";
+                                                                                } else {
+                                                                                    echo $row['bk_problem'];
+                                                                                }
+                                                                                ?></td>
                                             </tr>
                                     </tbody>
                                 <?php
