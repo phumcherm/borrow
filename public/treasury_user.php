@@ -141,7 +141,7 @@ require_once "../app/models/db.php";
             <div class="modal-content" style="padding: 10px; background-color: #ff5722;">
                 <div>
                     <div style="max-width: 1600px;margin-left: auto; background-color: white;padding: 30px;border-radius: 7px;">
-                        <span class="close" style="margin-left: auto;color: black;background-color: white;padding: 1px 7px;border-radius: 7px;"><i class="fa-solid fa-xmark"></i></span>
+                        <span class="close" style="margin-left: auto;color: black;background-color: #5d5656;padding: 1px 7px;border-radius: 7px;"><i class="fa-solid fa-xmark"></i></span>
 
                         <!-- <form action=""> -->
 

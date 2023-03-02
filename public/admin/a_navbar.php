@@ -54,10 +54,11 @@
   <div class="w3-bar w3-top  w3-large  " style="z-index:4; background-color: #E6581D; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; ">
     <button id="hid" class="w3-bar-item w3-button w3-hide-large  w3-hover-text-light-grey" onclick="w3_open();" style="color: #fff;"><i class="fa fa-bars"></i>  Menu</button> <span class="w3-bar-item w3-right" style="color: #fff;"></span>
     <span id="hid" class="w3-bar-item w3-right" style="color: #fff;"><i class="fas fa-portrait"></i> สวัสดี : คุณ<?php echo $_SESSION['fname_login'] . " " . $_SESSION['lname_login'] ?> </span>
+  
   </div>
 
   <!-- Sidebar/menu -->
-  <nav class="w3-sidebar w3-collapse  w3-animate-left" style="z-index:3;width:250px; background-color: #E6581D; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;" id="mySidebar"><br>
+  <nav class="w3-sidebar w3-collapse  w3-animate-left" style="z-index:3;width:250px; background-color: #E6581D; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;top: 40px;" id="mySidebar"><br>
     <div class="w3-container w3-row">
       <div class="w3-col s8 ">
 

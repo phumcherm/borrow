@@ -251,7 +251,7 @@
         .graphBox {
             position: relative;
             width: 100%;
-            padding: 20px;
+            padding: 15px;
             display: grid;
 
             grid-gap: 20px;
@@ -260,8 +260,8 @@
 
         .graphBox .box {
             position: relative;
-            background: #fff;
-            padding: 20px;
+            background: #e8e3e3;
+            padding: 15px;
             width: 100%;
             box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
             border-radius: 20px;
@@ -280,7 +280,7 @@
         .BoxTable .boxt {
             position: relative;
             background: #fff;
-            padding: 20px;
+            padding: 15px;
             width: 100%;
             box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
             border-radius: 20px;
@@ -291,4 +291,31 @@
                 grid-template-columns: 1fr;
                 height: auto;
             }
+        }
+
+
+        #cancle {
+            color: red;
+            border-style: solid;
+            border-color: #ff0000;
+            border-width: 5px;
+            padding: 15px 25px;
+            background-color: #fff;
+            border-radius: 7px;
+            margin-bottom: 15px;
+            box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;
+        }
+
+
+        #submit {
+            float: right;
+            border-style: solid;
+            border-color: #ff5722;
+            border-width: 5px;
+            padding: 15px 25px;
+            background-color: #ff5722;
+            border-radius: 7px;
+            margin-bottom: 15px;
+            box-shadow: rgba(0.35, 0, 0, 0.35) 0px 5px 10px;
+            /* width: auto; */
         }

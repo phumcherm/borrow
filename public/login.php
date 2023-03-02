@@ -125,15 +125,12 @@ require_once "../app/views/session_status.php";
         </section>
         <br>
 
-        <div style="max-width: 400px; margin: 15px auto 15px auto; ">
+        <div style="max-width: 400px; margin: 15px auto 15px auto;">
             <div>
-                <form action="../app/controller/login_db.php" method="post" class="container  w3-white w3-container " style=" margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                <form action="../app/controller/login_db.php" method="post" class="container  w3-white w3-container " style=" height: auto;margin: 50px; border-radius: 7px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
                     <div class="colororage">
 
-                        <h3>
-
                             <h3 style="color: #EC5A0F;font-family: SUT_Bold;"><i class="fas fa-sign-in-alt" style="font-size:24px;"></i>&nbsp;เข้าสู่ระบบ</h3>
-                        </h3>
                         <div class="w3-center">
                             <i class="fa fa-user icon"></i>
                             <input type="text" required name="txt_code" class="form-control form-control-lg " required placeholder="หมายเลขประจำตัว">
@@ -154,7 +151,6 @@ require_once "../app/views/session_status.php";
                     </div>
                 </form>
             </div>
-
 
         </div>
     </div>
